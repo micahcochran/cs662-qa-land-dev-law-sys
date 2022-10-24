@@ -1,0 +1,16 @@
+# this works 
+# arq --data simpl.ttl --query permitted.rq
+# arq -v --data permits_use2.ttl --query permitted2.rq
+
+PREFIX : <http://www.example.org/ns/lu/zoning#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?zoning ?label
+
+# this is in the C-1 district
+# if queried with permits_use2.ttl returns all the C districts
+
+WHERE {
+	?zoning :permitsUse "Minor automotive repair" .
+    ?zoning rdfs:label ?label .
+}

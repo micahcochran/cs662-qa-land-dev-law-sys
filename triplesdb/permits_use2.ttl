@@ -1,0 +1,325 @@
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix : <http://www.example.org/ns/lu/zoning#> .
+
+# Class definitions
+:ZoningDistrict     rdf:type        rdfs:class .
+
+# Property Definitions
+# :permitsUse         rdf:type
+
+# Instance Definitions
+
+########  Residential Zoning Districts  ########
+# perhaps these uses should be an Bnode?
+
+
+:r1 a :ZoningDistrict .
+
+:r1 rdfs:label "R-1"@en .
+
+:r1 :permitsUse "Single-family dwellings" ;
+    :permitsUse "publicly owned and operated parks" ;
+    :permitsUse "recreation centers" ;
+    :permitsUse "swimming pools and playgrounds" ;
+    :permitsUse "police and fire department stations" ;
+    :permitsUse "public and governmental services" ;
+    :permitsUse "public libraries" ;
+    :permitsUse "schools and colleges (excluding colleges or trade schools operated for profit)" ;
+    :permitsUse "public parking lots" ;
+    :permitsUse "private garages" ;
+    :permitsUse "buildings accessory to the permitted used (including private garages and accessory living quarters)" ;
+    :permitsUse "temporary buildings" .
+
+
+:r2 a :ZoningDistrict .
+
+:r2 rdfs:label "R-2"@en . 
+
+
+:r2 :permitsUse "Two-family dwellings" .
+
+# These are the permitted uses from R-1
+:r2 :permitsUse "Single-family dwellings" ;
+    :permitsUse "publicly owned and operated parks" ;
+    :permitsUse "recreation centers" ;
+    :permitsUse "swimming pools and playgrounds" ;
+    :permitsUse "police and fire department stations" ;
+    :permitsUse "public and governmental services" ;
+    :permitsUse "public libraries" ;
+    :permitsUse "schools and colleges (excluding colleges or trade schools operated for profit)" ;
+    :permitsUse "public parking lots" ;
+    :permitsUse "private garages" ;
+    :permitsUse "buildings accessory to the permitted used (including private garages and accessory living quarters)" ;
+    :permitsUse "temporary buildings" .
+
+
+:r3 a :ZoningDistrict .
+
+:r3 rdfs:label "R-3"@en . 
+
+:r3 :permitsUse "Two-family dwellingsmultiple family dwellings, such as apartment houses, boarding houses, condominiums and congregate residences" .
+
+# These are the permitted uses from R-2
+:r3 :permitsUse "Two-family dwellings" .
+
+# These are the permitted uses from R-1
+:r3 :permitsUse "Single-family dwellings" ;
+    :permitsUse "publicly owned and operated parks" ;
+    :permitsUse "recreation centers" ;
+    :permitsUse "swimming pools and playgrounds" ;
+    :permitsUse "police and fire department stations" ;
+    :permitsUse "public and governmental services" ;
+    :permitsUse "public libraries" ;
+    :permitsUse "schools and colleges (excluding colleges or trade schools operated for profit)" ;
+    :permitsUse "public parking lots" ;
+    :permitsUse "private garages" ;
+    :permitsUse "buildings accessory to the permitted used (including private garages and accessory living quarters)" ;
+    :permitsUse "temporary buildings" .
+
+
+########  Agricultural Zoning Districts  ########
+
+:a1 a :ZoningDistrict .
+
+:a1 rdfs:label "A-1"@en . 
+
+:a1 :permitsUse "Open space" .
+
+
+:a2 a :ZoningDistrict .
+
+:a2 rdfs:label "A-2"@en . 
+
+:a2 :permitsUse "Agricultural Use" ;
+    :permitsUse "Dwellings" ;
+    :permitsUse "Maintenance/storage buildings" .
+
+
+# A3 USES HAVE BEEN OMITTED
+:a3 a :ZoningDistrict .
+
+:a3 rdfs:label "A-3"@en . 
+
+########  Commercial Zoning Districts  ########
+
+:c1 a :ZoningDistrict ;
+    rdfs:label "C-1"@en . 
+
+:c1 :permitsUse "Minor automotive repair" ;
+	:permitsUse "automotive motor fuel dispensing facilities" ;
+	:permitsUse "automotive self-service motor fuel dispensing facilities" ;
+	:permitsUse "business services" ;
+	:permitsUse "financial services" ;
+	:permitsUse "convenience and neighborhood commercial centers (excluding wholesale sales)" ;
+	:permitsUse "family and group day care facilities" ;
+	:permitsUse "libraries" ;
+	:permitsUse "mortuary and funeral homes" ;
+	:permitsUse "public and governmental services" ;
+	:permitsUse "police and fire department stations" ;
+	:permitsUse "places of religious worship" ;
+	:permitsUse "public utility stations" ;
+	:permitsUse "restaurants" .
+
+
+:c2 a :ZoningDistrict ;
+    rdfs:label "C-2"@en . 
+
+:c2 :permitsUse "light commercial (excluding wholesale sales)" ;
+	:permitsUse "group care facilities" ;
+	:permitsUse "physical fitness centers" ;
+	:permitsUse "religious, cultural and fraternal activities" ;
+	:permitsUse "rehabilitation centers" ;
+	:permitsUse "school and colleges operated for profit (including commercial, vocational and trade schools)" .
+
+
+# These are the permitted uses from C-1
+:c2 :permitsUse "Minor automotive repair" ;
+	:permitsUse "automotive motor fuel dispensing facilities" ;
+	:permitsUse "automotive self-service motor fuel dispensing facilities" ;
+	:permitsUse "business services" ;
+	:permitsUse "financial services" ;
+	:permitsUse "convenience and neighborhood commercial centers (excluding wholesale sales)" ;
+	:permitsUse "family and group day care facilities" ;
+	:permitsUse "libraries" ;
+	:permitsUse "mortuary and funeral homes" ;
+	:permitsUse "public and governmental services" ;
+	:permitsUse "police and fire department stations" ;
+	:permitsUse "places of religious worship" ;
+	:permitsUse "public utility stations" ;
+	:permitsUse "restaurants" .
+
+
+:c3 a :ZoningDistrict ;
+    rdfs:label "C-3"@en .
+
+
+:c3 :permitsUse	"amusement centers (including bowling alleys, golf driving ranges miniature golf courses, ice rinks, pool and billiard halls, and similar recreational uses)" ;
+	:permitsUse "automotive sales" ;
+	:permitsUse "building material supply sales (wholesale and retail)" ;
+	:permitsUse "cultural institutions (such as museums and art galleries)" ;
+	:permitsUse "community centers (including wholesale and retail sales)" ;
+	:permitsUse "health and medical institutions (such as hospitals)" ;
+	:permitsUse "hotels and motels (excluding other residential occupancies)" ;
+	:permitsUse "commercial printing and publishing" ;
+	:permitsUse "taverns and cocktail lounges" ;
+	:permitsUse "indoor theaters" ;
+	:permitsUse "Self-storage warehouses" .
+
+# These are the permitted uses from C-2
+:c3 :permitsUse "light commercial (excluding wholesale sales)" ;
+	:permitsUse "group care facilities" ;
+	:permitsUse "physical fitness centers" ;
+	:permitsUse "religious, cultural and fraternal activities" ;
+	:permitsUse "rehabilitation centers" ;
+	:permitsUse "school and colleges operated for profit (including commercial, vocational and trade schools)" .
+
+
+# These are the permitted uses from C-1
+:c3 :permitsUse "Minor automotive repair" ;
+	:permitsUse "automotive motor fuel dispensing facilities" ;
+	:permitsUse "automotive self-service motor fuel dispensing facilities" ;
+	:permitsUse "business services" ;
+	:permitsUse "financial services" ;
+	:permitsUse "convenience and neighborhood commercial centers (excluding wholesale sales)" ;
+	:permitsUse "family and group day care facilities" ;
+	:permitsUse "libraries" ;
+	:permitsUse "mortuary and funeral homes" ;
+	:permitsUse "public and governmental services" ;
+	:permitsUse "police and fire department stations" ;
+	:permitsUse "places of religious worship" ;
+	:permitsUse "public utility stations" ;
+	:permitsUse "restaurants" .
+
+
+:c4 a :ZoningDistrict ;
+    rdfs:label "C-4"@en .
+
+:c4 :permitsUse "major automotive repair" ;
+	:permitsUse "commercial bakeries" ;
+	:permitsUse "regional commercial centers (including wholesale and retail sales)" ;
+	:permitsUse "plastic product design, molding and assembly" ;
+	:permitsUse "small metal products design, casting, fabricating, and processing" ;
+	:permitsUse "manufacture and finishing" ;
+	:permitsUse "storage yars" ;
+	:permitsUse "wood products manufacturing and finishing" .
+
+# These are the permitted uses from C-3
+:c4 :permitsUse	"amusement centers (including bowling alleys, golf driving ranges miniature golf courses, ice rinks, pool and billiard halls, and similar recreational uses)" ;
+	:permitsUse "automotive sales" ;
+	:permitsUse "building material supply sales (wholesale and retail)" ;
+	:permitsUse "cultural institutions (such as museums and art galleries)" ;
+	:permitsUse "community centers (including wholesale and retail sales)" ;
+	:permitsUse "health and medical institutions (such as hospitals)" ;
+	:permitsUse "hotels and motels (excluding other residential occupancies)" ;
+	:permitsUse "commercial printing and publishing" ;
+	:permitsUse "taverns and cocktail lounges" ;
+	:permitsUse "indoor theaters" ;
+	:permitsUse "Self-storage warehouses" .
+
+# These are the permitted uses from C-2
+:c4 :permitsUse "light commercial (excluding wholesale sales)" ;
+	:permitsUse "group care facilities" ;
+	:permitsUse "physical fitness centers" ;
+	:permitsUse "religious, cultural and fraternal activities" ;
+	:permitsUse "rehabilitation centers" ;
+	:permitsUse "school and colleges operated for profit (including commercial, vocational and trade schools)" .
+
+
+# These are the permitted uses from C-1
+:c4 :permitsUse "Minor automotive repair" ;
+	:permitsUse "automotive motor fuel dispensing facilities" ;
+	:permitsUse "automotive self-service motor fuel dispensing facilities" ;
+	:permitsUse "business services" ;
+	:permitsUse "financial services" ;
+	:permitsUse "convenience and neighborhood commercial centers (excluding wholesale sales)" ;
+	:permitsUse "family and group day care facilities" ;
+	:permitsUse "libraries" ;
+	:permitsUse "mortuary and funeral homes" ;
+	:permitsUse "public and governmental services" ;
+	:permitsUse "police and fire department stations" ;
+	:permitsUse "places of religious worship" ;
+	:permitsUse "public utility stations" ;
+	:permitsUse "restaurants" .
+
+
+### OMIT Commercial Residential Districts for the moment.
+
+
+########  Factory/Industrial Zoning Districts  ########
+
+:fi1 a :ZoningDistrict ;
+     rdfs:label "FI-1"@en .
+
+:fi1 :permitsUse "warehouses" ;
+	 :permitsUse "research or testing laboratories" ;
+	 :permitsUse "product distribution centers" ;
+	 :permitsUse "woodworking shops" ;
+	 :permitsUse "auto body shops" ;
+	 :permitsUse "furniture assembly" ;
+	 :permitsUse "dry cleaning plants" ;
+	 :permitsUse "places of religious worship" ;
+	 :permitsUse "public and governmental services" ;
+	 :permitsUse "machine shops" ;
+	 :permitsUse "boat storage yards" .
+
+
+:fi2 a :ZoningDistrict ;
+     rdfs:label "FI-2"@en .
+
+:fi2 :permitsUse "Stadiums and arenas" ;
+	 :permitsUse "indoor swap meets" ;
+	 :permitsUse "breweries" ;
+	 :permitsUse "liquid fertilizer manufacturing" ;
+	 :permitsUse "carpet manufacturing" ;
+	 :permitsUse "monument works" ;
+	 :permitsUse "regional recycling center" .
+
+# These are the permitted uses from FI-1
+:fi2 :permitsUse "warehouses" ;
+	 :permitsUse "research or testing laboratories" ;
+	 :permitsUse "product distribution centers" ;
+	 :permitsUse "woodworking shops" ;
+	 :permitsUse "auto body shops" ;
+	 :permitsUse "furniture assembly" ;
+	 :permitsUse "dry cleaning plants" ;
+	 :permitsUse "places of religious worship" ;
+	 :permitsUse "public and governmental services" ;
+	 :permitsUse "machine shops" ;
+	 :permitsUse "boat storage yards" .
+
+
+:fi3 a :ZoningDistrict ;
+     rdfs:label "FI-3"@en .
+
+:fi3 :permitsUse "Auto-dismantling yards" ;
+	 :permitsUse "alcohol manufacturing" ;
+	 :permitsUse "cotton gins" ;
+	 :permitsUse "paper manufacturing" ;
+	 :permitsUse "quarries" ;
+	 :permitsUse "salt works" ;
+	 :permitsUse "petroleum refining" .
+
+# These are the permitted uses from FI-2
+:fi3 :permitsUse "Stadiums and arenas" ;
+	 :permitsUse "indoor swap meets" ;
+	 :permitsUse "breweries" ;
+	 :permitsUse "liquid fertilizer manufacturing" ;
+	 :permitsUse "carpet manufacturing" ;
+	 :permitsUse "monument works" ;
+	 :permitsUse "regional recycling center" .
+
+# These are the permitted uses from FI-1
+:fi3 :permitsUse "warehouses" ;
+	 :permitsUse "research or testing laboratories" ;
+	 :permitsUse "product distribution centers" ;
+	 :permitsUse "woodworking shops" ;
+	 :permitsUse "auto body shops" ;
+	 :permitsUse "furniture assembly" ;
+	 :permitsUse "dry cleaning plants" ;
+	 :permitsUse "places of religious worship" ;
+	 :permitsUse "public and governmental services" ;
+	 :permitsUse "machine shops" ;
+	 :permitsUse "boat storage yards" .

@@ -1,0 +1,16 @@
+
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://www.example.org/ns/lu/zoning#> .
+
+# Class definitions
+:ZoningDistrict     rdf:type        rdfs:class .
+
+
+:c1                 rdfs:subClassOf :ZoningDistrict .
+
+:c1 rdfs:label "C-1"@en . 
+
+:c1 :permitsUse "Minor automotive repair" .
+

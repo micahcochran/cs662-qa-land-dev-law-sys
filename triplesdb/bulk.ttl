@@ -1,0 +1,191 @@
+
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://www.example.org/ns/lu/zoning#> .
+
+
+# ######## NOTES ##########################
+# Units have been omitted.
+# Areas are Square feet and distances are Feet.
+# Density is number of units per acre.  
+# Agricultural District uses Acres per dwelling to represent the minimum lot area.  Agricultural Density is a fraction, the decimalization different.  IZC says 1 dwelling unit per 5 acres = 0.2 in decimal.
+# Residential zones have divisions that are smaller than their use categories. R-1 has R-1a, R-1b, R-1c, and R-1d.
+
+
+# Class definitions
+:ZoningDistrict     rdf:type        rdfs:class .
+
+
+########  Residential Zoning Districts/Divisions  ########
+
+
+
+# need some kind of relationship between these smaller Division and the Parent Zoning District
+# Smaller Divisions, Parent Zone
+# :ZoningDivision     rdfs:subClassOf :ZoningDistrict .
+# :r1a      :r1
+
+
+:r1a :minLotSize        "35000"^^xsd:integer ;
+     :maxDensity        "1"^^xsd:integer ;
+     :minLotWidth       "125"^^xsd:integer ;
+     :minLotDepth       "150"^^xsd:integer ;
+     :minFrontSetback   "25"^^xsd:integer ;
+     :minSideSetback    "10"^^xsd:integer ;
+     :minRearSetback    "30"^^xsd:integer ;
+     :maxBuildingHeight "35"^^xsd:integer .
+
+:r1b :minLotSize        "20000"^^xsd:integer ;
+     :maxDensity        "2"^^xsd:integer ;
+     :minLotWidth       "100"^^xsd:integer ;
+     :minLotDepth       "125"^^xsd:integer ;
+     :minFrontSetback   "20"^^xsd:integer ;
+     :minSideSetback    "10"^^xsd:integer ;
+     :minRearSetback    "25"^^xsd:integer ;
+     :maxBuildingHeight "35"^^xsd:integer .
+
+:r1c :minLotSize        "10000"^^xsd:integer ;
+     :maxDensity        "4"^^xsd:integer ;
+     :minLotWidth       "75"^^xsd:integer ;
+     :minLotDepth       "100"^^xsd:integer ;
+     :minFrontSetback   "20"^^xsd:integer ;
+     :minSideSetback    "5"^^xsd:integer ;
+     :minRearSetback    "25"^^xsd:integer ;
+     :maxBuildingHeight "35"^^xsd:integer .
+
+
+:r1d :minLotSize        "6000"^^xsd:integer ;
+     :maxDensity        "6"^^xsd:integer ;
+     :minLotWidth       "60"^^xsd:integer ;
+     :minLotDepth       "90"^^xsd:integer ;
+     :minFrontSetback   "15"^^xsd:integer ;
+     :minSideSetback    "5"^^xsd:integer ;
+     :minRearSetback    "20"^^xsd:integer ;
+     :maxBuildingHeight "35"^^xsd:integer .
+
+
+
+:r2a :minLotSize        "10000"^^xsd:integer ;
+     :maxDensity        "4"^^xsd:integer ;
+     :minLotWidth       "60"^^xsd:integer ;
+     :minLotDepth       "70"^^xsd:integer ;
+     :minFrontSetback   "20"^^xsd:integer ;
+     :minSideSetback    "5"^^xsd:integer ;
+     :minRearSetback    "20"^^xsd:integer ;
+     :maxBuildingHeight "35"^^xsd:integer .
+
+:r2b :minLotSize        "6000"^^xsd:integer ;
+     :maxDensity        "6"^^xsd:integer ;
+     :minLotWidth       "60"^^xsd:integer ;
+     :minLotDepth       "70"^^xsd:integer ;
+     :minFrontSetback   "15"^^xsd:integer ;
+     :minSideSetback    "5"^^xsd:integer ;
+     :minRearSetback    "20"^^xsd:integer ;
+     :maxBuildingHeight "35"^^xsd:integer .
+
+
+:r3a :minLotSize        "6000"^^xsd:integer ;
+     :maxDensity        "8"^^xsd:integer ;
+     :minLotWidth       "60"^^xsd:integer ;
+     :minLotDepth       "70"^^xsd:integer ;
+     :minFrontSetback   "15"^^xsd:integer ;
+     :minSideSetback    "5"^^xsd:integer ;
+     :minRearSetback    "20"^^xsd:integer ;
+     :maxBuildingHeight "35"^^xsd:integer .
+
+:r3b :minLotSize        "6000"^^xsd:integer ;
+     :maxDensity        "12"^^xsd:integer ;
+     :minLotWidth       "60"^^xsd:integer ;
+     :minLotDepth       "70"^^xsd:integer ;
+     :minFrontSetback   "15"^^xsd:integer ;
+     :minSideSetback    "5"^^xsd:integer ;
+     :minRearSetback    "20"^^xsd:integer ;
+     :maxBuildingHeight "35"^^xsd:integer .
+
+
+########  Commercial Zoning Districts  ########
+:c1  :minLotSize        "6000"^^xsd:integer ;
+     :maxDensity        "12"^^xsd:integer ;
+     :minLotWidth       "30"^^xsd:integer ;
+     :minLotDepth       "70"^^xsd:integer ;
+     :minFrontSetback   "0"^^xsd:integer ;
+     :minSideSetback    "0"^^xsd:integer ;
+     :minRearSetback    "0"^^xsd:integer ;
+     :maxBuildingHeight "30"^^xsd:integer .
+
+:c2  :minLotWidth       "30"^^xsd:integer ;
+     :minLotDepth       "70"^^xsd:integer ;
+     :minFrontSetback   "0"^^xsd:integer ;
+     :minSideSetback    "0"^^xsd:integer ;
+     :minRearSetback    "0"^^xsd:integer ;
+     :maxBuildingHeight "40"^^xsd:integer .
+
+:c3  :minLotWidth       "75"^^xsd:integer ;
+     :minLotDepth       "100"^^xsd:integer ;
+     :minFrontSetback   "0"^^xsd:integer ;
+     :minSideSetback    "0"^^xsd:integer ;
+     :minRearSetback    "0"^^xsd:integer ;
+     :maxBuildingHeight "50"^^xsd:integer .
+
+:c4  :minLotWidth       "75"^^xsd:integer ;
+     :minLotDepth       "100"^^xsd:integer ;
+     :minFrontSetback   "0"^^xsd:integer ;
+     :minSideSetback    "0"^^xsd:integer ;
+     :minRearSetback    "0"^^xsd:integer ;
+     :maxBuildingHeight "50"^^xsd:integer .
+
+
+########  Factory/Industrial Zoning Districts  ########
+:fi1 :minLotWidth       "50"^^xsd:integer ;
+     :minLotDepth       "75"^^xsd:integer ;
+     :minFrontSetback   "0"^^xsd:integer ;
+     :minSideSetback    "0"^^xsd:integer ;
+     :minRearSetback    "0"^^xsd:integer ;
+     :maxBuildingHeight "60"^^xsd:integer .
+
+:fi2 :minLotWidth       "75"^^xsd:integer ;
+     :minLotDepth       "100"^^xsd:integer ;
+     :minFrontSetback   "0"^^xsd:integer ;
+     :minSideSetback    "0"^^xsd:integer ;
+     :minRearSetback    "0"^^xsd:integer ;
+     :maxBuildingHeight "80"^^xsd:integer .
+
+:fi3 :minLotWidth       "100"^^xsd:integer ;
+     :minLotDepth       "150"^^xsd:integer ;
+     :minFrontSetback   "0"^^xsd:integer ;
+     :minSideSetback    "0"^^xsd:integer ;
+     :minRearSetback    "0"^^xsd:integer ;
+     :maxBuildingHeight "80"^^xsd:integer .
+
+
+########  Agricultural Zoning Districts  ########
+:a1  :minLotSize        "20"^^xsd:integer ;
+     :maxDensity        "0.2"^^xsd:decimal ;
+     :minLotWidth       "600"^^xsd:integer ;
+     :minLotDepth       "600"^^xsd:integer ;
+     :minFrontSetback   "30"^^xsd:integer ;
+     :minSideSetback    "15"^^xsd:integer ;
+     :minRearSetback    "60"^^xsd:integer ;
+     :maxBuildingHeight "35"^^xsd:integer .
+
+:a2  :minLotSize        "10"^^xsd:integer ;
+     :maxDensity        "0.1"^^xsd:decimal ;
+     :minLotWidth       "400"^^xsd:integer ;
+     :minLotDepth       "400"^^xsd:integer ;
+     :minFrontSetback   "30"^^xsd:integer ;
+     :minSideSetback    "15"^^xsd:integer ;
+     :minRearSetback    "60"^^xsd:integer ;
+     :maxBuildingHeight "35"^^xsd:integer .
+
+:a3  :minLotSize        "5"^^xsd:integer ;
+     :maxDensity        "0.05"^^xsd:decimal ;
+     :minLotWidth       "250"^^xsd:integer ;
+     :minLotDepth       "250"^^xsd:integer ;
+     :minFrontSetback   "30"^^xsd:integer ;
+     :minSideSetback    "15"^^xsd:integer ;
+     :minRearSetback    "60"^^xsd:integer ;
+     :maxBuildingHeight "35"^^xsd:integer .
+

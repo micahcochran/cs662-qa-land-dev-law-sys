@@ -1,0 +1,14 @@
+# this works 
+# arq --data permits_use2.ttl --query all_permitted.rq
+
+# list all the Zoning Districts with Permitted Uses. 
+
+PREFIX : <http://www.example.org/ns/lu/zoning#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?zoning ?label ?use
+
+WHERE {
+	?zoning :permitsUse ?use .
+    ?zoning rdfs:label ?label .
+}

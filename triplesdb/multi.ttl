@@ -1,0 +1,30 @@
+
+# WORKING
+# arq --data multi.ttl --query permitted.rq  
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://www.example.org/ns/lu/zoning#> .
+
+# Class definitions
+:ZoningDistrict     rdf:type        rdfs:class .
+
+
+:c1                 rdfs:subClassOf :ZoningDistrict .
+
+:c1 rdfs:label "C-1"@en . 
+
+:c1 :permitsUse "Minor automotive repair" ;
+	:permitsUse "automotive motor fuel dispensing facilities" ;
+	:permitsUse "automotive self-service motor fuel dispensing facilities" ;
+	:permitsUse "business services" ;
+	:permitsUse "financial services" ;
+	:permitsUse "convenience and neighborhood commercial centers (excluding wholesale sales)" ;
+	:permitsUse "family and group day care facilities" ;
+	:permitsUse "libraries" ;
+	:permitsUse "mortuary and funeral homes" ;
+	:permitsUse "public and governmental services" ;
+	:permitsUse "police and fire department stations" ;
+	:permitsUse "places of religious worship" ;
+	:permitsUse "public utility stations" ;
+	:permitsUse "restaurants" .

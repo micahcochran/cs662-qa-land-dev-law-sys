@@ -1,0 +1,12 @@
+# this works 
+# arq --data simpl.ttl --query permitted.rq  
+
+PREFIX : <http://www.example.org/ns/lu/zoning#>
+
+SELECT ?zoning
+
+# this is in the C-1 district
+
+WHERE {
+		?zoning :permitsUse "Minor automotive repair" .
+}

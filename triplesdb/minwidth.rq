@@ -1,0 +1,17 @@
+
+# this works:
+#  arq -v --data bulk.ttl --query minwidth.rq	
+#  arq -v --data bulk2.ttl --query minwidth.rq	
+
+PREFIX : <http://www.example.org/ns/lu/zoning#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?lotWidth
+
+WHERE {
+	:r1c :minLotWidth ?lotWidth .
+}
+
+## bulk.ttl ANSWER:  75
+
+## bulk2.ttl ANSWER:  75 [ft_i]
