@@ -1,0 +1,11 @@
+# this works
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX : <http://www.example.org/ns/lu/zoning#>
+
+SELECT ?min_lot_size ?zoning_label
+# ?zoning -- this could also be exposed, if needed
+
+WHERE {
+		:r1a :minLotSize ?min_lot_size ;
+            rdfs:label ?zoning_label .
+}
