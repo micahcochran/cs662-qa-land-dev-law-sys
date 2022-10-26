@@ -29,7 +29,8 @@
 # :r1a      :r1
 
 
-:r1a :minLotSize        "35000"^^xsd:integer ;
+:r1a rdfs:label         "R1a" ;
+     :minLotSize        "35000"^^xsd:integer ;
      :maxDensity        "1"^^xsd:integer ;
      :minLotWidth       "125"^^xsd:integer ;
      :minLotDepth       "150"^^xsd:integer ;
@@ -38,7 +39,8 @@
      :minRearSetback    "30"^^xsd:integer ;
      :maxBuildingHeight "35"^^xsd:integer .
 
-:r1b :minLotSize        "20000"^^xsd:integer ;
+:r1b rdfs:label         "R1b" ;
+     :minLotSize        "20000"^^xsd:integer ;
      :maxDensity        "2"^^xsd:integer ;
      :minLotWidth       "100"^^xsd:integer ;
      :minLotDepth       "125"^^xsd:integer ;
@@ -47,7 +49,8 @@
      :minRearSetback    "25"^^xsd:integer ;
      :maxBuildingHeight "35"^^xsd:integer .
 
-:r1c :minLotSize        "10000"^^xsd:integer ;
+:r1c rdfs:label         "R1c" ;
+     :minLotSize        "10000"^^xsd:integer ;
      :maxDensity        "4"^^xsd:integer ;
      :minLotWidth       "75"^^xsd:integer ;
      :minLotDepth       "100"^^xsd:integer ;
@@ -57,7 +60,8 @@
      :maxBuildingHeight "35"^^xsd:integer .
 
 
-:r1d :minLotSize        "6000"^^xsd:integer ;
+:r1d rdfs:label         "R1d" ;
+     :minLotSize        "6000"^^xsd:integer ;
      :maxDensity        "6"^^xsd:integer ;
      :minLotWidth       "60"^^xsd:integer ;
      :minLotDepth       "90"^^xsd:integer ;
@@ -68,7 +72,8 @@
 
 
 
-:r2a :minLotSize        "10000"^^xsd:integer ;
+:r2a rdfs:label         "R2a" ;
+     :minLotSize        "10000"^^xsd:integer ;
      :maxDensity        "4"^^xsd:integer ;
      :minLotWidth       "60"^^xsd:integer ;
      :minLotDepth       "70"^^xsd:integer ;
@@ -77,7 +82,8 @@
      :minRearSetback    "20"^^xsd:integer ;
      :maxBuildingHeight "35"^^xsd:integer .
 
-:r2b :minLotSize        "6000"^^xsd:integer ;
+:r2b rdfs:label         "R2b" ;
+     :minLotSize        "6000"^^xsd:integer ;
      :maxDensity        "6"^^xsd:integer ;
      :minLotWidth       "60"^^xsd:integer ;
      :minLotDepth       "70"^^xsd:integer ;
@@ -87,7 +93,8 @@
      :maxBuildingHeight "35"^^xsd:integer .
 
 
-:r3a :minLotSize        "6000"^^xsd:integer ;
+:r3a rdfs:label         "R3a" ;
+     :minLotSize        "6000"^^xsd:integer ;
      :maxDensity        "8"^^xsd:integer ;
      :minLotWidth       "60"^^xsd:integer ;
      :minLotDepth       "70"^^xsd:integer ;
@@ -96,7 +103,8 @@
      :minRearSetback    "20"^^xsd:integer ;
      :maxBuildingHeight "35"^^xsd:integer .
 
-:r3b :minLotSize        "6000"^^xsd:integer ;
+:r3b rdfs:label         "R3b" ;
+     :minLotSize        "6000"^^xsd:integer ;
      :maxDensity        "12"^^xsd:integer ;
      :minLotWidth       "60"^^xsd:integer ;
      :minLotDepth       "70"^^xsd:integer ;
@@ -107,7 +115,8 @@
 
 
 ########  Commercial Zoning Districts  ########
-:c1  :minLotSize        "6000"^^xsd:integer ;
+:c1  rdfs:label         "C1" ;
+     :minLotSize        "6000"^^xsd:integer ;
      :maxDensity        "12"^^xsd:integer ;
      :minLotWidth       "30"^^xsd:integer ;
      :minLotDepth       "70"^^xsd:integer ;
@@ -116,21 +125,24 @@
      :minRearSetback    "0"^^xsd:integer ;
      :maxBuildingHeight "30"^^xsd:integer .
 
-:c2  :minLotWidth       "30"^^xsd:integer ;
+:c2  rdfs:label         "C2" ;
+     :minLotWidth       "30"^^xsd:integer ;
      :minLotDepth       "70"^^xsd:integer ;
      :minFrontSetback   "0"^^xsd:integer ;
      :minSideSetback    "0"^^xsd:integer ;
      :minRearSetback    "0"^^xsd:integer ;
      :maxBuildingHeight "40"^^xsd:integer .
 
-:c3  :minLotWidth       "75"^^xsd:integer ;
+:c3  rdfs:label         "C3" ;
+     :minLotWidth       "75"^^xsd:integer ;
      :minLotDepth       "100"^^xsd:integer ;
      :minFrontSetback   "0"^^xsd:integer ;
      :minSideSetback    "0"^^xsd:integer ;
      :minRearSetback    "0"^^xsd:integer ;
      :maxBuildingHeight "50"^^xsd:integer .
 
-:c4  :minLotWidth       "75"^^xsd:integer ;
+:c4  rdfs:label         "C4" ;
+     :minLotWidth       "75"^^xsd:integer ;
      :minLotDepth       "100"^^xsd:integer ;
      :minFrontSetback   "0"^^xsd:integer ;
      :minSideSetback    "0"^^xsd:integer ;
@@ -139,21 +151,24 @@
 
 
 ########  Factory/Industrial Zoning Districts  ########
-:fi1 :minLotWidth       "50"^^xsd:integer ;
+:fi1 rdfs:label         "FI1" ;
+     :minLotWidth       "50"^^xsd:integer ;
      :minLotDepth       "75"^^xsd:integer ;
      :minFrontSetback   "0"^^xsd:integer ;
      :minSideSetback    "0"^^xsd:integer ;
      :minRearSetback    "0"^^xsd:integer ;
      :maxBuildingHeight "60"^^xsd:integer .
 
-:fi2 :minLotWidth       "75"^^xsd:integer ;
+:fi2 rdfs:label         "FI2" ;
+     :minLotWidth       "75"^^xsd:integer ;
      :minLotDepth       "100"^^xsd:integer ;
      :minFrontSetback   "0"^^xsd:integer ;
      :minSideSetback    "0"^^xsd:integer ;
      :minRearSetback    "0"^^xsd:integer ;
      :maxBuildingHeight "80"^^xsd:integer .
 
-:fi3 :minLotWidth       "100"^^xsd:integer ;
+:fi3 rdfs:label         "FI3" ;
+     :minLotWidth       "100"^^xsd:integer ;
      :minLotDepth       "150"^^xsd:integer ;
      :minFrontSetback   "0"^^xsd:integer ;
      :minSideSetback    "0"^^xsd:integer ;
@@ -162,7 +177,8 @@
 
 
 ########  Agricultural Zoning Districts  ########
-:a1  :minLotSize        "20"^^xsd:integer ;
+:a1  rdfs:label         "A1" ;
+     :minLotSize        "20"^^xsd:integer ;
      :maxDensity        "0.2"^^xsd:decimal ;
      :minLotWidth       "600"^^xsd:integer ;
      :minLotDepth       "600"^^xsd:integer ;
@@ -171,7 +187,8 @@
      :minRearSetback    "60"^^xsd:integer ;
      :maxBuildingHeight "35"^^xsd:integer .
 
-:a2  :minLotSize        "10"^^xsd:integer ;
+:a2  rdfs:label         "A2" ;
+     :minLotSize        "10"^^xsd:integer ;
      :maxDensity        "0.1"^^xsd:decimal ;
      :minLotWidth       "400"^^xsd:integer ;
      :minLotDepth       "400"^^xsd:integer ;
@@ -180,7 +197,8 @@
      :minRearSetback    "60"^^xsd:integer ;
      :maxBuildingHeight "35"^^xsd:integer .
 
-:a3  :minLotSize        "5"^^xsd:integer ;
+:a3  rdfs:label         "A3" ;
+     :minLotSize        "5"^^xsd:integer ;
      :maxDensity        "0.05"^^xsd:decimal ;
      :minLotWidth       "250"^^xsd:integer ;
      :minLotDepth       "250"^^xsd:integer ;

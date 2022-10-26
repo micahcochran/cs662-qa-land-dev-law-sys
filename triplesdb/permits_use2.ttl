@@ -18,7 +18,7 @@
 
 :r1 a :ZoningDistrict .
 
-:r1 rdfs:label "R-1"@en .
+:r1 rdfs:label "R1" .
 
 :r1 :permitsUse "Single-family dwellings" ;
     :permitsUse "publicly owned and operated parks" ;
@@ -36,12 +36,12 @@
 
 :r2 a :ZoningDistrict .
 
-:r2 rdfs:label "R-2"@en . 
+:r2 rdfs:label "R2" . 
 
 
 :r2 :permitsUse "Two-family dwellings" .
 
-# These are the permitted uses from R-1
+# These are the permitted uses from R1
 :r2 :permitsUse "Single-family dwellings" ;
     :permitsUse "publicly owned and operated parks" ;
     :permitsUse "recreation centers" ;
@@ -58,14 +58,14 @@
 
 :r3 a :ZoningDistrict .
 
-:r3 rdfs:label "R-3"@en . 
+:r3 rdfs:label "R3" . 
 
 :r3 :permitsUse "Two-family dwellingsmultiple family dwellings, such as apartment houses, boarding houses, condominiums and congregate residences" .
 
-# These are the permitted uses from R-2
+# These are the permitted uses from R2
 :r3 :permitsUse "Two-family dwellings" .
 
-# These are the permitted uses from R-1
+# These are the permitted uses from R1
 :r3 :permitsUse "Single-family dwellings" ;
     :permitsUse "publicly owned and operated parks" ;
     :permitsUse "recreation centers" ;
@@ -84,14 +84,14 @@
 
 :a1 a :ZoningDistrict .
 
-:a1 rdfs:label "A-1"@en . 
+:a1 rdfs:label "A1" . 
 
 :a1 :permitsUse "Open space" .
 
 
 :a2 a :ZoningDistrict .
 
-:a2 rdfs:label "A-2"@en . 
+:a2 rdfs:label "A2" . 
 
 :a2 :permitsUse "Agricultural Use" ;
     :permitsUse "Dwellings" ;
@@ -101,12 +101,12 @@
 # A3 USES HAVE BEEN OMITTED
 :a3 a :ZoningDistrict .
 
-:a3 rdfs:label "A-3"@en . 
+:a3 rdfs:label "A3" . 
 
 ########  Commercial Zoning Districts  ########
 
 :c1 a :ZoningDistrict ;
-    rdfs:label "C-1"@en . 
+    rdfs:label "C1" . 
 
 :c1 :permitsUse "Minor automotive repair" ;
 	:permitsUse "automotive motor fuel dispensing facilities" ;
@@ -125,7 +125,7 @@
 
 
 :c2 a :ZoningDistrict ;
-    rdfs:label "C-2"@en . 
+    rdfs:label "C2" . 
 
 :c2 :permitsUse "light commercial (excluding wholesale sales)" ;
 	:permitsUse "group care facilities" ;
@@ -135,7 +135,7 @@
 	:permitsUse "school and colleges operated for profit (including commercial, vocational and trade schools)" .
 
 
-# These are the permitted uses from C-1
+# These are the permitted uses from C1
 :c2 :permitsUse "Minor automotive repair" ;
 	:permitsUse "automotive motor fuel dispensing facilities" ;
 	:permitsUse "automotive self-service motor fuel dispensing facilities" ;
@@ -153,7 +153,7 @@
 
 
 :c3 a :ZoningDistrict ;
-    rdfs:label "C-3"@en .
+    rdfs:label "C3" .
 
 
 :c3 :permitsUse	"amusement centers (including bowling alleys, golf driving ranges miniature golf courses, ice rinks, pool and billiard halls, and similar recreational uses)" ;
@@ -168,7 +168,7 @@
 	:permitsUse "indoor theaters" ;
 	:permitsUse "Self-storage warehouses" .
 
-# These are the permitted uses from C-2
+# These are the permitted uses from C2
 :c3 :permitsUse "light commercial (excluding wholesale sales)" ;
 	:permitsUse "group care facilities" ;
 	:permitsUse "physical fitness centers" ;
@@ -177,7 +177,7 @@
 	:permitsUse "school and colleges operated for profit (including commercial, vocational and trade schools)" .
 
 
-# These are the permitted uses from C-1
+# These are the permitted uses from C1
 :c3 :permitsUse "Minor automotive repair" ;
 	:permitsUse "automotive motor fuel dispensing facilities" ;
 	:permitsUse "automotive self-service motor fuel dispensing facilities" ;
@@ -195,7 +195,7 @@
 
 
 :c4 a :ZoningDistrict ;
-    rdfs:label "C-4"@en .
+    rdfs:label "C4" .
 
 :c4 :permitsUse "major automotive repair" ;
 	:permitsUse "commercial bakeries" ;
@@ -203,10 +203,10 @@
 	:permitsUse "plastic product design, molding and assembly" ;
 	:permitsUse "small metal products design, casting, fabricating, and processing" ;
 	:permitsUse "manufacture and finishing" ;
-	:permitsUse "storage yars" ;
+	:permitsUse "storage yards" ;
 	:permitsUse "wood products manufacturing and finishing" .
 
-# These are the permitted uses from C-3
+# These are the permitted uses from C3
 :c4 :permitsUse	"amusement centers (including bowling alleys, golf driving ranges miniature golf courses, ice rinks, pool and billiard halls, and similar recreational uses)" ;
 	:permitsUse "automotive sales" ;
 	:permitsUse "building material supply sales (wholesale and retail)" ;
@@ -219,7 +219,7 @@
 	:permitsUse "indoor theaters" ;
 	:permitsUse "Self-storage warehouses" .
 
-# These are the permitted uses from C-2
+# These are the permitted uses from C2
 :c4 :permitsUse "light commercial (excluding wholesale sales)" ;
 	:permitsUse "group care facilities" ;
 	:permitsUse "physical fitness centers" ;
@@ -228,7 +228,7 @@
 	:permitsUse "school and colleges operated for profit (including commercial, vocational and trade schools)" .
 
 
-# These are the permitted uses from C-1
+# These are the permitted uses from C1
 :c4 :permitsUse "Minor automotive repair" ;
 	:permitsUse "automotive motor fuel dispensing facilities" ;
 	:permitsUse "automotive self-service motor fuel dispensing facilities" ;
@@ -251,7 +251,7 @@
 ########  Factory/Industrial Zoning Districts  ########
 
 :fi1 a :ZoningDistrict ;
-     rdfs:label "FI-1"@en .
+     rdfs:label "FI1" .
 
 :fi1 :permitsUse "warehouses" ;
 	 :permitsUse "research or testing laboratories" ;
@@ -267,7 +267,7 @@
 
 
 :fi2 a :ZoningDistrict ;
-     rdfs:label "FI-2"@en .
+     rdfs:label "FI2" .
 
 :fi2 :permitsUse "Stadiums and arenas" ;
 	 :permitsUse "indoor swap meets" ;
@@ -277,7 +277,7 @@
 	 :permitsUse "monument works" ;
 	 :permitsUse "regional recycling center" .
 
-# These are the permitted uses from FI-1
+# These are the permitted uses from FI1
 :fi2 :permitsUse "warehouses" ;
 	 :permitsUse "research or testing laboratories" ;
 	 :permitsUse "product distribution centers" ;
@@ -292,7 +292,7 @@
 
 
 :fi3 a :ZoningDistrict ;
-     rdfs:label "FI-3"@en .
+     rdfs:label "FI3" .
 
 :fi3 :permitsUse "Auto-dismantling yards" ;
 	 :permitsUse "alcohol manufacturing" ;
@@ -302,7 +302,7 @@
 	 :permitsUse "salt works" ;
 	 :permitsUse "petroleum refining" .
 
-# These are the permitted uses from FI-2
+# These are the permitted uses from FI2
 :fi3 :permitsUse "Stadiums and arenas" ;
 	 :permitsUse "indoor swap meets" ;
 	 :permitsUse "breweries" ;
@@ -311,7 +311,7 @@
 	 :permitsUse "monument works" ;
 	 :permitsUse "regional recycling center" .
 
-# These are the permitted uses from FI-1
+# These are the permitted uses from FI1
 :fi3 :permitsUse "warehouses" ;
 	 :permitsUse "research or testing laboratories" ;
 	 :permitsUse "product distribution centers" ;
