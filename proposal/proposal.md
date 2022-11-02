@@ -1,23 +1,24 @@
-<!-- % Final Project Proposal
-% CS 662 Natural Language Processing
-% Date: 2022-10-14
+% NER Question to SPARQL Query for Zoning Ordinance Answering
+% Final Project Proposal
+% Micah Cochran & Seth Lewis
 ---
 geometry:
     - margin=1in
 ---
 
-## Changes
-* 2022-10-14 - Added table with references about portions of the IZC to be used for this project. Reworked few sentences of Zoning subsection to improve flow. Reworked last sentence of Concept section. -->
+Subjects: NER, NLP, SPARQL, Question Answering, Small Knowledge Graph
 
-# Title: English NER Question to SPARQL Query for Zoning Ordinance Answering
- <!--  * Project title? "English NER Question to SPARQL Query for Zoning Ordinance Answering" -->
+CS 662 Natural Language Processing
+
+Date: 2022-11-02
+
 
 # Concept 
 ### (The Need):
 
-Government regulations vary from town-to-town, city-to-city, and state-to-state.  Proponents tout this as a feature of being the great experiment that is the US Government.  Critics might cite it as being a failure that causes confusion and waste.  Objectively, there are thousands of communities with their own rules that can slightly differ from one to another.
+Government regulations vary from town-to-town, city-to-city, and state-to-state.  Proponents tout this as a feature of being the great experiment that is the US Government.  Critics might cite it as being a failure that causes confusion and is overly complication.  Objectively, there are thousands of communities with their own rules that can slightly differ from one to another.
 
-For instance, the sale of fireworks is allowed in some communities, others do not permit them at all.  Fireworks can cause fires and are a source of injury, but the sale of them can be a source of revenue for a small town.  State line stores and adult businesses do the same thing, they have products that might be restricted in one jurisdiction that are legal in the other state.  An example for Alabama, the Authors' home state, is lottery tickets, business around the boarders of states get a lot of revenue from residents of states like Alabama because Alabama is one of the few states without a lottery.
+For instance, the sale of fireworks is allowed in some communities, others do not permit them at all.  Fireworks can cause fires and are a source of injury, but the sale of them can be a needed revenue source for a small town.  State line stores and adult businesses do the same thing, they have products that might be restricted in one jurisdiction that are legal in the other state.  An example for Alabama, the Authors' home state, is lottery tickets, business around the boarders of states get a lot of revenue from residents of states like Alabama because Alabama is one of the few states without a lottery.
 
 Land development Regulations (and Building Codes) are a large portion of the laws for a local government. Members of our team worked for a small city and were authorities on roughly 500 pages of regulations. Reading and understanding those regulations takes time.
 
@@ -38,11 +39,9 @@ Land Development regulations determine how development can occur on a property. 
 
 Land Development requirements can include several documents such as Excavation and Fill Ordinance, Flood Prevention Ordinance, Building/Fire/Residential/Energy Codes, Traffic Circulation Standards, Subdivision Division Regulations, Zoning Ordinance, and more.  Some communities have sectioned off these ordinances into a model that called their Unified Development Code. From our team's domain experience, there is evidence that a large portion of a City's regulations are development regulation.
 
-Zoning is a land development regulation, a tool which separates different uses into Zoning Districts for Residential, Commercial, and Industrial purposes. Separating uses allows noxious use cases like a pet crematorium to be separated off from uses like residences, but this separation can also cause unwarranted separation. In some places it has been illegal for someone to open a small downtown bakery and live above that bakery. Due to overly strict separation, laws are constantly being relaxed to allow for more mixed use development. These relaxations require access to an ever changing regulation base.
+Zoning is a land development regulation, a tool which divides uses into Residential, Commercial, and Industrial uses into Zoning Districts. Separating uses allows noxious use like a quarry to be separated from residences, but zoning can also cause unwarranted separation. In some places it is illegal for someone to open a small downtown bakery and live above that bakery due to overly strict zoning ordinances.  Movements in urban planning such as New Urbanism strive to change laws that and create dense walkable development patterns that mirror pre-WWII development patterns.  Changes in laws can mean what a land developer can build today may have to be significantly altered to meet new laws.
 
-
-For a given project or business venture, there may be a myriad of laws that apply to a given project.  An experienced developer will know the basics, but for any given project there could be many rules that the same developer has never encountered.
-
+Setting aside that laws changing over time, a given land development project or business venture has myriad of laws that apply to a given project.  An experienced developer will know the basics, but for any given project there could be many rules that the same developer has never encountered.
 
 What if there was a chatbot that a developer, entrepreneur, or citizen could ask questions about these regulations? Specific questions could be asked such as: 
 
@@ -55,7 +54,7 @@ What if there was a chatbot that a developer, entrepreneur, or citizen could ask
 
 Some of these questions when answered by a bot would have scared our team members with local government experience and could have raised ethical concerns, but coupling domain knowledge to our computer methods should alleviate these concerns, provided the chat bot presents sufficient correctness when parsing natural language questions presented by a user before being released for use.
 
-For an eventual final version after incremental development, this type of technology would lead to a person being able to have a dialog with a digital assitant like Alexa, Google, or Siri starting, for example with, "Hey Alexa, I'd like to buy a lot and build a home on it."  The digital assistant would in turn ask specific followup questions and help with relevant next steps guiding the user through the process of completing a series of tasks such as: (1) buying a lot, (2) selecting a house plan that fits on the lot, (3) securing a construction loan, (4) hiring a general contractor, and so on.  The research presented in this project is a piece of the work needed to make this a reality.
+For an eventual final version after incremental development, this type of technology would lead to a person being able to have a dialog with a digital assistant like Alexa, Google, or Siri starting, for example with, "Hey Alexa, I'd like to buy a lot and build a home on it."  The digital assistant would in turn ask specific followup questions and help with relevant next steps guiding the user through the process of completing a series of tasks such as: (1) buying a lot, (2) selecting a house plan that fits on the lot, (3) securing a construction loan, (4) hiring a general contractor, and so on.  The research presented in this project is a piece of the work needed to make this a reality.
 
 
 # Land Use is Complicated 
@@ -74,13 +73,13 @@ The American Planning Association created comprehensive list land uses published
 
 Land uses can encompass large categories of uses including agricultural, residential, commercial, and industrial.
 
-A Zoning Ordinance regulates Zoning Districts which in turn control land use for a community.  Uses mainly fall into 3 categories: permitted uses, needing special board approval to grant permission, or not permitted. Land uses can be given in a list or in tables:
+A Zoning Ordinance regulates Zoning Districts which in turn control land use for a community.  Uses mainly fall into 3 categories: permitted uses, needing special board approval to grant permission, or not permitted. Land uses can be given in a list or in tables, example in Figure 2.
 
 ![City of Athens, Alabama Zoning Ordinance - Section 4.8 Table.  The top header are names and abbreviations for zoning districts. The codes in the cells are as follows: P - permitted used, C - Conditional Use, SE - Special Exception Use, and a blank cell means the uses is not permitted use.  Condition and Special Exception Uses require special board approval to grant permission.](img/AthensZO-4.8-uses-permitted-by-district-traditional-districts.png)
 
 
 
-Tables like the above are meant to convey the information in a visually organized manner.  This table has words with line breaks and a symbolic code for the meaning (for symbols P, C, and so on).  Decoding the table of symbols and converting it into something database-like would make it much easier to compute, something that can be searched for a particular land use.
+Tables like Figure 2 are meant to convey the information in a visually organized manner.  This table has words with line breaks and a symbolic code for the meaning (for symbols P, C, and so on).  Decoding the table of symbols and converting it into something database-like would make it much easier to compute, something that can be searched for a particular land use.
 
 Zoning ordinances typically also regulate building form with land use. A single-family house, duplex, and apartments are all building forms.
 
@@ -137,7 +136,7 @@ The [2022 NAICS tables - https://www.census.gov/naics/?48967](https://www.census
       * create training and test data in the form of a JSON dictionary with fields for question, relevant words, question type, and SPARQL template class. Two ground truths exist per question, the correct selection of template and the expected triple.
       * NER and POS tagging to parse the question into the relevant query terms
       * word embeddings and cosine similarity to identify synonyms to the identified triple from a set dictionary of terms used by the IZC regulatory database
-      * clasification of the question type to a limited set of SPARQL templates
+      * classification of the question type to a limited set of SPARQL templates
 3. Create a SPARQL query from the selected template passing the relevant terms from the NLP processor to use on the Knowledge Graph.
 4. Produce an answer.
 5. Check answer for correctness.
@@ -149,7 +148,7 @@ Verbose output will be available as a toggle. This will allow for debugging duri
 
 The technologies to be used will be Python, SPARQL, and MongoDB.
 
-Visualization could be stored as JSON to be able to be plugged into MongoDB, and retrieved for later analysis. AJAX could update the website to show the results as they are happening. It will be important to keep track of a job's runtime. A database of results with the Github commit code version used to produce that result and the date ran will be kept.
+Visualization could be stored as JSON to be able to be plugged into MongoDB, and retrieved for later analysis. AJAX could update the website to show the results as they are happening. It will be important to keep track of a job's runtime. A database of results with the GitHub commit code version used to produce that result and the date ran will be kept.
 
 This will help support future creation of a larger Knowledge Graph that would encompass more aspects of land development regulations.
 
@@ -159,7 +158,8 @@ This will help support future creation of a larger Knowledge Graph that would en
 
 Our knowledge graph will use a format to store triples,  RDF, RDFa, Turtle, or JSON-LD. There are a number of methods used for this purpose.
 
-Embedding this Knowledge Graph in HTML, so RDFa or JSON-LD could be used is the longterm goal.
+Embedding this Knowledge Graph in HTML, so RDFa or JSON-LD could be used is the long-term goal.
+
 
 # NLP Work
 ### (In Depth Description of Selected Process):
@@ -201,7 +201,7 @@ That being said there only portions list in the table will be the most useful to
 -------------------------- ----------------------------------
  Dimensional Requirements   §402.1, §502.1, §602.1, & §702.1
  Permitted Uses             §401.1, §501.1, §601.1, & §701.1 
- Parking Requirements       Table 801.2.1
+ ~~Parking Requirements~~   ~~Table 801.2.1~~
 
 The IZC is copyrighted and the owner, the International Code Council (ICC), has rights in how the content can be used.  Outside of an educational context (such as publishing a paper), permission will need to be sought.  Not a concern for this class project.  However, ICC is more well known for the their Building and Fire codes.  The owner should be around for a long time, which a concern also outside of this project. 
 
@@ -238,7 +238,7 @@ This section contains questions with answers, tricky questions that requires som
 ### Permitted Use
 Which zoning district permits duplexes?
 
- * Listed as "two-family dwelling", a few, so R-2 and R-3 (and all the subdivisions thereof).
+ * Listed as "two-family dwelling", a few, so R2 and R3 (and all the subdivisions thereof).
 
 
 Which zoning district allows apartments?
@@ -253,11 +253,11 @@ Which zoning districts permit an accessory dwelling unit?
 
  * called "accessory living quarters"
 
-Are auto sales allowed in a C-2 zoning district?
+Are auto sales allowed in a C2 zoning district?
 
  * yes.
 
-Is a bank allowed in a C-1 zoning district?
+Is a bank allowed in a C1 zoning district?
 
  * yes, listed a "financial services"
 
@@ -278,19 +278,19 @@ Will 20 parking spaces meet the parking requirements for a 5,000 square foot off
 
 ### Dimensional Requirements
 
-What is the front setback for a building in the C-1 zoning district?
+What is the front setback for a building in the C1 zoning district?
 
  * 0 feet
 
-What is the minimum lot Depth in an R-1a zoning district (R-1a Residential Zone Division 1a)
+What is the minimum lot Depth in an R1a zoning district (R1a Residential Zone Division 1a)?
 
  * 150 feet.
 
-What is the maximum building height in a FI-2 zoning district?
+What is the maximum building height in a FI2 zoning district?
 
  * 80 feet. 
 
-What is the minimum lot size in an R-1b zoning district?  (R-1b Residential Zone Division 1b)
+What is the minimum lot size in an R1b zoning district?  (R1b Residential Zone Division 1b)
 
  * 20,000 square feet
 
@@ -302,14 +302,14 @@ These are questions that may need some additional input to verify two paths.
 
 In what zoning district can a Church's Chicken be built?
 
- * Would it identify this is as a church for livestock instead of a fast-food restaurant?  How do you respond to a question about a specific franchise being built, such a a McDonalds.  It is easier to consider specific business names an **out of scope** problem.
+ * Would "Church's Chicken" be identified this is as a place of worships (that possibly worships fowl?) or a fast-food restaurant?  How do you respond to a question about a specific franchise being built, such a a McDonalds.  It is easier to consider specific business names an **out of scope** problem.
 
 Which zoning district allows mining?
 
- * FI-3, listed as "quarries", which is a type of mining.
+ * FI3, listed as "quarries", which is a type of mining.
 
 ### Dimensional
-What is the side setback for a R-1b zoning district?
+What is the side setback for a R1b zoning district?
 
  * This should probably be omitted because it is a tricky question to answer. The IZC seems to interpret a corner lot to have frontage, thus a side setback with a road has to have the front setback.  This isn't an easy question to answer and requires some knowledge.
 
@@ -319,7 +319,7 @@ What is the side setback for a R-1b zoning district?
 
 ## Questions that have a negative answer.
 
-Can a duplex be built in an R-1d zoning district?
+Can a duplex be built in an R1d zoning district?
 
 * No
 
