@@ -7,6 +7,11 @@
 @prefix cdt: <http://w3id.org/lindt/custom_datatypes#> .
 @prefix : <http://www.example.org/ns/lu/zoning#> .
 
+# These figures were derived from the International Zoning Code 2021.
+# Specifically §402.1, §502.1, §602.1, & §702.1.
+# International Code Council is the copyright owner of the document.
+# This was created and used in an educational context for a class.
+
 
 # ######## NOTES ##########################
 # Uses Custom Datatypes (CDT) for units
@@ -16,8 +21,10 @@
 # Areas are Square feet and distances are Feet.
 # Density is number of units per acre.  
 # Agricultural District uses Acres per dwelling to represent the minimum lot area.  Agricultural Density is a fraction, the decimalization different.  IZC says 1 dwelling unit per 5 acres = 0.2 in decimal.
-# Residential zones have divisions that are smaller than their use categories. R-1 has R-1a, R-1b, R-1c, and R-1d.
+# Residential zones have divisions that are smaller than their use categories. R1 has R1a, R1b, R1c, and R1d.
 
+# It uses the The Unified Code for Units of Measure
+# are the units expressed at https://unitsofmeasure.org/ucum
 
 # Use either cdt or qudt for units
 # https://qudt.org/
@@ -44,7 +51,7 @@
      :minLotDepth       "150 [ft_i]"^^cdt:length ;
      :minFrontSetback   "25 [ft_i]"^^cdt:length ;
      :minSideSetback    "10 [ft_i]"^^cdt:length ;
-     :minRearSetback    "30  [ft_i]"^^cdt:length ;
+     :minRearSetback    "30 [ft_i]"^^cdt:length ;
      :maxBuildingHeight "35 [ft_i]"^^cdt:length .
 
 :r1b rdfs:label         "R1b" ;
