@@ -4,6 +4,7 @@
 Code to generate templates
 """
 
+from typing import Generator, Iterator, Tuple
 import sys
 from string import Template
 
@@ -80,7 +81,7 @@ ZONING_RDF_PREFIX = 'http://www.example.org/ns/lu/zoning#'
 # dimensional regulations
 # key is text, value is the name of predicate in the dimensional requirements KG
 DIM_REGULATIONS_TEXT = {"minimum lot size": ":minLotSize",
-                        "maximum density": ":maxDensity",
+                        "maximum density": ":maxDensity",   # FIXME ignore maxDensity temporarily, so it does not block progress
                         "minimum lot width": ":minLotWidth",
                         "minimum lot depth": ":minLotDepth",
                         "minimum front setback": ":minFrontSetback",
@@ -104,6 +105,11 @@ UNITS_NAME = {
 
     # ---  Length units  ---
     "feet": '[ft_i]',
+
+    # --- Custom units for Zoning ---
+    'acres per dwelling unit': '[acr_u/du]',
+    'dwelling units per acre': '[du/acr_u]',
+    'units per acre': '[u/acr_u]',
 }
 
 # key is UCUM unit designation, value is the unit's name
@@ -357,8 +363,8 @@ ASK {
             # print(f"varibs: {varibs}")
 
             # print(f"'regulation_value' in varibs: {'regulation_value' in varibs}")
-            # print(f"'[' in varibs['regulation_value']: {'[' in varibs.get('regulation_value')}")
-            # print(f"']' in varibs['regulation_value']: {']' in varibs.get('regulation_value')}")
+#            print(f"'[' in varibs.get('regulation_value'): {'[' in varibs.get('regulation_value')}")
+#            print(f"']' in varibs.get('regulation_value'): {']' in varibs.get('regulation_value')}")
 
             # handle units for variable_values
             if 'regulation_value' in varibs \
@@ -371,16 +377,19 @@ ASK {
                 varibs['unit_text'] = UNITS_SYMBOL[unit_symbol]  # = "feet"
                 # TODO next step for handling units
 
-            result = {'sparql': sparl_template.substitute(varibs)}
+            result = {'sparql': sparl_template.substitute(varibs),
+                      # 'template_name': template_name,  # This could be added here
+                      'varibles': varibs,
+                     }
 
             for q_template in question_templates:
-                print(f"varibs = {varibs}")
-                print(f"templates are {self.templates[template_name]['question_templates']}")
+                # print(f"varibs = {varibs}")
+                # print(f"templates are {self.templates[template_name]['question_templates']}")
                 result['question'] = q_template.substitute(varibs)
                 yield result
 
 
-def main():
+def main() -> int:
     uses_kg = rdflib.Graph()
     # load the graph related to the permitted uses
     uses_kg.parse("permits_use2.ttl")

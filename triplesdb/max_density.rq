@@ -1,0 +1,12 @@
+# Ensure that max density is providing proper output.
+# arq --data bulk2.ttl --query max_density.rq
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX : <http://www.example.org/ns/lu/zoning#>
+
+SELECT ?max_density
+# ?zoning -- this could also be exposed, if needed
+
+WHERE {
+		?zoning :maxDensity ?max_density ;
+                rdfs:label "R1c" .
+}
