@@ -16,6 +16,6 @@ This project answers two important questions for someone doing property developm
 
 ## Folders
 
-* `triples/`  - triples "database" this is the data that will be queried using SPARQL queries with some example queries 
+* `triplesdb/`  - triples "database" this is the data that will be queried using SPARQL queries with some example queries 
 
 

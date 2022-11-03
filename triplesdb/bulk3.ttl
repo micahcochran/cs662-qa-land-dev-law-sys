@@ -1,0 +1,353 @@
+
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+# @prefix cdt: <http://w3id.org/lindt/custom_datatypes#> .
+@prefix qudt: <http://qudt.org/2.1/schema/qudt> .  # is this right?
+@prefix unit: <http://qudt.org/2.1/vocab/unit#> .
+@prefix : <http://www.example.org/ns/lu/zoning#> .
+
+
+# These figures were derived from the International Zoning Code 2021.
+# Specifically §402.1, §502.1, §602.1, & §702.1.
+# International Code Council is the copyright owner of the document.
+# This was created and used in an educational context for a class.
+
+# ######## NOTES ##########################
+# Uses QUDT
+# https://qudt.org/
+
+# Areas are Square feet and distances are Feet.
+# Density is number of units per acre.  
+# Agricultural District uses Acres per dwelling to represent the minimum lot area.  Agricultural Density is a fraction, the decimalization different.  IZC says 1 dwelling unit per 5 acres = 0.2 in decimal.
+# Residential zones have divisions that are smaller than their use categories. R1 has R1a, R1b, R1c, and R1d.
+# 2022-11-01 - This relies upon creating an entirely new unit in these scemes:  units per acre and acres per unit.
+#              Also could omit the Maximum Density measurement.  Or leave it as a unitless quantity, which will add some complication.
+
+# Usage examples at https://github.com/qudt/qudt-public-repo/wiki/User-Guide-for-QUDT
+
+# bulk2.ttl uses CDT for units
+# CDT
+# https://ci.mines-stetienne.fr/lindt/v2/custom_datatypes.html
+
+
+# Class definitions
+:ZoningDistrict     rdf:type        rdfs:class .
+
+
+
+#####################################################
+# UNITS
+
+#####  FEET  #######################
+
+These are blank nodes that contain a unit and the value of the unit.
+
+# It is slightly stange for this to be 0 feet, but it is convention.
+_:ft0 a qudt:QuantityValue ;
+          qudt:unit unit:FT ;
+          qudt:value "0"^^xsd:integer .
+
+_:ft5 a qudt:QuantityValue ;
+          qudt:unit unit:FT ;
+          qudt:value "5"^^xsd:integer .
+
+_:ft10 a qudt:QuantityValue ;
+          qudt:unit unit:FT ;
+          qudt:value "10"^^xsd:integer .
+
+_:ft15 a qudt:QuantityValue ;
+          qudt:unit unit:FT ;
+          qudt:value "15"^^xsd:integer .
+
+_:ft20 a qudt:QuantityValue ;
+          qudt:unit unit:FT ;
+          qudt:value "20"^^xsd:integer .
+
+_:ft25 a qudt:QuantityValue ;
+          qudt:unit unit:FT ;
+          qudt:value "25"^^xsd:integer .
+
+_:ft30 a qudt:QuantityValue ;
+          qudt:unit unit:FT ;
+          qudt:value "30"^^xsd:integer .
+
+_:ft35 a qudt:QuantityValue ;
+          qudt:unit unit:FT ;
+          qudt:value "35"^^xsd:integer .
+
+_:ft40 a qudt:QuantityValue ;
+          qudt:unit unit:FT ;
+          qudt:value "40"^^xsd:integer .
+
+_:ft50 a qudt:QuantityValue ;
+          qudt:unit unit:FT ;
+          qudt:value "50"^^xsd:integer .
+
+_:ft60 a qudt:QuantityValue ;
+          qudt:unit unit:FT ;
+          qudt:value "60"^^xsd:integer .
+
+_:ft70 a qudt:QuantityValue ;
+          qudt:unit unit:FT ;
+          qudt:value "70"^^xsd:integer .
+
+_:ft75 a qudt:QuantityValue ;
+          qudt:unit unit:FT ;
+          qudt:value "75"^^xsd:integer .
+
+_:ft80 a qudt:QuantityValue ;
+          qudt:unit unit:FT ;
+          qudt:value "80"^^xsd:integer .
+
+_:ft90 a qudt:QuantityValue ;
+          qudt:unit unit:FT ;
+          qudt:value "90"^^xsd:integer .
+
+_:ft100 a qudt:QuantityValue ;
+          qudt:unit unit:FT ;
+          qudt:value "100"^^xsd:integer .
+
+_:ft125 a qudt:QuantityValue ;
+          qudt:unit unit:FT ;
+          qudt:value "125"^^xsd:integer .
+
+_:ft150 a qudt:QuantityValue ;
+          qudt:unit unit:FT ;
+          qudt:value "150"^^xsd:integer .
+
+_:ft250 a qudt:QuantityValue ;
+          qudt:unit unit:FT ;
+          qudt:value "250"^^xsd:integer .
+
+_:ft400 a qudt:QuantityValue ;
+          qudt:unit unit:FT ;
+          qudt:value "400"^^xsd:integer .
+
+_:ft600 a qudt:QuantityValue ;
+          qudt:unit unit:FT ;
+          qudt:value "600"^^xsd:integer .
+
+####  AREA UNITS - SQUARE FEET and ACRES #####################
+
+_:ac5 a qudt:QuantityValue ;
+          qudt:unit unit:AC ;
+          qudt:value "5"^^xsd:integer .
+
+_:ac10 a qudt:QuantityValue ;
+          qudt:unit unit:AC ;
+          qudt:value "10"^^xsd:integer .
+
+_:ac20 a qudt:QuantityValue ;
+          qudt:unit unit:AC ;
+          qudt:value "20"^^xsd:integer .
+
+_:sqft6k a qudt:QuantityValue ;
+          qudt:unit unit:FT2 ;
+          qudt:value "6000"^^xsd:integer .
+
+_:sqft10k a qudt:QuantityValue ;
+          qudt:unit unit:FT2 ;
+          qudt:value "10000"^^xsd:integer .
+
+_:sqft20k a qudt:QuantityValue ;
+          qudt:unit unit:FT2 ;
+          qudt:value "20000"^^xsd:integer .
+
+_:sqft35k a qudt:QuantityValue ;
+          qudt:unit unit:FT2 ;
+          qudt:value "35000"^^xsd:integer .
+
+
+
+########  Residential Zoning Districts/Divisions  ########
+
+
+
+# need some kind of relationship between these smaller Division and the Parent Zoning District
+# Smaller Divisions, Parent Zone
+# :ZoningDivision     rdfs:subClassOf :ZoningDistrict .
+# :r1a      :r1
+
+:r1a rdfs:label         "R1a" ;
+     :minLotSize        _:sqft35k ;
+     :maxDensity        "1"^^xsd:integer ;
+     :minLotWidth       _:ft125 ;
+     :minLotDepth       _:ft150 ;
+     :minFrontSetback   _:ft25 ;
+     :minSideSetback    _:ft10 ;
+     :minRearSetback    _:ft30 ;
+     :maxBuildingHeight _:ft35 .
+
+:r1b rdfs:label         "R1b" ;
+     :minLotSize        _:sqft20k ;
+     :maxDensity        "2"^^xsd:integer ;
+     :minLotWidth       _:ft100 ;
+     :minLotDepth       _:ft125 ;
+     :minFrontSetback   _:ft20 ;
+     :minSideSetback    _:ft10 ;
+     :minRearSetback    _:ft25 ;
+     :maxBuildingHeight _:ft35 .
+
+:r1c rdfs:label         "R1c" ;
+     :minLotSize        _:sqft10k ;
+     :maxDensity        "4"^^xsd:integer ;
+     :minLotWidth       _:ft75 ;
+     :minLotDepth       _:ft100 ;
+     :minFrontSetback   _:ft20 ;
+     :minSideSetback    _:ft5 ;
+     :minRearSetback    _:ft25 ;
+     :maxBuildingHeight _:ft35 .
+
+
+:r1d rdfs:label         "R1d" ;
+     :minLotSize        _:sqft6k ;
+     :maxDensity        "6"^^xsd:integer ;
+     :minLotWidth       _:ft60 ;
+     :minLotDepth       _:ft90 ;
+     :minFrontSetback   _:ft15 ;
+     :minSideSetback    _:ft5 ;
+     :minRearSetback    _:ft20 ;
+     :maxBuildingHeight _:ft35 .
+
+
+:r2a rdfs:label         "R2a" ;
+     :minLotSize        _:sqft10k ;
+     :maxDensity        "4"^^xsd:integer ;
+     :minLotWidth       _:ft60 ;
+     :minLotDepth       _:ft70 ;
+     :minFrontSetback   _:ft20 ;
+     :minSideSetback    _:ft5 ;
+     :minRearSetback    _:ft20 ;
+     :maxBuildingHeight _:ft35 .
+
+
+:r2b rdfs:label         "R2b" ;
+     :minLotSize        _:sqft6k ;
+     :maxDensity        "6"^^xsd:integer ;
+     :minLotWidth       _:ft60 ;
+     :minLotDepth       _:ft70 ;
+     :minFrontSetback   _:ft15 ;
+     :minSideSetback    _:ft5 ;
+     :minRearSetback    _:ft20 ;
+     :maxBuildingHeight _:ft35 .
+
+:r3a rdfs:label         "R3a" ;
+     :minLotSize        _:sqft6k ;
+     :maxDensity        "8"^^xsd:integer ;
+     :minLotWidth       _:ft60 ;
+     :minLotDepth       _:ft70 ;
+     :minFrontSetback   _:ft15 ;
+     :minSideSetback    _:ft5 ;
+     :minRearSetback    _:ft20 ;
+     :maxBuildingHeight _:ft35 .
+
+
+:r3b rdfs:label         "R3b" ;
+     :minLotSize        _:sqft6k ;
+     :maxDensity        "12"^^xsd:integer ;
+     :minLotWidth       _:ft60 ;
+     :minLotDepth       _:ft70 ;
+     :minFrontSetback   _:ft15 ;
+     :minSideSetback    _:ft5 ;
+     :minRearSetback    _:ft20 ;
+     :maxBuildingHeight _:ft35 .
+
+
+########  Commercial Zoning Districts  ########
+:c1  rdfs:label         "C1" ;
+     :minLotSize        _:sqft6k ;
+     :maxDensity        "12"^^xsd:integer ;
+     :minLotWidth       _:ft30 ;
+     :minLotDepth       _:ft70 ;
+     :minFrontSetback   _:ft0 ;
+     :minSideSetback    _:ft0 ;
+     :minRearSetback    _:ft0 ;
+     :maxBuildingHeight _:ft30 .
+
+:c2  rdfs:label         "C2" ;
+     :minLotWidth       _:ft30 ;
+     :minLotDepth       _:ft70 ;
+     :minFrontSetback   _:ft0 ;
+     :minSideSetback    _:ft0 ;
+     :minRearSetback    _:ft0 ;
+     :maxBuildingHeight _:ft40 .
+
+
+:c3  rdfs:label         "C3" ;
+     :minLotWidth       _:ft75 ;
+     :minLotDepth       _:ft100 ;
+     :minFrontSetback   _:ft0 ;
+     :minSideSetback    _:ft0 ;
+     :minRearSetback    _:ft0 ;
+     :maxBuildingHeight _:ft50 .
+
+:c4  rdfs:label         "C4" ;
+     :minLotWidth       _:ft75 ;
+     :minLotDepth       _:ft100 ;
+     :minFrontSetback   _:ft0 ;
+     :minSideSetback    _:ft0 ;
+     :minRearSetback    _:ft0 ;
+     :maxBuildingHeight _:ft50 .
+
+
+########  Factory/Industrial Zoning Districts  ########
+:fi1 rdfs:label         "FI1" ;
+     :minLotWidth       _:ft50 ;
+     :minLotDepth       _:ft75 ;
+     :minFrontSetback   _:ft0 ;
+     :minSideSetback    _:ft0 ;
+     :minRearSetback    _:ft0 ;
+     :maxBuildingHeight _:ft60 .
+
+:fi2 rdfs:label         "FI2" ;
+     :minLotWidth       _:ft75 ;
+     :minLotDepth       _:ft100 ;
+     :minFrontSetback   _:ft0 ;
+     :minSideSetback    _:ft0 ;
+     :minRearSetback    _:ft0 ;
+     :maxBuildingHeight _:ft80 .
+
+:fi3 rdfs:label         "FI3" ;
+     :minLotWidth       _:ft100 ;
+     :minLotDepth       _:ft150 ;
+     :minFrontSetback   _:ft0 ;
+     :minSideSetback    _:ft0 ;
+     :minRearSetback    _:ft0 ;
+     :maxBuildingHeight _:ft80 .
+
+
+########  Agricultural Zoning Districts  ########
+:a1  rdfs:label         "A1" ;
+     :minLotSize        _:ac20 ;
+     :maxDensity        "0.2"^^xsd:decimal ;
+     :minLotWidth       _:ft600 ;
+     :minLotDepth       _:ft600 ;
+     :minFrontSetback   _:ft30 ;
+     :minSideSetback    _:ft15 ;
+     :minRearSetback    _:ft60 ;
+     :maxBuildingHeight _:ft35 .
+
+
+:a2  rdfs:label         "A2" ;
+     :minLotSize        _:ac10 ;
+     :maxDensity        "0.1"^^xsd:decimal ;
+     :minLotWidth       _:ft400 ;
+     :minLotDepth       _:ft400 ;
+     :minFrontSetback   _:ft30 ;
+     :minSideSetback    _:ft15 ;
+     :minRearSetback    _:ft60 ;
+     :maxBuildingHeight _:ft35 .
+
+:a3  rdfs:label         "A3" ;
+     :minLotSize        _:ac10 ;
+     :maxDensity        "0.05"^^xsd:decimal ;
+     :minLotWidth       _:ft250 ;
+     :minLotDepth       _:ft250 ;
+     :minFrontSetback   _:ft30 ;
+     :minSideSetback    _:ft15 ;
+     :minRearSetback    _:ft60 ;
+     :maxBuildingHeight _:ft35 .
+

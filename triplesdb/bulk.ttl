@@ -6,9 +6,13 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix : <http://www.example.org/ns/lu/zoning#> .
 
+# These figures were derived from the International Zoning Code 2021.
+# Specifically §402.1, §502.1, §602.1, & §702.1.
+# International Code Council is the copyright owner of the document.
+# This was created and used in an educational context for a class.
 
 # ######## NOTES ##########################
-# Units have been omitted.
+# This is the uniteless version.
 # Areas are Square feet and distances are Feet.
 # Density is number of units per acre.  
 # Agricultural District uses Acres per dwelling to represent the minimum lot area.  Agricultural Density is a fraction, the decimalization different.  IZC says 1 dwelling unit per 5 acres = 0.2 in decimal.

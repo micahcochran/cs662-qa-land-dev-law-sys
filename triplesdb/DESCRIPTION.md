@@ -17,9 +17,11 @@ Working example commands are in some of the .rq files.  The command is 'arq', wh
 * all_permitted.rq -- list all the zoning districts with permitted uses.
 
 
-## Bulk Requirements 
-* bulk.ttl -- These are "bulk" dimensional requirements.  This version has no units.
-* bulk2.ttl -- These are "bulk" dimensional requirements.  This uses CDT for distinguishing units.
+## Dimensional "Bulk" Requirements 
+* bulk.ttl -- Turtle file for "bulk" dimensional requirements.  This version is unitless.
+* bulk2.ttl -- Turtle file for "bulk" dimensional requirements.  This uses CDT for distinguishing units.
+* bulk3.ttl -- Turtle file for "bulk" dimensional requirements.  This uses QUDT for denoting units. (Too complicated for this project).
 
 * bulk.rq -- This is a query for the "bulk" requirements for the maximum Density
 * minwidth.rq -- Query for the minimum width requirement for bulk.ttl and bulk2.ttl. 
+* rand.rq -- Demonstation of SPARQL RAND() function to add randomization to the returned results.
