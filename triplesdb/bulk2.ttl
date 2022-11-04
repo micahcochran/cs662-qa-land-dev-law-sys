@@ -1,11 +1,14 @@
-
-
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix cdt: <http://w3id.org/lindt/custom_datatypes#> .
 @prefix : <http://www.example.org/ns/lu/zoning#> .
+
+# These figures were derived from the International Zoning Code 2021.
+# Specifically §402.1, §502.1, §602.1, & §702.1.
+# International Code Council is the copyright owner of the document.
+# This was created and used in an educational context for a class.
 
 
 # ######## NOTES ##########################
@@ -15,13 +18,28 @@
 
 # Areas are Square feet and distances are Feet.
 # Density is number of units per acre.  
-# Agricultural District uses Acres per dwelling to represent the minimum lot area.  Agricultural Density is a fraction, the decimalization different.  IZC says 1 dwelling unit per 5 acres = 0.2 in decimal.
-# Residential zones have divisions that are smaller than their use categories. R-1 has R-1a, R-1b, R-1c, and R-1d.
+# Residential zones have divisions that are smaller than their use categories. So, R1 has R1a, R1b, R1c, and R1d.
+
+# It uses the The Unified Code for Units of Measure
+# are the units expressed at https://unitsofmeasure.org/ucum
 
 
-# Use either cdt or qudt for units
-# https://qudt.org/
-# https://ci.mines-stetienne.fr/lindt/v2/custom_datatypes.html
+##### Custom Unit ########
+# The IZC has three custom units: Dwelling units per acre, acres per dwelling units, and units per acre.
+# I would like to denote these by [du/acr_u], [acr_u/du], and [u/acr_u].
+# These are units are upper bounds for the density of dwelling units in an area.
+
+# Per the The Unified Code for Units of Measure (Sections 2 & Section 3) - https://unitsofmeasure.org/ucum
+# There are two ways to treat this unit as an arbitrary unit or a special unit.
+# * Arbitrary units are considered dimensionless and should not be converted.
+# * Special units are customary units and are enclosed with square brackets [].
+# * Curly braces {} enclose annotation.
+#
+# Using this notation for the moment...
+#      :maxDensity        "4 [du/acr_u]"^^cdt:dimensionless ;
+#
+
+# Notes about creating a custom unit: https://ci.mines-stetienne.fr/lindt/
 
 
 # Class definitions
@@ -39,17 +57,17 @@
 
 :r1a rdfs:label         "R1a" ;
      :minLotSize        "35000 [sft_i]"^^cdt:area ;
-     :maxDensity        "1"^^xsd:integer ;
+     :maxDensity        "1 [du/acr_u]"^^cdt:dimensionless ;
      :minLotWidth       "125 [ft_i]"^^cdt:length ;
      :minLotDepth       "150 [ft_i]"^^cdt:length ;
      :minFrontSetback   "25 [ft_i]"^^cdt:length ;
      :minSideSetback    "10 [ft_i]"^^cdt:length ;
-     :minRearSetback    "30  [ft_i]"^^cdt:length ;
+     :minRearSetback    "30 [ft_i]"^^cdt:length ;
      :maxBuildingHeight "35 [ft_i]"^^cdt:length .
 
 :r1b rdfs:label         "R1b" ;
      :minLotSize        "20000 [sft_i]"^^cdt:area ;
-     :maxDensity        "2"^^xsd:integer ;
+     :maxDensity        "2 [du/acr_u]"^^cdt:dimensionless ;
      :minLotWidth       "100 [ft_i]"^^cdt:length ;
      :minLotDepth       "125 [ft_i]"^^cdt:length ;
      :minFrontSetback   "20 [ft_i]"^^cdt:length ;
@@ -59,7 +77,7 @@
 
 :r1c rdfs:label         "R1c" ;
      :minLotSize        "10000 [sft_i]"^^cdt:area ;
-     :maxDensity        "4"^^xsd:integer ;
+     :maxDensity        "4 [du/acr_u]"^^cdt:dimensionless ;
      :minLotWidth       "75 [ft_i]"^^cdt:length ;
      :minLotDepth       "100 [ft_i]"^^cdt:length ;
      :minFrontSetback   "20 [ft_i]"^^cdt:length ;
@@ -70,7 +88,7 @@
 
 :r1d rdfs:label         "R1d" ;
      :minLotSize        "6000 [sft_i]"^^cdt:area ;
-     :maxDensity        "6"^^xsd:integer ;
+     :maxDensity        "6 [du/acr_u]"^^cdt:dimensionless ;
      :minLotWidth       "60 [ft_i]"^^cdt:length ;
      :minLotDepth       "90 [ft_i]"^^cdt:length ;
      :minFrontSetback   "15 [ft_i]"^^cdt:length ;
@@ -81,7 +99,7 @@
 
 :r2a rdfs:label         "R2a" ;
      :minLotSize        "10000 [sft_i]"^^cdt:area ;
-     :maxDensity        "4"^^xsd:integer ;
+     :maxDensity        "4 [du/acr_u]"^^cdt:dimensionless ;
      :minLotWidth       "60 [ft_i]"^^cdt:length ;
      :minLotDepth       "70 [ft_i]"^^cdt:length ;
      :minFrontSetback   "20 [ft_i]"^^cdt:length ;
@@ -92,7 +110,7 @@
 
 :r2b rdfs:label         "R2b" ;
      :minLotSize        "6000 [sft_i]"^^cdt:area ;
-     :maxDensity        "6"^^xsd:integer ;
+     :maxDensity        "6 [du/acr_u]"^^cdt:dimensionless ;
      :minLotWidth       "60 [ft_i]"^^cdt:length ;
      :minLotDepth       "70 [ft_i]"^^cdt:length ;
      :minFrontSetback   "15 [ft_i]"^^cdt:length ;
@@ -102,7 +120,7 @@
 
 :r3a rdfs:label         "R3a" ;
      :minLotSize        "6000 [sft_i]"^^cdt:area ;
-     :maxDensity        "8"^^xsd:integer ;
+     :maxDensity        "8 [du/acr_u]"^^cdt:dimensionless ;
      :minLotWidth       "60 [ft_i]"^^cdt:length ;
      :minLotDepth       "70 [ft_i]"^^cdt:length ;
      :minFrontSetback   "15 [ft_i]"^^cdt:length ;
@@ -113,7 +131,7 @@
 
 :r3b rdfs:label         "R3b" ;
      :minLotSize        "6000 [sft_i]"^^cdt:area ;
-     :maxDensity        "12"^^xsd:integer ;
+     :maxDensity        "12 [du/acr_u]"^^cdt:dimensionless ;
      :minLotWidth       "60 [ft_i]"^^cdt:length ;
      :minLotDepth       "70 [ft_i]"^^cdt:length ;
      :minFrontSetback   "15 [ft_i]"^^cdt:length ;
@@ -125,7 +143,7 @@
 ########  Commercial Zoning Districts  ########
 :c1  rdfs:label         "C1" ;
      :minLotSize        "6000 [sft_i]"^^cdt:area ;
-     :maxDensity        "12"^^xsd:integer ;
+     :maxDensity        "12 [u/acr_u]"^^cdt:dimensionless ;
      :minLotWidth       "30 [ft_i]"^^cdt:length ;
      :minLotDepth       "70 [ft_i]"^^cdt:length ;
      :minFrontSetback   "0 [ft_i]"^^cdt:length ;
@@ -188,7 +206,7 @@
 ########  Agricultural Zoning Districts  ########
 :a1  rdfs:label         "A1" ;
      :minLotSize        "20 [acr_us]"^^cdt:area ;
-     :maxDensity        "0.2"^^xsd:decimal ;
+     :maxDensity        "20 [acr_u/du]"^^cdt:dimensionless ;
      :minLotWidth       "600 [ft_i]"^^cdt:length ;
      :minLotDepth       "600 [ft_i]"^^cdt:length ;
      :minFrontSetback   "30 [ft_i]"^^cdt:length ;
@@ -199,7 +217,7 @@
 
 :a2  rdfs:label         "A2" ;
      :minLotSize        "10 [acr_us]"^^cdt:area ;
-     :maxDensity        "0.1"^^xsd:decimal ;
+     :maxDensity        "10 [acr_u/du]"^^cdt:dimensionless ;
      :minLotWidth       "400 [ft_i]"^^cdt:length ;
      :minLotDepth       "400 [ft_i]"^^cdt:length ;
      :minFrontSetback   "30 [ft_i]"^^cdt:length ;
@@ -209,7 +227,7 @@
 
 :a3  rdfs:label         "A3" ;
      :minLotSize        "5 [acr_us]"^^cdt:area ;
-     :maxDensity        "0.05"^^xsd:decimal ;
+     :maxDensity        "5 [acr_u/du]"^^cdt:dimensionless ;
      :minLotWidth       "250 [ft_i]"^^cdt:length ;
      :minLotDepth       "250 [ft_i]"^^cdt:length ;
      :minFrontSetback   "30 [ft_i]"^^cdt:length ;

@@ -1,0 +1,16 @@
+# Example of how to get a random ordering from the triple results.
+# arq --data bulk2.ttl --query rand.rq
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX : <http://www.example.org/ns/lu/zoning#>
+
+SELECT ?zoning ?predicate ?object
+
+WHERE {
+		?zoning ?predicate ?object ;
+                rdfs:label "R1a" .
+}
+
+# This creates a random ordering for the variables.
+# Useful for training.  Comment out next line to test.
+ORDER BY RAND()
+
