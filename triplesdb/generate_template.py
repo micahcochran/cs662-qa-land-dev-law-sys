@@ -20,7 +20,7 @@ class QueryUsesSparql:
     def __init__(self, uses_kg):
         self.uses_kg = uses_kg
 
-    def all_uses_iter(self):
+    def all_uses_iter(self) -> Generator[str, None, None]:
         """
         iterator of all the permitted uses in the knowledge graph
         """
@@ -55,7 +55,7 @@ class QueryUsesSparql:
         for zoning in set([str(res.zoning_label) for res in results]):
             yield zoning
 
-    def all_uses_zoning_iter(self):
+    def all_uses_zoning_iter(self) -> Generator[Tuple[str, str], None, None]:
         """
         iterator of all the permitted uses in the knowledge graph
 
@@ -122,7 +122,7 @@ class QueryDimensionsSparql:
     def __init__(self, dimensional_kg):
         self.dimensional_kg = dimensional_kg
 
-    def all_zoning_iter(self):
+    def all_zoning_iter(self) -> Generator[str, None, None]:
         """
         iterator of all the zoning districts in the knowledge graph
         """
@@ -140,7 +140,7 @@ class QueryDimensionsSparql:
         for zoning in set([str(res.zoning_label) for res in results]):
             yield zoning
 
-    def all_regulations_zoning_iter(self):
+    def all_regulations_zoning_iter(self) -> Generator[Tuple[str, str, str], None, None]:
         """
         iterator
         :return:
@@ -301,13 +301,13 @@ ASK {
 
         self.templates['template_dimreg_4var_yn_answer'] = t4
 
-    def template_names(self):
+    def template_names(self) -> list:
         """template names"""
         return self.templates.keys()
 
     # NOTE: The dictionary was a design decision to allow extension
     # to add other variables.
-    def generate_output(self, kg, template_name):
+    def generate_output(self, kg, template_name) -> Generator[dict, None, None]:
         """
         generate the templates for the permitted uses
         kg - knowledge graph,

@@ -1,0 +1,4091 @@
+
+Anniston Zoning Ordinance
+
+
+
+CE NUMBER 16-O- 10
+
+AN ORDINANCE TO PROVIDE FOR THE ESTABLISHMENT OF DISTRICTS WITHIN
+THE CORPORATE LIMITS OF THE CITY OF ANNISTON, ALABAMA; TO REGULATE
+WITHIN SUCH DISTRICTS THE USE OF REAL PROPERTY CONTAINED THEREIN,
+INCLUDING, THE HEIGHT, NUMBER OF STORIES, AND SIZE OF BUILDINGS AND
+OTHER STRUCTURES, THE PERCENTAGE OF LOT THAT MAY BE OCCUPIED, THE
+SIZE OF YARDS AND OTHER OPEN SPACES, THE DENSITY OF POPULATION AND
+THE USE OF BUILDINGS, STRUCTURES AND LAND; TO PROVIDE METHODS OF
+ADMINISTRATION OF THIS ORDINANCE AND PENALTIES FOR THE VIOLATION
+THEREOF,
+
+BE IT ORDAINED by the City Council of the City of Anniston, Alabama as follows:
+
+18th July
+PASSED and ADOPTED this day of _ , 2016.
+
+CITY COUNCIL OF THE CITY OF
+ANNISTON, ALABAMA
+
+ae
+
+Vaughn'M. Stewart II, Mayor
+ey Council Member
+
+absent
+David E. Reddick, Council Member
+
+a Aa
+
+Seyram Selase, Council Member
+
+Millie Yan Council Member
+ATTEST:
+
+A BALE—$
+
+Alan B. Atkinson, City Clerk
+
+ 
+
+
+
+
+ACKNOWLEDGMENTS
+
+MAYOR     Vaughn Stewart
+
+CITY MANAGER    Brian Johnson
+
+ANNISTON PLANNING 
+COMMISSION    Burt Arthur  Jay Jenkins
+      David Christian Cory Salley 
+      Sharon Dunson Ridgely Smith
+      Mark Hearn  Vaughn Stewart
+      Stanley Jackson Ann Welch
+       
+       
+ANNISTON CITY COUNCIL  Millie Harris  David E. Reddick
+      Jay Jenkins  Seyram Selase
+        
+DIRECTOR, PLANNING
+AND DEVELOPMENT SERVICES  Toby Bennington
+
+PLANNING SECRETARY, PLANNING 
+AND DEVELOPMENT SERVICES  Jennie Emerson
+
+
+
+TABLE OF CONTENTS
+
+Sec. 1: Provisions for Official Zoning Map........................................................................................................................1
+
+Sec. 2: Districts.......................................................................................................................................................................2 
+ 
+Sec. 3: Measurements and Requirements...........................................................................................................................3
+
+Sec. 4: Urban Core (C) District................................................................................................................................................8
+
+Sec. 5: Urban Center 1 (UC1) District.....................................................................................................................................9
+
+Sec. 6: Urban Center 2 (UC2)  District.................................................................................................................................10
+
+Sec. 7: Urban Neighborhood 1 (UN1) District.....................................................................................................................11
+
+Sec. 8: Urban Neighborhood 2 (UN2) District...................................................................................................................12
+
+Sec. 9: Surburban Corridor (SC)  District...........................................................................................................................13
+
+Sec. 10: Suburban Neighborhood Center (SNC) District.................................................................................................14
+
+Sec. 11: Suburban Neighborhood 1 (SN1) District...........................................................................................................15
+
+Sec. 12: Suburban Neighborhood 2 (SN2) District...........................................................................................................15
+
+Sec. 13: Suburban Edge (SE)  District...................................................................................................................................16
+
+Sec. 14: Industrial 1 Light (IL) District................................................................................................................................16
+
+Sec. 15: Industrial 2 General (IG) District..........................................................................................................................17
+
+Sec. 16: Natural/Open Space (NO)  District......................................................................................................................18
+
+Sec. 17: Major Institution/Civic Campus (MI) District...................................................................................................18
+
+Sec. 18: Site Requirements..................................................................................................................................................20
+
+Sec. 19: Public Realm Requirements.................................................................................................................................21
+
+Sec. 20: Landscaping............................................................................................................................................................26
+
+Sec. 21: Permitted Uses.......................................................................................................................................................27
+
+Sec. 22: Permitted Use Table.............................................................................................................................................. 28
+
+Sec. 23: Development Types...............................................................................................................................................32
+
+Sec. 24: McClellan District.................................................................................................................................................34
+
+
+
+TABLE OF CONTENTS (continued)
+
+Sec. 25: Signs.......................................................................................................................................................................38
+
+Sec. 26: Outdoor Advertising...........................................................................................................................................45
+ 
+Sec. 27: Parking Regulations.............................................................................................................................................47
+
+Sec. 28: Non-Conforming Lots, Uses of Land, and Structures and Premises..............................................................48
+
+Sec. 29: Supplementary District Regulations...................................................................................................................50
+
+Sec. 30:  Mobile Home Parks..............................................................................................................................................52
+
+Sec. 31: Regulations for Telecommunication Facilities and Structures.....................................................................54
+
+Sec. 32: Definitions..............................................................................................................................................................59
+
+Sec. 33: Administration and Enforcement of Building Permits....................................................................................65
+
+Sec. 34: Board of Adjustment - Establishment and Procedures...................................................................................66
+
+Sec. 35:  Special Exceptions.................................................................................................................................................67
+
+Sec. 36: Amendments..........................................................................................................................................................67
+
+Sec. 37: Complaints Regarding Violations.......................................................................................................................69
+
+Sec. 38: Penalties for Violation...........................................................................................................................................69
+
+Sec. 39: Severability Clause................................................................................................................................................69
+
+Sec. 40: Repeal of Conflicting Ordinance - Effective Date..............................................................................................70
+
+
+
+
+
+
+
+City of Anniston Zoning Ordinance     1
+
+Sec. 1: PROVISIONS FOR OFFICIAL ZONING MAP
+
+Official Zoning Map – The City is hereby divided into zones, or districts as shown on the Official Zoning Map of 
+the City of Anniston, Alabama which, together with all explanatory matter thereon is hereby adopted by refer-
+ence and declared to be a part of this Ordinance. The Official Zoning Map of the City of Anniston, Alabama is 
+identified by the signature of the Mayor of the City of Anniston, attested by the City Clerk of the City of Annis-
+ton and bears the seal of the City under the following words: This is to certify that this is the Official Zoning Map 
+of the City of Anniston, Alabama referred to in Section 1 of Ordinance Number 81-0-40 of the City of Anniston 
+Alabama adopted on the 18th day of July, 2016. The City Clerk is hereby authorized, directed, and empowered to 
+insert on said map the number and the date of adoption of this Ordinance.
+
+If changes are made in district boundaries or other matter portrayed on the Official Zoning Map of the City of 
+Anniston, Alabama, such changes shall be entered by ordinance number and date by the Planning Director on 
+the official Zoning Map of the City of Anniston, Alabama promptly after the amendment has been approved by 
+the City Council. No amendment to this Ordinance shall become effective until after such change and entry has 
+been made on said map. No changes of any nature shall be made in the Official Zoning Map of the City of Annis-
+ton, Alabama or matter shown thereon except in conformity with the procedures set forth in this ordinance. Any 
+unauthorized change of whatever kind by any person or persons shall be considered a violation of this ordinance 
+and punishable as provided under Sec. 38.
+
+Regardless of any existence of purported copies of the Official Zoning Map of the City of Anniston, Alabama 
+which may from time to time be made or published, the Official Zoning Map of the City of Anniston, Alabama, 
+which shall be maintained in Planning and Development Services, shall be the best and conclusive evidence 
+thereof.
+
+INTERPRETATION OF DISTRICT BOUNDARIES
+Where uncertainty exists as to the boundaries of districts as shown on the Official Zoning Map of the City of 
+Anniston, Alabama, the following rules shall apply:
+
+1. Boundaries indicated as approximately following the center lines of streets, highways, or alleys shall be   
+ construed to follow such center lines;
+2. Boundaries indicated as approximately following platted lot lines shall be construed as following such lot   
+ lines;
+3. Boundaries indicated as approximately following city limits shall be construed as following such city   
+ limits;
+4. Boundaries indicated as following railroad lines shall be construed to be midway between the main   
+ tracks;
+5. Boundaries indicated as approximately following the center lines of streams, rivers, canals, lakes, or other  
+ bodies of water shall be construed to follow such center lines;
+6. Boundaries indicated as parallel to or extensions of features indicated in sub-sections 1 through 5 above   
+ shall be so construed. Distances not specifically indicated on the Official Zoning Map shall be    
+ determined by the scale of the map; and
+7. Where physical or cultural features existing on the ground are at variance with those shown on the Offi-  
+ cial Zoning Map, or in other circumstances not covered by subsections 1 through 6 above, the Board of   
+ Adjustment shall interpret the district’s boundaries.
+
+
+
+2 
+
+Sec. 2: DISTRICTS
+
+I.  The following districts and abbreviations are hereby established:
+
+DISTRICT ABBREVIATION
+Urban Core C
+Urban Center 1 UC1
+Urban Center 2 UC2
+Urban Neighborhood 1 UN1
+Urban Neighborhood 2 UN2
+Suburban Corridor SC
+Suburban Neighborhood Center SNC
+Suburban Neighborhood 1 SN1
+Suburban Neighborhood 2 SN2
+Suburban Edge SE
+Industrial 1 - Limited IL
+Industrial 2 - General IG
+Major Institution/Civic Campus MI
+Natural/Open Space NO
+
+II. Principles. Principles are statements of intent related to the character of the physical environment and   
+ preferences for how Anniston should manage its land resources in the future. They are used in con-  
+ junction with the districts to help communicate preferences for how and where development or    
+ redevelopment should or should not take place. The districts have been created with these     
+ principles in mind.
+
+ A.  Priority investment areas are the focus for future development and will serve as catalysts for city-  
+  wide reinvestment.
+ B. Infill development and redevelopment of underutilized and/or deteriorating sites take priority   
+  over development in greenfield locations.
+ C. Downtown is “everyone’s neighborhood,” featuring a vibrant mix of businesses, residences, and   
+  civic uses, and a distinctive character that is appealing to residents, visitors, and investors.
+ D. The city’s stable neighborhoods will be maintained.
+ E. The development of new residential areas and redevelopment of existing residential areas have   
+  strong neighborhood qualities, including sidewalks, mixed housing types, parks, and easy    
+  access to basic retail needs. 
+ F. Development that includes a mix of uses (residential, commercial, civic, employment) both verti-  
+  cally (within buildings) and horizontally (within sites) and is connected to existing urban areas is   
+  encouraged.
+ G. The city’s historic assets are conserved and respected through future development.
+ H. More opportunities to walk, bike, and access public transportation are created.
+ I. Quality design is emphasized for all uses to create an attractive, distinctive public (streets, side-  
+  walks, parks, and street trees, etc.) and private (building faces, lawns and landscaping, parking   
+  lots and driveways, etc.) realm.
+
+
+
+City of Anniston Zoning Ordinance     3
+
+I.  LOT
+
+ A.  Defined. A parcel of land intended as a unit for the purpose, whether immediate or for the future,   
+  of transfer of ownership, or possession, or for the purpose of development.
+
+ B. Lot Area. Lot area is the area included within all lot lines, but does not include any public rights-  
+  of-way.
+
+ C.  Lot Width. Lot width is the length of the Primary Street frontage of a lot.
+
+ D. Lot Depth. Lot depth is the measurement between the front and rear property lines measured   
+  along a line midway between the side lot lines.
+
+II.  BUILDING SETBACKS
+
+ A.  General. Building setbacks are defined as the measurement from the lot line to the building facade  
+  or elevation. In this ordinance, there are generally four (4) types of setbacks: primary street, side   
+  street, side interior, and rear. Setbacks are to remain clear of permanent structures except for  
+  permitted encroachments (see Sec. 3: II E). Setbacks are measured from the property lines and  
+  do not include any public rights-of-way. 
+
+ B.  Minimum/Maximum Setbacks. Where there are minimum and maximum setbacks rather than   
+  Build-to-Areas (see Sec. 3: III), the minimum setback refers to the minimum distance the    
+  structure must be set back from the property lines, while the maximum setback refers to the  
+  maximum distance the structure may be set back from the property line. Generally maximum   
+  setbacks are only applicable to Primary or Side Street frontages.
+
+ C.  Corner Lots. A corner lot must have at least one designated Primary Street. The Zoning Official   
+  shall determine the Primary Street and may consider the following in the determination:    
+  street classification, orientation of other structures on the block, longest face of the lot,    
+  orientation of any alleys within the block, and address of the lot.
+
+ D. Through Lots. Through lots may have either two (2) Primary Street setbacks or one (1) Primary   
+  Street setback and one (1) Side Street setback, as determined by the Zoning Official.
+
+ E. Setback encroachments. The following building features and other implements may encroach into   
+  a required setback, unless otherwise specified, as listed below:
+
+  1.  Porches, stoops, arcades, awnings, balconies (50% of the depth may encroach up to six [6]   
+   feet into the required setback).
+  2.  Unenclosed decks (up to six [6] feet into a rear setback or up to four [4] feet into a side   
+   setback. Such encroachment must be at least five [5] feet from any lot line).
+  3.  Accessibility ramps (to the extent necessary to be functional).
+  4.  Mechanical equipment (such encroachment must be at least five [5] feet from any lot line  
+   and said equipment is only permitted on the side or rear of the structure).
+
+Sec. 3: MEASUREMENTS AND REQUIREMENTS
+
+
+
+4 
+
+III.  BUILD-TO-AREA (BTA) 
+
+ A.  General. The Build-to-Area(BTA) is the area along street frontages within which the building   
+  must be located. When a district has a minimum percentage in the BTA, that percentage of the   
+  frontage must be occupied by a building between the minimum and maximum setback range for   
+  the BTA. The percentage is measured by dividing the width of the building by the width of the lot.
+
+ B.  Corner Lots. On corner lots, where applicable, the building facade must occupy the BTA for both   
+  streets within the first twenty (20) feet from the block corner.
+
+ C. Civic Buildings. See Sec. 23: Development Types K for reductions to the BTA for Civic    
+  Development types.  
+
+IV. PARKING SETBACKS
+
+ A.  General. Parking setbacks are defined as the measurement from the property line to the edge of a   
+  parking surface or elevation of a parking structure. There are four (4) types of parking setbacks:   
+  primary street, side street, side interior, and rear. 
+
+ B.  Parking. All parking, whether surface or structured, must be located beyond the parking setback.   
+  The parking setback applies only to the ground floor of a parking structure.
+
+ C. Where parking setbacks apply, in no case shall the parking be set back less than the setback of the   
+  building. 
+
+V. BUILDING HEIGHT 
+
+ A.  Measurement. Building Height is measured in feet from the ground at average grade to the top of   
+  the highest point of a roof, whether flat or pitched. 
+
+ B.  Basements and Attics. Basements do not count as an additional story where they are more than   
+  fifty (50) percent underground. Attics do not count as an additional story where they have a 
+  ceiling height clearance of seven (7) feet or less for fifty (50) percent or more of the floor area.
+
+
+
+City of Anniston Zoning Ordinance     5
+
+ C. Exceptions. The maximum height limits do not apply to spires, steeples, cupolas, domes, etc. not   
+  intended for human occupancy or to water tanks or towers, monuments, or other structures that   
+  by design or function, must exceed the height limits. The following may also exceed the    
+  height limit by not more than ten (10) feet:
+
+   1.  Electric utility equipment
+   2. Chimney or vent stack
+   3.  Flagpole
+   4. Landscaping
+   5.  Parapet wall (limited to a height of four [4] feet)
+   6.  Amateur communications tower*
+   7.  Elevator structure or access to roof*
+   8.  Cooling tower*
+   9.  Mechanical equipment*
+   10.  Greenhouse*
+  *In this context, these structures are all meant to be located on the roof. They must be set back at   
+  least ten [10] feet from the edge of the roof. If they are not located on the roof, height limits apply.
+
+VI.  GROUND FLOOR ELEVATION
+
+ A.  Measurement. Ground floor elevation is measured from the top of the sidewalk to the top of the   
+  finished ground floor.
+
+VII. TRANSPARENCY
+ 
+ A. Definition. Transparency refers to the minimum amount, as a percentage, of windows and doors   
+  that must cover a story’s facade. Transparency requirements do not apply to residential structures.  
+  
+ B. Measurement - ground floor. The ground story transparency is measured between two (2) and   
+  twelve (12) feet above the adjacent sidewalk. 
+
+
+
+6 
+
+ 
+
+ C.  Measurement - upper story. Transparency on an upper story is measured from the top of the 
+  finished floor to the top of the finished floor above or to the top of the wall plate if there is no   
+  floor above.
+
+ D.  Applicability. Transparency requirements apply to facades on Primary and Side Streets only, and   
+  do not apply to residential structures. See Sec. 23: Development Types K for reductions to  the  
+  transparency requirements for Civic Development types.  
+ 
+ E.  Requirements. Glass may not be painted. Windows may not be made permanently opaque by   
+  window treatments. 
+
+ F.  Blank Wall. Blank wall area is defined as a wall that does not include a substantial material   
+  change; windows or doors; columns, pilasters, or other articulation greater than twelve (12)  
+  inches in depth. Blank wall applies to both horizontal and vertical measurements and to primary  
+  and side street facing facades, both ground and upper stories.
+
+ G. Exceptions. In the historic districts, the Anniston Historic Preservation Commission may alter the  
+  transparency requirements for contributing buildings if the proposed changes meet the design   
+  guidelines and the intent of the zoning ordinance. 
+
+VIII. PEDESTRIAN ACCESS
+
+ A.  General. A functioning entrance, operable during normal business hours, is required to meet the   
+  street-facing entrance requirements. Additional entrances are permitted. 
+
+ B. Corner Building. An angled entrance on the corner may fulfill the street-facing entrance    
+  requirements for both the primary and side streets.
+
+ C. Entrance Spacing. For buildings over 100 feet in length on a street-facing facade in the Urban   
+  Core and Urban Center Districts, two entrances are required on any facade that is over 100 feet in  
+  length.
+
+
+
+City of Anniston Zoning Ordinance     7
+
+IX. BUILDING ELEMENTS
+
+ A. Porch. To meet the requirement, a porch must be contiguous with a width not less than fifty (50)   
+  percent of the building facade. The porch must also be at least six (6) feet deep, not including any   
+  steps or ramps. The porch may be covered but not fully enclosed. A porch may encroach by up  
+  to fifty (50) percent of its depth into a required setback, but may not be closer than three    
+  (3) feet to any lot line. A multi-family structure must have at least one porch or stoop, but is not   
+  required a porch or stoop for each residence. Townhouses should provide a stoop or porch   
+  on each residence.
+
+ B. Stoop. To meet the requirement, a stoop must be no more than six (6) feet deep and six (6) feet   
+  wide. The stoop may be covered but not fully enclosed. A stoop may extend by up to fifty    
+  (50) percent of its depth into a required setback, but may not be closer than three (3) feet    
+  to any lot line. 
+
+ C. Other. Other building elements, such as arcades, awnings, balconies, etc. are permitted and may   
+  encroach into a required setback up to fifty (50) percent of their depths, but may not be    
+  closer than three (3) feet to any lot line.
+
+ D.  Public right-of-way. Balconies on upper stories in the Urban Core and Urban Center districts   
+  may encroach into the public right-of-way by up to five (5) feet as long as they are cantilevered   
+  with no elements attaching them to the ground and the City Engineer has reviewed and approved  
+  the plans. No other building elements may encroach into a  public right-of-way.   
+
+
+
+8 
+
+I. Intent. The most compact, walkable development in the City comprises the Urban Core district. The   
+ district also contains the City’s largest collection of historic commercial structures. The intent of the   
+ Urban Core district is to maintain and improve the City’s historic downtown commercial area and at the  
+ same time foster adaptive reuse, redevelopment, and new construction that contribute to the vitality  
+ of the district by promoting walkability, a mix of uses, and activity in design and practice.
+
+II. Requirements. The following dimensional and building requirements shall apply in the Urban Core Dis-  
+ trict:
+
+Sec. 4: URBAN CORE DISTRICT
+
+Lot Dimensions
+Minimum lot area None
+Minimum lot width None
+Building Setbacks
+Primary street (min) 0’
+Side street (min) 0’
+Side, interior (min) 0’ or 5’
+Rear (min) 0’ or 5’
+Rear, alley (min) 5’
+Build to Area (BTA)
+Primary street (min/max) 0’/5’
+% of bldg in primary street BTA (min) 85%
+Side street (min/max) 0’/10’
+% of bldg in side street BTA (min) 50%
+Parking Setbacks
+Primary street (min) 30’
+Side street (min) 10’
+Side interior (min) 0’
+Rear (min) 0’
+Abutting protected area (min) 10’
+
+ For signage requirements in the C district, see Sec. 25:          
+Signs, page 38.
+
+Building Height 
+Min/max (feet) - Minimum height applies only 
+to buildings with frontage on Noble Street be-
+tween 9th and 13th Streets
+
+25’/110’
+
+Min/max (stories) - See above re. min height 2/10
+Ground Floor Elevation
+Commercial (min) 0’
+Residential (min) 2’
+Transparency
+Primary street ground floor (min) 50%
+Primary street upper story (min) 20%
+Side street ground floor (min) 30%
+Side street upper story (min) 20%
+Blank wall area (max) 20’
+Pedestrian Access
+Street-facing entrance Required
+Entrance transparency (min) 50%
+Accessory Structures
+Primary street setback (min) 50’
+Side street setback (min) 20’
+Side interior setback (min) 5’
+Rear setback (min) 5’
+Square footage (max) 600 sf
+
+
+
+City of Anniston Zoning Ordinance     9
+
+Sec. 5: URBAN CENTER 1 DISTRICT
+
+I. Intent. The area immediately surrounding the Urban Core is the Urban Center 1 district, which accom-  
+ modates a wide variety of uses and development types. The intent of the Urban Center district is to  
+ cluster a mix of buildings, uses, and development in the areas adjacent to the Urban Core in order to   
+ enhance the downtown area as a whole.
+
+II. Requirements. The following dimensional and building requirements shall apply in the Urban Center 1   
+ District:
+
+* Structures should generally align with those on  
+ adjacent properties.
+
+Lot Dimensions
+Minimum lot area None
+Minimum lot width None
+Building Setbacks
+Primary street (min)* 0’
+Side street (min)* 0’
+Side, interior (min) 0’ or 5’
+Rear (min) 0’ or 5’
+Rear, alley (min) 5’
+Build to Area (BTA)
+Primary street (min/max) 0’/20’
+% of bldg in primary street BTA (min) 50%
+Side street (min/max) 0’/20’
+% of bldg in side street BTA (min) 30%
+Parking Setbacks
+Primary street (min) 20’
+Side street (min) 10’
+Side interior (min) 0’
+Rear (min) 0’
+Abutting protected area (min) 10’
+
+For signage requirements in the UC1 district, see Sec. 
+25: Signs, page 38.
+
+Building Height
+Max (feet/stories) 55’/5
+Ground Floor Elevation
+Commercial (min) 0’
+Residential (min) 2’
+Transparency
+Primary street ground floor (min) 40%
+Primary street upper story  (min) 10%
+Side street ground floor (min) 20%
+Side street upper story (min) 10%
+Blank wall area (max) 20’
+Pedestrian Access
+Street-facing entrance Required
+Entrance transparency (min) 50%
+Accessory Structures
+Primary street setback (min) 50’
+Side street setback (min) 20’
+Side interior setback (min) 5’
+Rear setback (min) 5’
+Square footage (max) 600 sf
+
+
+
+10 
+
+Sec. 6: URBAN CENTER 2 DISTRICT
+
+I. Intent. Outside downtown Anniston, these small mixed-use centers serve surrounding urban neighbor-  
+ hoods. This district accommodates a variety of uses and development types, but the centers are generally   
+ small, sometimes occupying as little as one block.
+
+II. Requirements. The following dimensional and building requirements shall apply in the Urban Center 2   
+ District:
+
+O
+
+Lot Dimensions
+Minimum lot area 5,000 sf
+Minimum lot width 50’
+Building Setbacks
+Primary street (min)* 5’
+Side street (min)* 5’
+Side, interior (min) 0’ or 5’
+Rear (min) 0’ or 5’
+Rear, alley (min) 5’
+Build to Area (BTA)
+Primary street (min/max) 5’/20’
+% of bldg in primary street BTA (min) 50%
+Side street (min/max) 5’/20’
+% of bldg in side street BTA (min) 30%
+Parking Setbacks
+Primary street (min) 30’
+Side street (min) 10’
+Side interior (min) 0’
+Rear (min) 0’
+Abutting protected area (min) 10’
+
+For signage requirements in the UC2 district, see Sec. 
+25: Signs, page 38.
+
+Building Height
+Max (feet/stories) 45’/4
+Ground Floor Elevation
+Commercial (min) 0’
+Residential (min) 2’
+Transparency
+Primary street ground floor (min) 40%
+Primary street upper story (min) 10%
+Side street ground floor (min) 10%
+Side street upper story (min) 5%
+Blank wall area (max) 20’
+Pedestrian Access
+Street-facing entrance Required
+Accessory Structures
+Primary street setback (min) 50’
+Side street setback (min) 20’
+Side interior setback (min) 5’
+Rear setback (min) 5’
+Square footage (max) 600 sf
+
+O
+
+* Structures should generally align with those   
+ on adjacent properties.
+
+
+
+City of Anniston Zoning Ordinance     11
+
+Sec. 7: URBAN NEIGHBORHOOD 1 DISTRICT
+
+I. Intent. The Urban Neighborhood 1 district is a mixed residential neighborhood comprised primarily of   
+ small-lot single family residences with some small multifamily buildings, small retail and office uses,   
+ and civic sites that may exist together within the same block. The intent of this district is to expand   
+ and diversify residential opportunities within close proximity to downtown and to foster a walkable,   
+ mixed use neighborhood environment.
+
+II. Requirements. The following dimensional and building requirements shall apply in the Urban Neighbor-  
+ hood 1 District:
+
+Lot Dimensions
+Minimum lot area 5,000 sf
+Minimum lot width 50’
+Building Setbacks
+Primary street (min/max)* 10’/20’
+Side street (min)* 10’
+Side, interior (min) 5’
+Rear (min) 5’
+Rear, alley (min) 5’
+Accessory Structures
+Primary street setback (min) 50’
+Side street setback (min) 10’
+Side interior setback (min) 5’
+Rear setback (min) 5’
+Square footage (max) 600 sf
+
+For signage requirements in the UN2 district, see Sec. 
+25: Signs, page 38.
+
+Building Height
+Primary structure - max (feet/stories) 40’/3
+Accessory structure - max (feet/stories) 25’/2
+Ground Floor Elevation
+Residential on ground floor (min) 2’
+Commercial on ground floor (min) 0’
+Building Elements
+Street-facing entrance Required
+Porch, stoop, or balcony (residential) Required
+Transparency (commercial - min) 30%
+Parking Setbacks
+Primary street (min) 30’
+Side street (min) 5’
+Side interior (min) 5’
+Rear (min) 5’
+
+* Structures should generally align with those   
+ on adjacent properties.
+
+
+
+12 
+
+Sec. 8: URBAN NEIGHBORHOOD 2 DISTRICT
+
+I. Intent. The Urban Neighborhood 2 district is a transitional neighborhood occurring at the edges of   
+ Urban Neighborhood 1. This district consists mainly of single family residences on larger lots than UN1   
+ with some small multifamily and civic sites. The intent of this district is to maintain and reinforce    
+ walkable residential neighborhoods and foster the development of neighborhood services  in strategic  
+ locations.
+
+II. Requirements. The following dimensional and building requirements shall apply in the Urban Neighbor-  
+ hood 2 District:
+Lot Dimensions
+Minimum lot area 5,000 sf
+Minimum lot width 50’
+Building Setbacks
+Primary street (min)* 20’
+Side street (min)* 15’
+Side, interior (min) 10’
+Rear (min) 10’
+Rear, alley (min) 5’
+Accessory Structures
+Primary street setback (min) 50’
+Side street setback (min) 10’
+Side interior setback (min) 5’
+Rear setback (min) 5’
+Square footage (max) 600 sf
+
+For signage requirements in the UN2 district, see Sec. 
+25: Signs, page 38.
+
+Building Height
+Primary structure - max (feet/stories) 35’/2.5
+Accessory structure - max (feet/stories) 25’/2
+Ground Floor Elevation
+Residential on ground floor (min) 2’
+Commercial on ground floor (min) 0’
+Building Elements
+Street-facing entrance Required
+Porch, stoop, or balcony (residential) Required
+Transparency (commercial - min) 30%
+Parking Setbacks
+Primary street (min) 30’
+Side street (min) 5’
+Side interior (min) 5’
+Rear (min) 5’
+
+* Structures should generally align with those   
+ on adjacent properties.
+
+
+
+City of Anniston Zoning Ordinance     13
+
+Sec. 9: SUBURBAN CORRIDOR DISTRICT
+
+I. Intent. The Suburban Corridor district consists of areas along major road corridors primarily composed   
+ of commercial uses that serve the broader community. The intent of this district is to foster an    
+ environment conducive to primarily single use commercial development but also to improve the    
+ environment for drivers, cyclists, and pedestrians alike.
+
+II. Requirements. The following dimensional and building requirements shall apply in the Suburban Corri-  
+ dor District:
+
+Lot Dimensions
+Minimum lot area 5,000 sf
+Minimum lot width 50’
+Building Setbacks
+Primary street (min) 5’
+Side street (min) 5’
+Side, interior (min) 0’ or 5’
+Rear (min) 0’ or 5’
+Rear, alley (min) 5’
+
+For signage requirements in the SC district, see Sec. 25: 
+Signs, page 38.
+
+Building Height
+Max (feet/stories) 35’/3
+Pedestrian Access
+Street-facing entrance Required
+Parking Setbacks/Requirements
+Primary street (min) 10’
+Side street (min) 10’
+Side interior (min) 0’ or 5’
+Rear (min) 0’ or 5’
+Abutting protected area (min) 10’
+Max # of parallel parking aisles in front 
+of building
+
+4
+
+
+
+14 
+
+Sec. 10: SUBURBAN NEIGHBORHOOD CENTER DISTRICT
+
+I. Intent. The Suburban Neighborhood Center district is meant to allow small, mixed use centers that   
+ primarily serve surrounding neighborhoods, but may also include higher density residential uses    
+ integrated with nearby office, commercial, or mixed use buildings. The intent of this district is to provide   
+ opportunities for village centers in locations that are advantageous for both surrounding neighborhoods   
+ and transportation corridors.
+
+II. Requirements. The following dimensional and building requirements shall apply in the Suburban Neigh-  
+ borhood Center District:
+
+Lot Dimensions
+Minimum lot area 5,000 sf
+Minimum lot width 50’
+Building Setbacks
+Primary street (min) 5’
+Side street (min) 5’
+Side, interior (min) 0’ or 5’
+Rear (min) 0’ or 5’
+Rear, alley (min) 5’
+Build to Area (BTA)
+Primary street (min/max) 5’/20’
+% of bldg in primary street BTA (min) 50%
+Side street (min/max) 5’/20’
+% of bldg in side street BTA (min) 30%
+Building Height
+Max (feet) 55’
+Max (stories) 4
+
+For signage requirements in the SNC district, see Sec. 
+25: Signs, page 38.
+
+Transparency
+Primary street ground floor (min) 40%
+Primary street upper story (min) 20%
+Side street ground floor (min) 20%
+Side street upper story (min) 10%
+Blank wall area (max) 20’
+Pedestrian Access
+Street-facing entrance Required
+Parking Setbacks
+Primary street (min) 10’
+Side street (min) 10’
+Side interior (min) 0’
+Rear (min) 0’
+Abutting protected area (min) 10’
+Accessory Structures
+Primary street setback (min) 50’
+Side street setback (min) 20’
+Side interior setback (min) 5’
+Rear setback (min) 5’
+Square footage (max) 600 sf
+
+
+
+City of Anniston Zoning Ordinance     15
+
+Sec. 11: SUBURBAN NEIGHBORHOOD 1 DISTRICT
+
+I. Intent. The Suburban Neighborhood 1 district is primarily comprised of single family homes on lots of   
+ varying sizes, but most lots are larger than those found in either of the Urban Neighborhood districts.   
+ Some multifamily residential exists in this district as well, but it tends to be physically separated from  
+ single family homes. The intent of this district is to provide for the protection of existing residential   
+ neighborhoods and creation of new residential neighborhoods that are better connected to community  
+ facilities and neighborhood services and other neighborhoods. New cul-de-sacs shall not be permitted   
+ unless demonstrated that no other street configuration will be possible.
+
+II. Requirements. The following dimensional and building requirements shall apply in the Suburban Neigh-  
+ borhood 1 District:
+
+Sec. 12: SUBURBAN NEIGHBORHOOD 2 DISTRICT
+
+I. Intent. The Suburban Neighborhood 2 district is primarily comprised of single family homes on lots of   
+ varying sizes, but most lots are larger than those found in either of the Urban Neighborhood districts.   
+ There is very little multi-family residential development in this district. The intent of this district is to  
+ provide for the protection of existing residential neighborhoods and creation of new residential    
+ neighborhoods that are better connected to community facilities and neighborhood services and other   
+ neighborhoods. New cul-de-sacs shall not be permitted unless demonstrated that no other street    
+ configuration will be possible.
+
+II. Requirements. The following dimensional and building requirements shall apply in the Suburban Neigh-  
+ borhood 2 District:
+Lot Dimensions
+Minimum lot area 5,000 sf
+Minimum lot width 50’
+Building Setbacks
+Primary street (min) 25’
+Side street (min) 20’
+Side, interior (min) 10’
+Rear (min) 20’
+
+For signage requirements in the SN2 district, see Sec. 25: 
+Signs, page 38.
+
+Building Height
+Max (feet/stories) 35’/2.5
+Accessory Structures
+Primary street setback (min) 50’
+Side street setback (min) 20’
+Side interior setback (min) 5’
+Rear setback (min) 5’
+Square footage (max) 600 sf
+
+Lot Dimensions
+Minimum lot area 5,000 sf
+Minimum lot width 50’
+Building Setbacks
+Primary street (min) 20’
+Side street (min) 20’
+Side, interior (min) 10’
+Rear (min) 20’
+
+For signage requirements in the SN1 district, see Sec. 25: 
+Signs, page 38.
+
+Building Height
+Max (feet/stories) 35’/2.5
+Accessory Structures
+Primary street setback (min) 50’
+Side street setback (min) 20’
+Side interior setback (min) 5’
+Rear setback (min) 5’
+Square footage (max) 600 sf
+
+
+
+16 
+
+Sec. 13: SUBURBAN EDGE DISTRICT
+
+I. Intent. Large lots of typically at least one acre with scattered residential development comprise the Subur-  
+ ban Edge district. Sites often feature significant natural areas. The intent of the Suburban Edge district is   
+ to focus development into areas where there is existing infrastructure and preserve invaluable natural   
+ features and areas. New cul-de-sacs shall not be permitted unless demonstrated that no other street con-  
+ figuration will be possible.
+
+II. Requirements. The following dimensional and building requirements shall apply in the Suburban Edge   
+ District:
+
+Sec. 14: INDUSTRIAL 1 LIMITED DISTRICT
+
+I. Intent. The Industrial 1 Limited district is comprised of primarily large footprint buildings intended for   
+ light industrial development, clean manufacturing, or warehousing activities. The intent of this district is   
+ to provide for industrial development that has little impact on surrounding properties. 
+
+II. Requirements. The following dimensional and building requirements shall apply in the Industrial 1 Limit-  
+ ed District:
+
+Lot Dimensions
+Minimum lot area 1 acre
+Minimum lot width 100’
+Building Setbacks
+Primary street (min) 30’
+Side street (min) 30’
+Side, interior (min) 20’
+Rear (min) 20’
+Abutting protected area 30’
+
+For signage requirements in the IL district, see Sec. 25: 
+Signs, page 38.
+
+Building Height
+Max (feet/stories) 45’/4
+Landscaping for Parking Areas
+Primary street buffer strip (min) 10’
+Side street buffer strip (min) 10’
+Side interior (min) 10’
+Rear (min) 10’
+Abutting protected area 30’
+Distance between trees in buffers (max) 50’
+Size of landscape islands (min) 10’x10’
+Max # of spaces between landscape 
+islands
+
+10
+
+Lot Dimensions
+Minimum Lot Area 1 acre
+Minimum Lot Width 100’
+Building Setbacks
+Primary street (min) 30’
+Side street (min) 30’
+Side, interior (min) 10’
+Rear (min) 30’
+
+For signage requirements in the SE district, see Sec.25: 
+Signs, page 38.
+
+Building Height
+Max (feet/stories) 35’/2.5
+Accessory Structures
+Primary street setback (min) 50’
+Side street setback (min) 30’
+Side interior setback (min) 5’
+Rear setback (min) 5’
+Square footage (max) 600 sf
+
+
+
+City of Anniston Zoning Ordinance     17
+
+Sec. 15: INDUSTRIAL 2 GENERAL DISTRICT
+
+I. Intent. The Industrial 2 General district is comprised of sites generally larger than 20 acres that are the   
+ sites for large footprint buildings intended for a range of industrial development. Industrial development   
+ in this district tends to generate more traffic and other impacts on surrounding properties. Properties in   
+ this district tend to be near major transportation infrastructure. The intent of this district is to provide   
+ convenient sites for industrial development that minimize the effects on surrounding properties by  
+ ensuring development is not located in close proximity to neighborhoods or other development    
+ that would be adversely affected by industrial uses. Furthermore, this district intends to ensure that   
+ development that is potentially harmful to the environment  or public health is located in a way to   
+ mitigate and minimize these effects.   
+
+II. Requirements. The following dimensional and building requirements shall apply in the Industrial 2 Gen-  
+ eral District:
+
+Lot Dimensions
+Minimum lot area 2 acres
+Minimum lot width 150’
+Building Setbacks
+Primary street (min) 40’
+Side street (min) 40’
+Side, interior (min) 20’
+Rear (min) 20’
+Abutting protected area 40’
+
+For signage requirements in the IG district, see Sec. 25: 
+Signs, page 38.
+
+Building Height
+Max (feet/stories) 45’/4
+Landscaping for Parking Areas
+Primary street buffer strip (min) 10’
+Side street buffer strip (min) 10’
+Side interior (min) 10’
+Rear (min) 10’
+Abutting protected area 30’
+Distance between trees in buffers (max) 50’
+Size of landscape islands (min) 10’x10’
+Max # of spaces between landscape 
+islands
+
+10
+
+
+
+18 
+
+Sec. 16: NATURAL/OPEN SPACE DISTRICT
+
+I. Intent. The Natural/Open Space district is comprised of areas intended to remain in a natural state and   
+ may include infrastructure as well as passive recreational facilities and trails. Some places in the district  
+ may be suitable for development or may have been developed but are now vacant and returning to a   
+ natural state. The intent of this district is to preserve natural areas and open space in order to preserve  
+ wildlife habitat, improve air and water quality, and protect scenic areas and view. Furthermore, the   
+ intent of this district is to direct development into areas most suitable for development where there are  
+ existing services, infrastructure, and connections.
+
+II. Requirements. The following dimensional and building requirements shall apply in the Natural/Open   
+ Space District:
+
+Lot Dimensions
+Minimum Lot Area 10 acres
+Minimum Lot Width 500’
+Building Setbacks
+Primary Street (min) 45’
+Side Street (min) 45’
+Side, interior (min) 20’
+Rear (min) 20’
+Building Height 
+Max (Feet/Stories) 25’/2
+Impervious Surface
+Max Percentage 20%
+
+For signage requirements in the NO district, see Sec. 25: Signs, page 38.
+
+Sec. 17: MAJOR INSTITUTION/CIVIC CAMPUS
+
+I. Intent. The Major Institution/Civic Campus district encompasses major community-serving institutions   
+ such as educational campuses and hospitals. The development patterns for these institutions are unique   
+ to the site and may differ significantly from their surroundings. The intent of this district is to create  
+ places for these types of uses, which are highly desirable as economic generators, but also to ensure   
+ that these sites do little harm to surrounding districts by integrating better into their surroundings.  
+   
+II. Except for the development of a new public park or open space, this district is not intended to be expand-  
+ ed beyond the existing boundaries.
+
+III. General Procedure. In the Major Institution/Civic Campus district, all development is conditional based   
+ on the submittal and approval of a development plan, reviewed and approved by the Anniston Planning   
+ and Zoning Commission. The application and approval process is described in detail in Sec. 17: IV. 
+ 
+IV. In order to gain approval for development or redevelopment in the MI District, the applicant shall   
+ submit an MI Development Application to Planning and Development Services. 
+
+ A.  A complete application shall include the following:
+
+
+
+City of Anniston Zoning Ordinance     19
+
+  1. A site plan scaled to not less than 1:100 showing all proposed improvements to include   
+   buildings, landscaping, paving, parking, sidewalks, open spaces, location of signage, etc. as  
+   well as all information required by the Anniston Subdivision Regulations for a prelimi-  
+   nary plat.
+
+  2. Representative drawings of all elevations of proposed structures including material call-  
+   outs, landscaping, etc.
+
+  3. Proposed uses and/or tenants for each structure or part of a structure.
+
+  4. A master signage plan showing typical signage type, location, materials, size, etc. 
+
+  5. Evidence of ownership or control of the tract proposed for development, or, if the    
+   property is under contract or contingency, evidence of the contract or contingency.
+
+  6. Names and addresses of persons/firms/partnerships/corporations showing a financial   
+   interest in the project.
+
+  7. A fee, which shall be in accordance with the schedule of fees established by Planning and   
+   Development Services.
+
+ B.  Upon receipt of a complete application for approval, the Planning Commission shall advertise   
+  and conduct a  public hearing to determine the suitability of the proposal.
+
+ C. The Planning Commission shall make a decision on the application within sixty (60) days of   
+  receipt of the complete application.
+
+ D. The Planning Commission’s designee may approve changes to approved development plans that   
+  he or she determines to be insubstantial. Insubstantial changes are those that do not affect the   
+  overall character of the development.
+
+ E. Any changes to an approved development plan that the Planning Commission’s designee deter-  
+  mines to be substantial must be presented to the Planning Commission for approval. Substantial
+  changes may include, but are not limited to, changes to the design of the building or site, changes   
+  to materials, changes to the proposed uses in a development, or changes to signage.
+ 
+V. Use Approval. The Planning Director may approve the use of an existing structure in the Major Institu-  
+ tion/Civic Campus District if the use is listed in the Permitted Use table (Sec. 22: Permitted Use   
+ Table) as C. This administrative approval is only applicable to the use of the property, not any changes   
+ to the exterior or signage, which must be approved by the Planning Commission. For signage require-  
+ ments, see Sec. 25: Signs.     
+
+
+
+20 
+
+Sec. 18: SITE REQUIREMENTS
+
+I.  Protected Areas. 
+
+ A.  Defined. A protected area is defined as any area zoned Urban Neighborhood, Suburban    
+  Neighborhood, Suburban Edge, or Natural/Open Space.
+
+II.  Driveways. The following requirements apply to all non-residential driveways.
+
+ A.  Alley Access. If parking areas can be accessed from an improved alley, access from the alley is   
+  required and no new curb cuts shall be created.
+
+ B.  Spacing. Non-residential driveways shall be spaced according to the following list:
+  
+
+Right of Way Width Spacing
+Up to 60 feet 100’
+61 to 80 feet 200’
+81 or more feet 300’
+
+ C. Credit for Removing or Combining Curb Cuts. Whenever possible, driveways shall be consolidated   
+  and no additional driveways or curb cuts shall be added. If a curb cut is closed, eliminated, or  
+  combined with another curb cut, credit will be given for one (1) landscape island. The developer   
+  may construct one (1) less landscape island than would be required.
+
+ D. Corner Lots.  On corner lots, access will be from the street with the lower classification.
+
+ E.  Width. At the edge of pavement, driveways shall be no greater than the widths established below:
+
+District Driveway Width
+C 12’
+UC1 15’
+UC2 15’
+UN1 12’
+UN2 12’
+SC 24’
+SNC 15’
+SN1 15’
+SN2 15’
+SE 20’
+IL 32’
+IG 32’
+MI 15’
+NO 20’
+
+ F. No new driveways shall be permitted on Noble Street between 17th Street and 4th Street.   
+ 
+
+
+
+City of Anniston Zoning Ordinance     21
+
+II. Cross Access. Shared parking and cross access is encouraged for all non-residential, non-industrial uses.   
+ Therefore, site plans shall comply with the following:
+
+ A. Cross access between abutting properties must be provided.
+
+ B. A stub for future cross-access must be provided.
+
+ C. The requirement for cross access may be waived if it is deemed infeasible by the City Engineer.   
+  Pedestrian access shall still be provided when cross access is waived.
+
+ D. Where cross access is established, an easement allowing cross access and a joint maintenance   
+  agreement shall be recorded. 
+
+III.  Other Site Requirements.
+
+ A.  Loading Areas and Bay Doors. All loading areas and bay doors must be located on the side or rear   
+  of the building, and shall in no instance face the primary street in any district or the side street in   
+  the Urban Core, Urban Center 1, Urban Center 2, or Suburban Neighborhood Center Districts.
+ 
+ B. Outdoor Storage.  Outdoor storage is permitted only in the Industrial Districts.
+
+ C. Garbage/Trash Receptacles. All garbage receptacles will be screened from view with a fence of   
+  wood, masonry, stone, or stucco. Garbage receptacles shall not be located between a building and   
+  any adjacent street.
+
+ D.  Fuel and Drive-Thru Canopies. Canopies do not count as a portion of the building when calculat-  
+  ing Build-to-Area on a primary street.
+
+ E. Underground Utilities. For any new construction or substantial redevelopment (over 75% of the   
+  site being redeveloped), all utilities located upon said site must be located underground, unless   
+  they can be located in a manner so as not to be visible from the public right-of-way. The underly-  
+  ing land owner shall be responsible for all cost(s) related thereto. This provision shall not apply,  
+  however, to electric substations and/or facilities associated with the transport of electricity in  
+  excess of 25kV.
+
+Sec. 19: PUBLIC REALM REQUIREMENTS
+
+I.  Improvements Required. Where new development or substantial redevelopment occurs, the developer   
+ shall be required to install the public realm improvements in accordance with the provisions of this  
+ section.
+
+II. Determination of Street Type. The street type to be followed shall be determined by the City Engineer and   
+ the Planning Director on a project-by-project basis. The City Engineer and Planning Director may deter-  
+ mine that a street is of a type not listed in that district if it more closely resembles a different street   
+ type; however, the following street types listed by district shall serve as a guide to determine the street  
+ type. The street type shall be determined utilizing the following criteria:
+
+ A. Existing ROW width.
+
+ B. Street classification.
+
+
+
+22 
+
+ C. Character of the public realm adjacent to abutting and nearby properties. 
+
+III. Street Types Defined. Street types are defined herein for each district. Street types are the same across   
+ different districts; this section defines the types of streets most likely to be found in each district. 
+
+ A. Urban Core District. 
+
+  1.  Urban Main Street. This type is primarily intended for Noble Street, but other streets with-  
+   in the Urban Core or other districts may also be defined as Urban Main Streets.
+
+  2. Urban Street. This type of street is found in multiple districts. Dimensions may vary slight-  
+   ly by district and street. Parking lane widths depend on whether parking is angled or   
+   parallel.
+ 
+
+ 
+
+B. Urban Center 1 District. 
+ 
+  1.  Urban Street. See Sec. 19: IIIA2.
+  2.  Urban Neighborhood Street. This type of street is found in multiple districts. Dimensions   
+   may vary slightly by district and street. Parking, for the most part, is parallel.
+
+Walk and 
+Planting
+
+10’
+
+Parking
+
+8’-13’
+
+Travel Lane
+
+11’
+
+Travel Lane
+
+11’
+
+Parking
+
+8’-13’ 10’
+
+Walk and 
+Planting
+
+72’-90’ Right-of-Way
+
+
+
+City of Anniston Zoning Ordinance     23
+
+Parking
+
+8’
+
+Travel Lane
+
+10’
+
+Travel Lane
+
+10’
+
+Parking
+
+8’2’
+
+Planting
+
+5’
+
+W
+alk
+
+Planting
+
+2’
+
+W
+alk
+
+5’
+
+ 
+
+  
+  
+  3. Urban Boulevard. This street type is based on the cross section of Quintard Avenue in the   
+   Urban Center 1 District and should not be applied to other streets. Dimensions may vary.
+
+        
+ 
+ C. Urban Center 2 District.
+
+  1. Urban Main Street. See Sec. 19: IIIA1.
+  2. Urban Street. See Sec. 19: IIIA2.
+  3. Urban Neighborhood Street. See Sec. 19: IIIB2.
+
+ D. Urban Neighborhood 1 District.
+  
+  1. Urban Neighborhood Street. See Sec. 19: IIIB2.
+
+ E. Urban Neighborhood 2 District.
+
+  1. Urban Neighborhood Street. See Sec. 19: IIIB2.
+
+ F. Suburban Corridor District. 
+
+  1. Urban Street. See Sec. 19: IIIA2.
+  2. Suburban Corridor. This street type is intended for Quintard Avenue in the Suburban   
+   Corridor District and should not be applied to other streets.
+
+Travel Lane
+
+11’
+
+Travel Lane
+
+11’
+
+Planting
+
+5’-8’
+
+Travel Lane
+
+11’
+
+Travel Lane
+
+11’ 45’-55’
+
+M
+edian
+
+Travel Lane
+
+11’
+
+Travel Lane
+
+11’
+
+W
+alk
+
+5’
+
+W
+alk
+
+5’
+
+Planting
+
+5’-8’
+
+Travel Lane
+
+11’
+
+Travel Lane
+
+11’
+
+Planting
+
+5’
+
+Travel Lane
+
+11’
+
+Travel Lane
+
+11’ 25’
+
+M
+edian/Turn Lane
+
+Travel Lane
+
+11’
+
+Travel Lane
+
+11’
+
+W
+alk
+
+5’
+
+W
+alk
+
+5’
+
+Planting
+
+5’
+
+160’ Right-of-Way
+
+50’-60’ Right-of-Way
+
+160’ Right-of-Way
+
+
+
+24 
+
+        
+  3. Suburban Street. Dimensions may vary by street. Some streets may have four travel lanes   
+   and a median.
+
+ 
+ G. Suburban Neighborhood Center District. 
+
+  1. Urban Main Street. See Sec. 19: IIIA1.
+  2. Urban Street. See Sec. 19: IIIA2.
+  3. Urban Neighborhood Street. See Sec. 19: IIIB2.
+
+ H. Suburban Neighborhood 1 District. 
+
+  1. Urban Neighborhood Street. See Sec. 19: IIIB2.
+  2. Suburban Street. See Sec. 19: IIIF3. Suburban Streets in this district shall have only   
+   two travel lanes.
+  3.  Suburban Neighborhood Street. Dimensions may vary by street. Space may be provided for   
+   on-street parking, but street widths should remain narrow so as to discourage speeding.  
+
+ H. Suburban Neighborhood 2 District.
+
+  1.  Urban Neighborhood Street. See Sec. 19: IIIB2.
+  2. Suburban Street. See Sec. 19: IIIF3. Suburban Streets in this district shall have only   
+  two travel lanes.
+  3.  Suburban Neighborhood Street. See Sec. 19: IIIH3.
+
+ I. Suburban Edge District.
+
+  1. Suburban Street. See Sec. 19: IIIF3.
+  2. Suburban Neighborhood Street. See Sec. 19: IIIH3.
+  3. Suburban Edge Street. Dimensions may vary slightly by street.
+
+Travel Lane
+
+11’
+
+Travel Lane
+
+11’4’
+Planting
+
+5’
+
+W
+alk
+
+Planting
+
+4’
+
+W
+alk
+
+5’
+
+40’ Right-of-Way
+
+Travel Lane
+
+11’
+
+Travel Lane
+
+11’4’
+
+Planting
+
+Planting
+
+4’
+
+30’ Right-of-Way
+
+Travel Lane
+
+12’
+
+Travel Lane
+
+12’4’
+
+Planting
+
+4’
+
+W
+alk
+
+Planting
+
+4’
+
+W
+alk
+
+4’
+
+45’ Right-of-Way
+
+
+
+City of Anniston Zoning Ordinance     25
+
+ 
+ J. Industrial 1 Limited District.
+
+  1. Industrial Street. Dimensions may vary by street.
+
+  2. Suburban Street. See Sec. 19: IIIF3.
+
+ K. Industrial 2 General District. 
+
+  1. Industrial Street. See Sec. 19: IIIJ1.
+  2. Suburban Street. See Sec. 19: IIIF3.
+
+ L. Major Institution/Civic Campus District. In this district, streets shall primarily be urban types, but   
+  the determination shall be made by the Planning Commission at the recommendation of the City   
+  Engineer and Planning Director.
+
+ M. Natural/Open Space District.
+
+  1. Suburban Edge Street. See Sec: 19: IIII3
+  2. Industrial Street. See Sec. 19: IIIJ1.
+
+ N. McClellan District. Street types in the McClellan District shall be determined using the McClellan   
+  Streets Classification map and the above street types at the discretion of the Planning Commision,  
+  based on the recommendations of the City Engineer and Planning Director in consultation  
+  with the McClellan Development Authority.
+
+Travel Lane
+
+12’
+
+Travel Lane
+
+12’4’
+
+Planting
+
+Planting
+
+4’
+
+32’ Right-of-Way
+
+
+
+26 
+
+Sec. 20: LANDSCAPING
+
+I.  Except as otherwise specified, or as determined by any electric utility provider to endanger the safety or   
+ reliability of its facilities, the following landscaping requirements shall apply to all districts. 
+
+II. Applicability. The standards listed shall apply to all new construction and/or substantially redeveloped   
+ parking areas, unless otherwise specified. Surface parking lots as a primary use shall be landscaped   
+ according to Sec. 22: Footnote 13. In the case of conflict between these standards and those in a par-  
+ ticular district’s requirements, the more stringent of the requirements shall apply. 
+
+II. Maintenance of Landscaping. All landscaping shall be maintained in good condition for its lifespan, and,   
+ after its lifespan, shall be replaced with similar or better landscaping. Failure to maintain landscaping   
+ may result in penalties as described in Sec. 38.
+
+III. Requirements.
+
+Landscaping for Parking Areas
+Primary street buffer strip (min) 5’
+Side street buffer strip (min) 5’
+Side interior (min)* 5’
+Rear (min)* 5’
+Abutting protected area (min) 10’
+Distance between trees in buffers (max) 50’
+Max # of spaces between landscape islands 10
+
+     *See V. Buffers. 
+
+IV.  Landscape Islands.
+
+ A. Size. Unless otherwise specified, all landscape islands shall, at a minimum, be the same size as   
+  the parking spaces provided in the lot. For landscape islands within or at the end of a double   
+  parking row, said islands shall be double the size of the parking spaces provided in the lot.
+ 
+ B. Trees Required. All landscape islands shall include at least one (1) shade tree of minimum two   
+  inches (2”) in caliper measured at DBH (diameter at breast height): the diameter of a tree four   
+  and one-half feet (4½’) above ground level.
+
+ C. Landscape islands shall be an integral part of a site’s stormwater management. 
+
+V. Buffers. Unless otherwise specified, all buffer strips shall meet the following requirements.
+
+ A.  Trees Required. All buffer strips must have shade trees of minimum two inches (2”) in caliper   
+  measured at DBH. These trees shall be spaced no more than fifty feet (50’) apart. 
+
+ B.  For side interior and rear lot lines, buffers are not required along the portion of the parking area   
+  that is being stubbed for future cross access. Buffers shall still be provided along the parking stalls.
+
+ C. Existing street trees may count as trees required in buffer areas. However, if existing trees are   
+  spaced  greater than fifty feet (50’) apart, additional trees must be added to meet that requirement.
+
+
+
+City of Anniston Zoning Ordinance     27
+
+VI. Preservation of Existing Trees. The preservation of existing trees is encouraged, and may be included in   
+ the minimum planting requirements and credited toward trees required by this section according to the   
+ following list:
+
+DBH of Preserved Tree Trees Credited
+9-19 inches 2
+
+20-25 inches 3
+26-29 inches 4
+30-35 inches 5
+
+36 or more inches 6
+
+ A.  The preservation of existing trees shall only be credited for required tree plantings if the following  
+  conditions are met:
+
+  1. The critical root zone of the tree must be protected during the construction process. The   
+   extent of the protected area shall be shown on the submitted site plan.
+  2.  No part of a structure or pavement, except for sidewalks or other surfaces not intended for  
+   vehicular use, shall encroach into the critical root zone. 
+
+VII. All landscaping requirements shall be fulfilled before a Certificate of Occupancy is issued. 
+
+Sec. 21: PERMITTED USES
+
+I.  This section establishes the uses allowed in each zoning district. Lots and/or buildings may be occupied   
+ only with the uses allowed in the permitted use table.
+
+II.  One or more land uses allowed in a district may be established on any lot within that district in    
+ compliance with all applicable requirements.
+
+III.  Accessory uses on the same lot with and incidental to any of the uses listed in the permitted use table are   
+ allowed.
+
+IV. Land uses not listed. If a proposed use is not listed in the Permitted Use Table, but is similar to a listed   
+ use, the Planning Director may allow the proposed use. The Planning Director shall consider the    
+ following criteria when determining if a proposed use is similar to a listed use:
+
+ A.  The amount of site area or floor area dedicated to the proposed use
+ B. The number of employees 
+ C. The hours of operation
+ D.  Building and site arrangement
+ E.  Signage
+ F. The likely impact on surrounding properties
+ G. Types of vehicles used and their parking requirements
+ H. Characteristics of the proposed use
+
+V. Limited uses. Unless otherwise specified, no limited use shall be located on the same block face as another  
+ limited use and no limited use shall be located within two hundred and fifty (250) feet of another limited   
+ use. See also Footnote 14 in Sec. 22: Permitted Use Table.  
+
+
+
+28 
+
+Sec. 22: PERMITTED USE TABLE
+
+C U
+C
+
+1
+
+U
+C
+
+2
+
+U
+N
+
+1
+
+U
+N
+
+2
+
+SC SN
+C
+
+SN
+1
+
+SN
+2
+
+SE IL IG M
+I
+
+N
+O
+
+RESIDENTIAL
+SF - - - P P - P P P P - - - P
+SF-A - P P P - - P P P - - - - -
+Townhouse - P P P - - P P - - - - - -
+MF 4 units or fewer P1 P P P - - P P - - - - - -
+MF 5 units or more P1 P P - - P P P - - - - - -
+Mobile home park - - - - - - - - - S - - - -
+Group home - - - P - - P P - - - - - -
+Rehabilitation home - - - - - - - P - P - - - -
+Personal care home - P - - - P P - - - - - - -
+Home occupation P P P P P P P P P P - - - P
+Home day care2 P P P P P - P P P P - - - P
+CIVIC/INSTITUTIONAL
+Cemetery as primary use3 - - - - - P - - - P - - - P
+College/university P P P P4 P4 P P - - - - - C -
+Outdoor recreation, nonprofit - P P P - P P P P P P - C P
+Police or fire station P P P P P P P - - P P P C P
+Public building, government office P P P P P P P P P P P P C -
+Public park or recreation P P P P P P P P P P P P C P
+Place of worship5 P P P P - P P - - P - - C P6
+
+School, public or private6 P P P P P P P P P P - - C -
+LODGING
+Bed and breakfast - P P P P - - P - - - - - -
+Hotel, motel P P P - - P P - - - - - - -
+Extended stay hotel, motel - - - - - P P - - - - - - -
+SERVICE, RETAIL, ENTERTAINMENT
+Arts studio, gallery, instruction P P P P - P P - - - - - C -
+Bar, tavern P7 P P - - P P - - - - - - -
+Brewery P P P - - P P - - - P P - -
+Brewpub P P P - - P P - - - - - - -
+Cigar bar8 P P P - - P P - - - - - - -
+Country club - - - - - P - P - P - - C -
+Club, public or private - P P - - P P - - - - - - -
+Day care center - P P - - P P - - - - - - -
+Financial or lending institution P P P - - P P - - - - - C -
+Firing range - indoor - - - - - P - - - - P P - -
+Firing range - outdoor - - - - - - - - - C9 C9 C9 - -
+Funeral home - P P - - P P - - - - - - -
+Laundry, dry cleaning P P P - - P P - - - - P - -
+Package liquor store - P P - - P P - - - - P - -
+
+
+
+City of Anniston Zoning Ordinance     29
+
+C U
+C
+
+1
+
+U
+C
+
+2
+
+U
+N
+
+1
+
+U
+N
+
+2
+
+SC SN
+C
+
+SN
+1
+
+SN
+2
+
+SE IL IG M
+I
+
+N
+O
+
+SERVICE, RETAIL, ENTERTAINMENT (cont.)
+Personal service P P P C10 - P P - - - - P - -
+Recreation facility - indoor P P P - - P P - - - P P C -
+Recreation facility - outdoor - - - - - P P - - - - - - P11
+
+Restaurant with bar P P P - - P P - - - - - - -
+Restaurant without bar P P P C10 - P P - - - - - C -
+Restaurant with drive-thru - P12 P12 - - P P12 - - - - - - -
+Retail sales or service P P P C10 - P P - - - P - C -
+Special events center P P P - - P P - - - - - C -
+Television or other production studio P P P - - P - - - - P P - -
+Temporary festival or special event P P P - - P P - - - - - - P13
+
+Theater (live or cinema) P P P - - P P - - - - - - -
+Financial institution per Ord. No. 14-O-2114 - L L - - L - - - - L - - -
+Sexually-oriented adult use - L - - - L - - - - L L - -
+Tattoo parlor - - L - - L L - - - L L - -
+Tobacco shop L L - - - L L - - - L - - -
+GENERAL BUSINESS
+Ambulance or emergency service - P P - - P - - - - P P C -
+Artisanal P P P P - P P - - - P - - -
+Business, vocational school - P P - - P P - - - P - - -
+Hospital - P P - - P P - - - - - C -
+Medical or dental office, clinic P P P - - P P - - - P - C -
+Office, professional services P P P P15 - P P - - - P - C -
+Radio, television, etc. broadcasting - P P - - P - - - - P P C -
+Self-storage, indoor - - - - - P - - - - P P - -
+Service or repair (except automobile) P P P - - P P - - - P P - -
+Veterinary office, clinic - P P - - P P - - - P P - -
+Wholesale trade - P16 P16 - - P - - - - P P - -
+VEHICLE ACCOMMODATIONS
+Parking garage, structure (public or private) P P P - - P P - - - P P C -
+Car wash - - P - - P - - - - P P - -
+Fuel station - P P - - P P - - - P P - -
+Passenger transportation terminal P P P - - P P - - - P P C -
+RV Park17 - - - - - - - - - P - P - -
+Surface parking lot (as primary use)17 - L L - - L L - - - P P L -
+Vehicle repair, minor - P P - - P P - - - P P - -
+Vehicle repair, major - - - - - P - - - - P P - -
+Vehicle sales, leasing, rentals - - P - - P P - - - P P - -
+INDUSTRIAL
+Armory - - - - - - - - - - P P - -
+Construction contractor - - - - - - - - - - P P - -
+
+
+
+30 
+
+C U
+C
+
+1
+
+U
+C
+
+2
+
+U
+N
+
+1
+
+U
+N
+
+2
+
+SC SN
+C
+
+SN
+1
+
+SN
+2
+
+SE IL IG M
+I
+
+N
+O
+
+INDUSTRIAL (cont.)
+Electrical substation C C C C C C C C C C C C C C
+Equipment or machinery sales, leasing, repair - - - - - - - - - - P P - -
+Laboratory - medical, analytical - - - - - - - - - - P P C -
+Manufacturing/processing - heavy - - - - - - - - - - - P - -
+Manufacturing/processing - medium - - - - - - - - - - P P - -
+Manufacturing/processing - light - - - - - - - - - - P P - -
+Public utility C C C C C C C C C C C C C C
+Recycling - large collection facility - - - - - - - - - - - P - -
+Recycling - small collection facility - - - - - - - - - - P P - -
+Recycling - processing facility - - - - - - - - - - - P - -
+Research and development - - - - - - - - - - P P C -
+Scrap and dismantling or salvage yard - - - - - - - - - - - P - -
+Sewer and waste facility - - - - - - - - - - - P - -
+Storage - outdoor - - - - - - - - - - P P - -
+Storage and distribution - - - - - - - - - - P P - -
+Water supply facility - - - - - - - - - - P P - -
+Wireless transmitter - - - - - - - - - - P P - -
+
+P Permitted
+C Conditional
+L Limited
+S Special Exception Required
+- Not Permitted
+
+ 1.  Multi-family uses are only allowed on upper stories in the C district, not on the ground floor.
+ 2. A home day care shall only be permitted if five (5) or fewer children shall be cared for in the   
+  home and if adequate parking space for the loading and unloading of children is provided.
+ 3. Cemeteries are permitted as an accessory use to a place of worship anywhere that a place of wor-  
+  ship is permitted.
+ 4. College/university is permitted as a use in UN1 and UN2 district if it is a program that uses an   
+  existing structure.
+ 5. A place of worship is permitted in the NO district if no more than ten (10) percent of the lot area   
+  is covered by impervious surfaces.
+ 6. A place of worship or school is permitted in the C, UN1, UN2, SN1, and SN2 districts only in a   
+  Civic development type.
+ 7. No bars or taverns are permitted in the Urban Core district on any property located between 9th   
+  and 13th Streets with frontage on Noble Street.
+ 8. A cigar bar is subject to all of the requirements of Ordinance No. 15-O-16.
+ 9. An outdoor firing range is permitted if the point of origin of any weapons being fired is at least   
+  500 yards from any adjoining residential property. Any outdoor firing range must be approved as   
+  a conditional use by the Planning Commission and any application for such must include a   
+  site plan and an acoustical study.
+
+
+
+City of Anniston Zoning Ordinance     31
+
+ 10. A restaurant without bar, retail sales, personal service, or professional office shall be permitted in   
+  the UN1 District only with an occupied floor area of less than 2,500 square feet and on a corner   
+  lot. Furthermore, no more than six (6) parking spaces shall be provided on the site. These uses  
+  must be approved by the Planning Commission, which may impose more specific conditions on  
+  the use.
+ 11. A recreation facility - outdoor shall be permitted in the NO District only if it meets the following   
+  conditions: 
+  a.  It is located on a lot of more than ten (10) acres. 
+  b. The use requires minimal impervious surfaces; no more than five (5) percent of the lot   
+   area may be covered by impervious surfaces.
+ 12. A restaurant with drive-thru is permitted in the UC1, UC2, and SNC Districts only if the drive-  
+  thru does not face a Primary Street and all of the other building and parking requirements are  
+  met.
+  13. A temporary festival or special event may be permitted in the NO District only for a period six   
+  (6) or fewer days. 
+ 14. Ord. No. 14-O-21 defines financial institutions as businesses other than federally or state char-  
+  tered bank, credit union, mortgage lender or savings and loan association, that conduct business  
+  as a Pawn Shop, Pay-Day Lending, Title Pawn Shop, or a Deferred Presentment Financial Institu-  
+  tion. Such uses are subject to the following restrictions:
+  a. No two (2) Financial Institutions shall be permitted to be located within 600 feet of each   
+   other. 
+  b. No Financial Institution shall be permitted within 500 feet of a residence, church, school,   
+   or public park. 
+  c. No Financial Institution shall be permitted if there exists a ratio of more than one (1)   
+   Financial Institution for every 2,500 residents of the City.
+ 15. Office, professional services is permitted in the UN1 district only in the area bounded by 15th   
+  Street to the north, Woodstock Avenue to the east, 12th Street to the south, and the alley    
+  between Christine and Leighton Avenues to the west. An office, professional services is also   
+  permitted in the UN1 district in the area south of 11th Street between Woodstock Avenue    
+  and Highland Avenue. If a question arises about a property in the UN1 district’s being permitted   
+  to have an office, professional services, refer to the area on the former zoning map that was zoned   
+  RO - Residential Office. Lots in these areas may not be subdivided to encompass an area of   
+  greater than 40,000 square feet.
+ 16. In the UC1 and UC2 districts, wholesale trade is limited to no more than 5,000 square feet. 
+ 17. A surface parking lot as primary use, in addition to meeting the conditions of a Limited Use,   
+  must also provide landscaping to comply with the following:
+
+Landscaping for Surface Parking Lots
+Primary street buffer strip (min) 10’
+Side street buffer strip (min) 10’
+Side interior (min)* 5’
+Rear (min)* 5’
+Abutting protected area (min) 10’
+Distance between trees in buffers (max) 50’
+Max # of spaces between landscape islands 10
+Height of wall* along primary street (min) 4’
+
+*Wall must be constructed of masonry materials
+
+
+
+32 
+
+Sec. 23: DEVELOPMENT TYPES
+
+I. Development Types. All development is classified into the following development types. Each of the   
+ development types is further defined.
+
+ A. Single Family Residential Detached - SF. Detached 1-2.5 story residential structures each intended   
+  for one family.
+
+ B. Single Family Residential Attached - SF-A. 1-3 story residential structures that are attached to   
+  similar structures on at least one side (aka townhouses or rowhouses). Each attached structure   
+  has a separate entry and is intended for one family. 
+
+ C.  Two-Four Family Residential -MF-A. Structures that each contain between two and four separate   
+  residential dwellings under one roof. May be built in a similar pattern as single-family structures.
+
+ D. Multi-Family Residential - MF-B. Higher density residential format where five or more separate   
+  dwelling units are contained within a structure. Units may have separate entries or may only be   
+  accessed through a central lobby.
+
+ E. Vertical Mixed Use - MU. Structures intended to include different uses within the same structure.   
+  Typically ground floor uses are retail with offices or residential units occupying upper floors.
+ 
+ F. Community Commercial - CC. Large scale, primarily retail, restaurant, and accommodation uses   
+  that serve the broader community. Buildings tend to be 1-2 stories and larger than 30,000 square   
+  feet.
+
+ G. Neighborhood Commercial - NC. Small scale retail, restaurant, and accommodation buildings   
+  which should be compatible with and primarily serve nearby neighborhoods. Buildings    
+  are typically smaller than 30,000 sqaure feet. 
+
+ H. Office - O. 1-6 story buildings designed for professional offices with single or multiple tenants.   
+  May involve multiple large or small footprint buildings in a campus setting.
+
+ I. Limited Industrial - LI. 1-2 story large footprint buildings intended for light industrial    
+  development, clean manufacturing or warehousing activities, includes “flex” configurations that   
+  offer a hybrid office/industrial format. 
+
+ J. General Industrial - I. Development intended for modern industrial activities such as clean   
+  manufacturing and distribution. Larger in scale than Limited Industrial with minimal, utilitarian   
+  architecture.
+
+ K. Civic - C. Public and semi-public uses such as government buildings, libraries, police and fire   
+  stations, schools, and places of worship. Civic sites may differ from surroundings in style and   
+  relationship to the street. In the Core and Urban Center Districts, Civic development types may   
+  reduce the BTA requirements by 25 percent. In the Core and Urban Center 1 District, the maxi-  
+  mum building setback may be increased to 20 feet, but the parking setback shall not be decreased,  
+  and no parking is permitted in front of the building on either the primary or side street. In the   
+  Core and Urban Center districts, ground floor transparency requirements may be reduced by ten   
+  (10) percent.
+
+
+
+City of Anniston Zoning Ordinance     33
+
+II.  Development Types Allowed by District. The following is a table of permitted development types by   
+ district. Development or substantial redevelopment may only occur in these development types in these   
+ districts.
+
+C U
+C
+
+1
+
+U
+C
+
+2
+
+U
+N
+
+1
+
+U
+N
+
+2
+
+SC SN
+C
+
+SN
+1
+
+SN
+2
+
+SE IL IG M
+I
+
+N
+O
+
+DEVELOPMENT TYPE
+SF - - - P P - - P P P - - - P
+SF-A - P P P - - P P - - - - - -
+MF-A - P P P - - P P - - - - -
+MF-B P P P - - P P P - P - - - -
+MU P P P P P P P P - - - - P -
+CC - - P - - P P - - - - - - -
+NC - P P P1 - P P - - - P - - -
+O P P P - - P P - - - P - P -
+LI - - - - - - - - - - P P - -
+I - - - - - - - - - - P -
+C P P P P P P P P P P P P P P2
+
+ 1. Neighborhood Commercial development is allowed in the UN1 District if it occupies a lot of   
+  15,000 square feet or less and does not incorporate parking in front of the building. 
+ 2. The Civic development type is permitted in the NO district, but only on a lot of more than five (5)  
+  acres and with less than five (5) percent impervious surfaces. 
+
+
+
+34 
+
+Sec. 24: MCCLELLAN DISTRICT
+
+I.  Introduction.
+
+ A. Intent. The intent of the McClellan development approval process is to facilitate the development   
+  of land in a manner that conforms to City plans (including the Master Plan and plans for    
+  McClellan) but also provides flexibility on the development of the site, promoting high standards   
+  in layout and construction and ensuring development is harmonious with existing topographical   
+  and historic features and surrounding land uses.
+
+ B. General Procedure. In the McClellan district, all development is conditional based on the    
+  submittal and approval of a development plan, reviewed and approved by the Anniston Planning   
+  and Zoning Commission. The application and approval process is described in detail in    
+  Sec. 24: V. In this district, there are sub-districts that permit certain types of uses, which are   
+  specified in this section.
+
+II. McClellan Districts. Within the McClellan District, there exist the following sub-districts. While these   
+ districts have similar characteristics to the districts outside of McClellan, McClellan has a unique    
+ character that is expressed in each district’s requirements. The districts are further defined as to each  
+ district’s intent: 
+
+ A. McClellan Central District - MC. The intent of the McClellan Central District is to allow for the  
+  redevelopment of a walkable, mixed-use neighborhood at the core of the previous fort. The  
+  McClellan Central District is similar in type to the Suburban Neighborhood Center, but dev-  
+  elopment and redevelopment should be in keeping with the character of historic buildings within  
+  McClellan.
+
+ B. McClellan Historic Neighborhood 1 District - MHN. The intent of the McClellan Historic Neigh-  
+  borhood District is to, first, preserve the existing historic Buckner Circle neighborhood and,   
+   second, to allow infill development within the context of this historic, mixed-use neighborhood  
+  that honors the character of the historic district.
+ 
+ C. McClellan Neighborhood District - MN. The intent of the McClellan Neighborhood District is   
+  to guide the development of McClellan’s more suburban neighborhoods. The McClellan    
+  Neighborhood District is similar in type to the Suburban Neighborhood 1 District, but    
+  development and redevelopment should be in keeping with the character of buildings within  
+  McClellan.
+
+ D. McClellan Suburban Corridor District - MSC. The intent of the McClellan Suburban Corridor   
+  District is to allow for commercial and other development along the most viable commercial  
+  corridors such as McClellan Boulevard and Summerall Gate Road.  Development along    
+  these corridors should be attractive and reminiscent of the character of historic structures    
+  in McClellan while at the same time being viable for larger commercial or other uses.
+
+ E. McClellan Industrial District - MIN. The intent of the McClellan Industrial District is to provide   
+  land suitable for light industrial development that is accessible by major transportation    
+  routes within the context of the historic fort. Development in this district should be sensitive to   
+  the historic and natural character of the larger McClellan District.
+
+
+
+City of Anniston Zoning Ordinance     35
+
+ F. McClellan Natural/Open Space District - MNO. The intent of this district is to preserve natural   
+  areas and open space in order to preserve wildlife habitat, improve air and water quality,    
+  and protect scenic areas and view. Furthermore, the intent of this district is to direct development  
+  into areas most suitable for development where there are existing services, infrastructure, and   
+  connections. 
+  
+ G. McClellan National Guard District. The intent of the McClellan National Guard District is to   
+  provide property for the operations of the National Guard. As this District is under the purview   
+  of the US National Guard, the City does not have any jurisdiction over this District.
+
+III. Conditional Uses. The uses that may be conditionally approved (C) in each of the McClellan sub-districts   
+ are listed below. The approval of these uses is at the discretion of the Planning Commission based on   
+ an approved development plan. However, these uses are deemed to be the most appropriate uses for these  
+ districts and shall be approved if the development plan meets all development requirements and guide-  
+ lines.
+
+M
+C
+
+M
+H
+
+N
+
+M
+N
+
+M
+SC
+
+M
+IN
+
+M
+N
+
+O
+
+AGRICULTURAL
+Timber management - - - - C C
+Horticultural operations C C - C - C
+Processing facilities - - - - C -
+Research and training activities - - - - C -
+BUSINESS OFFICE
+General office use C - - C C -
+Administrative use C - - C C -
+Data processing facility C - - C C -
+Call center C - - C C -
+COMMERCIAL/RETAIL
+Retail shopping center C - - C - -
+Individual retail facility C - - C - -
+Motel/hotel C - - C - -
+Bed and breakfast C C - C - -
+Conference center C C - C - -
+Radio, television, recording studio C - - C C -
+Publishing operation C - - C C -
+Entertainment venue C - - C - -
+Cultural activity C C C C - -
+Professional service business C - - C - -
+EDUCATIONAL
+Educational facilities C C C C C -
+HEALTHCARE
+Hospital C - - C C -
+Nursing home C - - C - -
+Independent and assisted living facility C - - C - -
+Medical rehabilitation facility C - - C - -
+
+
+
+36 
+
+M
+C
+
+M
+H
+
+N
+
+M
+N
+
+M
+SC
+
+M
+IN
+
+M
+N
+
+O
+
+Medical or dental office C - - C - -
+Laboratory C - - C C -
+INDUSTRIAL
+Manufacturing - - - - C -
+Processing - - - - C -
+Fabrication - - - - C -
+Assembling - - - - C -
+Warehousing - - - - C -
+RELIGIOUS
+Place of worship C C C C - -
+Clerical educational and training facility C - - C - -
+RESEARCH/TECHNOLOGY
+General research facility C - - C C -
+Experimental or testing laboratory - - - - C -
+Technology education or innovation center C - - C C -
+Data storage facility - - - C C -
+Call center - - - - C -
+RESIDENTIAL
+Single family dwelling C C C - - C
+Multi-family dwelling C C C - - -
+Planned retirement community C C C C - -
+WAREHOUSE/STORAGE
+General warehousing or storage facility - - - - C -
+OTHER PERMITTED USES
+The Planning Commission may approve other uses as part of the approval 
+process if those uses are deemed appropriate and the development proposal 
+conforms to this ordinance and the MDA Supplemental Design Development 
+Guide.
+EXPRESSLY PROHIBITED USES
+See the MDA Supplemental Design Development Guide for expressly prohib-
+ited uses. Any uses expressly prohibited by Environmental or other Covenant 
+may not be approved by the Planning Commission.
+
+IV. All development in McClellan must meet the following standards:
+  
+ A. Must be compatible with the Master Plan.
+ 
+ B. Must be compatible with the topography of the land, shall preserve any sensitive, unusual, or   
+  significant topographic, natural, or historic features.
+
+ C. Development shall not unduly negatively impact surrounding properties or the district by adding   
+  significant volumes of traffic, degrading the natural environment or removing historic structures   
+  that are viable and in reparable condition.
+
+
+
+City of Anniston Zoning Ordinance     37
+
+ D. All development, redevelopment, rehabilitation, and signage shall conform to the guidelines set 
+  forth by the McClellan Development Authority in the Supplemental Design Development Guide.   
+  Enforcement of these guidelines is the responsibility of the Anniston Planning Commission or its   
+  designee. The Planning Commission shall not approve any proposal that does not align with  
+  these guidelines.
+
+V. In order to gain approval for development or redevelopment in any McClellan district, the applicant shall  
+ submit a McClellan Development Application to Planning and Development Services. 
+ 
+ A.  A complete application shall include the following:
+  
+  1. A site plan scaled to not less than 1:100 showing all proposed improvements to include   
+   buildings, landscaping, paving, parking, sidewalks, open spaces, location of signage, etc. as  
+   well as all information required by the Anniston Subdivision Regulations for a prelimi-  
+   nary plat.
+
+  2. Representative drawings of all elevations of proposed structures including material call-  
+   outs, landscaping, etc.
+
+  3. Proposed uses and/or tenants for each structure or part of a structure.
+
+  4. A master signage plan showing typical signage type, location, materials, size, etc. 
+
+  5. Evidence of ownership or control of the tract proposed for development, or, if the    
+   property is under contract or contingency, evidence of the contract or contingency.
+
+  6. Names and addresses of persons/firms/partnerships/corporations showing a financial   
+   interest in the project.
+
+  7. A fee, which shall be in accordance with the schedule of fees established by Planning and   
+   Development Services.
+
+ B.  Upon receipt of a complete application for approval, the Planning Commission shall advertise   
+  and conduct a  public hearing to determine the suitability of the proposal.
+
+ C. The Planning Commission shall make a decision on the application within sixty (60) days of   
+  receipt of the complete application.
+
+ D. The Planning Commission’s designee may approve changes to approved development plans that   
+  he or she determines to be insubstantial. Insubstantial changes are those that do not affect the   
+  overall character of the development.
+
+ E. Any changes to an approved development plan that the Planning Commission’s designee deter-  
+  mines to be substantial must be presented to the Planning Commission for approval. Substantial   
+  changes may include, but are not limited to, changes to the design of the building or site, changes   
+  to materials, changes to the proposed uses in a development, or changes to signage.
+
+V. The Planning Director may approve the use of an existing structure in the McClellan District if the use is  
+ listed in the Conditional Use table (Sec. 24: III) as C. This administrative approval is only applicable   
+ to the use of the property, not any changes to the exterior or signage, which must be approved by the   
+
+
+
+38 
+
+ Planning Commission.
+
+VI.  Southern McClellan Master Plan Area. In the area covered by the Southern McClellan Master Plan, the   
+ Planning Commission shall have the discretion to approve a design or use in accordance with the    
+ Southern McClellan Master Plan. This Plan is meant to be conceptual only.
+
+Sec. 25: SIGNS
+
+I. Primary Sign Types. The following sign types are herein defined. Billboards or outdoor advertising signs   
+ are covered in Sec. 26: Outdoor Advertising.
+
+ A. Building Sign. A building sign is any permanent on-premises sign, other than a ground mounted   
+  sign, that is attached to, erected on, painted on, or supported by any building.
+
+ B. Pole Sign. Any sign permanently supported by structures or supports (poles) that are placed on,   
+  or anchored in, the ground and that are independent from any building or other structure.   
+
+  
+ C. Monument Sign. Any ground mounted sign generally having a low profile with little or no open   
+  space between the ground and the sign and having a structure surrounding the sign constructed  
+  of masonry, wood, or other materials that are similar to those of the building. The sign is also   
+  generally landscaped. A monument sign is independent from any building or other structure.   
+  
+
+
+
+City of Anniston Zoning Ordinance     39
+
+ 
+ D. Freestanding Sign. Any ground mounted sign that does not meet the definition of a pole or mon-  
+  ument sign but is not attached to or supported by any part of the building. The supporting   
+  structures shall be considered as part of the sign and shall be included in computing the sign   
+  display area. 
+
+ E. Projecting Sign. Any sign affixed to a building or wall that extends at a perpendicular angle to the   
+  wall or  building to which it is attached.
+
+ F. Canopy/Awning Sign. Any sign permanently affixed to, painted on, or supported by an awning or   
+  canopy that is attached to the building.
+
+ G. Internally Illuminated Sign. Any sign lighted by artificial lighting within the face of the sign and   
+  with no external light source so that the sign is illuminated from within. Internally illuminated   
+  signs may be pole, freestanding, projecting, monument, or building signs. 
+
+
+
+40 
+
+ H. Externally Illuminated Sign. Any sign lighted by artificial lighting from an external source, such as  
+  lights directed onto the sign. Externally illuminated signs may be any type of sign.
+
+II. Primary Sign Types allowed by District. The following table lists sign types allowed by district.
+
+.
+
+C U
+C
+
+1
+
+U
+C
+
+2
+
+U
+N
+
+1
+
+U
+N
+
+2
+
+SC SN
+C
+
+SN
+1
+
+SN
+2
+
+SE IL IG M
+I
+
+N
+O
+
+SIGN TYPE
+Building Sign P P P P P P p - - - P P P P
+Pole Sign - - - - - P P - - - P P - -
+Monument Sign - P1 P1 P2 P2 P P P P P P P P P
+Freestanding Sign - P1 P1 P2 P2 P P - - - P P P -
+Projecting Sign P P P P P - - - - - - - - -
+Awning/Canopy Sign P P P P P P P - - - P P P P
+Digital Readerboard3 - - - - - P P - - - P P P -
+Internally Illuminated Sign - - - P4 P4 P P - - - P P P -
+Externally Illuminated Sign P P P P P P P P P P P P P -
+
+ 1. Monument and Freestanding Signs in the UC1 and UC2 Districts may be no greater than eight   
+  (8) feet in height and no more than 64 square feet in area. The measurement for height shall   
+  include the entire sign structure.
+ 2. Monument and Freestanding Signs in the UN1 and UN2 Districts may be no greater than six (6)   
+  feet in height and no more than 36 square feet in area. The measurement for height shall    
+  include the entire sign structure.
+ 3. See Sec. 25: V - Digital Readerboards.
+ 4. Internally Illuminated Signs may be allowed in the UN1 and UN2 Districts if they are Building   
+  Signs and are no more than 24 square feet in area.
+
+III. Requirements for Signs. 
+
+ A. Maximum Square Footage. The following table lists the maximum square footage for all signage   
+  on a property in all districts. Square footage is measured on one side of the sign only. For exam-  
+  ple, a sign that is 10’x10’ has a sign area of 100 square feet, even if it is double sided. 
+
+
+
+City of Anniston Zoning Ordinance     41
+
+DISTRICT MAX SQUARE FEET
+C 2 sq. ft. per 1 linear foot of facade or 32 sq. ft., whichever is more
+
+UC1 2 sq. ft. per 1 linear foot of facade or 32 sq. ft., whichever is more
+UC2 2 sq. ft. per 1 linear foot of facade or 32 sq. ft., whichever is more
+UN1 72 sq. ft.
+UN2 72 sq. ft.
+SC 2 sq. ft. per 1 linear foot of facade or 32 sq. ft., whichever is more - 
+
+freestanding signs are limited to 100 sq. ft.
+SNC 2 sq. ft. per 1 linear foot of facade or 32 sq. ft., whichever is more
+SN1 36 sq. ft.
+SN2 36 sq. ft.
+SE 36 sq. ft
+IL 150 sq. ft.
+IG 150 sq. ft.
+MI As determined by the Planning Commission
+NO 36 sq. ft.
+
+ B. General Requirements. 
+
+  1. No freestanding sign shall be taller than thirty (30) feet in height.
+
+  2. No more than one (1) freestanding sign of any type is permitted on a lot with frontage on   
+   one (1) street. Corner lots may have one (1) freestanding sign per street frontage, but   
+   these signs must be at least fifty (50) feet apart measured in a line from sign base to sign  
+   base. Corner lots are still limited to the maximum square footage requirements for the  
+   district.
+
+  3. Height of ground mounted (monument, pole, or freestanding) signs shall be measured   
+   from grade level of the lot measured at the location of the sign.
+
+  4. No more than one pair of ingress and egress signs shall be displayed per driveway    
+   entrance. These signs shall not exceed four (4) square feet in area or three (3) feet in   
+   height from the finished grade of the lot at the location of the sign and shall not bear any  
+   commercial message or logos.
+
+  5. No more than one real estate sign shall be displayed per street frontage per lot and shall be  
+   located at least fifteen (15) feet from any street line. Such sign shall not exceed six (6)  
+    square feet in area for a residential property and shall not exceed 32 square feet in area  
+   for a commercial property.
+  
+  6. No temporary signs shall be erected in or on any public right of way, public building,  
+   public grounds, or other public place, and no such sign shall be affixed to any tree, tree  
+   branch, fence, fence post or utility pole.
+
+  7.  Temporary construction site signs shall be permitted on a site where building is in prog-  
+   ress provided that such signage is removed within fourteen (14) days of completion of the   
+   project and totals no more than 32 square feet in area.
+
+
+
+42 
+
+  8. Shopping centers with four (4) or more tenant spaces may have a freestanding sign of up   
+   to 200 square feet. On the building, individual tenants are limited to two (2) square feet   
+   per linear foot of the tenant space or 32 square feet, whichever is more. 
+
+  9. All signs shall conform with building, electrical, and other applicable codes adopted by   
+   the City of Anniston. All signs and components thereof, including structural supports,   
+   shall be kept in a state of good repair, in good working order, and shall be kept free   
+   of excessive rust, corrosion, rotting, or other deterioration.
+
+  10. Repainting, repair, or copy changes  including removal and reinstallation shall not require   
+   a permit if the size of the sign is not enlarged, the existing cabinet is reused, and    
+   the lighting does not change.
+
+  11. Any new sign erected after the effective date of enactment of this Section shall expressly   
+   meet the regulations contained herein. Any sign which does not conform to the provisions  
+   of this Section, may not, after the effective date of this Section, be enlarged, strucurally  
+   altered or extended unless such sign be made to conform to the provisions  contained  
+   herein.
+.
+  12.  Normal maintenance of non-conforming signs is permitted. When a nonconforming sign   
+   is removed, damaged, or destroyed by any means to the extent of fifty percent (50%) of its   
+   replacement value exclusive of foundation it shall not be restored, unless such sign shall   
+   be made to conform to the provisions of this Section.
+  
+  13. Any non-conforming sign which is abandoned for more than six (6) months shall be   
+   removed.
+
+ C. Sign Placement. Signs may be located in the following ways:
+
+  1. Building signs may only be located on street-facing facades or on a facade with a customer  
+   entrance.
+
+  2.  Freestanding signs may not be placed in such a way that they would overhang the right-  
+   of-way. If there is more than one freestanding sign on a corner lot, the sign bases shall be   
+   located a minimum of fifty (50) feet apart. 
+
+  3. No sign shall impede clear line-of-sight for traffic, including pedestrian traffic. The City   
+   Engineer shall determine whether a sign’s proposed placement meets this criteria.
+
+IV.  Exempt Signs. The following signs are exempt from the general provisions of these regulations and all   
+ permit requirements therein.
+ 
+ A. Signs for the control of traffic or other regulatory purposes including signs for the control of   
+  parking on private property, and official messages erected by or on the authority of a public officer  
+  in the performance of his duty.
+
+ B. Non-illuminated signs not to exceed two (2) square feet which are permanently affixed to build-  
+  ings or structures for the purpose of identifying the name of a building, date of erection or other   
+  historical information.
+
+
+
+City of Anniston Zoning Ordinance     43
+
+ C. Signs which identify restrooms or provide instructions as required by law or necessity, provided   
+  the sign does not exceed two (2) square feet in area.
+
+ D. Signs affixed to door or window glass which permanently identify the name and/or address of an   
+  establishment. Said signs may not exceed ten (10) square feet in area or twenty (20) percent of   
+  the glass area, whichever is less. Window signs in any historic district are subject to review by the   
+  Anniston Historic Preservation Commission.
+
+ E. Flags and insignia of any government except when displayed in connection with commercial   
+  promotion.
+
+ F. Non-inflatable signs or decorations customarily displayed in conjunction with a national holiday   
+  for a period not to exceed thirty (30) days.
+ 
+ G. Signs, banners, flags and pennants displayed in conjunction with a City-sponsored event or   
+  approved as non-commercial.
+
+ H. Printed placards or other graphic material of a temporary nature. Said placards or materials shall   
+  not exceed six (6) square feet and shall not be left in place for more than thirty (30) days.  
+ 
+ I. Legal notices, identification, informational or directional signs erected or required by govern-  
+  mental bodies, or historic markers.
+
+ J. Signs of local cultural or historical significance as determined so by the City’s Historic Preserva-  
+  tion Commission, including ghost signs - signs that were historically hand-painted on the    
+  sides or rear of historic buildings and have been uncovered or are existing. A ghost sign is exempt  
+  from signage requirements such as maximum square footage only if it does not advertise the   
+  existing business on the premises it occupies. The Anniston Historic Preservation Commission  
+  shall have authority to approve the restoration or removal of ghost signs. 
+
+V. Digital Readerboards. Digital readerboards shall be limited to twelve (12) square feet and shall not have   
+ flashing, scrolling, or otherwise animated content. Messages shall only be changed instantaneously  
+ and must be visible for a minimum of nine (9) seconds.
+
+VI. Signs on US or State Roads. In addition to complying with all provisions of this ordinance, all signs on   
+ property abutting US or State Roads shall comply with FHWA and other State or Federal requirements   
+ for signage.
+
+VI. Prohibited Signs. The following signs are expressly prohibited within the City, and it shall be unlawful to   
+ erect or maintain any of the following:
+
+ A. Any sign which is determined to constitute a traffic hazard or may be confused with or construed   
+  as a traffic control device by reason of site, location, content, color or type of illumination.
+
+ B.  Any sign which is located within the public right-of-way, in public parks, or on other public prop-  
+  erty, including (but in no way limited to) the Quintard Avenue median.  
+
+ C. Any sign which extends over the City right-of-way without a clearance of at least eight (8) feet.   
+  Building signs on buildings located within two (2) feet of the right-of-way may project a    
+  maximum of eighteen (18) inches beyond the surface to which they are attached. 
+
+
+
+44 
+
+ D. Portable signs as defined herein and portable signs attached or affixed as appendages to free  
+  standing signs which are not inclusive to the original sign design; A or T frame signage for   
+  the display of menus, or special promotions shall be allowed at the point of entry provided they   
+  do not interfere with the safe flow of pedestrian traffic.
+
+ E. A changeable copy reader board which constitutes seventy-five percent (75%) or more of the   
+  entire sign.
+
+ F. Any moving, swinging, rotating, flashing, blinking, scintillating, fluctuating or otherwise animat-  
+  ed sign, except for time and temperature or stock information displays and digital readerboards   
+  as herein provided (see Sec. 25: V. Digital Readerboards).  
+
+ G. Any roof signs as defined herein.
+
+ H. Any off-site sign, not an outdoor advertising sign or billboard as defined in Sec. 26: Outdoor   
+  Advertising. An off-site sign is any sign not relating in its subject matter to the premises on which  
+  it is located or to products, accommodations, services, or activities on the premises.
+
+VII. Banners. Banners are defined as signs printed or otherwise inscribed on a fabric of some sort, not meant   
+ to be utilized as permanent signage. Banners may be connected to a pole or hung using grommets in the   
+ fabric. Except in the MI and SC districts, banners shall be permitted to be displayed only in accordance   
+ with a banner permit issued by Planning and Development Services. Banner permits shall  allow the   
+ display of a banner for a period not to exceed thirty (30) days, and no business or other entity may  
+ obtain more than four (4) banner permits in a calendar year. Permitted banners are limited to 32 square  
+ feet. In all districts, banners must be maintained in good condition and must be removed if they are in  
+ disrepair.
+
+VIII.  Inflatable Signs. Inflatable signs may only be displayed in conjunction with a Grand Opening celebration   
+ as herein defined or in conjunction with a special sales event for a period not to exceed two (2) weeks  
+ with an approved inflatable sign permit.  No business or other entity may obtain more than four (4)  
+ inflatable sign permits in a calendar year.
+
+IX. Sign Area. The area of a wall mounted sign shall be computed as the area of the wall covered by the   
+ various components that make up the sign. In the case of irregular shapes (such as individual letters) the   
+ area shall be computed by placing a rectangle around each individual character and computing the area   
+ of each such rectangle. The area of the sign shall be the sum total of the areas of all such rectangles. If the   
+ backing or panel of a sign is clearly a part of the company’s logo, as in the example below, the entire area   
+ shall be calculated as the sign.
+
+
+
+City of Anniston Zoning Ordinance     45
+
+Sec. 26: OUTDOOR ADVERTISING
+
+I. Billboards Permitted in these Districts. Outdoor Advertising Signs which conform to the provisions of   
+ this ordinance shall be permitted only in the SC, IL, and IG districts, unless expressly prohibited herein.   
+ Outdoor Advertising Signs shall only be permitted on lots with frontage on a road classified as a major or  
+ minor arterial by the MPO. Under no circumstances shall an Outdoor Advertising Sign be permitted on   
+ a property with frontage on Iron Mountain Road or on any property within any McClellan district. 
+
+II. Any non-conforming signs, structures, or non-conforming use, which are removed, damaged, or de-  
+ stroyed by any means to the extent of fifty percent (50%) of its replacement value shall not be restored   
+ unless such sign be made to conform to the provisions of this ordinance.
+
+III. General Requirements.
+
+ A. No Outdoor Advertising Sign shall be erected in the area along either side of Quintard Avenue   
+  between A Street and 22nd Street.
+
+ B. Outdoor Advertising Signs shall not be established at any location having principal frontage on   
+  any street within three hundred (300) feet of any property which is used for public parks,    
+  public schools, church, courthouse, city hall or public museum having principal frontage    
+  on the same street.
+
+ B. No Outdoor Advertising Sign shall be established closer to the street than the building setback   
+  line, if such a line exists. No portion of any Outdoor Advertising Sign may be placed on, or extend  
+  over the right-of-way line of any street or highway.
+
+ C. No Outdoor Advertising Sign shall be constructed which resembles any official marker erected by  
+  the City, State or any governmental agency, or which by reason of position, shape, or color would   
+  conflict with the proper functioning of any traffic sign or signal.
+
+ D. All Outdoor Advertising Signs shall be constructed in accordance with the adopted building and   
+  electrical code.
+
+ E. All Outdoor Advertising Signs shall be maintained in good and safe structural condition. The   
+  painted portions of Outdoor Advertising Signs shall be periodically repainted and kept in good   
+  condition.
+
+ F. The general ground area in the vicinity of any Outdoor Advertising Sign must be kept free and   
+  clear of sign materials, weeds, debris, trash, and other refuse.
+
+ G. Signs which are not effectively shielded as to prevent beams or rays from being directed at any   
+  portion of the traveled ways and are of such intensity or brilliance to cause glare or impair    
+  the vision of the driver of any motor vehicle or which otherwise interfere with any driver’s    
+  operation of a motor vehicle are prohibited.
+
+ H. No sign shall be so illuminated that it interferes with the effectiveness or obscures an official traf-  
+  fic sign, device or signal.
+
+ J. No Outdoor Advertising Signs shall be erected without first securing a permit from the City of   
+  Anniston.
+
+
+
+46 
+
+IV. Size of Signs.
+
+ A. On the Interstate system, size shall be in accordance with the agreement entered into by the State   
+  and the U.S. Secretary of Transportation and shall be pursuant to State regulation.
+
+ B. The maximum area for any one sign facing shall be eight hundred (800) square feet inclusive of   
+  any border and trim, but excluding the base or apron, supports and other structural members.
+
+ C. The maximum size limitations shall apply to each facing of a sign structure and signs may be   
+  placed back-to-back, or in V-type construction with not more than one (1) display to each facing   
+  and such sign structures shall be considered as one sign.
+
+V. Spacing of Outdoor Advertising Signs.
+
+ A. On the Interstate system, spacing shall be in accordance with the agreement entered into by the   
+  State and the U.S. Secretary of Transportation and shall be pursuant to State regulation.
+
+ B. On all other streets and highways within the jurisdiction of this Ordinance no Outdoor Advertis-  
+  ing Sign may be established within one thousand (1,000) feet of any other Outdoor Advertising   
+  Signs.
+
+ C. Official and On-Premise Signs, as well as any other sign which does not constitute an Outdoor   
+  Advertising Sign as defined herein, shall not be counted nor shall measurements be made from  
+   them for the purpose of determining compliance with these spacing requirements.
+
+ D. The minimum distance between structures shall be measured along the nearest edge of the pave-  
+  ment between points directly opposite the center of the signs along either side of the roadway.
+
+VI. Height of Outdoor Advertising Signs. No sign may exceed 45 feet in height or the height limit of the zon-  
+ ing district in which it is located, whichever is less.
+
+VII. Digital Outdoor Advertising Signs. The replacement of existing traditional outdoor advertising signs with   
+ digital outdoor advertising signs is permitted. Messages shall only be changed instantaneously and must   
+ be visible for a minimum of thirty (30) seconds. No new digital outdoor advertising signs may be erected   
+ unless such sign meets the spacing requirements in Sec. 26:V above.
+
+
+
+City of Anniston Zoning Ordinance     47
+
+Sec. 27: PARKING REGULATIONS
+
+I.  General. The following regulations shall be the requirements for off-street parking in all districts unless   
+ otherwise specified. 
+
+II. Districts with No Minimum Parking Requirements. There shall be no minimum parking requirements in   
+ the following districts: Urban Core, Urban Center 1, Urban Center 2. However, lodging facilities and  
+ multi-family dwellings (including those in mixed-use developments) shall provide 75 percent of the  
+ required off-street parking spaces for those uses in other districts. 
+
+III.  Minimum Parking Requirements. Properties in all other districts in the City shall provide off-street park-  
+ ing in accordance with the following table:
+
+Use Minimum # of Parking Spaces Required
+RESIDENTIAL
+Multi-family dwellings (includes townhomes) .5 per bedroom
+All other residential 2 per dwelling unit
+Group living facilities 1 per bedroom
+Home day care 2 per dwelling unit + adequate loading 
+
+and unloading space for children
+CIVIC/INSTITUTIONAL
+Place of worship 1 per 5 seats in main assembly area
+All other civic/institutional 1 per 300 square feet of gross floor area
+LODGING
+Bed and breakfast 1 per guest room
+Hotel/motel 1 per guest room 
+RETAIL SALES, SERVICES, ENTERTAINMENT
+All other retail sales, service, entertainment 1 per 300 square feet customer floor area
+Day care center 1 per employee + 1 per 15 children
+GENERAL BUSINESS
+Self-storage, indoor Aisles suitable for loading and unloading 
+
++ 1 per employee on the largest shift
+All other general business 1 per 300 square feet of gross floor area
+VEHICLE ACCOMMODATIONS
+All vehicle accommodations 1 per 300 square feet customer floor area
+INDUSTRIAL
+All industrial uses 1 per 1,000 square feet gross floor area 
+
+OR 1 per employee on the largest shift, 
+whichever is less
+
+  NOTE: Where a calculation of required parking results in a fraction of a parking space, 
+  the required number shall be rounded up to the nearest whole number.
+
+IV. Credit for On-Street Parking. Where on-street parking exists adjacent to a property, on-street parking   
+ spaces may be counted toward the required parking on a one-to-one basis, but may not be reserved for   
+ the exclusive use of the adjacent property.  
+
+
+
+48 
+
+V. Stacking Areas. Adequate space must be provided on-site for the stacking and queuing of vehicles. Stack- 
+  ing space may not interfere with the public use of streets or sidewalks.  
+
+ A. A bank or pharmacy with a drive-through facility must provide at least four (4) stacking spaces  
+  per drive-through lane.
+
+ B. A restaurant with drive-through facilities must provide at least six (6) stacking spaces per drive- 
+  through lane.
+
+VI.  Joint Parking Allowed. The Director may approve joint or shared parking for uses with different operating  
+ hours or with different peak business hours subject to the following conditions:
+
+ A.  All shared or joint parking shall be located within 600 feet of any uses utilizing the parking.
+
+ B.  Shared or joint parking shall be eligible for the parking reduction as stated in Sec. 27: II. 
+
+Sec. 28: NON-CONFORMING LOTS, USES OF LAND, AND STRUCTURES AND PREMISES
+
+I.  Intent. Within the districts established by this ordinance or amendments that may later be adopted there  
+  exist:
+
+•	 Lots
+•	 Structures
+•	 Uses of land and structures
+
+ which were lawful before this Ordinance was passed or amended, but which would be prohibited, reg- 
+ ulated, or restricted under the terms of this ordinance or future amendment. It is the intent of this ordi- 
+ nance to permit these non-conformities to continue until they are removed, but not to encourage their  
+ survival. Any expansion or extension of a non-conforming use shall require the granting of a special  
+ exception by the Zoning Board of Adjustment.  It is further the intent of this ordinance that non-con 
+ forming structures and properties shall not be enlarged upon, expanded or extended, nor be used as  
+ grounds for adding other structures or uses prohibited elsewhere in the same district, except as herein  
+ provided by this section. 
+
+ Non-conforming uses are declared by this ordinance to be incompatible with permitted uses in the dis- 
+ tricts involved. A non-conforming use of a structure, a non-conforming use of land, or a non-conform- 
+ ing use of structure and land in combination shall not be extended or enlarged after passage of this ordi- 
+ nance by attachment on a building or premises of additional signs intended to be seen from off the  
+ premises, or by the addition of other uses of a nature which would be prohibited generally in the district 
+ involved.
+
+ To avoid undue hardship, nothing in this ordinance shall be deemed to require a change in the plans,  
+ construction, or designated use of any building on which actual construction was lawfully begun prior to  
+ the effective date of adoption or amendment of this ordinance and upon which actual building construc- 
+ tion has been carried on diligently.
+
+II. Non-conforming Lots of Record. In any district in which detached dwellings are permitted, a detached  
+ dwelling and customary accessory buildings may be erected on any single lot of record at the effective  
+ date of adoption or amendment of this ordinance, not-withstanding limitations imposed by other provi- 
+ sions of this ordinance. Such lot must be in separate ownership and not of continuous frontage with other  
+ lots in the same ownership. This provision shall apply even though such lot fails to meet the requirements  
+
+
+
+City of Anniston Zoning Ordinance     49
+
+ for area or width, or both, that are generally applicable in the district, provided that yard dimensions and   
+ requirements other than those applying to area or width, or both, of the lot shall conform to the regula-  
+ tions for the district in which such lot is located. Variance of yard requirements shall be obtained    
+ only through action of the Board of Adjustment. 
+
+ If two or more lots or combinations of lots and portions of lots with continuous frontage in single owner-  
+ ship are of record at the time of passage or amendment of this ordinance, and if all or part or the lots  
+ do not meet the requirements established for lot width and area, the lands involved shall be considered   
+ to be an undivided parcel for the purposes of this ordinance, and no portion of said parcel shall be   
+ used or sold in a manner which diminishes compliance with lot width and area requirements established   
+ by this ordinance, nor shall any division of any parcel be made which creates a lot with width or area  
+  below the requirements stated in this ordinance.
+
+III. Non-conforming Structures. Where a lawful structure exists at the effective date of adoption or amend-  
+ ment of this ordinance that could not be built under the terms of this ordinance by reason of restrictions   
+ on area, lot coverage, height, yards, its location on the lot, or other requirements concerning the struc-  
+ ture, such structure may be continued so long as it remains otherwise lawful, subject to the following  
+ provision:
+
+ A. No existing structure devoted to a use not permitted by this ordinance in the district in which it is  
+  located shall be enlarged, extended, constructed, reconstructed, moved, or structurally altered   
+  except in changing the use of the structure to a use permitted in the district in which it is located.
+
+IV. Non-conforming Uses of Structures or of Structures and Premises in Combination. If lawful use involving   
+ individual structures, or of structure and premises in combination, exists at the effective date of adoption   
+ or amendment of this ordinance, that would not be allowed in the district under the terms of this    
+ ordinance, the lawful use may be continued so long as it remains otherwise lawful, subject to the follow-  
+ ing provisions:
+
+ A. No existing structure devoted to a use not permitted by this ordinance in the district in which it is  
+  located shall be enlarged, extended, constructed, reconstructed, moved, or structurally altered   
+  except in changing the use of the structure to a use permitted in the district in which it is located.
+
+ B. Any structure, or structure and land in combination, in or on which a non-conforming use is   
+  superseded by a permitted use, shall thereafter conform to the regulations for the district, and the   
+  non-conforming use may not thereafter be resumed.
+
+ C. When a non-conforming use of a structure, or structure and premises in combination, is discon-  
+  tinued or abandoned for six (6) consecutive months, the structure, or structure and premises in   
+  combination, shall not thereafter be used except in conformity with the regulations of the district   
+  in which it is located.
+
+ D. Where non-conforming use status applies to a structure and premises in combination, removal or  
+  destruction of the structure shall eliminate the non-conforming status of the land. Destruction   
+  for the purpose of this subsection is defined as damage to an extent of more than fifty (50) percent  
+  of the replacement cost at time of destruction.
+
+
+
+50 
+
+Sec. 29: SUPPLEMENTARY DISTRICT REGULATIONS
+
+I. Fences, Walls, and Hedges. Notwithstanding other provisions of this ordinance, fences and walls may be   
+ permitted in any required yard, or along the edge of any yard, provided that no fence or wall along the   
+ sides or front edge of any front yard shall be over two and one-half feet in height, except for a public  
+ utility or electric substation where a taller fence is required.
+
+II. Exceptions to Height Regulations. The height limitations contained in the District Regulations do not   
+ apply to spires, belfries, cupolas, antennas, water tanks, ventilations, chimneys, or other appurtenances   
+ usually required to be placed above the roof level and not intended for human occupancy.
+
+III. Parking and Storage of Certain Vehicles.
+
+ A. Major Recreational Equipment. For purposes of these regulations, major recreational equipment   
+  is defined as including boats and boat trailers, travel trailers, pick-up campers or coaches (de-  
+  signed to be mounted on automotive vehicles), motorized dwellings, tent trailers, buses and   
+  cases or boxes used for transporting recreational equipment, whether occupied by such equip-  
+  ment or not. No major recreational equipment shall be parked or stored on any lot in a residen-  
+  tial district except behind the nearest portion of a building to the street, provided however that   
+  such equipment may be parked anywhere on residential premises for a period not to exceed 24   
+  hours during loading or unloading. No such equipment shall be used for living, sleeping, or   
+  housekeeping purposes when parked or stored on a residential lot or in any location not approved  
+  for such use.  
+
+ B. Automotive vehicles or trailers of any kind or type without current license plates or which are   
+  inoperable or otherwise disabled for a period of thirty (30) consecutive days shall not be parked  
+  or stored on any residentially zoned property (whether occupied as a residence or not) or prop-  
+  erty used for residential purposes in a nonresidential zoned district other than in a completely  
+  enclosed buildings. For the purpose of this subsection, a vehicle shall be deemed inoperable or   
+  otherwise disabled if it is unable to operate on the streets and roadways of a city in the State of   
+  Alabama in full compliance with the various provisions of the Code of Alabama, 1975 and/or   
+  The Code of the City of Anniston, Alabama, 1981, as the same may from time to time be    
+  amended.
+
+IV. Parking of Large Vehicles in Residential Districts. For the purposes of this section, a residential district   
+ includes Urban Neighborhood and Suburban Neighborhood Districts. The following provisions apply to   
+ all vehicles with the exception of emergency and/or utility vehicles.
+
+ A.  No person shall park or leave a vehicle standing on the street or within 25 feet of the front lot line   
+  of a house in a residential district, any motor vehicle, commercial or otherwise, that exceeds 22   
+  feet in length.
+
+ B. No person shall park any truck, semi-trailer, or truck tractor having a rated capacity of 26,001   
+  gross vehicle weight (GVW) or more, or a school bus, on the street or in the driveway except for  
+  the purposes of loading or unloading.
+
+ C. No person shall park any commercial vehicle or motor truck that is not a passenger vehicle on the  
+  street in a residential district, even if the vehicle is less than 22 feet in length, between the hours of  
+  6:00 p.m. and 6:00 a.m.
+
+
+
+City of Anniston Zoning Ordinance     51
+
+ D. No person shall park on the street, in a driveway, within 25 feet of the front lot line of a house in a  
+  residential district any non-motorized vehicle attached or connected to a motor vehicle, which   
+  together exceed 22 feet in length measured from the front of the motor vehicle to the rear of the   
+  non-motorized vehicle.
+
+ E. Notwithstanding the other provisions of this section, a vehicle may be parked in a residential   
+  district on a street immediately abutting the lot upon which a resident resides, in a drive   
+  way, within 25 feet of the front lot line of the house, for the purpose of convenient departure from  
+   or the return to the lot in connection with a planned outing commencing or ending the same  
+   day of such departure or return, including any loading or unloading of persons or personal   
+  effects, or for the preparation of the vehicle incidental to such departure or return. Such parking   
+  shall in no event extend beyond two (2) consecutive days, or more than three (3) days during any   
+  seven (7) day period. 
+
+ F. In a designated residential historic district any recreational vehicle, travel trailer, motor home,   
+  watercraft (whether mounted on a trailer or unmounted), or utility trailer, except for loading and   
+  unloading activities, shall be parked or stored:
+  1. Within a vented garage or within a carport that is sight screened from abutting properties   
+   by solid board fencing or sight obscuring landscaping at least six (6) feet in height, or
+  2. Within eight (8) feet of the side lot line or in the rear yard if sight screened from abutting   
+   properties by solid board fencing or sight obscuring landscaping at least six (6) feet in  
+   height.
+
+ G. It is not a violation of this section if, in the judgment of the Planning Director, a vehicle is suffi-  
+  ciently screened so as not to be visible to the adjoining property on either side of the house where   
+  the vehicle is parked. 
+
+ H. Notwithstanding any provision of this section to the contrary, the parking of any vehicle on a   
+  street remains subject to regulation of parking established pursuant to the Code of Alabama,   
+  1975, and/or the Code of the City of Anniston, Alabama, 1981 and other lawful zoning and traffic  
+  regulations. The same may from time to time be amended.
+
+V. Structures to have Access. Every building hereafter erected or moved shall be on a lot adjacent to a public   
+ street, or with access to an approved private street, and all structures shall be so located on lots as to  
+ provide safe and convenient access.
+
+VI. Development on Corner Lot in Residential Districts. On any comer lot adjoining in the rear of another   
+ lot which is in a residential district, no part of any structure shall be nearer the side street lot line than the  
+ least depth of any front yard required for a dwelling on such adjoining lot along such side street.
+
+VII. Erection of More than One Principal Structure on a Lot. Only one principal structure is permitted per lot   
+ in the following districts: UN1, UN2, SN1, SN2, SE, NO. 
+
+VIII. Accessory Structures. 
+
+ A. No accessory structure shall be erected in any required front or side yard. 
+
+ B. Accessory structures shall be located a minimum of five (5) feet from any property line and ten   
+  (10) feet from any other structure on the lot.
+
+
+
+52 
+
+ C. Accessory structures shall not be used as a separate dwelling unit.
+
+VII. Utility Stations and Substations. For all zones in which they are permitted in the City of Anniston the   
+ construction and maintenance of public or privately owned utility stations or substations shall comply   
+ with the following regulations:
+
+ A. All electrical power substations shall be enclosed within a chain link, wooden privacy, masonry,   
+  or similar fence or be so designed to be inaccessible to unauthorized persons. Electrical power   
+  substations in all zones except manufacturing shall be enclosed by a planting screen with    
+  a minimum height of eight (8) feet and of sufficient depth and density to screen the structure  
+  from view. Setback requirements for buildings shall apply to power substations and shall be   
+  measured from the fencing enclosure except that setbacks along property lines adjacent to streets  
+  and alleys shall not be less than fifteen (15) feet regardless of other setback  requirements and that  
+  such enclosures shall not be constructed closer than ten (10) feet to  adjoining properties.    
+  Distribution lines may be run underground from any orientation.
+
+ B. Public or privately owned utility stations other than electrical power substations shall be enclosed  
+  by a planting screen of such height, depth, and density to screen the structure from view. Fencing  
+  shall be required where such structures present hazards to animals or people. Structures extend-  
+  ing above the ground in excess of two (2) feet shall comply with the same regulations as required  
+  for power sustations. 
+
+ C. Should the public utility company not be able to comply with the above regulations, it may submit  
+  a proposed site plan of the desired installation to the City Planning Commission for approval and   
+  recommendation to the City of Anniston.  The site plan shall include the following:
+
+1. Site of physical plant including height of structure, length and width including that of fencing;
+2. Setbacks;
+3. Means of access;
+4. Landscaping;
+5. Streets and alleys;
+6. Any proposed lighting indicating screening of same should it be necessary to protect adjacent 
+
+property owners from glare; and
+7. Other features pertaining to the particular installation.
+
+Sec. 30: MOBILE HOME PARKS
+
+I. Intent and Purpose. The following district regulations are designed to encourage the development of mo-  
+ bile home parks in a manner that will provide a quality living environment for the residents. The    
+ regulations will insure ample provision of open space and flexibility in lay-out to enhance the develop-  
+ ment of these parks with respect to flood zones, steep slopes and other topographical features. Mobile  
+ homes and mobile home parks are only permitted as a special exception in the Suburban Edge district.
+
+II. Procedure for Mobile Home Development. A Master Plan showing the exact manner in which the entire  
+ tract will be improved and used will be presented to the Planning Commission for review and approval of  
+ the subdivision and the Zoning Board of Adjustment for review and approval of the use. When reviewing  
+ the proposed park for approval as a special exception, the Zoning Board of Adjustment shall consider   
+ whether the following criteria are met:
+
+
+
+City of Anniston Zoning Ordinance     53
+
+ A. Minimum Parcel of Land. Not less than ten (10) contiguous acres. A mobile home park shall not   
+  be occupied until a minimum of 25 percent of its lots have been developed together with facilities  
+  in accordance with all applicable requirements of this ordinance and with city, county, or state   
+  laws, and must meet all published State of Alabama health regulations.
+
+ B.  Minimum Lot Size. Not less than 50 feet wide by 90 feet long for each mobile home. 
+
+ C. Minimum Separation. Minimum twenty (20) feet side-to-side clearance, and 20 feet end-to-end   
+  clearance for each mobile home.
+
+ D. Minimum Setback. Minimum setback of twenty (20) feet from any internal driveway and buffer   
+  strip. 
+ E.  Buffer Strip. Each mobile home park shall have and construct a buffer strip between the right-of-  
+  way line of adjacent public roadways and adjacent property lines of at least 30 feet. The buffer  
+  area shall be landscaped with trees and other suitable landscape materials sufficient to screen the  
+  mobile home park from view from adjacent properties and public roadways. No mobile home lot  
+  shall extend into any required buffer strip.
+
+ F. Parking. Each mobile home lot shall be provided with 2 paved spaces, with pavement material  
+  which is equal to or greater than the stability qualities of local residential roadways. Parking shall  
+  be prohibited along interior driveways.  
+
+ G. Interior Driveways. All interior driveways shall have a paved surface of not less than 20 feet in   
+  width. The pavement shall be of a material which is equal to or greater than the stability qualities  
+  of local residential roadways. 
+
+ H. Walkways. Concrete or asphalt walkways of not less than 4 feet wide and 4 inches thick shall be  
+  provided from the mobile home spaces to service buildings and to facilitate safe and convenient  
+  pedestrian traffic throughout the park.
+
+ I. Water and Sewage. Each mobile home space shall be provided with and each mobile home shall  
+  be connected to a sanitary sewerage and water supply system approved by the Calhoun County  
+  Health Department.
+
+ J. Wiring. All utility wiring shall be installed underground.
+
+ K. Lighting. Lighting shall be provided to illuminate streets, driveways, walks, and parking areas for   
+  safe movement of vehicles and pedestrians. All wiring shall be underground. All street inter-  
+  sections shall be lighted.
+
+ L. Recreational Area. A minimum of ten (10) percent of the gross acreage shall be set aside for the   
+  recreational use by residents of the mobile home park. The recreational space shall be located on  
+  land suitable for park development. No portion of the required recreational area shall be within   
+  the required buffer strip.
+
+ M. Refuse Disposal. Each mobile home lot shall be provided with at least 2 garbage cans of a mini-  
+  mum 20 gallon capacity. In addition, dumpster containers of sufficient size shall be provided   
+  within the mobile home park to enable disposal of waste from mobile home lots. Size and quan-  
+  tity of dumpsters shall be determined by the Public Works Department of the City of Anniston.
+
+
+
+54 
+
+Sec. 31: REGULATIONS FOR TELECOMMUNICATION FACILITIES AND STRUCTURES
+
+I.  Antennas.
+
+ A. Wall Mounted Antennas.
+  1. Wall mounted antennas shall not extend above the parapet (or wall line) of the building or  
+   extend more than four (4) feet horizontally from the face of the building without    
+   prior approval of the Zoning Board of Adjustment.
+  2. Antenna equipment and the supporting structure shall be painted to match the color of   
+   the building or structure or the building background against which they are most    
+   commonly seen as well as architecturally compatible with the building.
+  3. Whip antennas are not allowed on a wall mounted antenna structure.
+  4. Wall mounted antennas shall be located not lower than thirty (30) feet from the ground
+   level of the wall on which the antenna is located.
+  5. The total area for wall mounted antennas and supporting structures combined shall not   
+   exceed a total of 100 square feet on each exterior wall of the building. The total area shall   
+   be the sum of the areas of all antennas and support structures located on that wall.
+  6. The antenna area shall be determined as the area of each individual antenna face and the
+   visible portion of the supporting structure as viewed looking directly at the wall.
+  7. A maximum of three (3) carriers may locate antennas on one building wall. For each
+   additional carrier, a separate conditional use permit must be obtained.
+  8. No permit to install a wall mounted antenna shall be issued unless the owner of the build-
+   ing grants written permission to install the antenna.
+  9. Wall mounted antennas may not be installed on a building wall or walls facing a public   
+   street, or on a wall or walls constituting a building’s front or main entrance without the  
+   approval of the Zoning Board of Adjustment.
+
+ B. Roof Mounted Antennas.
+  1. Roof mounted antennas shall be enclosed by a structure that creates a visual screen. The   
+   screening structure and antenna mounting structures shall not extend more than eight (8)  
+   feet above the existing roofline.
+  2. The maximum height of a roof mounted antenna is equal to the distance the antenna is set  
+   back from the exterior wall.
+  3. Roof mounted antennas shall not be located on a building that exceeds the maximum   
+   height limit of the zoning district.
+  4. The total area for roof mounted antennas and support structures combined shall not ex-  
+   ceed 200 square feet. The total area shall be the sum of the areas of all antennas and   
+   support structures located on the roof.
+  5. No permit to install a roof-mounted antenna shall be issued unless the owner of the 
+   building grants written permission to install the antenna.
+
+ C. Monopole Towers.
+  1. The maximum allowable height for a monopole tower with a single antenna is 90 feet. The   
+   maximum allowable height for a monopole tower with two or more antennas co-located   
+   on it is 180 feet.
+  2. Monopole towers shall only be located in the rear yard of a lot.
+  3. Monopole towers may be permitted conditionally in landscaped areas, buffer zones, or   
+   parking lots. (Vertical structures are preferential to these areas such as light poles,    
+   billboards, etc.) 
+  4. The restrictions contained herein shall not apply, however, to monopole towers used in   
+
+
+
+City of Anniston Zoning Ordinance     55
+
+  connection with the transmission, distribution, and/or operation of electric utilities.
+
+ D. Satellite Dishes.
+  1.  Satellite dishes exceeding three (3) feet in diameter shall be considered structures and   
+   shall be installed in accordance with all applicable provisions of this Ordinance, the  
+   International Building Code, and any other relevant regulations. No satellite dish shall   
+   exceed twelve (12) feet in diameter and eighteen (18) feet in height, as measured from  
+   the ground to the highest projection of the supporting structure.  
+  2. No satellite dish shall be placed forward of the rear plane of the principal structure, and, if   
+   not wall-mounted, shall be set back from all property lines a distance equal to its height. 
+  3. Where the satellite is not mounted on a building, the supporting structure holding the
+   antenna shall not elevate the lower edge of the antenna dish more than 18 inches above   
+   the elevation of the eaves of the roof of the principal structure. Where mounted on a   
+   building, the combined height of the building and the satellite dish shall not exceed the   
+   maximum permitted building height.  
+
+II.  Permitting Requirements.
+ 
+ A. Building Permit Required. No communication tower or other facility shall be constructed unless:
+  1. A building permit is obtained.
+  2. All facilities and operations are in compliance with section B 1606 of the Southern
+   International Building Code and the Electronic Industries Associations RS 222 Code as   
+   well as other applicable city, state and federal laws and/or regulations.
+  3. Certification is received from an Alabama Licensed Professional Engineer that the design 
+   of the facility meets all applicable standards for the facility, including but not limited to:   
+   electrical safety, material and design integrity, natural hazards, safety (e.g., wind,    
+   thunderstorms, tornadoes, etc.).
+  4. An inventory of existing tower facilities is submitted to the Planning Director.
+  5. A list of adjoining property owners is submitted (only if it meets conditional require-  
+   ments).
+
+ B. Interference with Other Communications. No permit shall be approved if the operation will inter-  
+  fere with emergency or airport communications or commercial, private, and governmental  
+  communications.
+
+III. Exemptions to the Ordinance.
+
+ A. Pre-existing towers may be exempted from the ordinance provided ever that a written request   
+  for exemption must be submitted to the Planning Director within 120 days of passage of this   
+  ordinance. The Planning Commission shall consider each such request and shall respond    
+  within 120 days of the receipt of such request. Failure to respond within the time specified shall   
+  be deemed to be approval of the request for exemption.
+
+ B. Installation of antennas or satellite dishes for residential television or radio reception shall not   
+  require a permit if installed in a location not easily visible from a public right-of-way. Generally   
+  satellite dishes affixed to the side (if not on a corner lot) or rear of a residence or in the side (if   
+  not on a corner lot) or rear yard  will not require a permit. Satellite dishes installed in a manner   
+  so as to be easily visible from a public right-of-way due to necessity for a clear signal require a   
+  special exception from the Board of Adjustment. The Board  of Adjustment shall grant such  
+   special exceptions based on clear evidence demonstrating that the satellite dish cannot be    
+
+
+
+56 
+
+  installed in a manner hidden from a public right-of-way. 
+
+IV. Permit Approvals. 
+
+ A. Permit requests for telecommunications structures which meet all minimum provisions of the   
+  ordinance and which allow for co-location of multiple antennas may be approved by the Planning  
+  Director.
+
+ B. Request for telecommunication structures which do not meet the minimum provisions of the   
+  ordinance or which do not provide for co-location will be reviewed by the Planning Commission   
+  and forwarded with recommendation to the City Council for final approval.
+
+V. Proposed Telecommunications Facilities by Zoning Districts.
+
+ A. Residential Districts. For the purposes of this section, Urban and Suburban Neighborhood Dis-  
+  tricts (UN1, UN2, SN1, SN2) and the Suburban Edge (SE) District are considered residential  
+  districts. 
+  1. Monopole towers are prefereable to other tower structures.
+  2. Co-location is strongly encouraged to minimize the number of towers in these districts.
+  3. Open space areas are preferable.
+  4. Color blending and/or camouflage screening shall be strongly encouraged (for aesthetic
+   reasons).
+  5. Heightened landscaping and fencing requirements may be imposed (for aesthetic and
+   safety reasons, respectively).
+  
+ B. Other Districts.
+  1.  Antennas and satellite dishes are preferably located on the building roof top, side walls, or   
+   nearby vertical structures (billboards, light poles, etc.); whichever is deemed the    
+   least obtrusive and most safe.
+  2. Guy towers and self-supporting lattice towers shall only be pennitted conditionally.
+  3. Monopoles are strongly encouraged.
+  4. Co-location is strongly encouraged.
+  5. Color blending and/or camouflage screening shall be strongly encouraged.
+  6. Vertical structure attachments are strongly encouraged.
+
+ C.  Permitted Uses.
+
+C U
+C
+
+1
+
+U
+C
+
+2
+
+U
+N
+
+1
+
+U
+N
+
+2
+
+SC SN
+C
+
+SN
+1
+
+SN
+2
+
+SE IL IG M
+I
+
+N
+O
+
+TELECOMMUNICATIONS TYPE
+Antennas (omnidirectional, directional, and 
+microwave)
+
+- P P - - P P - - - P P P -
+
+Monopole communication towers - - - - - P - - - - P P - -
+Guyed wire communication towers - - - - - P - - - - P P - -
+Self-supporting lattice communication towers - - - - - P - - - - P P - -
+Satellite dishes (under three feet in diameter) P P P P P P P P P P P P P P
+Satellite dishes (over three feet in diameter) - - - - - P - - - P P P P -
+Switch boxes P P P P P P P P P P P P P P
+
+
+
+City of Anniston Zoning Ordinance     57
+
+P Permitted
+C Conditional
+L Limited
+S Special Exception Required
+- Not Permitted
+
+ D. Permitted Use Requirements. The following uses may be approved by the Planning Director:
+  1. Installing an antenna on an existing structure other than a communication tower (such as
+   a building, sign, light pole, water tower, or other free standing nonresidential structure)   
+   that is fifty (50) feet in height or greater, so long as such addition does not add more than   
+   twenty (20) feet of height of the existing structure.
+  2. Installing an antenna on an existing structure other than a communication tower (such as
+   a building, sign, light pole, water tower, or other free standing nonresidential structure)   
+   that is less than fifty (50) feet In height, so long as such addition does not add more than   
+   twenty (20) feet to the height of said existing communication tower.
+ E. Conditional Use Requirements. All uses listed as conditional (C) in the above use table require   
+  approval by the Board of Adjustment. The conditional use standards shall apply as follows:
+  1.  The height and mass of the proposed structure shall be compatible with existing buildings   
+   and utility structures in the surrounding area.
+  2. Proximity to existing communication towers within 1000 meters.
+  3. Impact of use on adjacent or nearby properties.
+  4. Surrounding topography.
+  5. Color blending and camouflage screening shall be provided.
+  6. Impact on Mure development in the area shall be considered.
+  7. No conditional use application shall be considered unless the following information is   
+   provided by applicant:
+   a. List of adjoining property owners.
+   b. The applicant’s (and property owner’s) name, address, and telephone number.
+  8. A written statement from the owner of the property where the facility is proposed to be
+   located, stating that the owner has reviewed the plans for the proposed facility, under-  
+   stands the type of facility that is being installed and obligations the owner is undertaking,   
+   and granting permission for the applicant to install and maintain the facility.  
+
+VI. Nothing in this section shall be construed to conflict with Section 6409(a) of the Federal Communica-  
+ tions Commission Report and Order of 2014, which states that a local government may not deny, and   
+ shall approve, any eligible facilities request for a modification of an existing wireless tower or base station   
+ that does not substantially change the physical dimensions of such tower or base station. The term   
+ “eligible facilities request” means any request or modification of an existing wireless tower or base station   
+ that involves collocation of new transmission equipment, removal of transmission equipment, or    
+ replacement of transmission equipment.
+
+ Nothing in this subsection shall be construed to relieve the FCC from the requirements of the National  
+ Historic Preservation Act or the National Environmental Policy Act of 1969.
+
+ Substantial change occurs when the proposed eligible facilities request:
+ 
+ A. Increases the height more than:
+  1. Ten (10) percent or one additional antenna array not more than twenty (20) feet higher   
+
+
+
+58 
+
+   for towers on private property, or 
+  2. Ten (10) percent or ten (10) feet (whichever is greater) for towers in the public rights-of-  
+   way and all base stations; or
+
+ B. Increases the width more than:
+  1. Twenty (20) feet or the tower width at the level of the appurtenance (whichever is greater)  
+   for towers on private property, or
+  2. Six (6) feet for towers in the public rights-of-way and all base stations; or
+
+ C. Involves any excavation outside either:
+  1. The lease or license area on private property, or
+  2. The proximity to the ground-mounted equipment in the ROW; or
+
+ D. Defeats the existing concealment elements of the tower or base station; or
+
+ E. Violates a prior condition of approval that does not conflict with the FCC’s standards for a sub-  
+  stantial change.
+
+
+
+City of Anniston Zoning Ordinance     59
+
+Sec. 32: DEFINITIONS
+
+Accessory Use or Structure. A use or structure on the same lot with, and of a nature customarily incidental   
+and subordinate to, the principal use or structure.
+
+Assisted Care Nursing Facility. A permanent building or group of buildings (not to include mobile homes and 
+trailers) in which room, board, meals, laundry, and limited assistance with activities of daily living are provid-
+ed for not less than twenty-four (24) hours in any week to a maximum of two (2) ambulatory adults per room. 
+Non-ambulatory tenants shall not remain at the facility longer than thirty (30) days. The following shall specifi-
+cally not be considered to be functions of an assisted care nursing facility:
+ a)  Drug or alcohol recovery programs;
+ b)  Temporary shelter for abused persons;
+ c)  Persons with progressive neuropsychiatric disease of aging which is characterized by the inexora-  
+  ble loss of cognitive function as well as affective and behavioral disturbances will only be acc-
+  ommodated per state guidelines regarding such care.
+
+Alteration and Altered. The word “alteration” shall include any of the following:
+ a) Any addition to the height or depth of a building or structure.
+ b) Any change in the location of any of the exterior walls of a building or structure.
+ c) Any increase in the interior accommodations of a building or structure.
+In addition to the foregoing, a building or structure shall be classified as altered when it is repaired, renovated, 
+remodeled, or rebuilt at a cost in excess of fifty percent (50%) of its value prior to the commencement of such 
+repairs, renovation, remodeling or rebuilding.
+
+Alley. A public or private way less in width than a street, designed for the special accommodation of the property 
+it reaches, and not intended for general travel.
+
+Artisanal. A business that makes high-quality or distinctive products in small quantities, usually by hand or 
+using traditional methods. 
+
+Automobile Filling Station/Service Station. Any place of business having pumps and storage tanks at which fuels 
+or oils for the use of motor vehicles are dispensed, sold or offered for sale at retail and where minor repairs, ser-
+vices and inspections may be carried on and rendered incidental to sale of such fuels and oils.
+
+Bar/Tavern. An establishment which serves beer, wine, and/or liquor for on-premise consumption as its primary 
+function. No person under the age of 19 shall be admitted on the premises of a bar/tavern. 
+
+Bed and Breakfast. A residential structure continuously occupied by the owner or operator thereof consisting of 
+not more than six sleeping rooms and breakfast for hire to any occupant for not more than fourteen consecutive 
+days with the following characteristics: Only the breakfast meal may prepared for the guests by the proprietor 
+and no other meals are provided by the proprietor. The rented rooms do not contain cooking facilities and do 
+not constitute separate dwelling units. Due to the desirability of a historical Bed and Breakfast Inn by the com-
+munity and the many historical and cultural advantages it brings to a community, in addition to providing sleep-
+ing rooms and breakfast for hire, special events, limited to weddings, receptions, luncheons, dinner parties and 
+business meetings, may be held at a Bed and Breakfast.
+
+Brewery. Any premises licensed by the city to engage in the manufacture of only malt or brewed alcoholic bev-
+erages as well as engaging in the receiving, storage, or warehousing only of malt or brewed beverages within the 
+city for transshipment inside and outside the state.
+
+
+
+60 
+
+Brewpub. Any premises upon which malt or brewed alcoholic beverages are actively and continuously manufac-
+tured or brewed, in quantities no greater than ten thousand (10,000) barrels per year, for consumption on the 
+premises where manufactured, or for sale to any designated wholesaler licensee for resale to retail licensees. 
+
+Buildable Area. The portion of a lot remaining after required yards and/or setbacks have been provided.
+
+Building. Any structure having a foundation and roof supported by columns or by walls, including trailers and 
+similar structures whether stationary or moving.
+
+ Building, Main. The main building shall, be considered as the principal structure on a lot, and an at-  
+ tached garage, carport, porte-cochere, porch or part thereof shall be considered as a part of the main   
+ building and shall be subject to the set-back and side yard requirements for the district in which it   
+ is located.
+
+Cigar Bar. A licensed establishment in which the primary activity is the sale, manufacture or promotion of cigars 
+or cigar accessories and in which sales of other products is merely incidental. Cigar bars are subject to the regula-
+tions in Ordinance No. 15-O-16.
+
+Club. An establishment formed by any entity for the purposes of health, fraternity,  recreation, etc. 
+
+Conditional Use. Any use that requires additional approval beyond administrative, such as uses permitted in the 
+MI district, which all require approval from the Planning Commission. Conditional uses other than those in 
+special districts shall require approval from the Zoning Board of Adjustment.
+
+Day Care. A place for the day care of children or adults not remaining overnight.
+ 
+ Home Day Care. A residence that is also used as a place for the day care of not more than five (5) children  
+ not remaining overnight. The home day care must be incidental to the primary use as a residence. 
+
+Development. The term “development” shall include new construction and substantial redevelopment of a struc-
+ture or property. Substantial redevelopment includes the replacement or reconstruction of over 50 percent of the 
+structure or property.
+
+Dwelling. A house or other building used primarily as an abode for one or two families except that the word 
+“dwelling” shall not include boarding or rooming houses, tents, hotels or other structures designed or used pri-
+marily for transient residence.
+
+Dwelling Unit. One room or rooms connected together, constituting a separate, independent housekeeping estab-
+lishment for owner occupancy, or rental or lease on a weekly, monthly, or longer basis, and physically separated 
+from any other rooms or dwelling units which may be in the same structure, and containing independent cook-
+ing and sleeping facilities.
+
+Family. One or more persons occupying a single dwelling unit, provided that unless all members are related by 
+blood or marriage, no such family shall contain over five persons.
+
+Firing Range (indoor). A facility used as a range for target practice indoors which shall be limited to hand guns 
+and hunting rifles, and shall not include automatic weapons. Such use shall be subject to meeting the standards 
+of the National Rifle Association, OSHA, and EPA relating to ventilation, fencing, lead recovery, buffering, and 
+interior finishing.
+
+
+
+City of Anniston Zoning Ordinance     61
+
+Firing Range (outdoor). A facility used as a range for target practice outdoors which shall be limited to hand guns 
+and hunting rifles, and shall not include automatic weapons. Such use shall be subject to meeting the standards 
+of the National Rifle Association, OSHA, and EPA relating to fencing, lead recovery, buffering, and interior fin-
+ishing.
+
+Flag. Any cloth or fabric banner that represents or identifies either a governmental entity or institution.
+
+Group Home. A small, residential facility located within a community and designed to serve children or adults 
+with chronic disabilities. These homes shall have five (5) or fewer occupants, unless the occupants are related by 
+blood or marriage, and are staffed 24 hours a day by trained caregivers.
+
+Height. The vertical distance measured from the finished ground surface at the center of the front wall of the 
+building to the highest point of the roof if a flat or pitched roof, and deck line of a mansard roof.
+
+Home Occupation. A routine accessory and customary non-residential use conducted within or administered 
+from a portion of a dwelling or its permitted accessory building that:
+ a)  Is conducted solely by a permanent resident of the dwelling;
+ b)  Meets the definition, standards and limitations of a general home occupation and light home   
+  occupation within the following definitions;
+ c)  Only include uses that are clearly incidental and secondary to the principal residential use;
+ d)  Does not include any retail or wholesale sales on the premises (other than over the phone,    
+  through the mail, or online) nor any industrial use (other than custom crafts and sewing).
+
+Hospital. An institution devoted primarily to the diagnosis, treatment or care of the sick or injured.
+
+Hotel/Motel. Any building or portion thereof which contains at least (10) guest rooms intended for occupancy by 
+individuals for compensation.
+
+Junk/Auto Wrecking Yard. An area where used or cast off materials are stored, purchased or offered for sale either 
+on or off the premises.
+
+Loading Area. Space logically and conveniently located for bulk pickups and deliveries, scaled to delivery vehicles 
+expected to be used, and accessible to such vehicles when required off-street parking spaces are filled. Required 
+off-street loading space is not to be included as off-street parking space in computation of required off-street 
+parking space.
+
+Lot. For purposes of this ordinance, a lot is a parcel of land of at least sufficient size to meet minimum zoning 
+requirements for use, coverage, and area, and to provide such yards and other open spaces as are herein required. 
+Such lot shall have frontage on an improved public street, or on an improved private street, and may consist of:
+ a)  A single lot of record;
+ b)  A portion of a lot of record
+ c)  A combination of complete lots of record, or complete lots of record and portions of lots of   
+  record, or of portions of lots of record;
+ d)  A parcel of land provided that in no case of division or combination shall any residential lot or   
+  parcel be created which does not meet the requirements of this ordinance or the Subdivision  
+  Regulations of the City of Anniston.
+
+Lot Frontage. The front of a lot shall be construed to be the portion nearest the street. For the purposes of deter-
+mining yard requirements on corner lots and through lots, all sides of a lot adjacent to streets shall be considered 
+frontage, and yards shall be provided as indicated under Yards in this section.
+
+
+
+62 
+
+Medical/Dental Clinic. A facility operated for the primary purpose of providing health services in more than one 
+medical or dental specialty to the public, and including related facilities such as laboratories and other service 
+facilities operated in connection with the clinic.
+
+Mobile Home. A detached residential dwelling unit designed for transportation after fabrication on streets or 
+highways on its own wheels or on flatbed or other trailers, and arriving at the site where it is to be occupied as a 
+dwelling complete and ready for occupancy except for minor and incidental unpacking and assembly operations, 
+location on jacks or other temporary or permanent foundations, connections to utilities, and the like. A travel 
+trailer is not to be considered as a mobile home. A mobile home is only permitted within a designated mobile 
+home park. 
+
+Mobile Home Park. Any tract of land privately or publicly owned or operated upon which two (2) or more house 
+trailers, used for living, eating or sleeping quarters, are intended to be located; such establishment being open 
+and designated to the public as places where temporary residential or trailer parking accommodations are avail-
+able, whether operated for or without compensation by whatsoever name or title they are colloquially or com-
+mercially termed.
+
+Package/Liquor Store. A business which provides retail sales of alcoholic beverages for off-premise consumption.
+
+Parking Garage/Structure. A building or portion thereof designed or used exclusively for the parking of motor 
+vehicles.
+
+Parking Lot (Surface). A lot or lots used exclusively for the purpose of parking motor vehicles.
+
+Parking Space. An all-weather surfaced area consisting of concrete or asphalt or other material that has an area 
+that is adequate for temporary storage and necessary access and maneuvering room for one automobile and 
+connected with a street or alley by an all-weather surf ace driveway which affords ingress and egress for an 
+automobile without requiring another automobile to be moved. For single-family dwellings, required off-street 
+parking spaces can be located on a driveway. It is the intent of this Ordinance that all required parking spaces be 
+all-weather surfaced and individual spaces be clearly marked or striped.
+
+Personal Care Home. Homes for the aged, intermediate institutions, and related institutions, whose primary 
+purpose is to furnish room, board, personal care, and other non-medical services, for not less than 24 hours 
+in any week to six or more individuals not related by blood or marriage to the owner and/or administrator. In 
+these facilities, there might available temporarily and incidentally the same type of limited medical attention as 
+an individual would receive if he were living in his own home. This definition also includes homes or centers for 
+rehabilitation for substance or other abuse. Personal care homes have six (6) or more occupants plus staff.
+
+Personal Service. Beauty and barber shops, salons, alterations, and the like. The Zoning Officer may make a de-
+termination if a use qualifies as a personal service establishment. 
+
+Professional Services Office. Any office that houses professional services such as (but not limited to) law, real es-
+tate, accounting, etc. A doctor, dentist, or other medical office where patients are seen and treated is classified as 
+a medical or dental clinic rather than a professional services office.
+
+Public Utilities. The utilities necessary to the health and welfare of the community such as water distribution, 
+sewage disposal, telephone service, gas distribution, electrical service, cable television service and transportation 
+and which utilities are publicly or privately owned and operated.
+
+Public Building. Those buildings or uses in which the business of the city, county, state and federal government 
+
+
+
+City of Anniston Zoning Ordinance     63
+
+may be conducted, including libraries, museums, schools, police and fire houses and structures connected with 
+water supply and sewage disposal, and excluding the sale of alcoholic beverages.
+
+ Semi-Public Building. Those buildings or uses developed by public or private capital which may be   
+ restricted to a group such as churches, country clubs, and private schools.
+
+Recreational Vehicle. A vehicular unit primarily designed as temporary living quarters for recreational, camping, 
+or travel use, which either has its own motive power or is mounted on or drawn by another vehicle. Included are 
+travel trailers, camping trailers, truck campers, and motor homes.
+
+Recreational Vehicle Park. Any establishment or premises conforming to this chapter and other applicable regula-
+tions which is designed, arranged, or used for the temporary placement of recreational vehicles. Permanent san-
+itary facilities adequate for the number of recreational vehicle spaces available shall be provided. No recreational 
+vehicle shall be occupied by a person or family for a period exceeding two (2) weeks. A recreational vehicle park 
+is subject to the same landscaping requirements as a surface parking lot as a primary use (see Sec. 22: Permitted 
+Use Table Footnote 13).
+
+Rehabilitation Home. A certified rehabilitation home (certified by the Alabama Department of Mental Health) 
+for substance abuse residents and resident staff, who live together as a single housekeeping unit, with no more 
+than five (5) occupants not related by blood or marriage, in a temporary environment wherein supervision, 
+rehabilitation, and counseling are provided to mainstream residents back into society, enabling them to live inde-
+pendently.
+
+Restaurant with Bar. A restaurant which may serve beer, wine, and/or liquor. Persons of any age may be permit-
+ted in a restaurant with bar. Over fifty (50) percent of receipts must be derived from food sales. 
+
+Restaurant without Bar. A restaurant which does not serve alcohol of any sort.
+
+Self-Service Storage Facility. One or more buildings in a fenced or otherwise secured enclosure containing vary-
+ing sizes of individual, lockable cubicles not exceeding three hundred (300) square feet in floor area each, and 
+used for the dead storage of a customer’s goods or wares only. No cubicle shall be used as a dwelling or for con-
+ducting a business of any kind.
+
+Shopping Center. A commercial development built on a tract of land in single ownership or control, and includ-
+ing at least four (4) retail or service establishments.
+
+Sign. Any device, fixture, placard, or structure that uses any color, form, graphic, illumination, symbol, or writing 
+which directs attention to a product, service, place, activity, institution, business or solicitation, or communicates 
+information of any kind to the public.
+
+ Abandoned Sign. Any sign which is located on property which becomes vacant or any sign which pertains  
+ to a use or activity which no longer applies shall be deemed to have been abandoned. Any sign meeting   
+ this description for a period of six (6) months shall be deemed abandoned.
+
+ Banner. Any sign made of lightweight fabric, cloth, canvas, plastic sheeting, nylon or any other flexible   
+ material, with no enclosing framework and which is not rigidly and permanently attached to a building   
+ or the ground through a permanent support structure.
+
+ Building/Wall Sign. A sign displayed upon or attached to any part of the exterior of a building, including   
+ walls, doors, parapets, and marquees. Canopy signs, awning signs, projecting signs, and signs suspended   
+
+
+
+64 
+
+ from buildings are considered types of building signs.
+
+ Commercial Sign. When describing the content of a sign, a sign advertising, identifying, directing at-  
+ tention to, or otherwise relating to commerce and to property, goods or services for sale, lease, exchange   
+ or any other transaction where value is given or received by any party to the transaction.
+
+ Digital Sign. Any sign that runs digital signage content.
+
+ Freestanding Sign. Any sign permanently supported by structures or supports that are placed on, or an-  
+ chored in, the ground and that are independent from any building or other structure.
+
+ Internally Illuminated Sign. Any sign in which the illumination elements are within the sign cabinet itself,  
+ as opposed to a sign in which the illumination elements are external to the sign.
+
+ Inflatable Sign. A balloon or other gas-filled membrane, whether lighter or heavier-than-air, displaying or  
+ holding up advertising matter, or used to attract attention to an event or commercial enterprise.
+ Untethered lighter-than-air balloons and other lighter-than-air devices not tethered to the earth which   
+ drift with air currents or are self-propelled are not included.
+
+ Ingress/Egress Signs. Signs that provide information to safely identify vehicular entrances and exits of   
+ businesses. Such signs may not display a business name or logo. Such signs are limited to six square feet. 
+ 
+ On-Site Sign. A sign, other than a residential sign, relating in its subject matter to the premises on which   
+ it is located, or to products, accommodations, services, or activities on the premises. On-site signs   
+ may include freestanding signs, and other sign types, but do not include signs erected by the outdoor   
+ advertising industry in the conduct of the outdoor advertising industry business (billboards).
+
+ Open Letter Sign. A sign consisting of a logo or symbol, individual letters or connected lettering mounted  
+ on a building in a raceway or similar mounting or on the surface of an integral architectural element,   
+ which is a part of the building. Individual letters may be illuminated. The display area of an open    
+ letter sign shall not exceed the maximum permitted area for building signs on the property.
+
+ Outdoor Advertising Sign (billboard). An outdoor advertising device which contains at any time a com-  
+ mercial message that directs attention to a business, commodity, service or entertainment conducted,   
+ advertising products, services, goods sold or offered, that are not available on the zone lot on which the   
+ sign is located.
+
+ Political Sign. Any temporary sign bearing a noncommercial message related to an election, a candidate,   
+ a public event, or a public issue.
+
+ Portable Sign. Any sign not permanently attached to the ground or other permanent structure or a sign   
+ designed to be transported, including, but not limited to, signs designed to be transported by means of   
+ wheels; signs made as A-frames or T-frames; menu and sandwich board signs; balloons used as    
+ signs; umbrellas used for commercial messages; and signs attached to or painted on vehicles parked and   
+ visible from the public right-of-way, unless said vehicle is used in the normal day-to-day operations of   
+ the business and any sign which is clearly designed to be relocated in its entirety, and easily and without  
+ significant expense.
+
+ Projecting Sign. Any sign affixed to a building or wall that extends more than eighteen inches and is ap-  
+ proximately perpendicular to the wall or building to which it is attached.
+
+
+
+City of Anniston Zoning Ordinance     65
+
+ Reader Board. A sign that is designed or used so that characters, letters, or symbols can be manually   
+ changed or rearranged without altering the surface of the sign.
+
+ Real Estate Sign. Sign used to offer for sale, lease or rent the land or buildings upon which the sign is   
+ located.
+
+ Roof Sign. Any sign erected and constructed wholly on and over the roof of a building and supported by
+ the roof structure.
+
+Sign Area. The area of a wall mounted sign shall be computed as the area of the wall covered by the various com-
+ponents that make up the sign. In the case of irregular shapes (such as individual letters) the area shall be com-
+puted by placing a rectangle around each individual character and computing the area of each such rectangle. 
+The area of the sign shall be the sum total of the areas of all such rectangles.
+
+Special Events Center. A building used primarily for entertainment purposes such as weddings, receptions and 
+banquets. The facility shall not be used for the operation of a night club. 
+
+Special Exception. A specific, permitted land use that is allowed only when clearly defined criteria and conditions 
+contained in the ordinance are met. A special exception is granted by the Zoning Board of Adjustment.
+
+Structure. Anything constructed or erected with a fixed location on the ground or attached to something having 
+a fixed location on the ground. Among other things, structures include buildings, mobile homes, walls, fences, 
+billboards, and signs.
+
+Temporary Festival/Special Event. A fair, carnival. or other temporary event, usually lasting two (2) weeks or few-
+er.
+
+Tobacco Shop. A retail establishment that primarily sells tobacco products, but an electronic cigarette or vape 
+shop is also included in this definition.
+
+Transit/Utilities Corridor. On the Zoning Map, this corridor is designated for future purposes of transportation, 
+surface and multimodal as well as expansion for public utility needs. 
+
+Variance. A relaxation of the terms of the zoning ordinance where such variance will not be contrary to the 
+public interest and where, owing to conditions peculiar to the property and a not the result of the actions of the 
+applicant, a literal enforcement of the ordinance would result in unnecessary or undue hardship. Variances shall 
+not be used to allow a use expressly not permitted in a particular zone in this ordinance.
+
+Wholesale trade. An establishment that sells goods in large quantities to be retailed by others. 
+
+Yard. An open space extending outward from the closest point of any building or structure to a lot line, street 
+line, or the edge of any environmental area as noted below. All yard dimensions shall be measured horizontally, 
+in a straight line and at right angles to either a straight street line, lot line, or the façade of a building or structure, 
+or perpendicular to the point of tangent of curved lines and facades. The minimum yard requirements shall be 
+provided in contiguous areas located outside of floodways, wetlands, wetland buffer area, easements, stormwater 
+detention basins, related watercourses and slopes exceeding fifteen percent (15%).
+
+
+
+66 
+
+Sec. 33: ADMINISTRATION AND ENFORCEMENT OF BUILDING PERMITS
+
+I.  Administration and Enforcement. The Planning Director of the City of Anniston shall administer and
+ enforce this ordinance. He or she may be provided with the assistance of such other persons as the City   
+ Manager may direct.
+ 
+ If the Planning Director shall find that any of the provisions of this ordinance are being violated, he   
+ shall notify in writing the persons responsible for such violations, indicating the nature of the violation  
+ and ordering the action necessary to correct it. He shall order discontinuance of illegal use of land,   
+ buildings, or structures or of illegal additions, alterations, or structural changes; discontinuance of any   
+ illegal work being done; or shall take any other action authorized by this ordinance to ensure compliance   
+ with or to prevent violation of its provisions.
+
+II.  Building Permits Required. No building or other structure shall be erected, moved, added to, structur-  
+ ally altered, renovated, or remodeled without a permit issued by the City. All permits shall be issued for   
+ development in accordance with this ordinance, unless written order is received from the Zoning Board   
+ of Adjustment in the form of an administrative review, special exception, or variance as provided by this   
+ ordinance.
+
+III. Application for Building Permits. All applications for building permits shall be accompanied by plans in  
+ duplicate drawn to scale, showing the actual dimensions and shape of the lot to be built upon; the exact  
+ sizes and locations on the lot of buildings already existing, if any; and the location and dimensions of the  
+ proposed uses of the building and land; the number of dwelling units the building is designed to acc-  
+ ommodate; and such other matters as may be necessary to determine conformance with, and provide for,  
+ the enforcement of this ordinance.
+
+ One copy of the plans shall be returned to the applicant by the Planning Director, after he shall have   
+ marked such copy either as approved or disapproved and attested to same by his signature on such copy.  
+ The original copy of the plans, similarly marked, shall be retained by the Planning Director.
+
+ If the proposed excavation, construction, moving or alteration and use as set forth in the application are  
+ in conformity with the provisions of this ordinance, the Planning Director of the City shall issue a   
+ building permit accordingly. If an application for a building permit is not approved, the Planning Dir-  
+ ector shall state in writing on the application the cause for such disapproval. Issuance of a building per-  
+ mit shall, in no case, be construed as waiving any provision of this ordinance. 
+
+IV. Expiration of Building Permit. If the work described in any building permit has not begun within six (6)   
+ months from the date of issuance thereof, said permit shall expire; it shall be cancelled by the Planning   
+ Director, and written notice thereof shall be given to the persons affected.
+
+ If the work described in any building permit has not been substantially completed within two years of the  
+ date of issuance thereof, said permit shall expire and be canceled by the Planning Director, and written   
+ notice thereof shall be given to the persons affected, together with notice that further work described in   
+ the canceled permit shall not proceed unless and until a new building permit has been obtained.
+
+V. Construction and Use to Be as Provided in Applications, Plans, and Permits. Building permits issued on  
+ the basis of plans and applications approved by the Planning Director authorize only the use, arrange-  
+ ment, and construction set forth in such approved plans and applications, and any other use, arrange-  
+ ment or construction at variance with that authorized shall be deemed in violation of this ordinance, and   
+ punishable as provided by Section hereof.
+
+
+
+City of Anniston Zoning Ordinance     67
+
+Sec. 34: ZONING BOARD OF ADJUSTMENT - ESTABLISHMENT AND PROCEDURES
+
+I. Establishment. A Board of Adjustment is hereby established. The appointment, procedure, powers and   
+ action of said Board of Adjustment shall be governed and controlled by Section 11-52-80, Code of   
+ Alabama 1975. The Board shall consist of five (5)members, appointed by the City Council for a period of   
+ three (3) years, except that in the first instance one (1) member shall be appointed for a term of three (3)  
+ years, two (2) for a term of two (2) years and two (2) for a term of one (1) year. The Board is an appeal  
+ board for variances, special exceptions, and ordinance interpretations.
+
+II. Appeals from the Board of Adjustment. Any person or persons or any board, taxpayer, department, or   
+ bureau of the City aggrieved by any decision of tne Board of Adjustment may seek review by a court of   
+ record of such decision, in the manner provided by the laws of the State and particularly by Section 11-  
+ 52-81, Code of Alabama 1975.
+
+III. Duties of Administrative Official, Board of Adjustment, City Council, and Courts on Matters of Appeal. It is  
+ the intent of this ordinance that all questions of interpretation and enforcement shall be first presented
+ to the Planning Director and that such questions shall be presented to the Board of Adjustment only
+ on appeal from the decision of the Planning Director. The Board of Adjustment hears, only, requests for   
+ variances and special exceptions and determines whether there has been an error in any decision made   
+ by the Planning Director while enforcing the ordinance. The recourse from the decision of the Board  
+ of Adjustment shall be to the courts as provided by law and particularly by Section 11-52-81, Code of   
+ Alabama 1975.
+
+ It is further the intent of this ordinance that the duties of the City Council in connection with this ord-
+ inance shall not include hearing and deciding questions of interpretation and enforcement that may
+ arise. The procedure for deciding such questions shall be as stated in this section and this ordinance.
+ Under this ordinance the City Council shall have only the duties (1) of considering and adopting or
+ rejecting proposed amendments of the repeal if this ordinance, as provided by law, and (2) of
+ establishing a schedule of fees and charges as stated in Sec.34: IV below.
+
+IV. Schedule of Fees, Charges, and Expenses. The City Council shall establish a schedule of fees, charges and   
+ expenses and a collection procedure for building permits, appeals and other matters pertaining to this  
+ ordinance. The schedule of fees shall be posted in the office of Planning and Development Services, and   
+ may be altered or amended only by the City Council. Until all applicable fees, charges, and expenses have   
+ been paid in full, no action shall be taken on any application or appeal.
+
+ Sec. 35: SPECIAL EXCEPTIONS
+
+The Board of Adjustment shall give careful consideration to the warrants and criteria set forth in this Ordinance 
+in judging applications for Special Exceptions. Special Exceptions may be granted as a conditional use within any 
+zoned district provided 1) the site for the proposed use is uniquely suited to the requested use, 2) there will be 
+no detrimental or adverse effects on adjacent uses, and 3) such use does not violate other sections of the City’s 
+Zoning Ordinance. The Board shall consider such factors as, but not limited to, site access, visibility, noise, effects 
+on adjacent uses and shape and topography of the land. In granting a Special Exception, the Board may attach 
+such reasonable conditions and safeguards as it may deem necessary in order to promote public health, safety, 
+and general welfare.
+
+Recommendation for a Special Exception by the Board of Adjustment shall require six (6) affirmative votes.
+
+
+
+68 
+
+Sec. 36: AMENDMENTS
+
+I. General Procedure. This ordinance may not be amended, supplemented, changed, modified or repealed   
+ unless there has been a substantial change in conditions in the City of Anniston upon which the    
+ regulations and the number, area and boundaries for districts established by this ordinance were based.   
+ If there has been substantial change in conditions, then the regulations and the number, area and bound-  
+ aries for districts established by this ordinance may be amended, supplemented, changed, modified, or   
+ repealed by the City Council of the City of Anniston at the recommendation of the Planning Commis-  
+ sion. The Planning Commission of the City of Anniston, upon its own initiative, may hold public hear-  
+ ings, public notice of which shall be given for the consideration of any proposed amendment to the  
+ provisions of this ordinance or the Official Zoning Map of the City of Anniston and report its recom-  
+ mendations to the City Council of the City of Anniston.
+
+II.  Amendment Application. An amendment to the zoning district boundaries or regulations as they pertain   
+ to a piece of property may be initiated by the City Council, the Planning Commission, or by petition of   
+ one or more owners or authorized agents of such owner or owners of property to be affected by such  
+ change.
+
+ When a rezoning request is made by a petition of the property owner or authorized agent of such owner   
+ the following procedure shall be followed:
+
+ A. A minimum of ten (10) days prior to a regularly scheduled Planning Commission meeting, an
+  application shall be filed with the Secretary of Planning and Development Services in the City
+  of Anniston. The application shall include, as a minimum, the following information:
+
+  1. A fee to be established by the Anniston City Council to defray the cost of processing the   
+   application.
+  2. The applicant’s name, address and interest in the application, and the name, address and   
+   interest of every person, firm or corporation represented by the applicant in the app-  
+   lication.
+  3. The name of the owner or owners of the entire land area to be included within the pro-  
+   posed district, if a district line change is requested.
+  4. The names and addresses of all owners of property abutting the property proposed for   
+   rezoning, to be obtained from the Calhoun County Tax Assessors Office.
+  5. If the proposed amendment would require a change in a zoning district line, the applicant   
+   shall submit a map, drawn to scale, indicating: the dimension and exact location of the site  
+   to be considered for rezoning; location of all public right-of-ways; and the approximate  
+   location of all proposed structures.
+  6. If the proposed amendment would require a change in a zoning district line, the applicant   
+   shall submit a written statement indicating: reason for the rezoning request; availability   
+   of required utilities; a legal description of the proposed rezoning site; and explanation of   
+   the substantial changes which have occurred to warrant changes in the district boundary   
+   lines.
+  7. If the proposed amendment would require a change in a zoning district line, the applicant   
+   shall submit a written time schedule for beginning and completion of the proposed   
+   development planned by the applicant.
+ 
+ B. Following the submission of a completed application which would require a district line change,   
+  the City of Anniston shall post signs on the subject property a minimum of ten (10) days prior to   
+  the next regularly scheduled meeting of the Planning Commission at which the request for an
+
+
+
+City of Anniston Zoning Ordinance     69
+
+  amendment is to be considered. The signs shall be provided by the City of Anniston.
+
+ C. If the proposed amendment would require a change in the zoning regulations, the applicant shall   
+  submit a written statement including: a clear statement of the specific rezoning requested;    
+  reasons for the rezoning; the adions to be taken by the applicant if the rezoning requested is  
+  approved; and an explanation of the substantial changes which have occurred to warrant changes  
+  in the zoning regulations.
+
+ D. The Planning Commission shall schedule a hearing on the application at the first regularly sched-  
+  uled meeting after the application requirements are met.
+
+ E. The failure of the Commission to act on any zoning application within 60 days from the time of   
+  official submission to the Commission shall constitute approval. If additional information is  
+   needed, the Commission shall render a decision not more than 30 days after the second regularly  
+  scheduled meeting. Upon the denial of an application reasons shall be established which must be   
+  in writing and must be based on evidence in a written record.
+
+ F. The applicant, or an authorized representative of the applicant, shall be present at the Planning   
+  Commission hearing, or hearings prepared to orally summarize their request and answer ques-  
+  tions presented by the Planning Commission. If the applicant, or authorized representative of the   
+  applicant, fail to appear before the Planning Commission at the hearing in which their applica-  
+  tion is considered, this failure to appear shall result in the denial of the application based on the  
+  lack of sufficient information upon which to render an opinion.
+
+ G. No proposed zoning change shall be approved by the Planning Commission except upon one (1)   
+  plus the majority votes of the Planning Commission members present approving said proposed   
+  change. Upon receipt of the approval of the Planning Commission as to a proposed zoning   
+  change, the Planning Director shall notify the City Council of all recommendations of the City   
+  of Anniston Planning Commission for amendments to the City of Anniston Zoning Ordinance   
+  and Zoning map by placement of a copy of the proposed ordinance (or a complete synopsis),   
+  thereof, on the routine  agenda of the next City Council meeting, provided such notice shall not  
+  be construed to prevent the prior publication of the public notices required in accordance with   
+  law for consideration of the ordinance.
+
+ H. In the event that a proposed rezoning amendment fails to receive one (1) plus the majority of   
+  votes of the Planning Commission, the applicant may request the City Council to review the   
+  rezoning request and take appropriate action thereon.  
+  
+ I. When the City Council denies a re-zoning request, the City Council and the Planning Commis-  
+  sion shall not reconsider an application for the same re-zoning request for a period of one year.
+
+Sec. 37: COMPLAINTS REGARDING VIOLATIONS
+
+Whenever a violation of this ordinance occurs, or is alleged to have occurred, any person may file a written com-
+plaint stating fully the causes and basis thereof shall be filed with the Planning Director. He shall record properly 
+such complaint, immediately investigate, and take action thereon as provided by this ordinance.
+
+
+
+70 
+
+Sec. 38: PENALTIES FOR VIOLATION
+
+Violation of the provisions of this ordinance or failure to comply with any of its requirements (including viola-
+tions of conditions and safeguards established in connection with grants of variances or special exceptions) shall 
+be unlawful. Any person who violates any provision of this ordinance or fails to comply with any of its require-
+ments shall upon conviction thereof be fined not more than $500 or imprisoned for not more than 180 days, or 
+both, in the discretion of the court trying the case; and in addition shall pay all costs in the case.
+
+Nothing herein contained shall prevent the City from taking such other lawful action as is necessary to
+prevent or remedy any violation.
+
+Sec. 39: SEVERABILITY CLAUSE
+
+The provisions of this ordinance are severable. If any provision, section, paragraph, sentence, or part thereof or 
+the application to any persons shall be held unconstitutional or invalid, such holding shall not affect or impair 
+the remainder of this ordinance or the remaining persons to whom it applies, it being the legislative intent to 
+enact each provision, section, paragraph, sentence, and part thereof and the application thereof, separately from 
+each other.
+
+Sec. 40: REPEAL OF CONFLICTING ORDINANCE - EFFECTIVE DATE
+
+All ordinances or parts of ordinances in conflict with this Zoning Ordinance, or inconsistent with the provisions 
+hereof, are hereby repealed to the extent necessary to give this ordinance full force and effect, provided, howev-
+er, that nothing contained in this Section 38 shall be construed to relieve any person from any liability, offense, 
+penalty or punishment committed or incurred under such ordinances before the effective date of this ordinance. 
+This Ordinance upon its adoption and publication as required by law shall become effective at 12:01 a.m. on the 
+1st day of October, 2016.
+
+
+
+City of Anniston Zoning Ordinance     71
+
+
+
+
+
+

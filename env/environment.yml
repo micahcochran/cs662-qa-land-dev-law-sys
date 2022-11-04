@@ -1,0 +1,29 @@
+name: NLP-SPARQL
+channels:
+  - conda-forge
+  - pytorch
+  - huggingface
+  - defaults
+dependencies:
+  - python = 3.9
+  - matplotlib
+  - numpy
+  - pandas
+  - pytest
+  - scikit-learn
+  - sklearn-pandas
+  - ipykernel
+  - pathlib
+  - xgboost
+  - shap
+  - pip
+  - rdflib
+  - pytorch
+  - torchtext
+  - nltk
+  - spacy
+  - seaborn
+  - gensim
+  - transformers
+  - pip:
+    - knockknock
