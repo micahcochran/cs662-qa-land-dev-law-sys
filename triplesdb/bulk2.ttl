@@ -46,6 +46,33 @@
 :ZoningDistrict     rdf:type        rdfs:class .
 
 
+# Property Definitions
+:minLotSize         rdf:type        rdf:Property ;
+                    rdf:label       "minimum lot size" .
+
+:maxDensity         rdf:type        rdf:Property ;
+                    rdf:label       "maximum density" .
+
+:minLotWidth        rdf:type        rdf:Property ;
+                    rdf:label       "minimum lot width" .
+
+:minLotDepth        rdf:type        rdf:Property ;
+                    rdf:label       "minimum lot depth" .
+
+:minFrontSetback    rdf:type        rdf:Property ;
+                    rdf:label       "minimum front setback" .
+
+:minSideSetback     rdf:type        rdf:Property ;
+                    rdf:label       "minimum side setback" .
+
+:minRearSetback     rdf:type        rdf:Property ;
+                    rdf:label       "minimum rear setback" .
+
+:maxBuildingHeight  rdf:type        rdf:Property ;
+                    rdf:label       "maximum building height" .
+
+
+
 ########  Residential Zoning Districts/Divisions  ########
 
 

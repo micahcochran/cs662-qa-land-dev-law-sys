@@ -78,24 +78,6 @@ class QueryUsesSparql:
 
 ZONING_RDF_PREFIX = 'http://www.example.org/ns/lu/zoning#'
 
-# dimensional regulations
-# key is text, value is the name of predicate in the dimensional requirements KG
-DIM_REGULATIONS_TEXT = {"minimum lot size": ":minLotSize",
-                        "maximum density": ":maxDensity",   # FIXME ignore maxDensity temporarily, so it does not block progress
-                        "minimum lot width": ":minLotWidth",
-                        "minimum lot depth": ":minLotDepth",
-                        "minimum front setback": ":minFrontSetback",
-                        "minimum side setback": ":minSideSetback",
-                        "minimum rear setback": ":minRearSetback",
-                        "maximum building height": ":maxBuildingHeight", }
-
-# the key is the predicate, the values is the text description
-DIM_REGULATIONS_PRED = {v: k for k, v in DIM_REGULATIONS_TEXT.items()}
-
-# the key is the predicate with full URI, the values is the text description
-DIM_REGULATIONS_PRED_URI = {ZONING_RDF_PREFIX + v[1:]: k for k, v in DIM_REGULATIONS_TEXT.items()}
-
-# DIM_REGULATIONS_TEXT_URI = {v:k for k,v in DIM_REGULATIONS_TEXT.items()}
 
 # key is the unit's name, value is the unit per https://unitsofmeasure.org/ucum  in the designation c/s
 UNITS_NAME = {
@@ -122,6 +104,17 @@ class QueryDimensionsSparql:
     def __init__(self, dimensional_kg):
         self.dimensional_kg = dimensional_kg
 
+        # dimensional regulations
+        # key is text, value is the name of predicate in the dimensional requirements KG
+        self.DIM_REGULATIONS_TEXT = self._get_kg_properties()
+
+        # the key is the predicate, the values is the text description
+        self.DIM_REGULATIONS_PRED = {v: k for k, v in self.DIM_REGULATIONS_TEXT.items()}
+
+        # the key is the predicate with full URI, the values is the text description
+        self.DIM_REGULATIONS_PRED_URI = {ZONING_RDF_PREFIX + v[1:]: k for k, v in self.DIM_REGULATIONS_TEXT.items()}
+
+        # DIM_REGULATIONS_TEXT_URI = {v:k for k,v in DIM_REGULATIONS_TEXT.items()}
     def all_zoning_iter(self) -> Generator[str, None, None]:
         """
         iterator of all the zoning districts in the knowledge graph
@@ -146,7 +139,7 @@ class QueryDimensionsSparql:
         :return:
         """
         for zoning in self.all_zoning_iter():
-            for regulation_text, regulation_predicate in DIM_REGULATIONS_TEXT.items():
+            for regulation_text, regulation_predicate in self.DIM_REGULATIONS_TEXT.items():
                 yield regulation_predicate, regulation_text, zoning
 
     def all_regulations_values_zoning_iter(self):
@@ -173,7 +166,7 @@ class QueryDimensionsSparql:
         for regulation_predicate, regulation_value, zoning_label in results:
 
             # skip predicates that are not in the dictionary of dimensional regulations
-            if str(regulation_predicate) not in DIM_REGULATIONS_PRED_URI:
+            if str(regulation_predicate) not in self.DIM_REGULATIONS_PRED_URI:
                 continue
             # REMOVEME
             # print(type(regulation_value))
@@ -182,8 +175,24 @@ class QueryDimensionsSparql:
 
             #            yield DIM_REGULATIONS_PRED[':' + regulation_predicate.fragment], regulation_predicate, regulation_value, zoning_label
             # this is regulation_predicate, regulation_text, regulation_value, zoning_label
-            yield ':' + regulation_predicate.fragment, DIM_REGULATIONS_PRED_URI[
+            yield ':' + regulation_predicate.fragment, self.DIM_REGULATIONS_PRED_URI[
                 str(regulation_predicate)], regulation_value, zoning_label
+    def _get_kg_properties(self) -> dict:
+        """generates Knowledge Graph's properties
+            specifically for DIM_REGULATIONS_TEXT variable from the graph
+           returns dictionary"""
+        sparql_properties = """
+        SELECT ?property_name ?property_label
+
+        WHERE {
+            ?property_name a rdf:Property ;
+                        rdf:label  ?property_label .
+        }
+        """
+        results = self.dimensional_kg.query(sparql_properties)
+        # This returns the fragment form (example :minLotSize)
+        # and does no checking if the property is from the correct KG.
+        return { str(row.property_label): ':'+row.property_name.fragment for row in results }
 
 
 class TemplateGeneration:
@@ -262,7 +271,7 @@ WHERE {
         ?zoning $regulation_predicate ?regulation_value ;
                 rdfs:label "${zoning}" .
 }
-    """,
+""",
               'question_templates': ["What is the $regulation_text in the $zoning zoning district?"],
               'answer_datatype': list,
               }
@@ -289,7 +298,7 @@ ASK {
         ?zoning $regulation_predicate ${regulation_value};
                 rdfs:label "${zoning}" .
 }
-    """,
+""",
               #          'question_templates':
               #                ["Is the $regulation_text for a property in the $zoning zoning district $regulation_value square feet?"],
               'question_templates':

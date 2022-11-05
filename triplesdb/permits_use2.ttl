@@ -16,7 +16,8 @@
 :ZoningDistrict     rdf:type        rdfs:class .
 
 # Property Definitions
-# :permitsUse         rdf:type
+:permitsUse         rdf:type        rdf:Property ;
+                    rdf:label       "permits use" .
 
 # Instance Definitions
 
