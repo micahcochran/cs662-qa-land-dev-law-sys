@@ -16,7 +16,8 @@
 :ZoningDistrict     rdf:type        rdfs:class .
 
 # Property Definitions
-# :permitsUse         rdf:type
+:permitsUse         rdf:type        rdf:Property ;
+                    rdf:label       "permits use" .
 
 # Instance Definitions
 
@@ -28,7 +29,7 @@
 
 :r1 rdfs:label "R1" .
 
-:r1 :permitsUse "Single-family dwellings" ;
+:r1 :permitsUse "single-family dwellings" ;
     :permitsUse "publicly owned and operated parks" ;
     :permitsUse "recreation centers" ;
     :permitsUse "swimming pools and playgrounds" ;
@@ -47,10 +48,10 @@
 :r2 rdfs:label "R2" . 
 
 
-:r2 :permitsUse "Two-family dwellings" .
+:r2 :permitsUse "two-family dwellings" .
 
 # These are the permitted uses from R1
-:r2 :permitsUse "Single-family dwellings" ;
+:r2 :permitsUse "single-family dwellings" ;
     :permitsUse "publicly owned and operated parks" ;
     :permitsUse "recreation centers" ;
     :permitsUse "swimming pools and playgrounds" ;
@@ -71,10 +72,10 @@
 :r3 :permitsUse "multiple family dwellings, such as apartment houses, boarding houses, condominiums and congregate residences" .
 
 # These are the permitted uses from R2
-:r3 :permitsUse "Two-family dwellings" .
+:r3 :permitsUse "two-family dwellings" .
 
 # These are the permitted uses from R1
-:r3 :permitsUse "Single-family dwellings" ;
+:r3 :permitsUse "single-family dwellings" ;
     :permitsUse "publicly owned and operated parks" ;
     :permitsUse "recreation centers" ;
     :permitsUse "swimming pools and playgrounds" ;
@@ -94,16 +95,16 @@
 
 :a1 rdfs:label "A1" . 
 
-:a1 :permitsUse "Open space" .
+:a1 :permitsUse "open space" .
 
 
 :a2 a :ZoningDistrict .
 
 :a2 rdfs:label "A2" . 
 
-:a2 :permitsUse "Agricultural Use" ;
-    :permitsUse "Dwellings" ;
-    :permitsUse "Maintenance/storage buildings" .
+:a2 :permitsUse "agricultural Use" ;
+    :permitsUse "dwellings" ;
+    :permitsUse "maintenance/storage buildings" .
 
 
 # A3 USES HAVE BEEN OMITTED
@@ -116,7 +117,7 @@
 :c1 a :ZoningDistrict ;
     rdfs:label "C1" . 
 
-:c1 :permitsUse "Minor automotive repair" ;
+:c1 :permitsUse "minor automotive repair" ;
 	:permitsUse "automotive motor fuel dispensing facilities" ;
 	:permitsUse "automotive self-service motor fuel dispensing facilities" ;
 	:permitsUse "business services" ;
@@ -174,7 +175,7 @@
 	:permitsUse "commercial printing and publishing" ;
 	:permitsUse "taverns and cocktail lounges" ;
 	:permitsUse "indoor theaters" ;
-	:permitsUse "Self-storage warehouses" .
+	:permitsUse "self-storage warehouses" .
 
 # These are the permitted uses from C2
 :c3 :permitsUse "light commercial (excluding wholesale sales)" ;
@@ -186,7 +187,7 @@
 
 
 # These are the permitted uses from C1
-:c3 :permitsUse "Minor automotive repair" ;
+:c3 :permitsUse "minor automotive repair" ;
 	:permitsUse "automotive motor fuel dispensing facilities" ;
 	:permitsUse "automotive self-service motor fuel dispensing facilities" ;
 	:permitsUse "business services" ;
@@ -225,7 +226,7 @@
 	:permitsUse "commercial printing and publishing" ;
 	:permitsUse "taverns and cocktail lounges" ;
 	:permitsUse "indoor theaters" ;
-	:permitsUse "Self-storage warehouses" .
+	:permitsUse "self-storage warehouses" .
 
 # These are the permitted uses from C2
 :c4 :permitsUse "light commercial (excluding wholesale sales)" ;
@@ -237,7 +238,7 @@
 
 
 # These are the permitted uses from C1
-:c4 :permitsUse "Minor automotive repair" ;
+:c4 :permitsUse "minor automotive repair" ;
 	:permitsUse "automotive motor fuel dispensing facilities" ;
 	:permitsUse "automotive self-service motor fuel dispensing facilities" ;
 	:permitsUse "business services" ;
@@ -277,7 +278,7 @@
 :fi2 a :ZoningDistrict ;
      rdfs:label "FI2" .
 
-:fi2 :permitsUse "Stadiums and arenas" ;
+:fi2 :permitsUse "stadiums and arenas" ;
 	 :permitsUse "indoor swap meets" ;
 	 :permitsUse "breweries" ;
 	 :permitsUse "liquid fertilizer manufacturing" ;
@@ -302,7 +303,7 @@
 :fi3 a :ZoningDistrict ;
      rdfs:label "FI3" .
 
-:fi3 :permitsUse "Auto-dismantling yards" ;
+:fi3 :permitsUse "auto-dismantling yards" ;
 	 :permitsUse "alcohol manufacturing" ;
 	 :permitsUse "cotton gins" ;
 	 :permitsUse "paper manufacturing" ;
@@ -311,7 +312,7 @@
 	 :permitsUse "petroleum refining" .
 
 # These are the permitted uses from FI2
-:fi3 :permitsUse "Stadiums and arenas" ;
+:fi3 :permitsUse "stadiums and arenas" ;
 	 :permitsUse "indoor swap meets" ;
 	 :permitsUse "breweries" ;
 	 :permitsUse "liquid fertilizer manufacturing" ;
