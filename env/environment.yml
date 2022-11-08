@@ -20,10 +20,14 @@ dependencies:
   - rdflib
   - pytorch
   - torchtext
+  - keras
   - nltk
   - spacy
   - seaborn
   - gensim
   - transformers
+  - datasets
+  - apache-beam
   - pip:
     - knockknock
+    - farm-haystack

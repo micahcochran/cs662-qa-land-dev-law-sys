@@ -1,8 +1,9 @@
 """ _summary_
 """
 
-from ._load_corpus import load_corpus
+from ._load_corpus import load_corpus, Corpus
 
 __all__ = [
-    'load_corpus'
+    'load_corpus',
+    'Corpus'
 ]
