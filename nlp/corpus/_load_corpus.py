@@ -122,7 +122,10 @@ class Corpus:
         Returns:
             list: _description_
         """
-        nltk.download(tagset)
+        try:
+            nltk.download(tagset)
+        except:
+            pass
         nltk.download('averaged_perceptron_tagger')
         try:
             if 'universal' in tagset:
@@ -148,7 +151,7 @@ class Corpus:
         self.corpus['tagged_words'] = self.tagged_words
         return self.tagged_words
 
-def load_corpus(corpus_name: str, language: str='english', tagset: str='universal_tagset') -> Corpus:
+def load_corpus(corpus_name: str, language: str='english', tagset: str=None) -> Corpus:
     """load_corpus _summary_
 
     Returns:

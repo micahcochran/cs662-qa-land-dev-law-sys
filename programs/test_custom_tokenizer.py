@@ -12,7 +12,7 @@ sys.path.append('../cs662-qa-land-dev-law-sys/')
 from nlp.corpus import load_corpus
 from nlp.model import create_custom_tokenizer
 
-corp = load_corpus("zo_corpus")
+corp = load_corpus("zo_corpus", tagset='universal_tagset')
 
 cur_dir = os.getcwd()
 temp_dir = f'{cur_dir}/temp_data/{corp.name}'
@@ -33,8 +33,3 @@ tokens = token.encode("This is a test")
 print(tokens)
 print(token.decode(tokens))
 
-# from datasets import load_dataset
-
-# bookcorpus = load_dataset("bookcorpus", split="train")
-
-# print(type(bookcorpus[0]), '\n', bookcorpus[0])

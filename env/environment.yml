@@ -3,6 +3,7 @@ channels:
   - conda-forge
   - pytorch
   - huggingface
+  - intel
   - defaults
 dependencies:
   - python = 3.9
@@ -30,4 +31,4 @@ dependencies:
   - apache-beam
   - pip:
     - knockknock
-    - farm-haystack
+    - farm-haystack[all]

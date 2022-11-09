@@ -65,7 +65,7 @@ class CustomTokenizer:
         """
         text_data = []
         file_count = 0
-        self.name = corpus.name
+        self.name = f'{corpus.name}_tokenizer'
         self.temp_path = temp_dir
         for text in corpus.raw_texts:
             for string in sent_tokenize(text):

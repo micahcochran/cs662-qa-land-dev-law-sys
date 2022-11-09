@@ -1,12 +1,11 @@
 """ _summary_
 """
 
-from nlp.corpus import load_corpus
+import sys
 
-import nltk
-from nltk.corpus import brown
-from triplesdb import generate_template
-nltk.download('brown')
+sys.path.append('../cs662-qa-land-dev-law-sys/')
+
+from nlp.corpus import load_corpus
 
 corp = load_corpus("zo_corpus")
 print(f'Number of texts in {corp.name}: {len(corp.raw_texts)}')
@@ -16,4 +15,4 @@ print(f"Vocabulary size: {len(corp.vocabulary)}")
 print(f"Number of tagged sentences in {corp.name}: {len(corp.tagged_sents)}")
 print(f"Number of tagged words in {corp.name}: {len(corp.tagged_words)}")
 
-# print(corp.raw_texts[0])
+print(corp.raw_texts[0])
