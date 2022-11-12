@@ -4,6 +4,7 @@
 Code to generate templates
 """
 
+import itertools
 from typing import Generator, Iterator, Tuple
 import sys
 from string import Template
@@ -397,6 +398,41 @@ ASK {
                 result['question'] = q_template.substitute(varibs)
                 yield result
 
+    def get_template(self, name: str) -> dict:
+        """provide the dictionary of the template"""
+        return self.templates[name]
+
+
+def generate_all_templates(uses_kg=None, dimreq_kg=None) -> Generator[dict, None, None]:
+    """generate all the templates
+
+    uses_kg or dimreq_kg rdflib.Graph() objects may be passed.  Otherwise, these will be loaded automatically."""
+
+    if uses_kg is None:
+        uses_kg = rdflib.Graph()
+        # load the graph related to the permitted uses
+        uses_kg.parse("permits_use2.ttl")
+
+    if dimreq_kg is None:
+        dimreq_kg = rdflib.Graph()
+        # load the graph related to the permitted uses
+        #    dimreq_kg.parse("bulk.ttl")
+        dimreq_kg.parse("bulk2.ttl")
+
+    tg = TemplateGeneration()
+    iterators = []
+    for template_name in tg.template_names():
+        kg_to_use = tg.get_template(template_name)['knowledge_graph']
+        if kg_to_use == 'dimensional_reqs':
+            iterators.append(tg.generate_output(dimreq_kg, template_name))
+        elif kg_to_use == 'permitted_uses':
+            iterators.append(tg.generate_output(uses_kg, template_name))
+        else:
+            raise RuntimeError(
+                f'self.templates["{template_name}"], knowledge_graph has an unknown value: {kg_to_use}')
+
+    return itertools.chain.from_iterable(iterators)
+
 
 def main() -> int:
     uses_kg = rdflib.Graph()
@@ -428,6 +464,9 @@ def main() -> int:
     elif sys.argv[1] == '5':
         print('=== template_use_1var_yn_answer ===')
         template_iter = tg.generate_output(uses_kg, 'template_use_1var_yn_answer')
+    elif sys.argv[1] == 'all':
+        print('=== Printing All templates ===')
+        template_iter = generate_all_templates(uses_kg, dimreq_kg)
     else:
         print_help()
         return 0
@@ -448,6 +487,7 @@ def print_help():
                 3 - Template 3 - template_dimreg_2var_m_answer
                 4 - Template 4 - template_dimreg_4var_yn_answer
                 5 - Template 5 - template_use_1var_yn_answer
+                all - output all the templates
     """)
 
 
