@@ -128,7 +128,7 @@ class Corpus:
             pass
         nltk.download('averaged_perceptron_tagger')
         try:
-            if 'universal' in tagset:
+            if tagset and 'universal' in tagset:
                 self.tagged_sents = nltk.pos_tag_sents(self.sents, tagset='universal')
             else:
                 self.tagged_sents = nltk.pos_tag_sents(self.sents)

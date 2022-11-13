@@ -31,4 +31,5 @@ dependencies:
   - apache-beam
   - pip:
     - knockknock
-    - farm-haystack[all]
+    - farm-haystack[all] # if you want to use CPU
+    # - farm-haystack[all-gpu] # if you want to use GPU

@@ -3,6 +3,7 @@
 
 import os
 import sys
+import shutil
 from pathlib import Path
 from transformers import RobertaTokenizer
 from tokenizers import ByteLevelBPETokenizer
@@ -32,4 +33,7 @@ token = RobertaTokenizer.from_pretrained(model_dir, max_len=512)
 tokens = token.encode("This is a test")
 print(tokens)
 print(token.decode(tokens))
+
+# add a code to remove the temp_dir if data not needed
+shutil.rmtree(f'{cur_dir}/temp_data')
 

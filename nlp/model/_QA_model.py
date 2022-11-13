@@ -22,6 +22,9 @@ class SquadBasedModel():
     def _create_model(self, reader: type) -> list:
         return None
     
+def create_squad_model() -> SquadBasedModel:
+    return SquadBasedModel()
+    
 @dataclass
 class CustomReader():
     

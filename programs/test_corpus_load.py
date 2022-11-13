@@ -7,7 +7,7 @@ sys.path.append('../cs662-qa-land-dev-law-sys/')
 
 from nlp.corpus import load_corpus
 
-corp = load_corpus("zo_corpus")
+corp = load_corpus("zo_corpus", tagset='universal_tagset')
 print(f'Number of texts in {corp.name}: {len(corp.raw_texts)}')
 print(f'Number of sentences in {corp.name}: {len(corp.sents)}')
 print(f'Number of words in {corp.name}: {len(corp.words)}')
