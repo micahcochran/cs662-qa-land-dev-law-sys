@@ -1,0 +1,605 @@
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix cdt: <http://w3id.org/lindt/custom_datatypes#> .
+@prefix : <http://www.example.org/ns/lu/zoning#> .
+
+
+# These permitted used were derived from the International Zoning Code 2021.
+# Specifically §401.1, §501.1, §601.1, & §701.1.
+# International Code Council is the copyright owner of the document.
+# This was created and used in an educational context for a class.
+
+
+##### Custom Unit ########
+# The IZC has three custom units: Dwelling units per acre, acres per dwelling units, and units per acre.
+# I would like to denote these by [du/acr_u], [acr_u/du], and [u/acr_u].
+# These are units are upper bounds for the density of dwelling units in an area.
+
+# Per the The Unified Code for Units of Measure (Sections 2 & Section 3) - https://unitsofmeasure.org/ucum
+# There are two ways to treat this unit as an arbitrary unit or a special unit.
+# * Arbitrary units are considered dimensionless and should not be converted.
+# * Special units are customary units and are enclosed with square brackets [].
+# * Curly braces {} enclose annotation.
+#
+# Using this notation for the moment...
+#      :maxDensity        "4 [du/acr_u]"^^cdt:dimensionless ;
+#
+
+# Notes about creating a custom unit: https://ci.mines-stetienne.fr/lindt/
+
+
+# ISSUES:
+# * Permitted uses have some repetition.
+# * Using :seeAlso to link residential :ZoningDistrictDivision needs a property that links it back to its :ZoningDistrict
+#     Not sure if this really gets at the proper relationship.
+
+
+# Class definitions -----------------------------------------------------------
+:ZoningDistrict     rdf:type        rdfs:class .
+
+# This is for the division of residential densities with different dimensional requirements.
+:ZoningDistrictDivision rdfs:subClassOf :ZoningDistrict .
+
+
+# Property Definitions ---------------------------------------------------------
+
+:permitsUse         rdf:type        rdf:Property ;
+                    rdfs:label      "permits use" ;
+                    rdfs:range      rdfs:Literal .
+
+:minLotSize         rdf:type        rdf:Property ;
+                    rdfs:label      "minimum lot size" ;
+                    rdf:range       cdt:area .
+
+:maxDensity         rdf:type        rdf:Property ;
+                    rdfs:label      "maximum density" ;
+                    rdf:range       cdt:dimensionless .
+
+:minLotWidth        rdf:type        rdf:Property ;
+                    rdfs:label      "minimum lot width" ;
+                    rdf:range       cdt:length .
+
+:minLotDepth        rdf:type        rdf:Property ;
+                    rdfs:label      "minimum lot depth" ;
+                    rdf:range       cdt:length .
+
+:minFrontSetback    rdf:type        rdf:Property ;
+                    rdfs:label      "minimum front setback" ;
+                    rdf:range       cdt:length .
+
+:minSideSetback     rdf:type        rdf:Property ;
+                    rdfs:label      "minimum side setback" ;
+                    rdf:range       cdt:length .
+
+:minRearSetback     rdf:type        rdf:Property ;
+                    rdfs:label      "minimum rear setback" ;
+                    rdf:range       cdt:length .
+
+:maxBuildingHeight  rdf:type        rdf:Property ;
+                    rdfs:label      "maximum building height" ;
+                    rdf:range       cdt:length .
+
+
+# Instance Definitions
+
+
+###############################################################################
+#####   PERMITTED USES    #####################################################
+###############################################################################
+
+########  Residential Zoning Districts  ########
+
+:r1 a           :ZoningDistrict ;
+    rdfs:label  "R1" .
+
+:r1 :permitsUse "single-family dwellings" ;
+    :permitsUse "publicly owned and operated parks" ;
+    :permitsUse "recreation centers" ;
+    :permitsUse "swimming pools and playgrounds" ;
+    :permitsUse "police and fire department stations" ;
+    :permitsUse "public and governmental services" ;
+    :permitsUse "public libraries" ;
+    :permitsUse "schools and colleges (excluding colleges or trade schools operated for profit)" ;
+    :permitsUse "public parking lots" ;
+    :permitsUse "private garages" ;
+    :permitsUse "buildings accessory to the permitted uses (including private garages and accessory living quarters)" ;
+    :permitsUse "temporary buildings" .
+
+
+:r2 a           :ZoningDistrict ;
+    rdfs:label  "R2" .
+
+:r2 :permitsUse "two-family dwellings" .
+
+# These are the permitted uses from R1
+:r2 :permitsUse "single-family dwellings" ;
+    :permitsUse "publicly owned and operated parks" ;
+    :permitsUse "recreation centers" ;
+    :permitsUse "swimming pools and playgrounds" ;
+    :permitsUse "police and fire department stations" ;
+    :permitsUse "public and governmental services" ;
+    :permitsUse "public libraries" ;
+    :permitsUse "schools and colleges (excluding colleges or trade schools operated for profit)" ;
+    :permitsUse "public parking lots" ;
+    :permitsUse "private garages" ;
+    :permitsUse "buildings accessory to the permitted uses (including private garages and accessory living quarters)" ;
+    :permitsUse "temporary buildings" .
+
+
+:r3 a           :ZoningDistrict ;
+    rdfs:label  "R3" .
+
+:r3 :permitsUse "multiple family dwellings, such as apartment houses, boarding houses, condominiums and congregate residences" .
+
+# These are the permitted uses from R2
+:r3 :permitsUse "two-family dwellings" .
+
+# These are the permitted uses from R1
+:r3 :permitsUse "single-family dwellings" ;
+    :permitsUse "publicly owned and operated parks" ;
+    :permitsUse "recreation centers" ;
+    :permitsUse "swimming pools and playgrounds" ;
+    :permitsUse "police and fire department stations" ;
+    :permitsUse "public and governmental services" ;
+    :permitsUse "public libraries" ;
+    :permitsUse "schools and colleges (excluding colleges or trade schools operated for profit)" ;
+    :permitsUse "public parking lots" ;
+    :permitsUse "private garages" ;
+    :permitsUse "buildings accessory to the permitted uses (including private garages and accessory living quarters)" ;
+    :permitsUse "temporary buildings" .
+
+
+########  Agricultural Zoning Districts  ########
+
+:a1 a           :ZoningDistrict ;
+    rdfs:label  "A1" .
+
+:a1 :permitsUse "open space" .
+
+
+:a2 a           :ZoningDistrict ;
+    rdfs:label  "A2" .
+
+:a2 :permitsUse "agricultural Use" ;
+    :permitsUse "dwellings" ;
+    :permitsUse "maintenance/storage buildings" .
+
+
+# A3 USES HAVE BEEN OMITTED
+:a3 a           :ZoningDistrict;
+    rdfs:label  "A3" .
+
+########  Commercial Zoning Districts  ########
+
+:c1 a           :ZoningDistrict ;
+    rdfs:label  "C1" .
+
+:c1 :permitsUse "minor automotive repair" ;
+	:permitsUse "automotive motor fuel dispensing facilities" ;
+	:permitsUse "automotive self-service motor fuel dispensing facilities" ;
+	:permitsUse "business services" ;
+	:permitsUse "financial services" ;
+	:permitsUse "convenience and neighborhood commercial centers (excluding wholesale sales)" ;
+	:permitsUse "family and group day care facilities" ;
+	:permitsUse "libraries" ;
+	:permitsUse "mortuary and funeral homes" ;
+	:permitsUse "public and governmental services" ;
+	:permitsUse "police and fire department stations" ;
+	:permitsUse "places of religious worship" ;
+	:permitsUse "public utility stations" ;
+	:permitsUse "restaurants" .
+
+
+:c2 a :ZoningDistrict ;
+    rdfs:label "C2" .
+
+:c2 :permitsUse "light commercial (excluding wholesale sales)" ;
+	:permitsUse "group care facilities" ;
+	:permitsUse "physical fitness centers" ;
+	:permitsUse "religious, cultural and fraternal activities" ;
+	:permitsUse "rehabilitation centers" ;
+	:permitsUse "school and colleges operated for profit (including commercial, vocational and trade schools)" .
+
+
+# These are the permitted uses from C1
+:c2 :permitsUse "Minor automotive repair" ;
+	:permitsUse "automotive motor fuel dispensing facilities" ;
+	:permitsUse "automotive self-service motor fuel dispensing facilities" ;
+	:permitsUse "business services" ;
+	:permitsUse "financial services" ;
+	:permitsUse "convenience and neighborhood commercial centers (excluding wholesale sales)" ;
+	:permitsUse "family and group day care facilities" ;
+	:permitsUse "libraries" ;
+	:permitsUse "mortuary and funeral homes" ;
+	:permitsUse "public and governmental services" ;
+	:permitsUse "police and fire department stations" ;
+	:permitsUse "places of religious worship" ;
+	:permitsUse "public utility stations" ;
+	:permitsUse "restaurants" .
+
+
+:c3 a :ZoningDistrict ;
+    rdfs:label "C3" .
+
+
+:c3 :permitsUse	"amusement centers (including bowling alleys, golf driving ranges miniature golf courses, ice rinks, pool and billiard halls, and similar recreational uses)" ;
+	:permitsUse "automotive sales" ;
+	:permitsUse "building material supply sales (wholesale and retail)" ;
+	:permitsUse "cultural institutions (such as museums and art galleries)" ;
+	:permitsUse "community centers (including wholesale and retail sales)" ;
+	:permitsUse "health and medical institutions (such as hospitals)" ;
+	:permitsUse "hotels and motels (excluding other residential occupancies)" ;
+	:permitsUse "commercial printing and publishing" ;
+	:permitsUse "taverns and cocktail lounges" ;
+	:permitsUse "indoor theaters" ;
+	:permitsUse "self-storage warehouses" .
+
+# These are the permitted uses from C2
+:c3 :permitsUse "light commercial (excluding wholesale sales)" ;
+	:permitsUse "group care facilities" ;
+	:permitsUse "physical fitness centers" ;
+	:permitsUse "religious, cultural and fraternal activities" ;
+	:permitsUse "rehabilitation centers" ;
+	:permitsUse "school and colleges operated for profit (including commercial, vocational and trade schools)" .
+
+
+# These are the permitted uses from C1
+:c3 :permitsUse "minor automotive repair" ;
+	:permitsUse "automotive motor fuel dispensing facilities" ;
+	:permitsUse "automotive self-service motor fuel dispensing facilities" ;
+	:permitsUse "business services" ;
+	:permitsUse "financial services" ;
+	:permitsUse "convenience and neighborhood commercial centers (excluding wholesale sales)" ;
+	:permitsUse "family and group day care facilities" ;
+	:permitsUse "libraries" ;
+	:permitsUse "mortuary and funeral homes" ;
+	:permitsUse "public and governmental services" ;
+	:permitsUse "police and fire department stations" ;
+	:permitsUse "places of religious worship" ;
+	:permitsUse "public utility stations" ;
+	:permitsUse "restaurants" .
+
+
+:c4 a :ZoningDistrict ;
+    rdfs:label "C4" .
+
+:c4 :permitsUse "major automotive repair" ;
+	:permitsUse "commercial bakeries" ;
+	:permitsUse "regional commercial centers (including wholesale and retail sales)" ;
+	:permitsUse "plastic product design, molding and assembly" ;
+	:permitsUse "small metal products design, casting, fabricating, and processing" ;
+	:permitsUse "manufacture and finishing" ;
+	:permitsUse "storage yards" ;
+	:permitsUse "wood products manufacturing and finishing" .
+
+# These are the permitted uses from C3
+:c4 :permitsUse	"amusement centers (including bowling alleys, golf driving ranges miniature golf courses, ice rinks, pool and billiard halls, and similar recreational uses)" ;
+	:permitsUse "automotive sales" ;
+	:permitsUse "building material supply sales (wholesale and retail)" ;
+	:permitsUse "cultural institutions (such as museums and art galleries)" ;
+	:permitsUse "community centers (including wholesale and retail sales)" ;
+	:permitsUse "health and medical institutions (such as hospitals)" ;
+	:permitsUse "hotels and motels (excluding other residential occupancies)" ;
+	:permitsUse "commercial printing and publishing" ;
+	:permitsUse "taverns and cocktail lounges" ;
+	:permitsUse "indoor theaters" ;
+	:permitsUse "self-storage warehouses" .
+
+# These are the permitted uses from C2
+:c4 :permitsUse "light commercial (excluding wholesale sales)" ;
+	:permitsUse "group care facilities" ;
+	:permitsUse "physical fitness centers" ;
+	:permitsUse "religious, cultural and fraternal activities" ;
+	:permitsUse "rehabilitation centers" ;
+	:permitsUse "school and colleges operated for profit (including commercial, vocational and trade schools)" .
+
+
+# These are the permitted uses from C1
+:c4 :permitsUse "minor automotive repair" ;
+	:permitsUse "automotive motor fuel dispensing facilities" ;
+	:permitsUse "automotive self-service motor fuel dispensing facilities" ;
+	:permitsUse "business services" ;
+	:permitsUse "financial services" ;
+	:permitsUse "convenience and neighborhood commercial centers (excluding wholesale sales)" ;
+	:permitsUse "family and group day care facilities" ;
+	:permitsUse "libraries" ;
+	:permitsUse "mortuary and funeral homes" ;
+	:permitsUse "public and governmental services" ;
+	:permitsUse "police and fire department stations" ;
+	:permitsUse "places of religious worship" ;
+	:permitsUse "public utility stations" ;
+	:permitsUse "restaurants" .
+
+
+### OMIT Commercial Residential Districts for the moment.
+
+
+########  Factory/Industrial Zoning Districts  ########
+
+:fi1 a :ZoningDistrict ;
+     rdfs:label "FI1" .
+
+:fi1 :permitsUse "warehouses" ;
+	 :permitsUse "research or testing laboratories" ;
+	 :permitsUse "product distribution centers" ;
+	 :permitsUse "woodworking shops" ;
+	 :permitsUse "auto body shops" ;
+	 :permitsUse "furniture assembly" ;
+	 :permitsUse "dry cleaning plants" ;
+	 :permitsUse "places of religious worship" ;
+	 :permitsUse "public and governmental services" ;
+	 :permitsUse "machine shops" ;
+	 :permitsUse "boat storage yards" .
+
+
+:fi2 a :ZoningDistrict ;
+     rdfs:label "FI2" .
+
+:fi2 :permitsUse "stadiums and arenas" ;
+	 :permitsUse "indoor swap meets" ;
+	 :permitsUse "breweries" ;
+	 :permitsUse "liquid fertilizer manufacturing" ;
+	 :permitsUse "carpet manufacturing" ;
+	 :permitsUse "monument works" ;
+	 :permitsUse "regional recycling center" .
+
+# These are the permitted uses from FI1
+:fi2 :permitsUse "warehouses" ;
+	 :permitsUse "research or testing laboratories" ;
+	 :permitsUse "product distribution centers" ;
+	 :permitsUse "woodworking shops" ;
+	 :permitsUse "auto body shops" ;
+	 :permitsUse "furniture assembly" ;
+	 :permitsUse "dry cleaning plants" ;
+	 :permitsUse "places of religious worship" ;
+	 :permitsUse "public and governmental services" ;
+	 :permitsUse "machine shops" ;
+	 :permitsUse "boat storage yards" .
+
+
+:fi3 a :ZoningDistrict ;
+     rdfs:label "FI3" .
+
+:fi3 :permitsUse "auto-dismantling yards" ;
+	 :permitsUse "alcohol manufacturing" ;
+	 :permitsUse "cotton gins" ;
+	 :permitsUse "paper manufacturing" ;
+	 :permitsUse "quarries" ;
+	 :permitsUse "salt works" ;
+	 :permitsUse "petroleum refining" .
+
+# These are the permitted uses from FI2
+:fi3 :permitsUse "stadiums and arenas" ;
+	 :permitsUse "indoor swap meets" ;
+	 :permitsUse "breweries" ;
+	 :permitsUse "liquid fertilizer manufacturing" ;
+	 :permitsUse "carpet manufacturing" ;
+	 :permitsUse "monument works" ;
+	 :permitsUse "regional recycling center" .
+
+# These are the permitted uses from FI1
+:fi3 :permitsUse "warehouses" ;
+	 :permitsUse "research or testing laboratories" ;
+	 :permitsUse "product distribution centers" ;
+	 :permitsUse "woodworking shops" ;
+	 :permitsUse "auto body shops" ;
+	 :permitsUse "furniture assembly" ;
+	 :permitsUse "dry cleaning plants" ;
+	 :permitsUse "places of religious worship" ;
+	 :permitsUse "public and governmental services" ;
+	 :permitsUse "machine shops" ;
+	 :permitsUse "boat storage yards" .
+
+
+
+###############################################################################
+#####   DIMENSIONAL REQUIREMENTS     ##########################################
+###############################################################################
+
+########  Residential Zoning Districts/Divisions  ########
+
+
+
+# need some kind of relationship between these smaller Division and the Parent Zoning District
+# Smaller Divisions, Parent Zone
+# :ZoningDivision     rdfs:subClassOf :ZoningDistrict .
+# :r1a      :r1
+
+:r1a a                  :ZoningDistrictDivision ;
+     rdfs:seeAlso       :r1 ;
+     rdfs:label         "R1a" ;
+     :minLotSize        "35000 [sft_i]"^^cdt:area ;
+     :maxDensity        "1 [du/acr_u]"^^cdt:dimensionless ;
+     :minLotWidth       "125 [ft_i]"^^cdt:length ;
+     :minLotDepth       "150 [ft_i]"^^cdt:length ;
+     :minFrontSetback   "25 [ft_i]"^^cdt:length ;
+     :minSideSetback    "10 [ft_i]"^^cdt:length ;
+     :minRearSetback    "30 [ft_i]"^^cdt:length ;
+     :maxBuildingHeight "35 [ft_i]"^^cdt:length .
+
+:r1b a                  :ZoningDistrictDivision ;
+     rdfs:seeAlso       :r1 ;
+     rdfs:label         "R1b" ;
+     :minLotSize        "20000 [sft_i]"^^cdt:area ;
+     :maxDensity        "2 [du/acr_u]"^^cdt:dimensionless ;
+     :minLotWidth       "100 [ft_i]"^^cdt:length ;
+     :minLotDepth       "125 [ft_i]"^^cdt:length ;
+     :minFrontSetback   "20 [ft_i]"^^cdt:length ;
+     :minSideSetback    "10 [ft_i]"^^cdt:length ;
+     :minRearSetback    "25 [ft_i]"^^cdt:length ;
+     :maxBuildingHeight "35 [ft_i]"^^cdt:length .
+
+:r1c a                  :ZoningDistrictDivision ;
+     rdfs:seeAlso       :r1 ;
+     rdfs:label         "R1c" ;
+     :minLotSize        "10000 [sft_i]"^^cdt:area ;
+     :maxDensity        "4 [du/acr_u]"^^cdt:dimensionless ;
+     :minLotWidth       "75 [ft_i]"^^cdt:length ;
+     :minLotDepth       "100 [ft_i]"^^cdt:length ;
+     :minFrontSetback   "20 [ft_i]"^^cdt:length ;
+     :minSideSetback    "5 [ft_i]"^^cdt:length ;
+     :minRearSetback    "25 [ft_i]"^^cdt:length ;
+     :maxBuildingHeight "35 [ft_i]"^^cdt:length .
+
+
+:r1d a                  :ZoningDistrictDivision ;
+     rdfs:seeAlso       :r1 ;
+     rdfs:label         "R1d" ;
+     :minLotSize        "6000 [sft_i]"^^cdt:area ;
+     :maxDensity        "6 [du/acr_u]"^^cdt:dimensionless ;
+     :minLotWidth       "60 [ft_i]"^^cdt:length ;
+     :minLotDepth       "90 [ft_i]"^^cdt:length ;
+     :minFrontSetback   "15 [ft_i]"^^cdt:length ;
+     :minSideSetback    "5 [ft_i]"^^cdt:length ;
+     :minRearSetback    "20 [ft_i]"^^cdt:length ;
+     :maxBuildingHeight "35 [ft_i]"^^cdt:length .
+
+
+:r2a a                  :ZoningDistrictDivision ;
+     rdfs:seeAlso       :r2 ;
+     rdfs:label         "R2a" ;
+     :minLotSize        "10000 [sft_i]"^^cdt:area ;
+     :maxDensity        "4 [du/acr_u]"^^cdt:dimensionless ;
+     :minLotWidth       "60 [ft_i]"^^cdt:length ;
+     :minLotDepth       "70 [ft_i]"^^cdt:length ;
+     :minFrontSetback   "20 [ft_i]"^^cdt:length ;
+     :minSideSetback    "5 [ft_i]"^^cdt:length ;
+     :minRearSetback    "20 [ft_i]"^^cdt:length ;
+     :maxBuildingHeight "35 [ft_i]"^^cdt:length .
+
+
+:r2b a                  :ZoningDistrictDivision ;
+     rdfs:seeAlso       :r2 ;
+     rdfs:label         "R2b" ;
+     :minLotSize        "6000 [sft_i]"^^cdt:area ;
+     :maxDensity        "6 [du/acr_u]"^^cdt:dimensionless ;
+     :minLotWidth       "60 [ft_i]"^^cdt:length ;
+     :minLotDepth       "70 [ft_i]"^^cdt:length ;
+     :minFrontSetback   "15 [ft_i]"^^cdt:length ;
+     :minSideSetback    "5 [ft_i]"^^cdt:length ;
+     :minRearSetback    "20 [ft_i]"^^cdt:length ;
+     :maxBuildingHeight "35 [ft_i]"^^cdt:length .
+
+:r3a a                  :ZoningDistrictDivision ;
+     rdfs:seeAlso       :r3 ;
+     rdfs:label         "R3a" ;
+     :minLotSize        "6000 [sft_i]"^^cdt:area ;
+     :maxDensity        "8 [du/acr_u]"^^cdt:dimensionless ;
+     :minLotWidth       "60 [ft_i]"^^cdt:length ;
+     :minLotDepth       "70 [ft_i]"^^cdt:length ;
+     :minFrontSetback   "15 [ft_i]"^^cdt:length ;
+     :minSideSetback    "5 [ft_i]"^^cdt:length ;
+     :minRearSetback    "20 [ft_i]"^^cdt:length ;
+     :maxBuildingHeight "35 [ft_i]"^^cdt:length .
+
+
+:r3b a                  :ZoningDistrictDivision ;
+     rdfs:seeAlso       :r3 ;
+     rdfs:label         "R3b" ;
+     :minLotSize        "6000 [sft_i]"^^cdt:area ;
+     :maxDensity        "12 [du/acr_u]"^^cdt:dimensionless ;
+     :minLotWidth       "60 [ft_i]"^^cdt:length ;
+     :minLotDepth       "70 [ft_i]"^^cdt:length ;
+     :minFrontSetback   "15 [ft_i]"^^cdt:length ;
+     :minSideSetback    "5 [ft_i]"^^cdt:length ;
+     :minRearSetback    "20 [ft_i]"^^cdt:length ;
+     :maxBuildingHeight "35 [ft_i]"^^cdt:length .
+
+
+########  Commercial Zoning Districts  ########
+:c1     # rdfs:label         "C1" ;
+     :minLotSize        "6000 [sft_i]"^^cdt:area ;
+     :maxDensity        "12 [u/acr_u]"^^cdt:dimensionless ;
+     :minLotWidth       "30 [ft_i]"^^cdt:length ;
+     :minLotDepth       "70 [ft_i]"^^cdt:length ;
+     :minFrontSetback   "0 [ft_i]"^^cdt:length ;
+     :minSideSetback    "0 [ft_i]"^^cdt:length ;
+     :minRearSetback    "0 [ft_i]"^^cdt:length ;
+     :maxBuildingHeight "30 [ft_i]"^^cdt:length .
+
+:c2     #  rdfs:label         "C2" ;
+     :minLotWidth       "30 [ft_i]"^^cdt:length ;
+     :minLotDepth       "70 [ft_i]"^^cdt:length ;
+     :minFrontSetback   "0 [ft_i]"^^cdt:length ;
+     :minSideSetback    "0 [ft_i]"^^cdt:length ;
+     :minRearSetback    "0 [ft_i]"^^cdt:length ;
+     :maxBuildingHeight "40 [ft_i]"^^cdt:length .
+
+
+:c3     # rdfs:label         "C3" ;
+     :minLotWidth       "75 [ft_i]"^^cdt:length ;
+     :minLotDepth       "100 [ft_i]"^^cdt:length ;
+     :minFrontSetback   "0 [ft_i]"^^cdt:length ;
+     :minSideSetback    "0 [ft_i]"^^cdt:length ;
+     :minRearSetback    "0 [ft_i]"^^cdt:length ;
+     :maxBuildingHeight "50 [ft_i]"^^cdt:length .
+
+:c4     # rdfs:label         "C4" ;
+     :minLotWidth       "75 [ft_i]"^^cdt:length ;
+     :minLotDepth       "100 [ft_i]"^^cdt:length ;
+     :minFrontSetback   "0 [ft_i]"^^cdt:length ;
+     :minSideSetback    "0 [ft_i]"^^cdt:length ;
+     :minRearSetback    "0 [ft_i]"^^cdt:length ;
+     :maxBuildingHeight "50 [ft_i]"^^cdt:length .
+
+
+########  Factory/Industrial Zoning Districts  ########
+:fi1    # rdfs:label         "FI1" ;
+     :minLotWidth       "50 [ft_i]"^^cdt:length ;
+     :minLotDepth       "75 [ft_i]"^^cdt:length ;
+     :minFrontSetback   "0 [ft_i]"^^cdt:length ;
+     :minSideSetback    "0 [ft_i]"^^cdt:length ;
+     :minRearSetback    "0 [ft_i]"^^cdt:length ;
+     :maxBuildingHeight "60 [ft_i]"^^cdt:length .
+
+:fi2     # rdfs:label         "FI2" ;
+     :minLotWidth       "75 [ft_i]"^^cdt:length ;
+     :minLotDepth       "100 [ft_i]"^^cdt:length ;
+     :minFrontSetback   "0 [ft_i]"^^cdt:length ;
+     :minSideSetback    "0 [ft_i]"^^cdt:length ;
+     :minRearSetback    "0 [ft_i]"^^cdt:length ;
+     :maxBuildingHeight "80 [ft_i]"^^cdt:length .
+
+:fi3    # rdfs:label         "FI3" ;
+     :minLotWidth       "100 [ft_i]"^^cdt:length ;
+     :minLotDepth       "150 [ft_i]"^^cdt:length ;
+     :minFrontSetback   "0 [ft_i]"^^cdt:length ;
+     :minSideSetback    "0 [ft_i]"^^cdt:length ;
+     :minRearSetback    "0 [ft_i]"^^cdt:length ;
+     :maxBuildingHeight "80 [ft_i]"^^cdt:length .
+
+
+########  Agricultural Zoning Districts  ########
+:a1     # rdfs:label         "A1" ;
+     :minLotSize        "20 [acr_us]"^^cdt:area ;
+     :maxDensity        "20 [acr_u/du]"^^cdt:dimensionless ;
+     :minLotWidth       "600 [ft_i]"^^cdt:length ;
+     :minLotDepth       "600 [ft_i]"^^cdt:length ;
+     :minFrontSetback   "30 [ft_i]"^^cdt:length ;
+     :minSideSetback    "15 [ft_i]"^^cdt:length ;
+     :minRearSetback    "60 [ft_i]"^^cdt:length ;
+     :maxBuildingHeight "35 [ft_i]"^^cdt:length .
+
+
+:a2     # rdfs:label         "A2" ;
+     :minLotSize        "10 [acr_us]"^^cdt:area ;
+     :maxDensity        "10 [acr_u/du]"^^cdt:dimensionless ;
+     :minLotWidth       "400 [ft_i]"^^cdt:length ;
+     :minLotDepth       "400 [ft_i]"^^cdt:length ;
+     :minFrontSetback   "30 [ft_i]"^^cdt:length ;
+     :minSideSetback    "15 [ft_i]"^^cdt:length ;
+     :minRearSetback    "60 [ft_i]"^^cdt:length ;
+     :maxBuildingHeight "35 [ft_i]"^^cdt:length .
+
+:a3     # rdfs:label         "A3" ;
+     :minLotSize        "5 [acr_us]"^^cdt:area ;
+     :maxDensity        "5 [acr_u/du]"^^cdt:dimensionless ;
+     :minLotWidth       "250 [ft_i]"^^cdt:length ;
+     :minLotDepth       "250 [ft_i]"^^cdt:length ;
+     :minFrontSetback   "30 [ft_i]"^^cdt:length ;
+     :minSideSetback    "15 [ft_i]"^^cdt:length ;
+     :minRearSetback    "60 [ft_i]"^^cdt:length ;
+     :maxBuildingHeight "35 [ft_i]"^^cdt:length .
+

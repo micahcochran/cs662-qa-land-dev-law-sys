@@ -39,7 +39,7 @@
     :permitsUse "schools and colleges (excluding colleges or trade schools operated for profit)" ;
     :permitsUse "public parking lots" ;
     :permitsUse "private garages" ;
-    :permitsUse "buildings accessory to the permitted used (including private garages and accessory living quarters)" ;
+    :permitsUse "buildings accessory to the permitted uses (including private garages and accessory living quarters)" ;
     :permitsUse "temporary buildings" .
 
 
@@ -61,7 +61,7 @@
     :permitsUse "schools and colleges (excluding colleges or trade schools operated for profit)" ;
     :permitsUse "public parking lots" ;
     :permitsUse "private garages" ;
-    :permitsUse "buildings accessory to the permitted used (including private garages and accessory living quarters)" ;
+    :permitsUse "buildings accessory to the permitted uses (including private garages and accessory living quarters)" ;
     :permitsUse "temporary buildings" .
 
 
@@ -85,7 +85,7 @@
     :permitsUse "schools and colleges (excluding colleges or trade schools operated for profit)" ;
     :permitsUse "public parking lots" ;
     :permitsUse "private garages" ;
-    :permitsUse "buildings accessory to the permitted used (including private garages and accessory living quarters)" ;
+    :permitsUse "buildings accessory to the permitted uses (including private garages and accessory living quarters)" ;
     :permitsUse "temporary buildings" .
 
 
