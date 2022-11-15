@@ -1,7 +1,6 @@
 
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix : <http://www.example.org/ns/lu/zoning#> .
 
 
@@ -13,11 +12,11 @@
 
 
 # Class definitions
-:ZoningDistrict     rdf:type        rdfs:class .
+:ZoningDistrict     rdf:type        rdfs:Class .
 
 # Property Definitions
 :permitsUse         rdf:type        rdf:Property ;
-                    rdf:label       "permits use" .
+                    rdfs:label       "permits use" .
 
 # Instance Definitions
 
@@ -145,7 +144,7 @@
 
 
 # These are the permitted uses from C1
-:c2 :permitsUse "Minor automotive repair" ;
+:c2 :permitsUse "minor automotive repair" ;
 	:permitsUse "automotive motor fuel dispensing facilities" ;
 	:permitsUse "automotive self-service motor fuel dispensing facilities" ;
 	:permitsUse "business services" ;
@@ -169,7 +168,7 @@
 	:permitsUse "automotive sales" ;
 	:permitsUse "building material supply sales (wholesale and retail)" ;
 	:permitsUse "cultural institutions (such as museums and art galleries)" ;
-	:permitsUse "community centers (including wholesale and retail sales)" ;
+	:permitsUse "community commercial centers (including wholesale and retail sales)" ;
 	:permitsUse "health and medical institutions (such as hospitals)" ;
 	:permitsUse "hotels and motels (excluding other residential occupancies)" ;
 	:permitsUse "commercial printing and publishing" ;
@@ -220,7 +219,7 @@
 	:permitsUse "automotive sales" ;
 	:permitsUse "building material supply sales (wholesale and retail)" ;
 	:permitsUse "cultural institutions (such as museums and art galleries)" ;
-	:permitsUse "community centers (including wholesale and retail sales)" ;
+	:permitsUse "community commercial centers (including wholesale and retail sales)" ;
 	:permitsUse "health and medical institutions (such as hospitals)" ;
 	:permitsUse "hotels and motels (excluding other residential occupancies)" ;
 	:permitsUse "commercial printing and publishing" ;
