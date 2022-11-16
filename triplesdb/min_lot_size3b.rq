@@ -1,0 +1,13 @@
+#
+# arq --data combined.ttl --query min_lot_size3b.rq
+# This is what the query will need to look like in order to work for combined.ttl and bulk2.ttl.
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+# PREFIX cdt: <http://w3id.org/lindt/custom_datatypes#>
+PREFIX cdt: <https://w3id.org/cdt/>
+PREFIX : <http://www.example.org/ns/lu/zoning#>
+
+ASK {
+		?zoning :minLotSize "35000 [sft_i]"^^cdt:area;
+                rdfs:label "R1a" .
+}

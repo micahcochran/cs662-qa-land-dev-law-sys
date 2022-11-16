@@ -1,7 +1,6 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix cdt: <http://w3id.org/lindt/custom_datatypes#> .
 @prefix : <http://www.example.org/ns/lu/zoning#> .
 
@@ -46,30 +45,43 @@
 :ZoningDistrict     rdf:type        rdfs:class .
 
 
-# Property Definitions
+# Property Definitions ---------------------------------------------------------
+
+:permitsUse         rdf:type        rdf:Property ;
+                    rdfs:label      "permits use" ;
+                    rdfs:range      rdfs:Literal .
+
 :minLotSize         rdf:type        rdf:Property ;
-                    rdf:label       "minimum lot size" .
+                    rdfs:label      "minimum lot size" ;
+                    rdf:range       cdt:area .
 
 :maxDensity         rdf:type        rdf:Property ;
-                    rdf:label       "maximum density" .
+                    rdfs:label      "maximum density" ;
+                    rdf:range       cdt:dimensionless .
 
 :minLotWidth        rdf:type        rdf:Property ;
-                    rdf:label       "minimum lot width" .
+                    rdfs:label      "minimum lot width" ;
+                    rdf:range       cdt:length .
 
 :minLotDepth        rdf:type        rdf:Property ;
-                    rdf:label       "minimum lot depth" .
+                    rdfs:label      "minimum lot depth" ;
+                    rdf:range       cdt:length .
 
 :minFrontSetback    rdf:type        rdf:Property ;
-                    rdf:label       "minimum front setback" .
+                    rdfs:label      "minimum front setback" ;
+                    rdf:range       cdt:length .
 
 :minSideSetback     rdf:type        rdf:Property ;
-                    rdf:label       "minimum side setback" .
+                    rdfs:label      "minimum side setback" ;
+                    rdf:range       cdt:length .
 
 :minRearSetback     rdf:type        rdf:Property ;
-                    rdf:label       "minimum rear setback" .
+                    rdfs:label      "minimum rear setback" ;
+                    rdf:range       cdt:length .
 
 :maxBuildingHeight  rdf:type        rdf:Property ;
-                    rdf:label       "maximum building height" .
+                    rdfs:label      "maximum building height" ;
+                    rdf:range       cdt:length .
 
 
 
