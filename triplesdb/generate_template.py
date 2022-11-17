@@ -5,7 +5,7 @@ Code to generate templates
 """
 
 import itertools
-from typing import Generator, Iterator, Tuple
+from typing import Generator, Union, Tuple
 import sys
 from string import Template
 
@@ -169,15 +169,11 @@ class QueryDimensionsSparql:
             # skip predicates that are not in the dictionary of dimensional regulations
             if str(regulation_predicate) not in self.DIM_REGULATIONS_PRED_URI:
                 continue
-            # REMOVEME
-            # print(type(regulation_value))
-            # print(dir(regulation_value))
-            # print(regulation_value._datatype)
 
-            #            yield DIM_REGULATIONS_PRED[':' + regulation_predicate.fragment], regulation_predicate, regulation_value, zoning_label
             # this is regulation_predicate, regulation_text, regulation_value, zoning_label
             yield ':' + regulation_predicate.fragment, self.DIM_REGULATIONS_PRED_URI[
                 str(regulation_predicate)], regulation_value, zoning_label
+
     def _get_kg_properties(self) -> dict:
         """generates Knowledge Graph's properties
             specifically for DIM_REGULATIONS_TEXT variable from the graph
@@ -193,7 +189,7 @@ class QueryDimensionsSparql:
         results = self.dimensional_kg.query(sparql_properties)
         # This returns the fragment form (example :minLotSize)
         # and does no checking if the property is from the correct KG.
-        return { str(row.property_label): ':'+row.property_name.fragment for row in results }
+        return {str(row.property_label): ':'+row.property_name.fragment for row in results}
 
 
 class TemplateGeneration:
@@ -208,7 +204,7 @@ class TemplateGeneration:
         t1 = {'template_name': 'template_use_1var_m_answer',
               'knowledge_graph': 'permitted_uses',
               'variables': ('use',),  # variables feed into the templates
-              'variable_names_sparql': ('zoning',),  # variable resulting from SPARQL query
+              'variable_names_sparql': ('zoning_label',),  # variable resulting from SPARQL query
               'sparql_template': """
 SELECT ?zoning_label
 
@@ -221,7 +217,6 @@ WHERE {
                                      "Which zoning districts permit ${use}?",
                                      "I would like to build ${use}.  Which zoning districts permits this use?"],
               'answer_datatype': list,
-              #              'iter_method' :
               }
         self.templates['template_use_1var_m_answer'] = t1
 
@@ -362,19 +357,17 @@ ASK {
         variable_names = self.templates[template_name]['variables']
         for variables in iterators[variable_names]:
             #   print(f"variable_names: {variable_names}, variables: {variables}")
-            # make suer the variables  that come in are in a tuple
+            # make sure the variables that come in are in a tuple
             if isinstance(variables, tuple):
                 variables_tuple = variables
             else:
                 variables_tuple = (variables,)
 
-            # this creates a dictionary that puts the variable names together with their values
-            varibs = dict(zip(variable_names, variables_tuple))
+            # Creates a dictionary that puts the variable names together with their values
+            #   Make sure that all values in variable_tuple have been converted to strings.
+            varibs = dict(zip(variable_names,
+                              map(lambda x: str(x), variables_tuple)))
             # print(f"varibs: {varibs}")
-
-            # print(f"'regulation_value' in varibs: {'regulation_value' in varibs}")
-#            print(f"'[' in varibs.get('regulation_value'): {'[' in varibs.get('regulation_value')}")
-#            print(f"']' in varibs.get('regulation_value'): {']' in varibs.get('regulation_value')}")
 
             # handle units for variable_values
             if 'regulation_value' in varibs \
@@ -385,12 +378,16 @@ ASK {
                 # print(f"value is {value}")
                 varibs['unit_symbol'] = unit_symbol  # = "[ft_i]"
                 varibs['unit_text'] = UNITS_SYMBOL[unit_symbol]  # = "feet"
-                # TODO next step for handling units
 
             result = {'sparql': sparl_template.substitute(varibs),
                       # 'template_name': template_name,  # This could be added here
-                      'varibles': varibs,
+                      'variables': varibs,
                      }
+
+            # execute SPARQL and create answer.
+            result['answer'] = self.execute_sparql_for_answer(kg,  result['sparql'],
+                                                              self.templates[template_name]['variable_names_sparql'],
+                                                              self.templates[template_name]['answer_datatype'])
 
             for q_template in question_templates:
                 # print(f"varibs = {varibs}")
@@ -402,8 +399,22 @@ ASK {
         """provide the dictionary of the template"""
         return self.templates[name]
 
+    def execute_sparql_for_answer(self, kg, sparql: str, varibs: tuple, expected_result) -> Union[bool, list]:
+        """execute SPARQL query get the answer, returns either a list or boolean"""
+        result = kg.query(sparql)
 
-def generate_all_templates(uses_kg=None, dimreq_kg=None) -> Generator[dict, None, None]:
+        # Assumption this is a one or zero variable answer from SPARQL
+        if(len(varibs) > 1):
+            raise ValueError(f'varibs should have only one value in the tuple: varibs = {varibs} ')
+        elif expected_result == list:
+            return [str(r[varibs[0]]) for r in result]
+        elif expected_result == bool:
+            return result.askAnswer
+        else:
+            raise ValueError(f"expected_result paramenter should be either a 'list' or 'boolean', but is listed as '{expected_result}'")
+
+
+def generate_all_templates(uses_kg=None, dimreq_kg=None) -> itertools.chain[dict]:
     """generate all the templates
 
     uses_kg or dimreq_kg rdflib.Graph() objects may be passed.  Otherwise, these will be loaded automatically."""
