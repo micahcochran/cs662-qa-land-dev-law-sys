@@ -306,9 +306,18 @@ ASK {
 
         self.templates['template_dimreg_4var_yn_answer'] = t4
 
+        # create a template number dictionary
+        # key is template_name, value is number
+        self.template_number = {tmplt: i+1 for i, tmplt in enumerate(sorted(self.templates.keys()))}
+
     def template_names(self) -> list:
         """template names"""
         return self.templates.keys()
+
+    @property
+    def template_number_dict(self) -> dict:
+        return self.template_number
+
 
     # NOTE: The dictionary was a design decision to allow extension
     # to add other variables.
@@ -380,7 +389,7 @@ ASK {
                 varibs['unit_text'] = UNITS_SYMBOL[unit_symbol]  # = "feet"
 
             result = {'sparql': sparl_template.substitute(varibs),
-                      # 'template_name': template_name,  # This could be added here
+                      'template_name': template_name,
                       'variables': varibs,
                      }
 
