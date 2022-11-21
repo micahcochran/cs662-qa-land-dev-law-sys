@@ -32,9 +32,16 @@ for index in range(13):
     for indx, q_df in enumerate(q_dfs):
         q_df['document_identifier'] = f'id{index}'
         q_df.to_csv(f'{file_path}/questions{index}{indx}.csv', index=False, header=True, lineterminator='\n', columns=['question', 'document_identifier', 'question_identifier']) 
-    with open(f'{os.getcwd()}/text/text_{index}.txt', 'r') as file:
-        data = file.read().rstrip()
+    with open(f'{file_path}/text/text_{index}.txt', 'r') as file:
+        data = file.read()
+        data = data.replace('\n', ' ')
+        data = data.replace('  ', ' ')
+        data = data.rstrip()
         dataframe_dict = {'document_identifier': f'id{index}', 'document_text': data}
         d_df = pd.DataFrame.from_dict(dataframe_dict, orient='index').T
         d_df.to_csv(f'{file_path}/documents{index}.csv', index=False, header=True, lineterminator='\n', columns=['document_identifier', 'document_text'])
+    with open(f'{file_path}/text/text_{index}.txt', 'w') as file:
+        file.seek(0)
+        file.write(data)
+        file.truncate()
 

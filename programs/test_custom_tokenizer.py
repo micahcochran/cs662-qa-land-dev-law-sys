@@ -36,4 +36,3 @@ print(token.decode(tokens))
 
 # add a code to remove the temp_dir if data not needed
 shutil.rmtree(f'{cur_dir}/temp_data')
-
