@@ -1,0 +1,501 @@
+question,document_identifier,question_identifier
+Are community centers (including wholesale and retail sales) permitted in a C3 zoning district?,id6,qid500
+Are community centers (including wholesale and retail sales) allowed in a C4 zoning district?,id6,qid501
+Are community centers (including wholesale and retail sales) permitted in a C4 zoning district?,id6,qid502
+Are health and medical institutions (such as hospitals) allowed in a C3 zoning district?,id6,qid503
+Are health and medical institutions (such as hospitals) permitted in a C3 zoning district?,id6,qid504
+Are health and medical institutions (such as hospitals) allowed in a C4 zoning district?,id6,qid505
+Are health and medical institutions (such as hospitals) permitted in a C4 zoning district?,id6,qid506
+Are hotels and motels (excluding other residential occupancies) allowed in a C3 zoning district?,id6,qid507
+Are hotels and motels (excluding other residential occupancies) permitted in a C3 zoning district?,id6,qid508
+Are hotels and motels (excluding other residential occupancies) allowed in a C4 zoning district?,id6,qid509
+Are hotels and motels (excluding other residential occupancies) permitted in a C4 zoning district?,id6,qid510
+Are commercial printing and publishing allowed in a C3 zoning district?,id6,qid511
+Are commercial printing and publishing permitted in a C3 zoning district?,id6,qid512
+Are commercial printing and publishing allowed in a C4 zoning district?,id6,qid513
+Are commercial printing and publishing permitted in a C4 zoning district?,id6,qid514
+Are taverns and cocktail lounges allowed in a C3 zoning district?,id6,qid515
+Are taverns and cocktail lounges permitted in a C3 zoning district?,id6,qid516
+Are taverns and cocktail lounges allowed in a C4 zoning district?,id6,qid517
+Are taverns and cocktail lounges permitted in a C4 zoning district?,id6,qid518
+Are indoor theaters allowed in a C3 zoning district?,id6,qid519
+Are indoor theaters permitted in a C3 zoning district?,id6,qid520
+Are indoor theaters allowed in a C4 zoning district?,id6,qid521
+Are indoor theaters permitted in a C4 zoning district?,id6,qid522
+Are self-storage warehouses allowed in a C3 zoning district?,id6,qid523
+Are self-storage warehouses permitted in a C3 zoning district?,id6,qid524
+Are self-storage warehouses allowed in a C4 zoning district?,id6,qid525
+Are self-storage warehouses permitted in a C4 zoning district?,id6,qid526
+Are major automotive repair allowed in a C4 zoning district?,id6,qid527
+Are major automotive repair permitted in a C4 zoning district?,id6,qid528
+Are commercial bakeries allowed in a C4 zoning district?,id6,qid529
+Are commercial bakeries permitted in a C4 zoning district?,id6,qid530
+Are regional commercial centers (including wholesale and retail sales) allowed in a C4 zoning district?,id6,qid531
+Are regional commercial centers (including wholesale and retail sales) permitted in a C4 zoning district?,id6,qid532
+Are plastic product design molding and assembly allowed in a C4 zoning district?,id6,qid533
+Are plastic product design molding and assembly permitted in a C4 zoning district?,id6,qid534
+Are small metal products design casting fabricating and processing allowed in a C4 zoning district?,id6,qid535
+Are small metal products design casting fabricating and processing permitted in a C4 zoning district?,id6,qid536
+Are manufacture and finishing allowed in a C4 zoning district?,id6,qid537
+Are manufacture and finishing permitted in a C4 zoning district?,id6,qid538
+Are storage yards allowed in a C4 zoning district?,id6,qid539
+Are storage yards permitted in a C4 zoning district?,id6,qid540
+Are wood products manufacturing and finishing allowed in a C4 zoning district?,id6,qid541
+Are wood products manufacturing and finishing permitted in a C4 zoning district?,id6,qid542
+Are warehouses allowed in a FI1 zoning district?,id6,qid543
+Are warehouses permitted in a FI1 zoning district?,id6,qid544
+Are warehouses allowed in a FI2 zoning district?,id6,qid545
+Are warehouses permitted in a FI2 zoning district?,id6,qid546
+Are warehouses allowed in a FI3 zoning district?,id6,qid547
+Are warehouses permitted in a FI3 zoning district?,id6,qid548
+Are research or testing laboratories allowed in a FI1 zoning district?,id6,qid549
+Are research or testing laboratories permitted in a FI1 zoning district?,id6,qid550
+Are research or testing laboratories allowed in a FI2 zoning district?,id6,qid551
+Are research or testing laboratories permitted in a FI2 zoning district?,id6,qid552
+Are research or testing laboratories allowed in a FI3 zoning district?,id6,qid553
+Are research or testing laboratories permitted in a FI3 zoning district?,id6,qid554
+Are product distribution centers allowed in a FI1 zoning district?,id6,qid555
+Are product distribution centers permitted in a FI1 zoning district?,id6,qid556
+Are product distribution centers allowed in a FI2 zoning district?,id6,qid557
+Are product distribution centers permitted in a FI2 zoning district?,id6,qid558
+Are product distribution centers allowed in a FI3 zoning district?,id6,qid559
+Are product distribution centers permitted in a FI3 zoning district?,id6,qid560
+Are woodworking shops allowed in a FI1 zoning district?,id6,qid561
+Are woodworking shops permitted in a FI1 zoning district?,id6,qid562
+Are woodworking shops allowed in a FI2 zoning district?,id6,qid563
+Are woodworking shops permitted in a FI2 zoning district?,id6,qid564
+Are woodworking shops allowed in a FI3 zoning district?,id6,qid565
+Are woodworking shops permitted in a FI3 zoning district?,id6,qid566
+Are auto body shops allowed in a FI1 zoning district?,id6,qid567
+Are auto body shops permitted in a FI1 zoning district?,id6,qid568
+Are auto body shops allowed in a FI2 zoning district?,id6,qid569
+Are auto body shops permitted in a FI2 zoning district?,id6,qid570
+Are auto body shops allowed in a FI3 zoning district?,id6,qid571
+Are auto body shops permitted in a FI3 zoning district?,id6,qid572
+Are furniture assembly allowed in a FI1 zoning district?,id6,qid573
+Are furniture assembly permitted in a FI1 zoning district?,id6,qid574
+Are furniture assembly allowed in a FI2 zoning district?,id6,qid575
+Are furniture assembly permitted in a FI2 zoning district?,id6,qid576
+Are furniture assembly allowed in a FI3 zoning district?,id6,qid577
+Are furniture assembly permitted in a FI3 zoning district?,id6,qid578
+Are dry cleaning plants allowed in a FI1 zoning district?,id6,qid579
+Are dry cleaning plants permitted in a FI1 zoning district?,id6,qid580
+Are dry cleaning plants allowed in a FI2 zoning district?,id6,qid581
+Are dry cleaning plants permitted in a FI2 zoning district?,id6,qid582
+Are dry cleaning plants allowed in a FI3 zoning district?,id6,qid583
+Are dry cleaning plants permitted in a FI3 zoning district?,id6,qid584
+Are machine shops allowed in a FI1 zoning district?,id6,qid585
+Are machine shops permitted in a FI1 zoning district?,id6,qid586
+Are machine shops allowed in a FI2 zoning district?,id6,qid587
+Are machine shops permitted in a FI2 zoning district?,id6,qid588
+Are machine shops allowed in a FI3 zoning district?,id6,qid589
+Are machine shops permitted in a FI3 zoning district?,id6,qid590
+Are boat storage yards allowed in a FI1 zoning district?,id6,qid591
+Are boat storage yards permitted in a FI1 zoning district?,id6,qid592
+Are boat storage yards allowed in a FI2 zoning district?,id6,qid593
+Are boat storage yards permitted in a FI2 zoning district?,id6,qid594
+Are boat storage yards allowed in a FI3 zoning district?,id6,qid595
+Are boat storage yards permitted in a FI3 zoning district?,id6,qid596
+Are stadiums and arenas allowed in a FI2 zoning district?,id6,qid597
+Are stadiums and arenas permitted in a FI2 zoning district?,id6,qid598
+Are stadiums and arenas allowed in a FI3 zoning district?,id6,qid599
+Are stadiums and arenas permitted in a FI3 zoning district?,id6,qid600
+Are indoor swap meets allowed in a FI2 zoning district?,id6,qid601
+Are indoor swap meets permitted in a FI2 zoning district?,id6,qid602
+Are indoor swap meets allowed in a FI3 zoning district?,id6,qid603
+Are indoor swap meets permitted in a FI3 zoning district?,id6,qid604
+Are breweries allowed in a FI2 zoning district?,id6,qid605
+Are breweries permitted in a FI2 zoning district?,id6,qid606
+Are breweries allowed in a FI3 zoning district?,id6,qid607
+Are breweries permitted in a FI3 zoning district?,id6,qid608
+Are liquid fertilizer manufacturing allowed in a FI2 zoning district?,id6,qid609
+Are liquid fertilizer manufacturing permitted in a FI2 zoning district?,id6,qid610
+Are liquid fertilizer manufacturing allowed in a FI3 zoning district?,id6,qid611
+Are liquid fertilizer manufacturing permitted in a FI3 zoning district?,id6,qid612
+Are carpet manufacturing allowed in a FI2 zoning district?,id6,qid613
+Are carpet manufacturing permitted in a FI2 zoning district?,id6,qid614
+Are carpet manufacturing allowed in a FI3 zoning district?,id6,qid615
+Are carpet manufacturing permitted in a FI3 zoning district?,id6,qid616
+Are monument works allowed in a FI2 zoning district?,id6,qid617
+Are monument works permitted in a FI2 zoning district?,id6,qid618
+Are monument works allowed in a FI3 zoning district?,id6,qid619
+Are monument works permitted in a FI3 zoning district?,id6,qid620
+Are regional recycling center allowed in a FI2 zoning district?,id6,qid621
+Are regional recycling center permitted in a FI2 zoning district?,id6,qid622
+Are regional recycling center allowed in a FI3 zoning district?,id6,qid623
+Are regional recycling center permitted in a FI3 zoning district?,id6,qid624
+Are auto-dismantling yards allowed in a FI3 zoning district?,id6,qid625
+Are auto-dismantling yards permitted in a FI3 zoning district?,id6,qid626
+Are alcohol manufacturing allowed in a FI3 zoning district?,id6,qid627
+Are alcohol manufacturing permitted in a FI3 zoning district?,id6,qid628
+Are cotton gins allowed in a FI3 zoning district?,id6,qid629
+Are cotton gins permitted in a FI3 zoning district?,id6,qid630
+Are paper manufacturing allowed in a FI3 zoning district?,id6,qid631
+Are paper manufacturing permitted in a FI3 zoning district?,id6,qid632
+Are quarries allowed in a FI3 zoning district?,id6,qid633
+Are quarries permitted in a FI3 zoning district?,id6,qid634
+Are salt works allowed in a FI3 zoning district?,id6,qid635
+Are salt works permitted in a FI3 zoning district?,id6,qid636
+Are petroleum refining allowed in a FI3 zoning district?,id6,qid637
+Are petroleum refining permitted in a FI3 zoning district?,id6,qid638
+What is the minimum lot size in the R1b zoning district?,id6,qid639
+What is the maximum density in the R1b zoning district?,id6,qid640
+What is the minimum lot width in the R1b zoning district?,id6,qid641
+What is the minimum lot depth in the R1b zoning district?,id6,qid642
+What is the minimum front setback in the R1b zoning district?,id6,qid643
+What is the minimum side setback in the R1b zoning district?,id6,qid644
+What is the minimum rear setback in the R1b zoning district?,id6,qid645
+What is the maximum building height in the R1b zoning district?,id6,qid646
+What is the minimum lot size in the C2 zoning district?,id6,qid647
+What is the maximum density in the C2 zoning district?,id6,qid648
+What is the minimum lot width in the C2 zoning district?,id6,qid649
+What is the minimum lot depth in the C2 zoning district?,id6,qid650
+What is the minimum front setback in the C2 zoning district?,id6,qid651
+What is the minimum side setback in the C2 zoning district?,id6,qid652
+What is the minimum rear setback in the C2 zoning district?,id6,qid653
+What is the maximum building height in the C2 zoning district?,id6,qid654
+What is the minimum lot size in the A1 zoning district?,id6,qid655
+What is the maximum density in the A1 zoning district?,id6,qid656
+What is the minimum lot width in the A1 zoning district?,id6,qid657
+What is the minimum lot depth in the A1 zoning district?,id6,qid658
+What is the minimum front setback in the A1 zoning district?,id6,qid659
+What is the minimum side setback in the A1 zoning district?,id6,qid660
+What is the minimum rear setback in the A1 zoning district?,id6,qid661
+What is the maximum building height in the A1 zoning district?,id6,qid662
+What is the minimum lot size in the R3a zoning district?,id6,qid663
+What is the maximum density in the R3a zoning district?,id6,qid664
+What is the minimum lot width in the R3a zoning district?,id6,qid665
+What is the minimum lot depth in the R3a zoning district?,id6,qid666
+What is the minimum front setback in the R3a zoning district?,id6,qid667
+What is the minimum side setback in the R3a zoning district?,id6,qid668
+What is the minimum rear setback in the R3a zoning district?,id6,qid669
+What is the maximum building height in the R3a zoning district?,id6,qid670
+What is the minimum lot size in the A2 zoning district?,id6,qid671
+What is the maximum density in the A2 zoning district?,id6,qid672
+What is the minimum lot width in the A2 zoning district?,id6,qid673
+What is the minimum lot depth in the A2 zoning district?,id6,qid674
+What is the minimum front setback in the A2 zoning district?,id6,qid675
+What is the minimum side setback in the A2 zoning district?,id6,qid676
+What is the minimum rear setback in the A2 zoning district?,id6,qid677
+What is the maximum building height in the A2 zoning district?,id6,qid678
+What is the minimum lot size in the R1c zoning district?,id6,qid679
+What is the maximum density in the R1c zoning district?,id6,qid680
+What is the minimum lot width in the R1c zoning district?,id6,qid681
+What is the minimum lot depth in the R1c zoning district?,id6,qid682
+What is the minimum front setback in the R1c zoning district?,id6,qid683
+What is the minimum side setback in the R1c zoning district?,id6,qid684
+What is the minimum rear setback in the R1c zoning district?,id6,qid685
+What is the maximum building height in the R1c zoning district?,id6,qid686
+What is the minimum lot size in the R1d zoning district?,id6,qid687
+What is the maximum density in the R1d zoning district?,id6,qid688
+What is the minimum lot width in the R1d zoning district?,id6,qid689
+What is the minimum lot depth in the R1d zoning district?,id6,qid690
+What is the minimum front setback in the R1d zoning district?,id6,qid691
+What is the minimum side setback in the R1d zoning district?,id6,qid692
+What is the minimum rear setback in the R1d zoning district?,id6,qid693
+What is the maximum building height in the R1d zoning district?,id6,qid694
+What is the minimum lot size in the C4 zoning district?,id6,qid695
+What is the maximum density in the C4 zoning district?,id6,qid696
+What is the minimum lot width in the C4 zoning district?,id6,qid697
+What is the minimum lot depth in the C4 zoning district?,id6,qid698
+What is the minimum front setback in the C4 zoning district?,id6,qid699
+What is the minimum side setback in the C4 zoning district?,id6,qid700
+What is the minimum rear setback in the C4 zoning district?,id6,qid701
+What is the maximum building height in the C4 zoning district?,id6,qid702
+What is the minimum lot size in the C1 zoning district?,id6,qid703
+What is the maximum density in the C1 zoning district?,id6,qid704
+What is the minimum lot width in the C1 zoning district?,id6,qid705
+What is the minimum lot depth in the C1 zoning district?,id6,qid706
+What is the minimum front setback in the C1 zoning district?,id6,qid707
+What is the minimum side setback in the C1 zoning district?,id6,qid708
+What is the minimum rear setback in the C1 zoning district?,id6,qid709
+What is the maximum building height in the C1 zoning district?,id6,qid710
+What is the minimum lot size in the FI1 zoning district?,id6,qid711
+What is the maximum density in the FI1 zoning district?,id6,qid712
+What is the minimum lot width in the FI1 zoning district?,id6,qid713
+What is the minimum lot depth in the FI1 zoning district?,id6,qid714
+What is the minimum front setback in the FI1 zoning district?,id6,qid715
+What is the minimum side setback in the FI1 zoning district?,id6,qid716
+What is the minimum rear setback in the FI1 zoning district?,id6,qid717
+What is the maximum building height in the FI1 zoning district?,id6,qid718
+What is the minimum lot size in the R1a zoning district?,id6,qid719
+What is the maximum density in the R1a zoning district?,id6,qid720
+What is the minimum lot width in the R1a zoning district?,id6,qid721
+What is the minimum lot depth in the R1a zoning district?,id6,qid722
+What is the minimum front setback in the R1a zoning district?,id6,qid723
+What is the minimum side setback in the R1a zoning district?,id6,qid724
+What is the minimum rear setback in the R1a zoning district?,id6,qid725
+What is the maximum building height in the R1a zoning district?,id6,qid726
+What is the minimum lot size in the FI2 zoning district?,id6,qid727
+What is the maximum density in the FI2 zoning district?,id6,qid728
+What is the minimum lot width in the FI2 zoning district?,id6,qid729
+What is the minimum lot depth in the FI2 zoning district?,id6,qid730
+What is the minimum front setback in the FI2 zoning district?,id6,qid731
+What is the minimum side setback in the FI2 zoning district?,id6,qid732
+What is the minimum rear setback in the FI2 zoning district?,id6,qid733
+What is the maximum building height in the FI2 zoning district?,id6,qid734
+What is the minimum lot size in the FI3 zoning district?,id6,qid735
+What is the maximum density in the FI3 zoning district?,id6,qid736
+What is the minimum lot width in the FI3 zoning district?,id6,qid737
+What is the minimum lot depth in the FI3 zoning district?,id6,qid738
+What is the minimum front setback in the FI3 zoning district?,id6,qid739
+What is the minimum side setback in the FI3 zoning district?,id6,qid740
+What is the minimum rear setback in the FI3 zoning district?,id6,qid741
+What is the maximum building height in the FI3 zoning district?,id6,qid742
+What is the minimum lot size in the R2a zoning district?,id6,qid743
+What is the maximum density in the R2a zoning district?,id6,qid744
+What is the minimum lot width in the R2a zoning district?,id6,qid745
+What is the minimum lot depth in the R2a zoning district?,id6,qid746
+What is the minimum front setback in the R2a zoning district?,id6,qid747
+What is the minimum side setback in the R2a zoning district?,id6,qid748
+What is the minimum rear setback in the R2a zoning district?,id6,qid749
+What is the maximum building height in the R2a zoning district?,id6,qid750
+What is the minimum lot size in the C3 zoning district?,id6,qid751
+What is the maximum density in the C3 zoning district?,id6,qid752
+What is the minimum lot width in the C3 zoning district?,id6,qid753
+What is the minimum lot depth in the C3 zoning district?,id6,qid754
+What is the minimum front setback in the C3 zoning district?,id6,qid755
+What is the minimum side setback in the C3 zoning district?,id6,qid756
+What is the minimum rear setback in the C3 zoning district?,id6,qid757
+What is the maximum building height in the C3 zoning district?,id6,qid758
+What is the minimum lot size in the A3 zoning district?,id6,qid759
+What is the maximum density in the A3 zoning district?,id6,qid760
+What is the minimum lot width in the A3 zoning district?,id6,qid761
+What is the minimum lot depth in the A3 zoning district?,id6,qid762
+What is the minimum front setback in the A3 zoning district?,id6,qid763
+What is the minimum side setback in the A3 zoning district?,id6,qid764
+What is the minimum rear setback in the A3 zoning district?,id6,qid765
+What is the maximum building height in the A3 zoning district?,id6,qid766
+What is the minimum lot size in the R3b zoning district?,id6,qid767
+What is the maximum density in the R3b zoning district?,id6,qid768
+What is the minimum lot width in the R3b zoning district?,id6,qid769
+What is the minimum lot depth in the R3b zoning district?,id6,qid770
+What is the minimum front setback in the R3b zoning district?,id6,qid771
+What is the minimum side setback in the R3b zoning district?,id6,qid772
+What is the minimum rear setback in the R3b zoning district?,id6,qid773
+What is the maximum building height in the R3b zoning district?,id6,qid774
+What is the minimum lot size in the R2b zoning district?,id6,qid775
+What is the maximum density in the R2b zoning district?,id6,qid776
+What is the minimum lot width in the R2b zoning district?,id6,qid777
+What is the minimum lot depth in the R2b zoning district?,id6,qid778
+What is the minimum front setback in the R2b zoning district?,id6,qid779
+What is the minimum side setback in the R2b zoning district?,id6,qid780
+What is the minimum rear setback in the R2b zoning district?,id6,qid781
+What is the maximum building height in the R2b zoning district?,id6,qid782
+Is the minimum lot size for a property in the R1a zoning district 35000 square feet?,id6,qid783
+Is the maximum density for a property in the R1a zoning district 1 dwelling units per acre?,id6,qid784
+Is the minimum lot width for a property in the R1a zoning district 125 feet?,id6,qid785
+Is the minimum lot depth for a property in the R1a zoning district 150 feet?,id6,qid786
+Is the minimum front setback for a property in the R1a zoning district 25 feet?,id6,qid787
+Is the minimum side setback for a property in the R1a zoning district 10 feet?,id6,qid788
+Is the minimum rear setback for a property in the R1a zoning district 30 feet?,id6,qid789
+Is the maximum building height for a property in the R1a zoning district 35 feet?,id6,qid790
+Is the minimum lot size for a property in the R1b zoning district 20000 square feet?,id6,qid791
+Is the maximum density for a property in the R1b zoning district 2 dwelling units per acre?,id6,qid792
+Is the minimum lot width for a property in the R1b zoning district 100 feet?,id6,qid793
+Is the minimum lot depth for a property in the R1b zoning district 125 feet?,id6,qid794
+Is the minimum front setback for a property in the R1b zoning district 20 feet?,id6,qid795
+Is the minimum side setback for a property in the R1b zoning district 10 feet?,id6,qid796
+Is the minimum rear setback for a property in the R1b zoning district 25 feet?,id6,qid797
+Is the maximum building height for a property in the R1b zoning district 35 feet?,id6,qid798
+Is the minimum lot size for a property in the R1c zoning district 10000 square feet?,id6,qid799
+Is the maximum density for a property in the R1c zoning district 4 dwelling units per acre?,id6,qid800
+Is the minimum lot width for a property in the R1c zoning district 75 feet?,id6,qid801
+Is the minimum lot depth for a property in the R1c zoning district 100 feet?,id6,qid802
+Is the minimum front setback for a property in the R1c zoning district 20 feet?,id6,qid803
+Is the minimum side setback for a property in the R1c zoning district 5 feet?,id6,qid804
+Is the minimum rear setback for a property in the R1c zoning district 25 feet?,id6,qid805
+Is the maximum building height for a property in the R1c zoning district 35 feet?,id6,qid806
+Is the minimum lot size for a property in the R1d zoning district 6000 square feet?,id6,qid807
+Is the maximum density for a property in the R1d zoning district 6 dwelling units per acre?,id6,qid808
+Is the minimum lot width for a property in the R1d zoning district 60 feet?,id6,qid809
+Is the minimum lot depth for a property in the R1d zoning district 90 feet?,id6,qid810
+Is the minimum front setback for a property in the R1d zoning district 15 feet?,id6,qid811
+Is the minimum side setback for a property in the R1d zoning district 5 feet?,id6,qid812
+Is the minimum rear setback for a property in the R1d zoning district 20 feet?,id6,qid813
+Is the maximum building height for a property in the R1d zoning district 35 feet?,id6,qid814
+Is the minimum lot size for a property in the R2a zoning district 10000 square feet?,id6,qid815
+Is the maximum density for a property in the R2a zoning district 4 dwelling units per acre?,id6,qid816
+Is the minimum lot width for a property in the R2a zoning district 60 feet?,id6,qid817
+Is the minimum lot depth for a property in the R2a zoning district 70 feet?,id6,qid818
+Is the minimum front setback for a property in the R2a zoning district 20 feet?,id6,qid819
+Is the minimum side setback for a property in the R2a zoning district 5 feet?,id6,qid820
+Is the minimum rear setback for a property in the R2a zoning district 20 feet?,id6,qid821
+Is the maximum building height for a property in the R2a zoning district 35 feet?,id6,qid822
+Is the minimum lot size for a property in the R2b zoning district 6000 square feet?,id6,qid823
+Is the maximum density for a property in the R2b zoning district 6 dwelling units per acre?,id6,qid824
+Is the minimum lot width for a property in the R2b zoning district 60 feet?,id6,qid825
+Is the minimum lot depth for a property in the R2b zoning district 70 feet?,id6,qid826
+Is the minimum front setback for a property in the R2b zoning district 15 feet?,id6,qid827
+Is the minimum side setback for a property in the R2b zoning district 5 feet?,id6,qid828
+Is the minimum rear setback for a property in the R2b zoning district 20 feet?,id6,qid829
+Is the maximum building height for a property in the R2b zoning district 35 feet?,id6,qid830
+Is the minimum lot size for a property in the R3a zoning district 6000 square feet?,id6,qid831
+Is the maximum density for a property in the R3a zoning district 8 dwelling units per acre?,id6,qid832
+Is the minimum lot width for a property in the R3a zoning district 60 feet?,id6,qid833
+Is the minimum lot depth for a property in the R3a zoning district 70 feet?,id6,qid834
+Is the minimum front setback for a property in the R3a zoning district 15 feet?,id6,qid835
+Is the minimum side setback for a property in the R3a zoning district 5 feet?,id6,qid836
+Is the minimum rear setback for a property in the R3a zoning district 20 feet?,id6,qid837
+Is the maximum building height for a property in the R3a zoning district 35 feet?,id6,qid838
+Is the minimum lot size for a property in the R3b zoning district 6000 square feet?,id6,qid839
+Is the maximum density for a property in the R3b zoning district 12 dwelling units per acre?,id6,qid840
+Is the minimum lot width for a property in the R3b zoning district 60 feet?,id6,qid841
+Is the minimum lot depth for a property in the R3b zoning district 70 feet?,id6,qid842
+Is the minimum front setback for a property in the R3b zoning district 15 feet?,id6,qid843
+Is the minimum side setback for a property in the R3b zoning district 5 feet?,id6,qid844
+Is the minimum rear setback for a property in the R3b zoning district 20 feet?,id6,qid845
+Is the maximum building height for a property in the R3b zoning district 35 feet?,id6,qid846
+Is the minimum lot size for a property in the C1 zoning district 6000 square feet?,id6,qid847
+Is the maximum density for a property in the C1 zoning district 12 units per acre?,id6,qid848
+Is the minimum lot width for a property in the C1 zoning district 30 feet?,id6,qid849
+Is the minimum lot depth for a property in the C1 zoning district 70 feet?,id6,qid850
+Is the minimum front setback for a property in the C1 zoning district 0 feet?,id6,qid851
+Is the minimum side setback for a property in the C1 zoning district 0 feet?,id6,qid852
+Is the minimum rear setback for a property in the C1 zoning district 0 feet?,id6,qid853
+Is the maximum building height for a property in the C1 zoning district 30 feet?,id6,qid854
+Is the minimum lot width for a property in the C2 zoning district 30 feet?,id6,qid855
+Is the minimum lot depth for a property in the C2 zoning district 70 feet?,id6,qid856
+Is the minimum front setback for a property in the C2 zoning district 0 feet?,id6,qid857
+Is the minimum side setback for a property in the C2 zoning district 0 feet?,id6,qid858
+Is the minimum rear setback for a property in the C2 zoning district 0 feet?,id6,qid859
+Is the maximum building height for a property in the C2 zoning district 40 feet?,id6,qid860
+Is the minimum lot width for a property in the C3 zoning district 75 feet?,id6,qid861
+Is the minimum lot depth for a property in the C3 zoning district 100 feet?,id6,qid862
+Is the minimum front setback for a property in the C3 zoning district 0 feet?,id6,qid863
+Is the minimum side setback for a property in the C3 zoning district 0 feet?,id6,qid864
+Is the minimum rear setback for a property in the C3 zoning district 0 feet?,id6,qid865
+Is the maximum building height for a property in the C3 zoning district 50 feet?,id6,qid866
+Is the minimum lot width for a property in the C4 zoning district 75 feet?,id6,qid867
+Is the minimum lot depth for a property in the C4 zoning district 100 feet?,id6,qid868
+Is the minimum front setback for a property in the C4 zoning district 0 feet?,id6,qid869
+Is the minimum side setback for a property in the C4 zoning district 0 feet?,id6,qid870
+Is the minimum rear setback for a property in the C4 zoning district 0 feet?,id6,qid871
+Is the maximum building height for a property in the C4 zoning district 50 feet?,id6,qid872
+Is the minimum lot width for a property in the FI1 zoning district 50 feet?,id6,qid873
+Is the minimum lot depth for a property in the FI1 zoning district 75 feet?,id6,qid874
+Is the minimum front setback for a property in the FI1 zoning district 0 feet?,id6,qid875
+Is the minimum side setback for a property in the FI1 zoning district 0 feet?,id6,qid876
+Is the minimum rear setback for a property in the FI1 zoning district 0 feet?,id6,qid877
+Is the maximum building height for a property in the FI1 zoning district 60 feet?,id6,qid878
+Is the minimum lot width for a property in the FI2 zoning district 75 feet?,id6,qid879
+Is the minimum lot depth for a property in the FI2 zoning district 100 feet?,id6,qid880
+Is the minimum front setback for a property in the FI2 zoning district 0 feet?,id6,qid881
+Is the minimum side setback for a property in the FI2 zoning district 0 feet?,id6,qid882
+Is the minimum rear setback for a property in the FI2 zoning district 0 feet?,id6,qid883
+Is the maximum building height for a property in the FI2 zoning district 80 feet?,id6,qid884
+Is the minimum lot width for a property in the FI3 zoning district 100 feet?,id6,qid885
+Is the minimum lot depth for a property in the FI3 zoning district 150 feet?,id6,qid886
+Is the minimum front setback for a property in the FI3 zoning district 0 feet?,id6,qid887
+Is the minimum side setback for a property in the FI3 zoning district 0 feet?,id6,qid888
+Is the minimum rear setback for a property in the FI3 zoning district 0 feet?,id6,qid889
+Is the maximum building height for a property in the FI3 zoning district 80 feet?,id6,qid890
+Is the minimum lot size for a property in the A1 zoning district 20 acre?,id6,qid891
+Is the maximum density for a property in the A1 zoning district 20 acres per dwelling unit?,id6,qid892
+Is the minimum lot width for a property in the A1 zoning district 600 feet?,id6,qid893
+Is the minimum lot depth for a property in the A1 zoning district 600 feet?,id6,qid894
+Is the minimum front setback for a property in the A1 zoning district 30 feet?,id6,qid895
+Is the minimum side setback for a property in the A1 zoning district 15 feet?,id6,qid896
+Is the minimum rear setback for a property in the A1 zoning district 60 feet?,id6,qid897
+Is the maximum building height for a property in the A1 zoning district 35 feet?,id6,qid898
+Is the minimum lot size for a property in the A2 zoning district 10 acre?,id6,qid899
+Is the maximum density for a property in the A2 zoning district 10 acres per dwelling unit?,id6,qid900
+Is the minimum lot width for a property in the A2 zoning district 400 feet?,id6,qid901
+Is the minimum lot depth for a property in the A2 zoning district 400 feet?,id6,qid902
+Is the minimum front setback for a property in the A2 zoning district 30 feet?,id6,qid903
+Is the minimum side setback for a property in the A2 zoning district 15 feet?,id6,qid904
+Is the minimum rear setback for a property in the A2 zoning district 60 feet?,id6,qid905
+Is the maximum building height for a property in the A2 zoning district 35 feet?,id6,qid906
+Is the minimum lot size for a property in the A3 zoning district 5 acre?,id6,qid907
+Is the maximum density for a property in the A3 zoning district 5 acres per dwelling unit?,id6,qid908
+Is the minimum lot width for a property in the A3 zoning district 250 feet?,id6,qid909
+Is the minimum lot depth for a property in the A3 zoning district 250 feet?,id6,qid910
+Is the minimum front setback for a property in the A3 zoning district 30 feet?,id6,qid911
+Is the minimum side setback for a property in the A3 zoning district 15 feet?,id6,qid912
+Is the minimum rear setback for a property in the A3 zoning district 60 feet?,id6,qid913
+Is the maximum building height for a property in the A3 zoning district 35 feet?,id6,qid914
+Are regional recycling center permitted?,id6,qid915
+Are regional recycling center allowed?,id6,qid916
+Are public utility stations permitted?,id6,qid917
+Are public utility stations allowed?,id6,qid918
+Are liquid fertilizer manufacturing permitted?,id6,qid919
+Are liquid fertilizer manufacturing allowed?,id6,qid920
+Are group care facilities permitted?,id6,qid921
+Are group care facilities allowed?,id6,qid922
+Are paper manufacturing permitted?,id6,qid923
+Are paper manufacturing allowed?,id6,qid924
+Are mortuary and funeral homes permitted?,id6,qid925
+Are mortuary and funeral homes allowed?,id6,qid926
+Are product distribution centers permitted?,id6,qid927
+Are product distribution centers allowed?,id6,qid928
+Are commercial bakeries permitted?,id6,qid929
+Are commercial bakeries allowed?,id6,qid930
+Are amusement centers (including bowling alleys golf driving ranges miniature golf courses ice rinks pool and billiard halls and similar recreational uses) permitted?,id6,qid931
+Are amusement centers (including bowling alleys golf driving ranges miniature golf courses ice rinks pool and billiard halls and similar recreational uses) allowed?,id6,qid932
+Are convenience and neighborhood commercial centers (excluding wholesale sales) permitted?,id6,qid933
+Are convenience and neighborhood commercial centers (excluding wholesale sales) allowed?,id6,qid934
+Are dwellings permitted?,id6,qid935
+Are dwellings allowed?,id6,qid936
+Are storage yards permitted?,id6,qid937
+Are storage yards allowed?,id6,qid938
+Are maintenance/storage buildings permitted?,id6,qid939
+Are maintenance/storage buildings allowed?,id6,qid940
+Are dry cleaning plants permitted?,id6,qid941
+Are dry cleaning plants allowed?,id6,qid942
+Are auto-dismantling yards permitted?,id6,qid943
+Are auto-dismantling yards allowed?,id6,qid944
+Are automotive motor fuel dispensing facilities permitted?,id6,qid945
+Are automotive motor fuel dispensing facilities allowed?,id6,qid946
+Are commercial printing and publishing permitted?,id6,qid947
+Are commercial printing and publishing allowed?,id6,qid948
+Are publicly owned and operated parks permitted?,id6,qid949
+Are publicly owned and operated parks allowed?,id6,qid950
+Are taverns and cocktail lounges permitted?,id6,qid951
+Are taverns and cocktail lounges allowed?,id6,qid952
+Are manufacture and finishing permitted?,id6,qid953
+Are manufacture and finishing allowed?,id6,qid954
+Are open space permitted?,id6,qid955
+Are open space allowed?,id6,qid956
+Are regional commercial centers (including wholesale and retail sales) permitted?,id6,qid957
+Are regional commercial centers (including wholesale and retail sales) allowed?,id6,qid958
+Are automotive sales permitted?,id6,qid959
+Are automotive sales allowed?,id6,qid960
+Are rehabilitation centers permitted?,id6,qid961
+Are rehabilitation centers allowed?,id6,qid962
+Are temporary buildings permitted?,id6,qid963
+Are temporary buildings allowed?,id6,qid964
+Are two-family dwellings permitted?,id6,qid965
+Are two-family dwellings allowed?,id6,qid966
+Are cultural institutions (such as museums and art galleries) permitted?,id6,qid967
+Are cultural institutions (such as museums and art galleries) allowed?,id6,qid968
+Are minor automotive repair permitted?,id6,qid969
+Are minor automotive repair allowed?,id6,qid970
+Are self-storage warehouses permitted?,id6,qid971
+Are self-storage warehouses allowed?,id6,qid972
+Are wood products manufacturing and finishing permitted?,id6,qid973
+Are wood products manufacturing and finishing allowed?,id6,qid974
+Are community centers (including wholesale and retail sales) permitted?,id6,qid975
+Are community centers (including wholesale and retail sales) allowed?,id6,qid976
+Are carpet manufacturing permitted?,id6,qid977
+Are carpet manufacturing allowed?,id6,qid978
+Are cotton gins permitted?,id6,qid979
+Are cotton gins allowed?,id6,qid980
+Are salt works permitted?,id6,qid981
+Are salt works allowed?,id6,qid982
+Are restaurants permitted?,id6,qid983
+Are restaurants allowed?,id6,qid984
+Are monument works permitted?,id6,qid985
+Are monument works allowed?,id6,qid986
+Are furniture assembly permitted?,id6,qid987
+Are furniture assembly allowed?,id6,qid988
+Are police and fire department stations permitted?,id6,qid989
+Are police and fire department stations allowed?,id6,qid990
+Are automotive self-service motor fuel dispensing facilities permitted?,id6,qid991
+Are automotive self-service motor fuel dispensing facilities allowed?,id6,qid992
+Are public libraries permitted?,id6,qid993
+Are public libraries allowed?,id6,qid994
+Are warehouses permitted?,id6,qid995
+Are warehouses allowed?,id6,qid996
+Are small metal products design casting fabricating and processing permitted?,id6,qid997
+Are small metal products design casting fabricating and processing allowed?,id6,qid998
+Are private garages permitted?,id6,qid999
