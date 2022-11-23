@@ -9,6 +9,8 @@ from typing import Generator, Union, Tuple
 import sys
 from string import Template
 
+# NOTE: Some of the SPARQL queries don't work well when put into a combined Knowledge Graph.
+
 # Developed using rdflib version 6.2.0 is the current version as of 2022-10-31.
 # using feature URIRef.fragment added in this version, but could easily program around if needed.
 import rdflib
@@ -120,14 +122,25 @@ class QueryDimensionsSparql:
         """
         iterator of all the zoning districts in the knowledge graph
         """
+#        sparql = """
+#        SELECT ?zoning_label
+#
+#        WHERE {
+#                ?zoning rdfs:label  ?zoning_label .
+#        }
+#        """
 
         sparql = """
-        SELECT ?zoning_label
-
-        WHERE {
-                ?zoning rdfs:label ?zoning_label .
-        }
-        """
+SELECT ?zoning_label
+WHERE {
+    { ?zid    a           :ZoningDistrict .
+      ?zid    rdfs:label  ?zoning_label . 
+    } 
+    UNION
+    { ?zid    a           :ZoningDistrictDivision .
+      ?zid    rdfs:label  ?zoning_label . 
+    } 
+}"""
 
         results = self.dimensional_kg.query(sparql)
 
@@ -139,7 +152,10 @@ class QueryDimensionsSparql:
         iterator
         :return:
         """
+#        print('all_regulations_zoning_iter')
         for zoning in self.all_zoning_iter():
+#            print(zoning)
+#            print(self.DIM_REGULATIONS_TEXT)
             for regulation_text, regulation_predicate in self.DIM_REGULATIONS_TEXT.items():
                 yield regulation_predicate, regulation_text, zoning
 
@@ -179,17 +195,19 @@ class QueryDimensionsSparql:
             specifically for DIM_REGULATIONS_TEXT variable from the graph
            returns dictionary"""
         sparql_properties = """
-        SELECT ?property_name ?property_label
+SELECT ?property_name ?property_label
 
-        WHERE {
-            ?property_name a rdf:Property ;
-                        rdf:label  ?property_label .
-        }
+WHERE {
+    ?property_name a rdf:Property ;
+                rdfs:label  ?property_label .
+}
         """
         results = self.dimensional_kg.query(sparql_properties)
         # This returns the fragment form (example :minLotSize)
         # and does no checking if the property is from the correct KG.
-        return {str(row.property_label): ':'+row.property_name.fragment for row in results}
+        kg_properties_set = {str(row.property_label): ':'+row.property_name.fragment for row in results}
+#       print(kg_properties_set)
+        return kg_properties_set
 
 
 class TemplateGeneration:
@@ -291,7 +309,7 @@ WHERE {
               'variable_names_sparql': tuple(),  # variable resulting from SPARQL query
               'sparql_template': """
 ASK {
-        ?zoning $regulation_predicate ${regulation_value};
+        ?zoning $regulation_predicate "${regulation_value}" ;
                 rdfs:label "${zoning}" .
 }
 """,
@@ -308,7 +326,9 @@ ASK {
 
         # create a template number dictionary
         # key is template_name, value is number
-        self.template_number = {tmplt: i+1 for i, tmplt in enumerate(sorted(self.templates.keys()))}
+        # self.template_number = {tmplt: i+1 for i, tmplt in enumerate(sorted(self.templates.keys()))}
+        # must start at zero for xgboost labels.
+        self.template_number = {tmplt: i for i, tmplt in enumerate(sorted(self.templates.keys()))}
 
     def template_names(self) -> list:
         """template names"""
@@ -364,8 +384,9 @@ ASK {
         question_templates = [Template(q_tmpl) for q_tmpl in self.templates[template_name]['question_templates']]
 
         variable_names = self.templates[template_name]['variables']
+ #       print(variable_names)
         for variables in iterators[variable_names]:
-            #   print(f"variable_names: {variable_names}, variables: {variables}")
+            # print(f"variable_names: {variable_names}, variables: {variables}")
             # make sure the variables that come in are in a tuple
             if isinstance(variables, tuple):
                 variables_tuple = variables
@@ -393,6 +414,7 @@ ASK {
                       'variables': varibs,
                      }
 
+  #          print(result)
             # execute SPARQL and create answer.
             result['answer'] = self.execute_sparql_for_answer(kg,  result['sparql'],
                                                               self.templates[template_name]['variable_names_sparql'],
@@ -410,6 +432,9 @@ ASK {
 
     def execute_sparql_for_answer(self, kg, sparql: str, varibs: tuple, expected_result) -> Union[bool, list]:
         """execute SPARQL query get the answer, returns either a list or boolean"""
+  #      print(f'sparql: {sparql}')
+  #      print(f'varibs: {varibs}')
+  #      print(f'exprected_result: {expected_result}')
         result = kg.query(sparql)
 
         # Assumption this is a one or zero variable answer from SPARQL
@@ -422,7 +447,7 @@ ASK {
         else:
             raise ValueError(f"expected_result paramenter should be either a 'list' or 'boolean', but is listed as '{expected_result}'")
 
-
+## This has a bug in it.
 def generate_all_templates(uses_kg=None, dimreq_kg=None) -> itertools.chain[dict]:
     """generate all the templates
 
@@ -437,7 +462,8 @@ def generate_all_templates(uses_kg=None, dimreq_kg=None) -> itertools.chain[dict
         dimreq_kg = rdflib.Graph()
         # load the graph related to the permitted uses
         #    dimreq_kg.parse("bulk.ttl")
-        dimreq_kg.parse("bulk2.ttl")
+        # dimreq_kg.parse("bulk2.ttl")
+        dimreq_kg.parse("combined.ttl")
 
     tg = TemplateGeneration()
     iterators = []
@@ -457,13 +483,16 @@ def generate_all_templates(uses_kg=None, dimreq_kg=None) -> itertools.chain[dict
 def main() -> int:
     uses_kg = rdflib.Graph()
     # load the graph related to the permitted uses
-    uses_kg.parse("permits_use2.ttl")
+    # uses_kg.parse("permits_use2.ttl")
+    uses_kg.parse("combined.ttl")
 
     # import rdflib
     dimreq_kg = rdflib.Graph()
     # load the graph related to the permitted uses
     #    dimreq_kg.parse("bulk.ttl")
+    # this template template_dimreg_4var_yn_answer requires using bulk2.ttl
     dimreq_kg.parse("bulk2.ttl")
+    # dimreq_kg.parse("combined.ttl")
 
     tg = TemplateGeneration()
     if len(sys.argv) < 2:
