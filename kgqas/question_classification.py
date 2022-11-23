@@ -17,7 +17,7 @@ from nltk.tag.perceptron import PerceptronTagger
 from nltk.tokenize import word_tokenize
 import numpy as np
 from sklearn.model_selection import KFold, train_test_split
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, f1_score
 import spacy
 import stanza
 # install xgboost
@@ -290,7 +290,9 @@ class QuestionClassification:
         y_pred = model.predict(X_test)
         predictions = [round(value) for value in y_pred]
         accuracy = accuracy_score(y_test, predictions)
+        f1 = f1_score(y_test, predictions)
         print("Accuracy %.2f%%" % (accuracy * 100.0))
+        print(f"F1 Score: {f1* 100.0}")
         model.save_model("question_classification_model.ubj")
 
     # NOT WORKING
