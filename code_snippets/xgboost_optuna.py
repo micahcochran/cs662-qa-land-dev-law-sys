@@ -10,7 +10,7 @@ y = pd.DataFrame()
 def objective(trial):
     param = {
         "verbosity": 0,
-        "objective": "binary:logistic", # * change objective to match your problem
+        "objective": "binary:logistic", # * change objective to match your problem, probably multi:softmax
         # "tree_method": "hist",
         # defines booster, gblinear for linear functions.
         "booster": "gbtree",
@@ -49,13 +49,13 @@ def objective(trial):
     X_xgb = correct_feature_names(X, replace)
     xgb_c = xgb.XGBClassifier(**param)
     xgb_c.fit(X_xgb, y)
-    pred = xgb_c.predict_proba(X_xgb)
-    preds = pred[:, 1:].flatten()
-#     pred_labels = np.rint(preds)
-    roc = roc_auc_score(y, preds)
-    return roc
-#     f_score = f1_score(xgb.y_test, preds)
-#     return f_score
+    preds = xgb_c.predict(X_xgb)
+    #preds = pred[:, 1:].flatten()
+    # pred_labels = np.rint(preds)
+    # roc = roc_auc_score(y, preds) # * change to f1_score or other metric based on tp, tn, fp, fn, we want multi class and not probilites
+    # return roc
+    f_score = f1_score(X_xgb, preds)
+    return f_score
 
 def correct_feature_names(df: pd.DataFrame, replace: dict) -> pd.DataFrame:
     """_correct_feature_names _summary_

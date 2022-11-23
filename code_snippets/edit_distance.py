@@ -1,4 +1,6 @@
-
+""" Could be used as replacement for levenshtein distance from nltk.metrics.distance
+    Memoized version of the Levenshtein distance function with spelling adjustment
+"""
 import os
 import numpy as np
 import collections
