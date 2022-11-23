@@ -55,6 +55,8 @@ class IndexesKG:
         self._permitted_uses_index = set([(str(res.use), ':permitsUse') for res in results_uses])
 #        self._permitted_uses_index = set([('', ':permitsUse', str(res.use)) for res in results_uses])
 
+        # combine the indexes
+        self._both_index = self._label_index2 | self._permitted_uses_index
     # currently this is a set, not sure if this should have another type
     # It is a set of tuples.  The first element of tuple is string for the label,
     # and the second element of the tuple is the Property.
@@ -71,6 +73,13 @@ class IndexesKG:
     @property
     def permitted_uses_index(self) -> set:
         return self._permitted_uses_index
+
+    @property
+    def both_index(self) -> set:
+        return self._both_index
+
+    def both_index_labels(self) -> list:
+        return [label for label, _fragment in self._both_index]
 
 # Intended only for testing
 if __name__ == '__main__':
