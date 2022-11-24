@@ -17,10 +17,11 @@ hf_dataset_df.loc[hf_dataset_df['answer'] == 'True', 'answer'] = 'Yes'
 hf_dataset_df.loc[hf_dataset_df['answer'] == 'False', 'answer'] = 'No' # ? may be a flaw in the dataset with no negative results it may not respond with a no
 
 print(hf_dataset_df.head())
+print(hf_dataset_df.shape)
 
 hf_dataset_df = hf_dataset_df.filter(['answer', 'question'], axis=1)
 
-print(hf_dataset_df['question'].iloc[0])
+# print(hf_dataset_df['question'].iloc[0])
 
 hf_dataset_df.to_json(f'{file_path}/json/hf_QA_noSquad_dataset.json', orient='records')#, lines=True)
 
