@@ -6,9 +6,9 @@ import sys
 import json
 from pathlib import Path
 
-os.environ['KMP_DUPLICATE_LIB_OK']='True'
+os.environ['KMP_DUPLICATE_LIB_OK']='True' # caused by some haystack duplication of processes, currently only a workaround
 
-sys.path.append('../cs662-qa-land-dev-law-sys/')
+sys.path.append('../cs662-qa-land-dev-law-sys/') # for cheaha '..' is all that is needed here
 
 from nlp.model import create_reader
 

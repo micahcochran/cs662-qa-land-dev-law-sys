@@ -3,7 +3,7 @@
 
 import sys
 
-sys.path.append('../cs662-qa-land-dev-law-sys/')
+sys.path.append('../cs662-qa-land-dev-law-sys/') # for cheaha '..' is all that is needed here
 
 from nlp.corpus import load_corpus
 

@@ -29,10 +29,11 @@ dependencies:
   - datasets
   - apache-beam
   - optuna
+  - loguru
   - pip:
-    - stanza
-    # - farm-haystack # uncomment for any intel system with basic features set
-    # - farm-haystack[all] # if you want to use CPU with full features set
-    # - farm-haystack[all-gpu] # if you want to use GPU with full features set
-    # for m1 macs need rust, cmake, postgresql install with brew 
-    # and follow instructions at https://docs.haystack.deepset.ai/docs/installation#basic-installation
+    - stanza # as pip package to override pytorch version when installing farm-haystack on M1 macs
+    # - farm-haystack # uncomment for any linux intel system with basic features set
+    # - farm-haystack[all] # if you want to use CPU on any linux intel system with full features set
+    # - farm-haystack[all-gpu] # if you want to use GPU on any linux intel system with full features set
+    # for m1 macs need rust, cmake, postgresql install with brew, 
+    # and follow instructions at https://docs.haystack.deepset.ai/docs/installation#basic-installation (windows users also follow installation instructions)

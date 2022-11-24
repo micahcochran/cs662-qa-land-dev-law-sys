@@ -8,7 +8,7 @@ from pathlib import Path
 from transformers import RobertaTokenizer
 from tokenizers import ByteLevelBPETokenizer
 
-sys.path.append('../cs662-qa-land-dev-law-sys/')
+sys.path.append('../cs662-qa-land-dev-law-sys/') # for cheaha '..' is all that is needed here
 
 from nlp.corpus import load_corpus
 from nlp.model import create_custom_tokenizer
