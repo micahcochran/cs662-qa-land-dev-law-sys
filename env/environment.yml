@@ -1,15 +1,15 @@
 name: NLP-SPARQL
 channels:
   - conda-forge
-  - pytorch
+  # - pytorch # uncomment for any intel system
   - huggingface
   - intel
   - defaults
 dependencies:
   - python = 3.9
   - matplotlib
-  - numpy
   - pandas
+  - numpy
   - pytest
   - scikit-learn
   - sklearn-pandas
@@ -19,8 +19,7 @@ dependencies:
   - shap
   - pip
   - rdflib
-  - pytorch
-  - torchtext
+  # - pytorch # uncomment for any intel system
   - keras
   - nltk
   - spacy
@@ -30,8 +29,10 @@ dependencies:
   - datasets
   - apache-beam
   - optuna
-  - stanza
   - pip:
-    - knockknock
-    - farm-haystack[all] # if you want to use CPU
-    # - farm-haystack[all-gpu] # if you want to use GPU
+    - stanza
+    # - farm-haystack # uncomment for any intel system with basic features set
+    # - farm-haystack[all] # if you want to use CPU with full features set
+    # - farm-haystack[all-gpu] # if you want to use GPU with full features set
+    # for m1 macs need rust, cmake, postgresql install with brew 
+    # and follow instructions at https://docs.haystack.deepset.ai/docs/installation#basic-installation
