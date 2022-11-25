@@ -26,6 +26,6 @@ hf_dataset_df = hf_dataset_df.filter(['answer', 'question'], axis=1)
 hf_dataset_df.to_json(f'{file_path}/json/hf_QA_noSquad_dataset.json', orient='records')#, lines=True)
 
 QA_dataset = load_dataset('json', data_files=f'{file_path}/json/hf_QA_noSquad_dataset.json')
-# data_files = {"train": "QAZoningTrain.json", "test": "QAZoningTest.json"} # * this is how to load multiple files need to sklearn train_test_split into two sets first
+# data_files = {"train": "QAZoningTrain.json", "test": "QAZoningTest.json"} # * this is how to load multiple files, need to sklearn train_test_split into two sets first
 # QA_dataset = load_dataset('json', data_files=data_files, split=['train', 'test'])
 print(QA_dataset)

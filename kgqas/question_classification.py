@@ -272,7 +272,7 @@ class QuestionClassification:
         print(f"Number of Questions Encoded: {question_dep_encoded.shape[0]}")
         print(template_labels)
         print(question_dep_encoded)
-        X_train, X_test, y_train, y_test = train_test_split(question_dep_encoded, template_labels)
+        X_train, X_test, y_train, y_test = train_test_split(question_dep_encoded, template_labels, shuffle=True, random_state=42)
         param = {'booster': 'gbtree',
                  'learning_rate': 0.3,
                  'max_depth': 3,
@@ -290,7 +290,7 @@ class QuestionClassification:
         y_pred = model.predict(X_test)
         predictions = [round(value) for value in y_pred]
         accuracy = accuracy_score(y_test, predictions)
-        f1 = f1_score(y_test, predictions)
+        f1 = f1_score(y_test, predictions, average='macro')
         print("Accuracy %.2f%%" % (accuracy * 100.0))
         print(f"F1 Score: {f1* 100.0}")
         model.save_model("question_classification_model.ubj")
