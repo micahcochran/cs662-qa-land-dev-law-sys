@@ -1,35 +1,65 @@
 """ _summary_
 """
 
+import os
+os.environ['KMP_DUPLICATE_LIB_OK']='True'
+
 import json
 import ntpath
+import datasets
 from importlib import resources
 from dataclasses import dataclass, field
-import logging
 
-logging.basicConfig(format="%(levelname)s - %(name)s -  %(message)s", level=logging.WARNING)
-logging.getLogger("haystack").setLevel(logging.INFO)
+from transformers import AutoTokenizer
+from transformers import DataCollatorWithPadding
+from transformers import AutoModelForSequenceClassification
 
 from haystack.nodes import FARMReader
+from haystack.nodes import TfidfRetriever
+from haystack.pipelines import ExtractiveQAPipeline
+from haystack.document_stores import InMemoryDocumentStore
+from haystack.utils import clean_wiki_text, convert_files_to_docs
 
 DATA_MODULE = "nlp.model.data.question_answering"
 
 @dataclass
 class SequenceClassificationBasedModel():
+    name: str=None
+    data: datasets.Dataset = None
+    model: AutoModelForSequenceClassification = None
+    model_dir: str=None
     
-    def _create_model():
-        return None
+    def _preprocess_function(examples, tokenizer):
+        return tokenizer(examples["text"], truncation=True)
+    
+    def _create_model(self, pretrained: str, model_dir: str, gpu: bool, data: datasets.Dataset, n_classes: int):
+        self.model = None 
+        return self.model
+
+def create_sequence_classification_model():
+    return None
 
 @dataclass
 class SquadBasedModel():
+
+    reader: FARMReader=None
+    document_store: InMemoryDocumentStore=None
+    retriever: TfidfRetriever=None
+    model: ExtractiveQAPipeline=None
+    model_dir: str=None
     
-    name: str=None
+    def _create_model(self, reader: type, doc_dir: str) -> ExtractiveQAPipeline:
+        self.document_store = InMemoryDocumentStore()
+        docs = convert_files_to_docs(dir_path=doc_dir, clean_func=clean_wiki_text, split_paragraphs=True)
+        self.document_store.write_documents(docs)
+        self.retriever = TfidfRetriever(document_store=self.document_store)
+        self.reader = reader
+        self.moel = ExtractiveQAPipeline(self.reader, self.retriever)
+        return self.model
     
-    def _create_model(self, reader: type) -> list:
-        return None
-    
-def create_squad_model() -> SquadBasedModel:
-    return SquadBasedModel()
+def create_squad_model(reader: type=FARMReader, doc_dir: str= f"{os.getcwd()}") -> SquadBasedModel:
+    model = SquadBasedModel(reader=reader, doc_dir=doc_dir)
+    return model
     
 @dataclass
 class CustomReader():
