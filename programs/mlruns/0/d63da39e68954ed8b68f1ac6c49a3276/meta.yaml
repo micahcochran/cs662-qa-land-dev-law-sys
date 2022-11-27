@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/MasterControlProgram/git/cs662-qa-land-dev-law-sys/programs/mlruns/0/d63da39e68954ed8b68f1ac6c49a3276/artifacts
+end_time: 1669449643158
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d63da39e68954ed8b68f1ac6c49a3276
+run_name: capable-auk-759
+run_uuid: d63da39e68954ed8b68f1ac6c49a3276
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1669449386777
+status: 3
+tags: []
+user_id: jesusaur
