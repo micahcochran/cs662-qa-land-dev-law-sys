@@ -16,12 +16,16 @@ from loguru import logger
 from nltk.tag.perceptron import PerceptronTagger
 from nltk.tokenize import word_tokenize
 import numpy as np
-from sklearn.model_selection import KFold, train_test_split
+from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, f1_score
 import spacy
 import stanza
 # install xgboost
 import xgboost as xgb
+
+# internal library imports
+# from semantic_parsing import generate_templates, label_dictionary
+from kg_helper import generate_templates, label_dictionary
 
 # The below aren't needed for nltk because I am using spacy.
 # Run these one time only
@@ -173,34 +177,11 @@ class QuestionClassification:
     # https://universaldependencies.org/u/dep/
 
 
-
-    def generate_templates(self) -> itertools.chain[dict]:
-        """build the templates"""
-        sys.path.append("..")  # hackish
-        from triplesdb.generate_template import generate_all_templates
-        import rdflib
-        uses_kg = rdflib.Graph()
-        uses_kg.parse("../triplesdb/combined.ttl")
-
-        dimreq_kg = rdflib.Graph()
-        # one of the templates is unable handle combined.ttl
-        dimreq_kg.parse("../triplesdb/bulk2.ttl")
-
-        tg_iter = generate_all_templates(uses_kg, dimreq_kg)
-
-        return tg_iter
-#        return generate_all_templates()
-
-    def label_dictionary(self) -> dict:
-        sys.path.append("..")  # hackish
-        from triplesdb.generate_template import TemplateGeneration
-        tg_obj = TemplateGeneration()
-        return tg_obj.template_number_dict
-
     # This sets up everything needed to determine the maximum vector size.
+    # This only needs to be performed once
     # This takes about 3 minutes to run on CPU.
     def run_compute_max_length_from_training_data(self):
-        tg = self.generate_templates()
+        tg = generate_templates()
         maximum = self.compute_max_length_from_training_data([generated_data['question'] for generated_data in tg])
         return maximum
 
@@ -228,15 +209,22 @@ class QuestionClassification:
         return self.padding(enc)
 
     # WORKING
-    def train2(self):
+    def train2(self, question_templates=None):
+        """Train the Question XGBoost Classifier.
+        train_iter : iterable of the questions that you'd like to train"""
         logger.info("1. Question Classifier training begun. ================")
         start_time = time.time()
         # generate the questions from the templates
-        tg = self.generate_templates()
+        if question_templates is not None:
+            tg = question_templates
+        else:
+            tg = generate_templates()
 
+        # NOTE: the steps are is specific to this dataset.
         questions_and_labels = [(gd['question'], gd['template_name']) for gd in tg]
         question_corpus = [ql[0] for ql in questions_and_labels]
-        template_number_dict = self.label_dictionary()
+#        template_number_dict = self.label_dictionary()
+        template_number_dict = label_dictionary()
         template_labels = [template_number_dict[ql[1]] for ql in questions_and_labels]
 
 
@@ -248,7 +236,7 @@ class QuestionClassification:
 #        X_train, X_test, y_train, y_test = train_test_split(question_dep_encoded, template_labels) # default test_size=0.25
 #        X_train, X_test, y_train, y_test = train_test_split(question_dep_encoded, template_labels, test_size=0.2, random_state=246341428)
         X_train, X_test, y_train, y_test = train_test_split(question_dep_encoded, template_labels, random_state=246341428,
-                                                            shuffle=True) # default test_size=0.25
+                                                            shuffle=True)  # default test_size=0.25
 
         param = {'booster': 'gbtree',
                  'learning_rate': 0.3,
@@ -277,20 +265,32 @@ class QuestionClassification:
 
     def classify(self, sentence: str, model=None) -> int:
         """Classify a question based on the sentence string.
-        returns an integer for the question classification"""
-#        question_dep_encoded = np.array(self.dependency_encoding(self.nlp, sentence))
+        model would be used for classifying multiple sentences or a long running process.
+        returns an integer for the question classification
+
+        sentence - sentence (string) to be classified
+        model - XGBoost Classifier model
+
+        returns an integer with the classification"""
+
         question_dep_encoded = np.array([self.dependency_encoding(self.nlp, sentence)])
 
         if model is None:
-            model = xgb.XGBClassifier()
-            model.load_model("question_classification_model.ubj")
+            model = self.load_model()
+#            logger.info("Loading XGBoost model: question_classification_model.ubj")
+#            model = xgb.XGBClassifier()
+#            model.load_model("question_classification_model.ubj")
 
         print(question_dep_encoded)
         ypred = model.predict(question_dep_encoded)
         print(ypred)
         return ypred[0]
 
-
+    def load_model(self):
+        logger.info("Loading XGBoost model: question_classification_model.ubj")
+        model = xgb.XGBClassifier()
+        model.load_model("question_classification_model.ubj")
+        return model
 
 
 ### These are main functions to make stuff happen.
@@ -304,7 +304,6 @@ def main():
 def qc_train_main():
     """This is a step to train the classifier"""
     qc = QuestionClassification()
-#    qc.train()
     qc.train2()
 
 def compute_max_main():
@@ -314,22 +313,33 @@ def compute_max_main():
     print(f'MAXIMUM: {maximum}')
     print(f'length: {len(maximum)}')
 
+# this is a test to make sure that this function can get to the TTL files.
 def generate_all_templates_text():
-    qc = QuestionClassification()
-    for res in qc.generate_templates():
+    for res in generate_templates():
         print(res)
 
 def classify_main():
     qc = QuestionClassification()
 #    model = qc.train2()
 #    template_number = qc.classify('Are auto-dismantling yards permitted?', model)
-    template_number = qc.classify('Are auto-dismantling yards permitted?')
-    print(f"template_number = {template_number}")
+
+    # these are questions to test that all of the 5 of the templates are being tested
+    questions = ['Are auto-dismantling yards permitted?',
+                 'Is the maximum building height for a property in the C3 zoning district 50 feet?',
+                 'Which zoning districts allow physical fitness centers?',
+                 'Are salt works allowed in a FI3 zoning district?',
+                 'What is the maximum building height in the R2 zoning district?',]
+
+    print("===== Question Classifications =====")
+    model = qc.load_model()
+    for q in questions:
+        template_number = qc.classify(q, model)
+        print(f"Question: {q} template_number = {template_number}")
 
 if __name__ == '__main__':
 
 #    sys.exit(main())
 #    sys.exit(compute_max_main())
-#    sys.exit(qc_train_main())
 #    sys.exit(generate_all_templates_text())
-   classify_main()
+#    sys.exit(qc_train_main())
+    classify_main()
