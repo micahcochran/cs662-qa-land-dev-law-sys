@@ -130,6 +130,7 @@ class QueryDimensionsSparql:
 #        }
 #        """
 
+# TODO: Remove ?zoning_label when it has a rdfs:seeAlso :ZoningDistrictDivision
         sparql = """
 SELECT ?zoning_label
 WHERE {
@@ -299,8 +300,8 @@ WHERE {
         #           All of these units have many ways to abbreviate.
         #
         #  SPARQL queries don't care about the units, I've tried this out in rdflib and Jena.
-        #  Some code will be needed to deals with units in order to make sure to respond with the right units if conversion
-        #  is needed.
+        #  Some code will be needed to deals with units in order to make sure to respond with the right units if
+        #  conversion is needed.
         # TODO may need to somehow make $unit_text work with the rest of the code.
         t4 = {'template_name': 'template_dimreg_4var_yn_answer',
               'knowledge_graph': 'dimensional_reqs',
@@ -331,13 +332,12 @@ ASK {
         self.template_number = {tmplt: i for i, tmplt in enumerate(sorted(self.templates.keys()))}
 
     def template_names(self) -> list:
-        """template names"""
-        return self.templates.keys()
+        """returns the template names as a list"""
+        return list(self.templates.keys())
 
     @property
     def template_number_dict(self) -> dict:
         return self.template_number
-
 
     # NOTE: The dictionary was a design decision to allow extension
     # to add other variables.
@@ -456,14 +456,15 @@ def generate_all_templates(uses_kg=None, dimreq_kg=None) -> itertools.chain[dict
     if uses_kg is None:
         uses_kg = rdflib.Graph()
         # load the graph related to the permitted uses
-        uses_kg.parse("permits_use2.ttl")
+        # uses_kg.parse("permits_use2.ttl")
+        uses_kg.parse("combined.ttl")
 
     if dimreq_kg is None:
         dimreq_kg = rdflib.Graph()
         # load the graph related to the permitted uses
         #    dimreq_kg.parse("bulk.ttl")
-        # dimreq_kg.parse("bulk2.ttl")
-        dimreq_kg.parse("combined.ttl")
+        dimreq_kg.parse("bulk2.ttl")
+        # dimreq_kg.parse("combined.ttl")
 
     tg = TemplateGeneration()
     iterators = []
@@ -520,9 +521,14 @@ def main() -> int:
         print_help()
         return 0
 
+    if sys.argv[2] == '-q' or sys.argv[2] == '--question-only':
+        # print the question only
+        for d in template_iter:
+            print(d['question'])
+    else:
     # Currently, just printing a dictionary
-    for d in template_iter:
-        print(d)
+        for d in template_iter:
+            print(d)
 
     return 0
 
