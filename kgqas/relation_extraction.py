@@ -2,6 +2,7 @@
 Semantic Parsing Phase - 3) Relation Extraction
 """
 # internal Python libraries
+import itertools
 import pickle
 import random
 from typing import List, Tuple
@@ -12,6 +13,7 @@ from sklearn.metrics import f1_score
 from sklearn.model_selection import train_test_split
 from sklearn.neural_network import MLPClassifier
 from sklearn.preprocessing import MultiLabelBinarizer
+from sklearn.preprocessing import OneHotEncoder
 from sentence_transformers import SentenceTransformer, util
 
 # internal imports
@@ -57,19 +59,27 @@ class RelationExtraction():
         # Use SBERT to generate the embedding for the MLP
         # some of the variable names need to be removed.
 
-        mlb = MultiLabelBinarizer()
+        # flatten the list of list into a list, use set to determine the unique variables for the MLP Classifier,
+        # (prepare for encoding the matrix)
+        #variable_classes = list(set(itertools.chain(*variables)))
+
+        # mlb = MultiLabelBinarizer(classes=variable_classes)
+        # this is preferrable to the above.
         idx = IndexesKG()
-        mlb.fit([idx.all_index_labels()])
-        mlb.fit_transform(variables)
+        mlb = MultiLabelBinarizer(classes=idx.all_index_labels())
+
+        label_encoding = mlb.fit_transform(variables)
+        # mlb.fit([idx.all_index_labels()])
 #        q_embeddings = [self.sbert_model.encode(q, convert_to_tensor=True) for q in questions]
         q_embeddings = [self.sbert_model.encode(q) for q in questions]
 
         X_train, X_test, y_train, y_test = train_test_split(q_embeddings, variables, random_state=246341428,
                                                             shuffle=True)
+
         # Used Table 5. MLP Parameters from paper
         params = {
             'activation': 'logistic',  # uses sigmoid activation function
- #           'hidden_layer_sizes': (100, 100),  # ????????????
+            'hidden_layer_sizes': (768, 114),  # ????????????
             'max_inter': 100,       # epochs
             'learning_rate_init': 0.01,
             'solver': 'adam',
@@ -79,6 +89,8 @@ class RelationExtraction():
         # Loss Functions: binary_crossentropy
         # Output Dimensions: 29
         # 1 input layer, 2 hidden layers, one output layer
+        # VERBOSITY
+        # Printout of Accuracy
 
 #        print("Embedding first 10: ")
 #        print(q_embeddings)
@@ -87,15 +99,22 @@ class RelationExtraction():
 
         # the parameters are a little different from the scikit learn version.
  #       model = MLPClassifier(*params)
-        self.model = MLPClassifier(activation='logistic', max_iter=100, learning_rate_init=0.01, solver='adam')
+        #
+        # max_iter=100,
+        # hidden_layer_sizes=(768, 114),
+        hidden_layer_sizes=(768, 100, 100, 29),
 
-        self.model.fit(X_train, mlb)
+        self.model = MLPClassifier(activation='logistic', learning_rate='adaptive', max_iter=100, hidden_layer_sizes=(768, 100, 100, 29),
+                                   learning_rate_init=0.01, solver='adam', random_state=246341428, verbose=True)
+
+        self.model.fit(X_train, y_train)
 
         y_pred = self.model.predict(X_test)
-        predictions = [round(value) for value in y_pred]
+#        predictions = [round(value) for value in y_pred]
 #        accuracy = accuracy_score(y_test, predictions)
-        f1 = f1_score(y_test, predictions, average='micro')
-#        print(f"Accuracy {accuracy * 100.0}")
+#        f1 = f1_score(y_test, y_pred, average='micro')
+        accuracy = self.model.score(y_test, y_pred)
+        print(f"Accuracy {accuracy * 100.0}")
         print(f"F1 Score: {f1* 100.0}")
         with open("relation_extraction_model.pickle", "wb") as fp:
             pickle.dump(self.model, fp)
