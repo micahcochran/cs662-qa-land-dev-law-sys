@@ -105,7 +105,7 @@ class CustomReader():
                     self.data = json.load(json_file)
                 path_split = ntpath.split(file)
         self.reader = FARMReader(model_name_or_path=pretrained, use_gpu=gpu)
-        self.reader.train(data_dir=path_split[0], train_filename=path_split[1], dev_split=dev_split,  use_gpu=gpu, n_epochs=epochs, save_dir="my_model")
+        self.reader.train(data_dir=path_split[0], train_filename=path_split[1], dev_split=dev_split, max_seq_len=512, use_gpu=gpu, n_epochs=epochs, save_dir="my_model")
         self.model_dir = model_dir
         self.reader.save(model_dir)
         return self.reader
