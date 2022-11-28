@@ -73,7 +73,7 @@ class RelationExtraction():
 #        q_embeddings = [self.sbert_model.encode(q, convert_to_tensor=True) for q in questions]
         q_embeddings = [self.sbert_model.encode(q) for q in questions]
 
-        X_train, X_test, y_train, y_test = train_test_split(q_embeddings, variables, random_state=246341428,
+        X_train, X_test, y_train, y_test = train_test_split(q_embeddings, label_encoding, random_state=246341428,
                                                             shuffle=True)
 
         # Used Table 5. MLP Parameters from paper
@@ -115,7 +115,7 @@ class RelationExtraction():
 #        f1 = f1_score(y_test, y_pred, average='micro')
         accuracy = self.model.score(y_test, y_pred)
         print(f"Accuracy {accuracy * 100.0}")
-        print(f"F1 Score: {f1* 100.0}")
+#        print(f"F1 Score: {f1* 100.0}")
         with open("relation_extraction_model.pickle", "wb") as fp:
             pickle.dump(self.model, fp)
         return self.model
