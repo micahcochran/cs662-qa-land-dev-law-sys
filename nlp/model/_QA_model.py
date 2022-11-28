@@ -76,7 +76,7 @@ class CustomReader():
     reader: FARMReader = None
     model_dir: str=None
     
-    def _create_reader(self, data_name: str, pretrained: str, gpu: bool, epochs: int, model_dir: str, data_module=DATA_MODULE) -> FARMReader:
+    def _create_reader(self, data_name: str, pretrained: str, gpu: bool, epochs: int, model_dir: str, dev_split: float, data_module=DATA_MODULE) -> FARMReader:
         """_create_reader _summary_
 
         Args:
@@ -105,12 +105,12 @@ class CustomReader():
                     self.data = json.load(json_file)
                 path_split = ntpath.split(file)
         self.reader = FARMReader(model_name_or_path=pretrained, use_gpu=gpu)
-        self.reader.train(data_dir=path_split[0], train_filename=path_split[1], use_gpu=gpu, n_epochs=1, save_dir="my_model")
+        self.reader.train(data_dir=path_split[0], train_filename=path_split[1], dev_split=dev_split,  use_gpu=gpu, n_epochs=epochs, save_dir="my_model")
         self.model_dir = model_dir
         self.reader.save(model_dir)
         return self.reader
         
-def create_reader(model_dir: str, data_name: str, pretrained: str="deepset/roberta-base-squad2", gpu: bool=False, epochs:int=1) -> FARMReader:
+def create_reader(model_dir: str, data_name: str, dev_split: float=0.1, pretrained: str="deepset/roberta-base-squad2", gpu: bool=False, epochs:int=1) -> FARMReader:
     """create_reader _summary_
 
     Args:
@@ -123,5 +123,5 @@ def create_reader(model_dir: str, data_name: str, pretrained: str="deepset/rober
         FARMReader: _description_
     """
     reader = CustomReader()
-    reader._create_reader(data_name=data_name, pretrained=pretrained, gpu=gpu, model_dir=model_dir, epochs=epochs)
+    reader._create_reader(data_name=data_name, pretrained=pretrained, gpu=gpu, model_dir=model_dir, epochs=epochs, dev_split=dev_split)
     return reader
