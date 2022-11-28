@@ -1,5 +1,5 @@
 """
-Indexes are build from rdf labels and permitted uses.
+Indexes are build from Knowledge Graph labels, permitted uses, and units.
 """
 # internal Python libraries
 from typing import Set, Tuple
@@ -7,7 +7,7 @@ from typing import Set, Tuple
 # external libraries
 import rdflib
 
-# TODO: perhaps need to also index numeric values
+# TODO: Perhaps add numeric values specified in the KG to the index.
 
 # For these indexes are in a set of tuples.
 # The text label (Literal) is first element, and the URI fragment is second element.

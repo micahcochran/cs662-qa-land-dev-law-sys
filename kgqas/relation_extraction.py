@@ -3,6 +3,8 @@ Semantic Parsing Phase - 3) Relation Extraction
 """
 # internal Python libraries
 import pickle
+import random
+from typing import List, Tuple
 
 # imports from external libraries
 from loguru import logger
@@ -17,18 +19,44 @@ from indexes import IndexesKG
 
 class RelationExtraction():
     def __init__(self):
+        # This is a faster model
         self.sbert_model = SentenceTransformer('all-MiniLM-L6-v2')
         # MLP Classifier model
         self.model = None
 
-
-    def train(self, question_corpus):
-        # Use SBERT to generate the embedding for the MLP
+    def process_question_corpus(self, question_corpus) -> Tuple[List[str], List[List[str]]]:
+        """Takes the question corpus and splits it into parallel lists of questions and variable values used to fill in
+        the question.
+        return (questions, variables)"""
         def split_question_and_variables(question_corpus):
-            return [(question['question'], list(question['variables'].values())) for question in question_corpus]
+           return [(question['question'], list(question['variables'].values())) for question in question_corpus]
+        # this is just for debug
         questions_and_variables = split_question_and_variables(question_corpus)
-        questions = [qv[0] for qv in questions_and_variables]
-        variables = [qv[1] for qv in questions_and_variables]
+
+        questions = [question['question'] for question in question_corpus]
+        variables_intermediate = [list(question['variables'].values()) for question in question_corpus]
+
+
+        # remove strings that begin with : or [ ...  URI fragment predicates ":maxBulidingHeight" and units "[ft_i]"
+        # These are useless to the production of the text version of the question
+        # (perhaps the generate_template.py needs to be rewritten to not
+        # have these values for the question text.)  This is not idea.
+        variables = [list(filter(lambda x: x[0] not in (':', '['), vi))
+                        for vi in variables_intermediate]
+
+        print(f"{len(questions_and_variables)}, {len(questions)}, {len(variables)}")
+        print("===== 10 Random Question and Variables ===== ")
+        for i in range(10):
+            rnd = random.randint(0, len(questions_and_variables))
+            # print(questions_and_variables[rnd])
+            print(f"Question: {questions[rnd]}")
+            print(f"Variables: {variables[rnd]}")
+        return questions, variables
+
+    def train(self, questions: List[str], variables: List[List[str]]):
+        # Use SBERT to generate the embedding for the MLP
+        # some of the variable names need to be removed.
+
         mlb = MultiLabelBinarizer()
         idx = IndexesKG()
         mlb.fit([idx.all_index_labels()])
@@ -52,10 +80,10 @@ class RelationExtraction():
         # Output Dimensions: 29
         # 1 input layer, 2 hidden layers, one output layer
 
-        print("Embedding: ")
-        print(q_embeddings)
-        print("Labels: ")
-        print(variables)
+#        print("Embedding first 10: ")
+#        print(q_embeddings)
+#        print("Labels: ")
+#        print(variables)
 
         # the parameters are a little different from the scikit learn version.
  #       model = MLPClassifier(*params)
@@ -69,7 +97,6 @@ class RelationExtraction():
         f1 = f1_score(y_test, predictions, average='micro')
 #        print(f"Accuracy {accuracy * 100.0}")
         print(f"F1 Score: {f1* 100.0}")
-#        self.model.save_model("relation_extraction_model.ubj")
         with open("relation_extraction_model.pickle", "wb") as fp:
             pickle.dump(self.model, fp)
         return self.model
@@ -112,15 +139,47 @@ class RelationExtraction():
             with open("relation_extraction_model.pickle") as fp:
                 pickle.load(self.model, fp)
 
-def main_test():
-    # from question_classification import QuestionClassification
-    # from entity_class_linking import EntityClassLinking
-    from semantic_parsing import generate_templates
 
-    # qc = QuestionClassification()
+# Here are a few examples questions that are passed through:
+
+# Is the minimum lot size for a property in the C1 zoning district 6000 square feet?
+# ['minimum lot size', '6000', 'C1', 'square feet']
+# ('Are libraries allowed in a C1 zoning district?', ['libraries', 'C1'])
+
+# Question: What is the minimum lot width in the R3a zoning district?
+# Variables: ['minimum lot width', 'R3a']
+# Question: I would like to build public parking lots.  Which zoning districts permits this use?
+# Variables: ['public parking lots']
+
+### Nonsense question from generate_template.py:
+# Question: What is the permits use in the C4 zoning district?
+# Variables: ['permits use', 'C4']
+
+
+def main_test():
     relex = RelationExtraction()
-    relex.train(generate_templates())
+    questions, variables = relex.process_question_corpus(list(generate_templates()))
+    relex.train(questions, variables)
+
+def small_test():
+    """small test of main for debugging"""
+    ex_questions = [
+        'I would like to build public parking lots.  Which zoning districts permits this use?',
+        'Are libraries allowed in a C1 zoning district?',
+        'Is the minimum lot size for a property in the C1 zoning district 6000 square feet?',
+        'What is the minimum lot width in the R3a zoning district?',
+    ]
+    ex_variables = [
+        ['public parking lots'],
+        ['libraries', 'C1'],
+        ['minimum lot size', '6000', 'C1', 'square feet'],
+        ['minimum lot width', 'R3a']
+    ]
+
+    relex = RelationExtraction()
+    relex.train(ex_questions, ex_variables)
 
 
 if __name__ == '__main__':
-    main_test()
+#    main_test()
+    small_test()

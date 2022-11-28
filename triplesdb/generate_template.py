@@ -306,6 +306,7 @@ WHERE {
         t4 = {'template_name': 'template_dimreg_4var_yn_answer',
               'knowledge_graph': 'dimensional_reqs',
               'variables': ('regulation_predicate', 'regulation_text', 'regulation_value', 'zoning'),
+#              'variables': ('regulation_predicate', 'regulation_text', 'regulation_value', 'zoning', 'unit_text'),
               # variables feed into the templates
               'variable_names_sparql': tuple(),  # variable resulting from SPARQL query
               'sparql_template': """
@@ -521,7 +522,7 @@ def main() -> int:
         print_help()
         return 0
 
-    if sys.argv[2] == '-q' or sys.argv[2] == '--question-only':
+    if len(sys.argv) > 2 and (sys.argv[2] == '-q' or sys.argv[2] == '--question-only'):
         # print the question only
         for d in template_iter:
             print(d['question'])

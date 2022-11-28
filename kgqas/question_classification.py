@@ -5,8 +5,6 @@ Semantic Parsing Phase - 1) Question Classification
 # training takes ~3 minutes on CPU
 
 # Python library imports
-import itertools
-import sys
 import time
 from typing import List
 
@@ -29,7 +27,7 @@ from kg_helper import generate_templates, label_dictionary
 
 # The below aren't needed for nltk because I am using spacy.
 # Run these one time only
-import nltk
+# import nltk
 # nltk.download('universal_tagset')    # brown when tagset='universal'
 # nltk.download('averaged_perceptron_tagger')    # PerceptronTagger(load=True)
 
@@ -260,6 +258,8 @@ class QuestionClassification:
         print("Accuracy %.2f%%" % (accuracy * 100.0))
         print(f"F1 Score: {f1* 100.0}")
         model.save_model("question_classification_model.ubj")
+        end_time = time.time()
+        logger.info(f"Training XGBoost Classifier took: {end_time-start_time} s")
         return model
 
 
@@ -296,6 +296,7 @@ class QuestionClassification:
 ### These are main functions to make stuff happen.
 
 def main():
+    """example to replicate paper"""
     qc = QuestionClassification()
     qc.run("What is the address of the hotel where Mozart Week takes place?")
 #    qc.run("When does Mozart Week start?")
@@ -337,9 +338,9 @@ def classify_main():
         print(f"Question: {q} template_number = {template_number}")
 
 if __name__ == '__main__':
-
+    import sys
 #    sys.exit(main())
 #    sys.exit(compute_max_main())
 #    sys.exit(generate_all_templates_text())
-#    sys.exit(qc_train_main())
-    classify_main()
+    sys.exit(qc_train_main())
+#    classify_main()
