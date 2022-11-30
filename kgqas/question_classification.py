@@ -233,8 +233,8 @@ class QuestionClassification:
         print(question_dep_encoded)
 #        X_train, X_test, y_train, y_test = train_test_split(question_dep_encoded, template_labels) # default test_size=0.25
 #        X_train, X_test, y_train, y_test = train_test_split(question_dep_encoded, template_labels, test_size=0.2, random_state=246341428)
-        X_train, X_test, y_train, y_test = train_test_split(question_dep_encoded, template_labels, random_state=246341428,
-                                                            shuffle=True)  # default test_size=0.25
+        X_train, X_test, y_train, y_test = train_test_split(question_dep_encoded, template_labels,
+                                                            test_size=0.25, random_state=246341428, shuffle=True)
 
         param = {'booster': 'gbtree',
                  'learning_rate': 0.3,
