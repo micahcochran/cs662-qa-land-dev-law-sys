@@ -4,6 +4,7 @@ Semantic Parsing Phase - 2) Entity Linking and Class Linking
 # Python library imports
 from collections import defaultdict, namedtuple
 from operator import attrgetter
+from typing import List, Tuple
 
 # External library imports
 from loguru import logger
@@ -24,14 +25,11 @@ class EntityClassLinking:
         # this model is a 5 times faster model
         self.sbert_model = SentenceTransformer('all-MiniLM-L6-v2')
         # This is for step 5 Algorithm 1.
-        ec_embeddings = self.sbert_model.encode(self.index_kg.both_index_labels(), convert_to_tensor=True)
-        self.entity_candidate_embeddings = list(zip(self.index_kg.both_index_labels(), ec_embeddings))
+        ec_embeddings = self.sbert_model.encode(self.index_kg.all_index_labels(), convert_to_tensor=True)
+        self.entity_candidate_embeddings = list(zip(self.index_kg.all_index_labels(), ec_embeddings))
 
     def ngram_collection(self, sentence) -> list:
         tokens = word_tokenize(sentence)
-#        unigram = ngrams(tokens, 1)
-#        bigram = ngrams(tokens, 2)
-#        trigram = ngrams(tokens, 3)
         # compute unigram, bigram, and trigram at the same time
         # ngram_out = everygrams(tokens, max_len=3)  # this is per the paper
         # compute unigram, bigram, trigram, 4-grams and 5-grams all at the same time
@@ -42,11 +40,12 @@ class EntityClassLinking:
         return ngram_out
 
     # this is Algorithm 1 in the paper
-    def string_similarity_score(self, mention):
-        entity_candidates = self.index_kg.both_index_labels()
+    def string_similarity_score(self, mention) -> List[Tuple[float, str]]:
+        entity_candidates = self.index_kg.all_index_labels()
+
+        Score_Result = namedtuple("Score_STS", 'ld_div_ls, ld, ls, cand')
         # score a single mention and candidate
-        def score_sts(m, cand):
-            Score_Result = namedtuple("Score_STS", 'ld_div_ls, ld, ls, cand')
+        def score_sts(m, cand) -> Score_Result:
             ld = edit_distance(" ".join(m), cand)
             ls = len(cand)
             return Score_Result(ld/ls, ld, ls, cand)
@@ -70,14 +69,14 @@ class EntityClassLinking:
         # 4. Compute STR (STring Ranks) including entity candidates' string-ranks where the
         # string-rank of the entity candidate c is 1/index(stc) where index(stc) is the index
         # of the entity candidate c in STS Vector
-        def compute_string_ranks(computed_scores: list):
+        def compute_string_ranks(computed_scores: list) -> List[Tuple]:
             st_rank = [(1.0 / i, cs) for i, cs in enumerate(computed_scores, start=1)]
             return st_rank
 
         st_ranks = compute_string_ranks(computed_scores)
         # 5. Compute vector SES (SEmantic Similiariy) containing the cosine similarity cs
         # between the embeddings of an entity mention m and the embeddings of entity candidates
-        def compute_semantic_similarity(mention) -> list:
+        def compute_semantic_similarity(mention) -> List[Tuple]:
             embedding_mention = [self.sbert_model.encode(' '.join(m), convert_to_tensor=True) for m in mention]
             ses_vec = []
             for emb_m in embedding_mention:
@@ -97,7 +96,7 @@ class EntityClassLinking:
         # index of the entity candidate c in SES vector
 
         # Note is the unpacking ses_scores correctly?
-        def compute_semantic_ranks(ses_scores: list):
+        def compute_semantic_ranks(ses_scores: list) -> List[Tuple]:
             sem_ranks = [(1.0 / i, c) for i, c in enumerate(ses_scores, start=1)]
             return sem_ranks
 
@@ -129,6 +128,8 @@ class EntityClassLinking:
         print("======== Top Similarity Scores ========")
         for i in range(10):
             print(f"{similarity_score_list[i]}")
+
+        return similarity_score_list
 
     def run(self):
         sentence = 'Are auto-dismantling yards permitted?'

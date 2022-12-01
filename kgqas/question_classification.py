@@ -4,11 +4,9 @@ Semantic Parsing Phase - 1) Question Classification
 
 # training takes ~3 minutes on CPU
 
-import itertools
 # Python library imports
-import sys
 import time
-from typing import Generator, List, Tuple
+from typing import List
 
 # External library imports
 # install loguru
@@ -16,31 +14,41 @@ from loguru import logger
 from nltk.tag.perceptron import PerceptronTagger
 from nltk.tokenize import word_tokenize
 import numpy as np
-from sklearn.model_selection import KFold, train_test_split
+from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, f1_score
 import spacy
 import stanza
 # install xgboost
 import xgboost as xgb
 
+# internal library imports
+# from semantic_parsing import generate_templates, label_dictionary
+from kg_helper import generate_templates, label_dictionary
+
 # The below aren't needed for nltk because I am using spacy.
 # Run these one time only
-import nltk
+# import nltk
 # nltk.download('universal_tagset')    # brown when tagset='universal'
 # nltk.download('averaged_perceptron_tagger')    # PerceptronTagger(load=True)
 
 class QuestionClassification:
+    def __init__(self):
+        self.nlp = self.dependency_parse_stanza_initialize()
+
+    # UNUSED
     def pos_tagging(self, sentence: str):
         avg_tagger = PerceptronTagger(load=True)
         tokens = word_tokenize(sentence)
         avg_perceptron_tags = avg_tagger.tag(tokens)
         return avg_perceptron_tags
 
+    # NOT WORKING: Had problems finding the POS tag of the headword.
     # result in a triplets in the following form:
     # <POS tag of headword, dependency tag, POS tag of dependent word>
     def dependency_parsing_spacy(self, sentence: str) -> List[tuple]:
         nlp = spacy.load("en_core_web_sm")
         doc = nlp(sentence)
+        dependency_triplets = []
         # see, https://spacy.io/api/token for explanation
         for token in doc:
 #            print(type(token))
@@ -48,20 +56,17 @@ class QuestionClassification:
 #                f'{token.text:{12}} {token.pos_:{6}} {token.tag_:{6}} {token.dep_:{6}} {spacy.explain(token.pos_):{20}} {spacy.explain(token.tag_)}')
             print(
                f'{token.text:{12}} {token.pos_:{6}} <{token.tag_:{6}} {token.dep_:{6}}> {token.head} {spacy.explain(token.pos_):{20}} {spacy.explain(token.tag_)}')
+            dependency_triplets.append((doc[token.i].tag_, token.head, token.dep_, token.tag_))
         return [(doc[token.i].tag_, token.head, token.dep_, token.tag_) for token in doc]
 
     # result in a triplets in the following form:
     # <POS tag of headword, dependency tag, POS tag of dependent word>
     # This WORKS
     # This uses a Standford parser.
+    # Documentation: for Stanza Dependency parsing: https://stanfordnlp.github.io/stanza/depparse.html
     def dependency_parse_stanza(self, nlp, sentence: str) -> List[tuple]:
         doc = nlp(sentence)
-#        print(
-#            *[f'word: {word.text}\tupos: {word.upos}\txpos: {word.xpos}\tfeats: {word.feats if word.feats else "_"}' for
-#              sent in doc.sentences for word in sent.words], sep='\n')
-#        print(*[
-#            f'id: {word.id}\tword: {word.text}\thead id: {word.head}\thead: {sent.words[word.head - 1].text if word.head > 0 else "root"}\tdeprel: {word.deprel}'
-#            for sent in doc.sentences for word in sent.words], sep='\n')
+
         dependency_triplets = []
         for sent in doc.sentences:
             for word in sent.words:
@@ -75,11 +80,12 @@ class QuestionClassification:
 
     def dependency_parse_stanza_initialize(self):
         """Initialization for dependency_parse_stanza()"""
-        nlp = stanza.Pipeline(lang='en', processors='tokenize,mwt,pos,lemma,depparse')
+        # nlp = stanza.Pipeline(lang='en', processors='tokenize,mwt,pos,lemma,depparse')
+        nlp = stanza.Pipeline(lang='en', processors='tokenize,lemma,pos,depparse')
         return nlp
 
     # padding to the encoding to MAX_VECTOR_LEN
-    def padding(self, encoding):
+    def padding(self, encoding) -> List[int]:
         PAD_VALUE = 120000   # large meaningless value
         MAX_VECTOR_LEN = 40    # maximum vector length
         fill_vec = MAX_VECTOR_LEN-len(encoding)
@@ -158,79 +164,35 @@ class QuestionClassification:
             # NUM_POS = 37  # paper
             NUM_POS = 42
             # triple[0] encode depedencies
-#            print(triple)
-#            print(self.UPENN_POS_NUM[triple[0]])
             return (self.UPENN_POS_NUM[triple[0]] * NUM_DEPS + self.UNIV_DEP_REL_NUM[triple[1]]) * NUM_POS + self.UPENN_POS_NUM[triple[2]]
 
  #       return map(label_encode, dep_triples)
         return [label_encode(t) for t in dep_triples]
 
-    # NOT WORKING, porbably should DELETE
+    # NOT WORKING, probably should DELETE
     # 63 dependency tags listed in the paper is close to 65 listed in the Universal Dependency Relations
     # Perhaps a couple are removed for not being needed.
     # https://universaldependencies.org/u/dep/
-    def classifier(self, train=False):
-        # xgboost goes here
-        # parameters the specified in Table 4 of the paper
-        param = {'booster': 'gbtree',
-                 'learning_rate': 0.3,
-                 'max_depth': 3,
-                 'subsample': 0.5,
-                 'colsample_bytree': 0.4,
-                 'objective': 'multi:softprob',
-                 'sample_type': 'uniform',
-                 'tree_method': 'auto',
-                 }
-        # xgb.train(param)
-        # create model instance
-        #bst = XGBClassifier(kwargs=param)
-        # if train is True:
-        #    xgb.train(param, )
-        # fit model
-        # bst.fit(X_train, y_train)
-        # make predictions
-        # else:
-        preds = bst.predict(X_test)
 
-    def generate_templates(self) -> itertools.chain[dict]:
-        """build the templates"""
-        sys.path.append("..")  # hackish
-        from triplesdb.generate_template import generate_all_templates
-        import rdflib
-        uses_kg = rdflib.Graph()
-        uses_kg.parse("../triplesdb/combined.ttl")
-
-        dimreq_kg = rdflib.Graph()
-        # one of the templates is unable handle combined.ttl
-        dimreq_kg.parse("../triplesdb/bulk2.ttl")
-
-        tg_iter = generate_all_templates(uses_kg, dimreq_kg)
-
-        return tg_iter
-
-    def label_dictionary(self) -> dict:
-        sys.path.append("..")  # hackish
-        from triplesdb.generate_template import TemplateGeneration
-        tg_obj = TemplateGeneration()
-        return tg_obj.template_number_dict
 
     # This sets up everything needed to determine the maximum vector size.
+    # This only needs to be performed once
     # This takes about 3 minutes to run on CPU.
     def run_compute_max_length_from_training_data(self):
-        tg = self.generate_templates()
+        tg = generate_templates()
         maximum = self.compute_max_length_from_training_data([generated_data['question'] for generated_data in tg])
         return maximum
 
     # This is really just something that needs to be ran once to determine the size of l1 and l2
     # I used this to inform the MAX_VECTOR_LEN in padding().
     def compute_max_length_from_training_data(self, training_data):
-        nlp = self.dependency_parse_stanza_initialize()
+        # nlp = self.dependency_parse_stanza_initialize()
         max_sentence = None
         max_label_encoding = []
         for sentence in training_data:
             if '-' in sentence:
                 print(f"SENTENCE as a hypen: {sentence}")
-            dependency_tripe = self.dependency_parse_stanza(nlp, sentence)
+            dependency_tripe = self.dependency_parse_stanza(self.nlp, sentence)
             encoding = list(self.label_encoding(dependency_tripe))
             if len(encoding) > len(max_label_encoding):
                 max_label_encoding = encoding
@@ -238,41 +200,42 @@ class QuestionClassification:
 
         return max_sentence, max_label_encoding
 
+    # do all the dependency parsing in one go and free all the memory of this.
+    def dependency_encoding(self, nlp, sentence: str) -> list:
+        tpl = self.dependency_parse_stanza(nlp, sentence)
+        enc = self.label_encoding(tpl)
+        return self.padding(enc)
+
     # WORKING
-    def train2(self):
+    def train2(self, question_templates=None):
+        """Train the Question XGBoost Classifier.
+        train_iter : iterable of the questions that you'd like to train"""
         logger.info("1. Question Classifier training begun. ================")
         start_time = time.time()
         # generate the questions from the templates
-        tg = self.generate_templates()
+        if question_templates is not None:
+            tg = question_templates
+        else:
+            tg = generate_templates()
 
+        # NOTE: the steps are is specific to this dataset.
         questions_and_labels = [(gd['question'], gd['template_name']) for gd in tg]
         question_corpus = [ql[0] for ql in questions_and_labels]
-        template_number_dict = self.label_dictionary()
+#        template_number_dict = self.label_dictionary()
+        template_number_dict = label_dictionary()
         template_labels = [template_number_dict[ql[1]] for ql in questions_and_labels]
 
-        # note subsetting the data set barely helped the speed
-#        SUBSET = 100
-        SUBSET = 0
-        # create a subset of the data  (SUBSET=0 to disable creating a subset)
-        if SUBSET > 0:
-            question_corpus = question_corpus[:SUBSET]
-            template_labels = np.array(list(template_labels)[:SUBSET])
-
-        # do all the dependency parsing in one go and free all the memory of this.
-        def dependency_steps(nlp, sentence):
-            tpl = self.dependency_parse_stanza(nlp, sentence)
-            enc = self.label_encoding(tpl)
-            return self.padding(enc)
-
-
-        nlp = self.dependency_parse_stanza_initialize()
 
 #        question_dep_encoded = np.array(map(lambda sentence: np.array(dependency_steps(nlp, sentence)), question_corpus))
-        question_dep_encoded = np.array([np.array(dependency_steps(nlp, sentence)) for sentence in question_corpus])
+        question_dep_encoded = np.array([np.array(self.dependency_encoding(self.nlp, sentence)) for sentence in question_corpus])
         print(f"Number of Questions Encoded: {question_dep_encoded.shape[0]}")
         print(template_labels)
         print(question_dep_encoded)
-        X_train, X_test, y_train, y_test = train_test_split(question_dep_encoded, template_labels, shuffle=True, random_state=42)
+#        X_train, X_test, y_train, y_test = train_test_split(question_dep_encoded, template_labels) # default test_size=0.25
+#        X_train, X_test, y_train, y_test = train_test_split(question_dep_encoded, template_labels, test_size=0.2, random_state=246341428)
+        X_train, X_test, y_train, y_test = train_test_split(question_dep_encoded, template_labels,
+                                                            test_size=0.25, random_state=246341428, shuffle=True)
+
         param = {'booster': 'gbtree',
                  'learning_rate': 0.3,
                  'max_depth': 3,
@@ -287,147 +250,53 @@ class QuestionClassification:
         model.fit(X_train, y_train)
 
         # make predictions for test data
+        print(f'X_test {X_test}')
         y_pred = model.predict(X_test)
         predictions = [round(value) for value in y_pred]
         accuracy = accuracy_score(y_test, predictions)
-        f1 = f1_score(y_test, predictions, average='macro')
+        f1 = f1_score(y_test, predictions, average='micro')
         print("Accuracy %.2f%%" % (accuracy * 100.0))
         print(f"F1 Score: {f1* 100.0}")
         model.save_model("question_classification_model.ubj")
-
-    # NOT WORKING
-    def train(self):
-        """Training for the Question Classification"""
-        logger.info("1. Question Classifier training begun. ================")
-        start_time = time.time()
-        # generate the questions from the templates
-        tg = self.generate_templates()
-
-        questions_and_labels = [(gd['question'], gd['template_name']) for gd in tg]
-        question_corpus = [ql[0] for ql in questions_and_labels]
-#        question_corpus = map(lambda gd: gd['question'], tg)
-        # numeric template labels (a parallel array to the question_corpus)
-#        template_labels = map(lambda gd: np.array([tg.template_number_dict[gd['template_name']]]), tg)
-#        template_labels = map(lambda gd: tg.template_number_dict[gd['template_name']], tg)
- #       template_labels = [tg.template_number_dict[gd['template_name']] for gd in tg.template]
-        template_number_dict = self.label_dictionary()
-#        template_labels_int = [ql[1] for ql in questions_and_labels]
-#        template_labels = template_number_dict[
-        template_labels = [template_number_dict[ql[1]] for ql in questions_and_labels]
-#        print([gd['template_name'] for gd in tg])
-
-        SHORT_TEST = True
-        # create a subset of the data
-        if SHORT_TEST:
-            SUBSET = 100
-            question_corpus = question_corpus[:SUBSET]
-            template_labels = np.array(list(template_labels)[:SUBSET])
-
-
-        logger.info("Dependency & POS tagging")
-        nlp = self.dependency_parse_stanza_initialize()
-        # generate the dependency triples
-        dep_triples = [self.dependency_parse_stanza(nlp, sentence) for sentence in question_corpus]
-#        dep_triples = map(lambda s: self.dependency_parse_stanza(nlp, s), question_corpus)
-
-        logger.info("Dependency & POS tagging - Done")
-
-        logger.info("Encode Dependency Triples")
-        # encode the dependency triples
-        enc_dep_vec = [self.label_encoding(tpl) for tpl in dep_triples]
-        logger.info("Encode Dependency Triples - Done")
-
-
-        logger.info("Padding List")
-#        enc_dep_vec = map(lambda tpl: self.label_encoding(tpl), dep_triples)
-        # pad
-        pad_enc_dep_vec = [self.padding(enc) for enc in enc_dep_vec]
-#        pad_enc_dep_np = [np.array(self.padding(enc)) for enc in enc_dep_vec]
-        logger.info("Padding List - Done")
-
-        # import pickle
-        # pickle.dump(pad_enc_dep_vec, "pad_enc_dep_vec.pickle")
-        # pickle.dump(template_labels, "template_labels.pickle")
-#        print(np.array(pad_enc_dep_vec))
-#        print(np.array(template_labels))
-#        return
-        self.train_xgb(np.array(pad_enc_dep_vec), np.array(template_labels))
-        return
-#        logger.info("Convert to DMatrix")
-        # Is this right?????????????????????????????????????????????????????????????
-        #        pad_enc_dep_dmatrixes = [xgb.DMatrix(tpl) for tpl in enc_dep_triples]
-        data_dmatrix = xgb.DMatrix(pad_enc_dep_vec, template_labels)
-#         template_label_dmatrix = xgb.DMatrix()
-#        template_label_dmatrix = xgb.DMatrix([list(x) for x in template_labels])
-
-#        logger.info("Convert to DMatrix - Done")
-
-        # parameters the specified in Table 4 of the paper
-        param = {'booster': 'gbtree',
-                 'learning_rate': 0.3,
-                 'max_depth': 3,
-                 'subsample': 0.5,
-                 'colsample_bytree': 0.4,
-                 'objective': 'multi:softprob',
-                 'sample_type': 'uniform',
-                 'tree_method': 'auto',
-                 }
-
-        # train using 5 fold cross validation --- not needed for XGBoost
-        kf = KFold(n_splits=5)
-        for testing_data, training_data in kf.split(dep_triples):
-#        for testing_data, training_data in self.cross_validation_lists(dep_triples):
-            xgb.train(param, dtrain=training_data)
-
-        print(data_dmatrix)
-        # train using 5 fold cross validation
-#        eval_hist = xgb.cv(param, data_dmatrix, nfold=5)
-        print(f"eval_hist: {eval_hist}")
-        # save the trained model
-        bst.save_model("question_classification.ubj")
-        # fit model
-        # bst.fit(X_train, y_train)
-        preds = bst.predict(pad_enc_dep_dmatrixes)
         end_time = time.time()
-        logger.info(f"QC's train function took {end_time-start_time} s")
+        logger.info(f"Training XGBoost Classifier took: {end_time-start_time} s")
+        return model
 
-    # NOT WORKING
-    # I used this example for guidance
-    def train_xgb(self, X, Y):
-        param = {'booster': 'gbtree',
-                 'learning_rate': 0.3,
-                 'max_depth': 3,
-                 'subsample': 0.5,
-                 'colsample_bytree': 0.4,
-                 'objective': 'multi:softprob',
-                 'sample_type': 'uniform',
-                 'tree_method': 'auto',
-                 }
-        # split data into train and test sets
-       # seed = 7
-        test_size = 0.33
-        X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=test_size) # , random_state=seed)
+
+    def classify(self, sentence: str, model=None) -> int:
+        """Classify a question based on the sentence string.
+        model would be used for classifying multiple sentences or a long running process.
+        returns an integer for the question classification
+
+        sentence - sentence (string) to be classified
+        model - XGBoost Classifier model
+
+        returns an integer with the classification"""
+
+        question_dep_encoded = np.array([self.dependency_encoding(self.nlp, sentence)])
+
+        if model is None:
+            model = self.load_model()
+#            logger.info("Loading XGBoost model: question_classification_model.ubj")
+#            model = xgb.XGBClassifier()
+#            model.load_model("question_classification_model.ubj")
+
+        print(question_dep_encoded)
+        ypred = model.predict(question_dep_encoded)
+        print(ypred)
+        return ypred[0]
+
+    def load_model(self):
+        logger.info("Loading XGBoost model: question_classification_model.ubj")
         model = xgb.XGBClassifier()
-        model.fit(X_train, y_train)
-        y_pred = model.predict(X_test)
-        predictions = [round(value) for value in y_pred]
-        # evaluate predictions
-        accuracy = accuracy_score(y_test, predictions)
-        print("Accuracy: %.2f%%" % (accuracy * 100.0))
-
-
-    def run(self, sentence: str):
-        # pos = self.pos_tagging(sentence)
-        # logger.info(f"POS Tagging {pos}")
-#       dep_triples = self.dependency_parsing_spacy(sentence)
-        dep_triples = self.dependency_parse_stanza(sentence)
-        logger.info(f"Dependency_triples:  {dep_triples}")
-
+        model.load_model("question_classification_model.ubj")
+        return model
 
 
 ### These are main functions to make stuff happen.
 
 def main():
+    """example to replicate paper"""
     qc = QuestionClassification()
     qc.run("What is the address of the hotel where Mozart Week takes place?")
 #    qc.run("When does Mozart Week start?")
@@ -436,7 +305,6 @@ def main():
 def qc_train_main():
     """This is a step to train the classifier"""
     qc = QuestionClassification()
-#    qc.train()
     qc.train2()
 
 def compute_max_main():
@@ -446,13 +314,33 @@ def compute_max_main():
     print(f'MAXIMUM: {maximum}')
     print(f'length: {len(maximum)}')
 
+# this is a test to make sure that this function can get to the TTL files.
 def generate_all_templates_text():
-    qc = QuestionClassification()
-    for res in qc.generate_templates():
+    for res in generate_templates():
         print(res)
 
+def classify_main():
+    qc = QuestionClassification()
+#    model = qc.train2()
+#    template_number = qc.classify('Are auto-dismantling yards permitted?', model)
+
+    # these are questions to test that all of the 5 of the templates are being tested
+    questions = ['Are auto-dismantling yards permitted?',
+                 'Is the maximum building height for a property in the C3 zoning district 50 feet?',
+                 'Which zoning districts allow physical fitness centers?',
+                 'Are salt works allowed in a FI3 zoning district?',
+                 'What is the maximum building height in the R2 zoning district?',]
+
+    print("===== Question Classifications =====")
+    model = qc.load_model()
+    for q in questions:
+        template_number = qc.classify(q, model)
+        print(f"Question: {q} template_number = {template_number}")
+
 if __name__ == '__main__':
+    import sys
 #    sys.exit(main())
 #    sys.exit(compute_max_main())
-    sys.exit(qc_train_main())
 #    sys.exit(generate_all_templates_text())
+    sys.exit(qc_train_main())
+#    classify_main()
