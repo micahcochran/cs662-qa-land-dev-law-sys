@@ -14,6 +14,7 @@ dependencies:
   - scikit-learn
   - sklearn-pandas
   - ipykernel
+  - ipywidgets
   - pathlib
   - xgboost
   - shap
@@ -25,14 +26,17 @@ dependencies:
   - spacy
   - seaborn
   - gensim
-  - transformers
-  - datasets
+  # - transformers
   - apache-beam
   - optuna
   - loguru
+  - stanza
   - pip:
-    - stanza # as pip package to override pytorch version when installing farm-haystack on M1 macs
-    # - farm-haystack # uncomment for any linux intel system with basic features set
+    - transformers # as pip package to override pytorch version when installing farm-haystack on M1 macs
+    - sentence-transformers # as pip package to override pytorch version when installing farm-haystack on M1 macs
+    - evaluate # as pip package to override pytorch version when installing farm-haystack on M1 macs
+    - datasets # as pip package to override pytorch version when installing farm-haystack on M1 macs
+    - farm-haystack # uncomment for any linux intel system with basic features set
     # - farm-haystack[all] # if you want to use CPU on any linux intel system with full features set
     # - farm-haystack[all-gpu] # if you want to use GPU on any linux intel system with full features set
     # for m1 macs need rust, cmake, postgresql install with brew, 
