@@ -4,10 +4,11 @@
 Code to generate templates
 """
 
+# Python libraries
 import itertools
-from typing import Generator, Union, Tuple
+import string
 import sys
-from string import Template
+from typing import Dict, Generator, List, Optional, Union, Tuple
 
 # NOTE: Some of the SPARQL queries don't work well when put into a combined Knowledge Graph.
 
@@ -20,7 +21,7 @@ import rdflib
 class QueryUsesSparql:
     """SPARQL queries that have multiple uses for the Permitted Uses Knowledge Graph."""
 
-    def __init__(self, uses_kg):
+    def __init__(self, uses_kg: rdflib.graph.Graph):
         self.uses_kg = uses_kg
 
     def all_uses_iter(self) -> Generator[str, None, None]:
@@ -81,7 +82,6 @@ class QueryUsesSparql:
 
 ZONING_RDF_PREFIX = 'http://www.example.org/ns/lu/zoning#'
 
-
 # key is the unit's name, value is the unit per https://unitsofmeasure.org/ucum  in the designation c/s
 UNITS_NAME = {
     # ---  area units  ---
@@ -104,7 +104,7 @@ UNITS_SYMBOL = {v: k for k, v in UNITS_NAME.items()}
 class QueryDimensionsSparql:
     """SPARQL queries that have multiple uses for the Dimensional Requirements Knowledge Graph."""
 
-    def __init__(self, dimensional_kg):
+    def __init__(self, dimensional_kg: rdflib.graph.Graph):
         self.dimensional_kg = dimensional_kg
 
         # dimensional regulations
@@ -118,19 +118,11 @@ class QueryDimensionsSparql:
         self.DIM_REGULATIONS_PRED_URI = {ZONING_RDF_PREFIX + v[1:]: k for k, v in self.DIM_REGULATIONS_TEXT.items()}
 
         # DIM_REGULATIONS_TEXT_URI = {v:k for k,v in DIM_REGULATIONS_TEXT.items()}
+
     def all_zoning_iter(self) -> Generator[str, None, None]:
         """
         iterator of all the zoning districts in the knowledge graph
         """
-#        sparql = """
-#        SELECT ?zoning_label
-#
-#        WHERE {
-#                ?zoning rdfs:label  ?zoning_label .
-#        }
-#        """
-
-# TODO: Remove ?zoning_label when it has a rdfs:seeAlso :ZoningDistrictDivision
         sparql = """
 SELECT ?zoning_label
 WHERE {
@@ -153,10 +145,7 @@ WHERE {
         iterator
         :return:
         """
-#        print('all_regulations_zoning_iter')
         for zoning in self.all_zoning_iter():
-#            print(zoning)
-#            print(self.DIM_REGULATIONS_TEXT)
             for regulation_text, regulation_predicate in self.DIM_REGULATIONS_TEXT.items():
                 yield regulation_predicate, regulation_text, zoning
 
@@ -206,8 +195,8 @@ WHERE {
         results = self.dimensional_kg.query(sparql_properties)
         # This returns the fragment form (example :minLotSize)
         # and does no checking if the property is from the correct KG.
-        kg_properties_set = {str(row.property_label): ':'+row.property_name.fragment for row in results}
-#       print(kg_properties_set)
+        kg_properties_set = {str(row.property_label): ':' + row.property_name.fragment for row in results}
+        #       print(kg_properties_set)
         return kg_properties_set
 
 
@@ -224,6 +213,7 @@ class TemplateGeneration:
               'knowledge_graph': 'permitted_uses',
               'variables': ('use',),  # variables feed into the templates
               'variable_names_sparql': ('zoning_label',),  # variable resulting from SPARQL query
+              'sparql_variables_entities': ('use',),
               'sparql_template': """
 SELECT ?zoning_label
 
@@ -244,6 +234,7 @@ WHERE {
               'knowledge_graph': 'permitted_uses',
               'variables': ('use', 'zoning'),  # variables feed into the templates
               'variable_names_sparql': tuple(),  # variable resulting from SPARQL query
+              'sparql_variables_entities': ('use', 'zoning'),
               'sparql_template': """
 ASK {
     ?zoning :permitsUse "${use}" ;
@@ -262,6 +253,7 @@ ASK {
               'knowledge_graph': 'permitted_uses',
               'variables': ('use',),  # variables feed into the templates
               'variable_names_sparql': tuple(),  # variable resulting from SPARQL query
+              'sparql_variables_entities': ('use',),
               'sparql_template': """
 ASK {
         ?zoning :permitsUse "${use}" .
@@ -279,6 +271,7 @@ ASK {
               'knowledge_graph': 'dimensional_reqs',
               'variables': ('regulation_predicate', 'regulation_text', 'zoning'),  # variables feed into the templates
               'variable_names_sparql': ('regulation_value',),  # variable resulting from SPARQL query
+              'sparql_variables_entities': ('zoning',),
               'sparql_template': """
 SELECT ?regulation_value
 
@@ -306,9 +299,10 @@ WHERE {
         t4 = {'template_name': 'template_dimreg_4var_yn_answer',
               'knowledge_graph': 'dimensional_reqs',
               'variables': ('regulation_predicate', 'regulation_text', 'regulation_value', 'zoning'),
-#              'variables': ('regulation_predicate', 'regulation_text', 'regulation_value', 'zoning', 'unit_text'),
+              #              'variables': ('regulation_predicate', 'regulation_text', 'regulation_value', 'zoning', 'unit_text'),
               # variables feed into the templates
               'variable_names_sparql': tuple(),  # variable resulting from SPARQL query
+              'sparql_variables_entities': ('regulation_value', 'zoning'),
               'sparql_template': """
 ASK {
         ?zoning $regulation_predicate "${regulation_value}" ;
@@ -330,19 +324,26 @@ ASK {
         # key is template_name, value is number
         # self.template_number = {tmplt: i+1 for i, tmplt in enumerate(sorted(self.templates.keys()))}
         # must start at zero for xgboost labels.
-        self.template_number = {tmplt: i for i, tmplt in enumerate(sorted(self.templates.keys()))}
+        self._template_number = {tmplt: i for i, tmplt in enumerate(sorted(self.templates.keys()))}
 
-    def template_names(self) -> list:
-        """returns the template names as a list"""
-        return list(self.templates.keys())
+#        self.template_number = {i: tmplt for i, tmplt in enumerate(sorted(self.templates.keys()))}
+
+
+    def template_names(self) -> List[str]:
+        """returns the template names as a list
+        this is in the same order as template_number_dict"""
+        return list(sorted(self.templates.keys()))
 
     @property
-    def template_number_dict(self) -> dict:
-        return self.template_number
+    def template_number_dict(self) -> Dict[str, int]:
+        """This has {template_name: number}.  Numbering starts at zero"""
+        return self._template_number
+
+
 
     # NOTE: The dictionary was a design decision to allow extension
     # to add other variables.
-    def generate_output(self, kg, template_name) -> Generator[dict, None, None]:
+    def generate_output(self, kg: rdflib.graph.Graph, template_name) -> Generator[dict, None, None]:
         """
         generate the templates for the permitted uses
         kg - knowledge graph,
@@ -381,11 +382,11 @@ ASK {
                 f'self.templates["{template_name}"], knowledge_graph has an unknown value: {self.templates[template_name]["knowledge_graph"]}')
 
         # set up the templates
-        sparl_template = Template(self.templates[template_name]['sparql_template'])
-        question_templates = [Template(q_tmpl) for q_tmpl in self.templates[template_name]['question_templates']]
+        sparl_template = string.Template(self.templates[template_name]['sparql_template'])
+        question_templates = [string.Template(q_tmpl) for q_tmpl in self.templates[template_name]['question_templates']]
 
         variable_names = self.templates[template_name]['variables']
- #       print(variable_names)
+        #       print(variable_names)
         for variables in iterators[variable_names]:
             # print(f"variable_names: {variable_names}, variables: {variables}")
             # make sure the variables that come in are in a tuple
@@ -413,11 +414,11 @@ ASK {
             result = {'sparql': sparl_template.substitute(varibs),
                       'template_name': template_name,
                       'variables': varibs,
-                     }
+                      }
 
-  #          print(result)
+            #          print(result)
             # execute SPARQL and create answer.
-            result['answer'] = self.execute_sparql_for_answer(kg,  result['sparql'],
+            result['answer'] = self.execute_sparql_for_answer(kg, result['sparql'],
                                                               self.templates[template_name]['variable_names_sparql'],
                                                               self.templates[template_name]['answer_datatype'])
 
@@ -431,25 +432,29 @@ ASK {
         """provide the dictionary of the template"""
         return self.templates[name]
 
-    def execute_sparql_for_answer(self, kg, sparql: str, varibs: tuple, expected_result) -> Union[bool, list]:
+    def execute_sparql_for_answer(self, kg: rdflib.graph.Graph, sparql: str, varibs: tuple,
+                                  expected_result) -> Union[bool, list]:
         """execute SPARQL query get the answer, returns either a list or boolean"""
-  #      print(f'sparql: {sparql}')
-  #      print(f'varibs: {varibs}')
-  #      print(f'exprected_result: {expected_result}')
+        #      print(f'sparql: {sparql}')
+        #      print(f'varibs: {varibs}')
+        #      print(f'exprected_result: {expected_result}')
         result = kg.query(sparql)
 
         # Assumption this is a one or zero variable answer from SPARQL
-        if(len(varibs) > 1):
+        if len(varibs) > 1:
             raise ValueError(f'varibs should have only one value in the tuple: varibs = {varibs} ')
         elif expected_result == list:
             return [str(r[varibs[0]]) for r in result]
         elif expected_result == bool:
             return result.askAnswer
         else:
-            raise ValueError(f"expected_result paramenter should be either a 'list' or 'boolean', but is listed as '{expected_result}'")
+            raise ValueError(
+                f"expected_result paramenter should be either a 'list' or 'boolean', but is listed as '{expected_result}'")
+
 
 ## This has a bug in it.
-def generate_all_templates(uses_kg=None, dimreq_kg=None) -> itertools.chain[dict]:
+def generate_all_templates(uses_kg: Optional[rdflib.graph.Graph] = None,
+                           dimreq_kg: Optional[rdflib.graph.Graph] = None) -> itertools.chain[dict]:
     """generate all the templates
 
     uses_kg or dimreq_kg rdflib.Graph() objects may be passed.  Otherwise, these will be loaded automatically."""
@@ -478,6 +483,23 @@ def generate_all_templates(uses_kg=None, dimreq_kg=None) -> itertools.chain[dict
         else:
             raise RuntimeError(
                 f'self.templates["{template_name}"], knowledge_graph has an unknown value: {kg_to_use}')
+
+    return itertools.chain.from_iterable(iterators)
+
+def generate_dimensional_templates(dimreq_kg: Optional[rdflib.graph.Graph] = None) -> itertools.chain[dict]:
+    if dimreq_kg is None:
+        dimreq_kg = rdflib.Graph()
+        # load the graph related to the permitted uses
+        #    dimreq_kg.parse("bulk.ttl")
+        dimreq_kg.parse("bulk2.ttl")
+        # dimreq_kg.parse("combined.ttl")
+
+    tg = TemplateGeneration()
+    iterators = []
+    for template_name in tg.template_names():
+        kg_to_use = tg.get_template(template_name)['knowledge_graph']
+        if kg_to_use == 'dimensional_reqs':
+            iterators.append(tg.generate_output(dimreq_kg, template_name))
 
     return itertools.chain.from_iterable(iterators)
 
@@ -527,7 +549,7 @@ def main() -> int:
         for d in template_iter:
             print(d['question'])
     else:
-    # Currently, just printing a dictionary
+        # Currently, just printing a dictionary
         for d in template_iter:
             print(d)
 

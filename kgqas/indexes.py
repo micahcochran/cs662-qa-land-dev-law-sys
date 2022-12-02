@@ -3,7 +3,7 @@ Indexes are build from Knowledge Graph labels, permitted uses, and units.
 """
 # internal Python libraries
 import re
-from typing import Set, Tuple
+from typing import Dict, Optional, Set, Tuple
 
 # external libraries
 import rdflib
@@ -18,14 +18,14 @@ import rdflib
 
 class IndexesKG:
 
-    def __init__(self, kg=None):
+    def __init__(self, kg: Optional[rdflib.graph.Graph] = None):
         """kg - initialize with a knowledge graph"""
         if kg is None:
             kg = rdflib.Graph()
             # load the graph
             kg.parse("../triplesdb/combined.ttl")
 
-
+        # TODO REMOVE THIS SECTION
         ### Another set of labels
         # For parsing these types of triples
         # :maxBuildingHeight rdfs:label "maximum building height"
@@ -55,8 +55,35 @@ class IndexesKG:
 
         self._numeric_index = self._init_numbers(kg)
 
+#        self._predicate_index = self._init_predicates(kg)
+        self._predicate_index = self._init_variable_predicate(kg, 'rdf:Property')
+
+        self._zoning_index = self._init_variable_predicate(kg, ':ZoningDistrict')
+
+        self._zoning_division_index = self._init_variable_predicate(kg, ':ZoningDistrictDivision')
+
+        self._entity_index = self._permitted_uses_index | self._units_index | self._numeric_index | \
+                             self._zoning_index | self._zoning_division_index
+        # TODO REMOVE ME
         # combine the indexes
         self._all_indexes = self._label_index2 | self._permitted_uses_index | self._units_index | self._numeric_index
+
+
+    def _init_variable_predicate(self, kg: Optional[rdflib.graph.Graph], predicate: str) -> Set[Tuple[str, str]]:
+        """
+        Used to get create indexes for predeicates that match rdf:Property,
+        :ZoningDistrict, :ZoningDistrictDivision
+        """
+
+        sparql = """SELECT ?subject ?label WHERE {
+            ?subject    rdf:type        %s .
+            ?subject    rdfs:label      ?label .
+        }""" % predicate
+
+        results_pred = kg.query(sparql)
+
+        # results in a set
+        return set([(str(res.label), ':' + res.subject.fragment) for res in results_pred])
 
 
     def _init_units(self) -> Set[Tuple[str, str]]:
@@ -77,8 +104,7 @@ class IndexesKG:
         }
         return set(UNITS_NAME.items())
 
-#    def _init_numbers(self, kg) -> Set[Tuple[str, str]]:
-    def _init_numbers(self, kg) -> Set[Tuple[str, str]]:
+    def _init_numbers(self, kg: Optional[rdflib.graph.Graph]) -> Set[Tuple[str, str]]:
         # The CDT typing causes problems for SPARQL to be able to do any filtering, so python has to do it instead.
         sparql_everything = """
 SELECT ?pred ?obj WHERE {
@@ -103,29 +129,64 @@ SELECT ?pred ?obj WHERE {
         return set([(num, '') for num, _ in number_list])
 
     @property
-    def label_index2(self) -> set:
+    def label_index2(self) -> Set[Tuple[str, str]]:
         return self._label_index2
 
     # These are a set of object which have the :permitsUse property.
     # We will always know that :permitsUse is a predicate, with the use as an object.
     @property
-    def permitted_uses_index(self) -> set:
+    def permitted_uses_index(self) -> Set[Tuple[str, str]]:
         return self._permitted_uses_index
 
     @property
-    def numeric_index(self) -> set:
+    def predicate_index(self) -> Set[Tuple[str, str]]:
+        return self._predicate_index
+
+    @property
+    def predicate_dict(self) -> Dict[str, str]:
+        return {label: predicate for label, predicate in self._predicate_index}
+
+    def predicate_labels(self) -> list:
+        return [label for label, _fragment in self._predicate_index]
+    @property
+    def zoning_index(self) -> Set[Tuple[str, str]]:
+        return self._zoning_index
+
+    @property
+    def zoning_division_index(self) -> Set[Tuple[str, str]]:
+        return self._zoning_division_index
+
+    @property
+    def numeric_index(self) -> Set[Tuple[str, str]]:
         return self._numeric_index
 
     @property
-    def units_index(self) -> set:
+    def units_index(self) -> Set[Tuple[str, str]]:
         return self._units_index
 
     @property
-    def all_indexes(self) -> set:
+    def all_indexes(self) -> Set[Tuple[str, str]]:
         return self._all_indexes
 
     def all_index_labels(self) -> list:
+        raise DeprecationWarning("all_index_labels() deprecated, use all_entity_labels() instead.")
         return [label for label, _fragment in self._all_indexes]
+
+    @property
+    def zoning_index(self) -> Set[Tuple[str, str]]:
+        return self._zoning_index
+
+    @property
+    def zoning_division_index(self) -> Set[Tuple[str, str]]:
+        return self._zoning_index
+
+    @property
+    def entity_index(self) -> Set[Tuple[str, str]]:
+        raise DeprecationWarning("entity_index() deprecated, use all_entity_labels() instead.")
+        return self._entity_index
+
+    def all_entity_labels(self) -> list:
+        return [label for label, _fragment in self._entity_index]
 
 # Intended only for testing
 if __name__ == '__main__':
@@ -133,11 +194,24 @@ if __name__ == '__main__':
 
     print("==========  Label Index 2 ==========")
     print(indexkg.label_index2)
+    print(f"Labels2 Count: {len(indexkg.label_index2)}")
     print("==========  Numeric Index 2 ==========")
     print(indexkg.numeric_index)
+    print(f"Numeric Count: {len(indexkg.numeric_index)}")
     print("==========  Permitted Uses Index ==========")
     print(indexkg.permitted_uses_index)
+    print(f"Permitted Uses Count: {len(indexkg.permitted_uses_index)}")
     print("==========  Units Index ==========")
     print(indexkg.units_index)
+    print(f"Units Count: {len(indexkg.units_index)}")
+    print("==========  Predicate Index ==========")
+    print(indexkg.predicate_index)
+    print(f"Predicate Count: {len(indexkg.predicate_index)}")
+    print("==========  Zoning District Index ==========")
+    print(indexkg.zoning_index)
+    print(f"Predicate Count: {len(indexkg.zoning_index)}")
+    print("==========  Zoning District Division Index ==========")
+    print(indexkg.zoning_division_index)
+    print(f"Predicate Count: {len(indexkg.zoning_division_index)}")
 
     print(f'\nTotal number of items in the index: {len(indexkg.all_indexes)}')
