@@ -50,7 +50,7 @@ def label_dictionary() -> dict:
     tg_obj = triplesdb.generate_template.TemplateGeneration()
     return tg_obj.template_number_dict
 
-@property
+#@property
 def template_number_dictionary() -> Dict[str, int]:
     tg_obj = triplesdb.generate_template.TemplateGeneration()
     return tg_obj.template_number_dict

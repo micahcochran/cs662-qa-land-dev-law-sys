@@ -16,8 +16,10 @@ from typing import Dict, Generator, List, Optional, Union, Tuple
 # using feature URIRef.fragment added in this version, but could easily program around if needed.
 import rdflib
 
+# FIXME The answers to these questions should be True, but they are False.
+#       4 - Template 4 - template_dimreg_4var_yn_answer
+#       These are returning false due to not having the proper unit in the question.
 
-# SPARQL queries that are useful
 class QueryUsesSparql:
     """SPARQL queries that have multiple uses for the Permitted Uses Knowledge Graph."""
 
@@ -318,7 +320,9 @@ ASK {
               'answer_datatype': bool,
               }
 
-        self.templates['template_dimreg_4var_yn_answer'] = t4
+        # FIXME: THE ABOVE TEMPLATE NEEDS SOME WORK SO THAT IT CAN PROPERLY GENERATE SPARQL QUERIES.
+        #        IT IS BEING COMMENTED OUT UNTIL THAT TIME.
+        # self.templates['template_dimreg_4var_yn_answer'] = t4
 
         # create a template number dictionary
         # key is template_name, value is number
@@ -416,7 +420,7 @@ ASK {
                       'variables': varibs,
                       }
 
-            #          print(result)
+            # print(result)
             # execute SPARQL and create answer.
             result['answer'] = self.execute_sparql_for_answer(kg, result['sparql'],
                                                               self.templates[template_name]['variable_names_sparql'],
@@ -435,9 +439,9 @@ ASK {
     def execute_sparql_for_answer(self, kg: rdflib.graph.Graph, sparql: str, varibs: tuple,
                                   expected_result) -> Union[bool, list]:
         """execute SPARQL query get the answer, returns either a list or boolean"""
-        #      print(f'sparql: {sparql}')
-        #      print(f'varibs: {varibs}')
-        #      print(f'exprected_result: {expected_result}')
+        # print(f'sparql: {sparql}')
+        # print(f'varibs: {varibs}')
+        # print(f'expected_result: {expected_result}')
         result = kg.query(sparql)
 
         # Assumption this is a one or zero variable answer from SPARQL
@@ -449,7 +453,7 @@ ASK {
             return result.askAnswer
         else:
             raise ValueError(
-                f"expected_result paramenter should be either a 'list' or 'boolean', but is listed as '{expected_result}'")
+                f"expected_result parameter should be either a 'list' or 'boolean', but is listed as '{expected_result}'")
 
 
 ## This has a bug in it.

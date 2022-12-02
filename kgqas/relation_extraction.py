@@ -50,9 +50,9 @@ class RelationExtraction():
 #        print(f"variables: {variables}")
 #        # filter out variables that are not in the predicates
         variables_filtered = [self.filter_relation_variables(row) for row in variables]
-        print(f"variables_filtered: {variables_filtered}")
+#        print(f"variables_filtered: {variables_filtered}")
         self.label_encoding = self.mlb.fit_transform(variables_filtered)
-        print(f"self.label_encoding: {self.label_encoding}")
+#        print(f"self.label_encoding: {self.label_encoding}")
 #        self.label_encoding = self.mlb.fit_transform(index_kg.predicate_labels())
 
     def filter_relation_variables(self, variables: List[str]) -> List[str]:
@@ -99,9 +99,12 @@ class RelationExtraction():
         q_embeddings = [self.sbert_model.encode(q) for q in questions]
 
         # print(q_embeddings)
-        print(self.label_encoding)
+#        print(self.label_encoding)
+        variables_encoded = self.mlb.fit_transform(variables)
 
-        X_train, X_test, y_train, y_test = train_test_split(q_embeddings, self.label_encoding, random_state=246341428,
+#        X_train, X_test, y_train, y_test = train_test_split(q_embeddings, self.label_encoding, random_state=246341428,
+#                                                            shuffle=True)
+        X_train, X_test, y_train, y_test = train_test_split(q_embeddings, variables_encoded, random_state=246341428,
                                                             shuffle=True)
 
         # Used Table 5. MLP Parameters from paper
