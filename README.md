@@ -17,5 +17,5 @@ This project answers two important questions for someone doing property developm
 ## Folders
 
 * `triplesdb/`  - triples "database" this is the data that will be queried using SPARQL queries with some example queries 
-
-
+* `programs/` - [programs](./programs/PROGRAMS.md), integration tests and jupyter notebooks. Go here for example code
+* `env/` - [environment](./env/ENV.md), conda environment files. Includes all package requirements to run code and instructions for installing env.yaml file in conda

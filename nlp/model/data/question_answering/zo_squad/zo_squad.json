@@ -1,0 +1,3026 @@
+{
+  "data": [
+    {
+      "paragraphs": [
+        {
+          "qas": [
+            {
+              "question": "Which zoning districts allow school and colleges operated for profit (including commercial vocational and trade schools)?",
+              "id": 599385,
+              "answers": [
+                {
+                  "answer_id": 651253,
+                  "document_id": 1271660,
+                  "question_id": 599385,
+                  "text": "C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4700,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit school and colleges operated for profit (including commercial vocational and trade schools)?",
+              "id": 599387,
+              "answers": [
+                {
+                  "answer_id": 651254,
+                  "document_id": 1271660,
+                  "question_id": 599387,
+                  "text": "C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4700,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build school and colleges operated for profit (including commercial vocational and trade schools). Which zoning districts permits this use?",
+              "id": 599391,
+              "answers": [
+                {
+                  "answer_id": 651255,
+                  "document_id": 1271660,
+                  "question_id": 599391,
+                  "text": "C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4700,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit financial services?",
+              "id": 599392,
+              "answers": [
+                {
+                  "answer_id": 651256,
+                  "document_id": 1271660,
+                  "question_id": 599392,
+                  "text": "C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers.",
+                  "answer_start": 4614,
+                  "answer_end": 5000,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit places of religious worship?",
+              "id": 599393,
+              "answers": [
+                {
+                  "answer_id": 651258,
+                  "document_id": 1271660,
+                  "question_id": 599393,
+                  "text": "C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4614,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow financial services?",
+              "id": 599394,
+              "answers": [
+                {
+                  "answer_id": 651257,
+                  "document_id": 1271660,
+                  "question_id": 599394,
+                  "text": "C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4614,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build places of religious worship. Which zoning districts permits this use?",
+              "id": 599395,
+              "answers": [
+                {
+                  "answer_id": 651259,
+                  "document_id": 1271660,
+                  "question_id": 599395,
+                  "text": "C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4614,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build financial services. Which zoning districts permits this use?",
+              "id": 599397,
+              "answers": [
+                {
+                  "answer_id": 651260,
+                  "document_id": 1271660,
+                  "question_id": 599397,
+                  "text": "C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4614,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow places of religious worship?",
+              "id": 599398,
+              "answers": [
+                {
+                  "answer_id": 651261,
+                  "document_id": 1271660,
+                  "question_id": 599398,
+                  "text": "C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4614,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow wood products manufacturing and finishing?",
+              "id": 599400,
+              "answers": [
+                {
+                  "answer_id": 651262,
+                  "document_id": 1271660,
+                  "question_id": 599400,
+                  "text": "C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4919,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build wood products manufacturing and finishing. Which zoning districts permits this use?",
+              "id": 599404,
+              "answers": [
+                {
+                  "answer_id": 651263,
+                  "document_id": 1271660,
+                  "question_id": 599404,
+                  "text": "C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4919,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit wood products manufacturing and finishing?",
+              "id": 599406,
+              "answers": [
+                {
+                  "answer_id": 651264,
+                  "document_id": 1271660,
+                  "question_id": 599406,
+                  "text": "C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4919,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow automotive self-service motor fuel dispensing facilities?",
+              "id": 599416,
+              "answers": [
+                {
+                  "answer_id": 651265,
+                  "document_id": 1271660,
+                  "question_id": 599416,
+                  "text": "C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4614,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build cultural institutions (such as museums and art galleries). Which zoning districts permits this use?",
+              "id": 599417,
+              "answers": [
+                {
+                  "answer_id": 651266,
+                  "document_id": 1271660,
+                  "question_id": 599417,
+                  "text": "C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4763,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit cultural institutions (such as museums and art galleries)?",
+              "id": 599418,
+              "answers": [
+                {
+                  "answer_id": 651267,
+                  "document_id": 1271660,
+                  "question_id": 599418,
+                  "text": "C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4763,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build automotive self-service motor fuel dispensing facilities. Which zoning districts permits this use?",
+              "id": 599420,
+              "answers": [
+                {
+                  "answer_id": 651268,
+                  "document_id": 1271660,
+                  "question_id": 599420,
+                  "text": "C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4614,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow cultural institutions (such as museums and art galleries)?",
+              "id": 599422,
+              "answers": [
+                {
+                  "answer_id": 651270,
+                  "document_id": 1271660,
+                  "question_id": 599422,
+                  "text": "C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4763,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit automotive self-service motor fuel dispensing facilities?",
+              "id": 599423,
+              "answers": [
+                {
+                  "answer_id": 651269,
+                  "document_id": 1271660,
+                  "question_id": 599423,
+                  "text": "C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4614,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow family and group day care facilities?",
+              "id": 599426,
+              "answers": [
+                {
+                  "answer_id": 651271,
+                  "document_id": 1271660,
+                  "question_id": 599426,
+                  "text": "C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4",
+                  "answer_start": 4614,
+                  "answer_end": 4921,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit family and group day care facilities?",
+              "id": 599428,
+              "answers": [
+                {
+                  "answer_id": 651272,
+                  "document_id": 1271660,
+                  "question_id": 599428,
+                  "text": "C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4614,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build family and group day care facilities. Which zoning districts permits this use?",
+              "id": 599429,
+              "answers": [
+                {
+                  "answer_id": 651273,
+                  "document_id": 1271660,
+                  "question_id": 599429,
+                  "text": "C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4614,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit plastic product design molding and assembly?",
+              "id": 599435,
+              "answers": [
+                {
+                  "answer_id": 651275,
+                  "document_id": 1271660,
+                  "question_id": 599435,
+                  "text": "C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4919,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow plastic product design molding and assembly?",
+              "id": 599440,
+              "answers": [
+                {
+                  "answer_id": 651276,
+                  "document_id": 1271660,
+                  "question_id": 599440,
+                  "text": "C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4919,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow taverns and cocktail lounges?",
+              "id": 599450,
+              "answers": [
+                {
+                  "answer_id": 651281,
+                  "document_id": 1271660,
+                  "question_id": 599450,
+                  "text": "C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4763,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow automotive motor fuel dispensing facilities?",
+              "id": 599452,
+              "answers": [
+                {
+                  "answer_id": 651283,
+                  "document_id": 1271660,
+                  "question_id": 599452,
+                  "text": "C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4614,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow small metal products design casting fabricating and processing?",
+              "id": 599455,
+              "answers": [
+                {
+                  "answer_id": 651286,
+                  "document_id": 1271660,
+                  "question_id": 599455,
+                  "text": "C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4919,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit automotive motor fuel dispensing facilities?",
+              "id": 599458,
+              "answers": [
+                {
+                  "answer_id": 651289,
+                  "document_id": 1271660,
+                  "question_id": 599458,
+                  "text": "C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4614,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build small metal products design casting fabricating and processing. Which zoning districts permits this use?",
+              "id": 599460,
+              "answers": [
+                {
+                  "answer_id": 651291,
+                  "document_id": 1271660,
+                  "question_id": 599460,
+                  "text": "C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4919,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit religious cultural and fraternal activities?",
+              "id": 599462,
+              "answers": [
+                {
+                  "answer_id": 651294,
+                  "document_id": 1271660,
+                  "question_id": 599462,
+                  "text": "C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4700,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit business services?",
+              "id": 599466,
+              "answers": [
+                {
+                  "answer_id": 651297,
+                  "document_id": 1271660,
+                  "question_id": 599466,
+                  "text": "C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4614,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build business services. Which zoning districts permits this use?",
+              "id": 599469,
+              "answers": [
+                {
+                  "answer_id": 651300,
+                  "document_id": 1271660,
+                  "question_id": 599469,
+                  "text": "C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4614,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit health and medical institutions (such as hospitals)?",
+              "id": 599478,
+              "answers": [
+                {
+                  "answer_id": 651302,
+                  "document_id": 1271660,
+                  "question_id": 599478,
+                  "text": "C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4763,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit public and governmental services?",
+              "id": 599481,
+              "answers": [
+                {
+                  "answer_id": 651303,
+                  "document_id": 1271660,
+                  "question_id": 599481,
+                  "text": " C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4613,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow police and fire department stations?",
+              "id": 599484,
+              "answers": [
+                {
+                  "answer_id": 651310,
+                  "document_id": 1271660,
+                  "question_id": 599484,
+                  "text": "C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4614,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit libraries?",
+              "id": 599487,
+              "answers": [
+                {
+                  "answer_id": 651309,
+                  "document_id": 1271660,
+                  "question_id": 599487,
+                  "text": "C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4614,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit police and fire department stations?",
+              "id": 599490,
+              "answers": [
+                {
+                  "answer_id": 651312,
+                  "document_id": 1271660,
+                  "question_id": 599490,
+                  "text": "C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4614,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow restaurants?",
+              "id": 599494,
+              "answers": [
+                {
+                  "answer_id": 651316,
+                  "document_id": 1271660,
+                  "question_id": 599494,
+                  "text": "C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4614,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit commercial printing and publishing?",
+              "id": 599497,
+              "answers": [
+                {
+                  "answer_id": 651317,
+                  "document_id": 1271660,
+                  "question_id": 599497,
+                  "text": "C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4763,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build commercial printing and publishing. Which zoning districts permits this use?",
+              "id": 599503,
+              "answers": [
+                {
+                  "answer_id": 651319,
+                  "document_id": 1271660,
+                  "question_id": 599503,
+                  "text": "C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4763,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit amusement centers (including bowling alleys golf driving ranges miniature golf courses ice rinks pool and billiard halls and similar recreational uses)?",
+              "id": 599510,
+              "answers": [
+                {
+                  "answer_id": 651321,
+                  "document_id": 1271660,
+                  "question_id": 599510,
+                  "text": "C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4763,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build automotive sales. Which zoning districts permits this use?",
+              "id": 599514,
+              "answers": [
+                {
+                  "answer_id": 651323,
+                  "document_id": 1271660,
+                  "question_id": 599514,
+                  "text": "C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4",
+                  "answer_start": 4763,
+                  "answer_end": 4921,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow community centers (including wholesale and retail sales)?",
+              "id": 599527,
+              "answers": [
+                {
+                  "answer_id": 651330,
+                  "document_id": 1271660,
+                  "question_id": 599527,
+                  "text": "C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4700,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build Minor automotive repair. Which zoning districts permits this use?",
+              "id": 599583,
+              "answers": [
+                {
+                  "answer_id": 651348,
+                  "document_id": 1271660,
+                  "question_id": 599583,
+                  "text": "C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4614,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit rehabilitation centers?",
+              "id": 599446,
+              "answers": [
+                {
+                  "answer_id": 651278,
+                  "document_id": 1271660,
+                  "question_id": 599446,
+                  "text": "C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4700,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build rehabilitation centers. Which zoning districts permits this use?",
+              "id": 599447,
+              "answers": [
+                {
+                  "answer_id": 651279,
+                  "document_id": 1271660,
+                  "question_id": 599447,
+                  "text": "C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers.",
+                  "answer_start": 4700,
+                  "answer_end": 5000,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit taverns and cocktail lounges?",
+              "id": 599448,
+              "answers": [
+                {
+                  "answer_id": 651280,
+                  "document_id": 1271660,
+                  "question_id": 599448,
+                  "text": "C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4763,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow self-storage warehouses?",
+              "id": 599453,
+              "answers": [
+                {
+                  "answer_id": 651284,
+                  "document_id": 1271660,
+                  "question_id": 599453,
+                  "text": "C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4763,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit self-storage warehouses?",
+              "id": 599454,
+              "answers": [
+                {
+                  "answer_id": 651285,
+                  "document_id": 1271660,
+                  "question_id": 599454,
+                  "text": "C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4763,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build self-storage warehouses. Which zoning districts permits this use?",
+              "id": 599456,
+              "answers": [
+                {
+                  "answer_id": 651288,
+                  "document_id": 1271660,
+                  "question_id": 599456,
+                  "text": "C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4763,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow religious cultural and fraternal activities?",
+              "id": 599461,
+              "answers": [
+                {
+                  "answer_id": 651292,
+                  "document_id": 1271660,
+                  "question_id": 599461,
+                  "text": " C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4699,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build religious cultural and fraternal activities. Which zoning districts permits this use?",
+              "id": 599464,
+              "answers": [
+                {
+                  "answer_id": 651295,
+                  "document_id": 1271660,
+                  "question_id": 599464,
+                  "text": "C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4700,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow business services?",
+              "id": 599467,
+              "answers": [
+                {
+                  "answer_id": 651298,
+                  "document_id": 1271660,
+                  "question_id": 599467,
+                  "text": "C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4614,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit public utility stations?",
+              "id": 599468,
+              "answers": [
+                {
+                  "answer_id": 651299,
+                  "document_id": 1271660,
+                  "question_id": 599468,
+                  "text": "C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4614,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build libraries. Which zoning districts permits this use?",
+              "id": 599483,
+              "answers": [
+                {
+                  "answer_id": 651306,
+                  "document_id": 1271660,
+                  "question_id": 599483,
+                  "text": "C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4614,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow public and governmental services?",
+              "id": 599485,
+              "answers": [
+                {
+                  "answer_id": 651308,
+                  "document_id": 1271660,
+                  "question_id": 599485,
+                  "text": "C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4614,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit restaurants?",
+              "id": 599489,
+              "answers": [
+                {
+                  "answer_id": 651314,
+                  "document_id": 1271660,
+                  "question_id": 599489,
+                  "text": "C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4614,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build police and fire department stations. Which zoning districts permits this use?",
+              "id": 599491,
+              "answers": [
+                {
+                  "answer_id": 651313,
+                  "document_id": 1271660,
+                  "question_id": 599491,
+                  "text": "C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4614,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow amusement centers (including bowling alleys golf driving ranges miniature golf courses ice rinks pool and billiard halls and similar recreational uses)?",
+              "id": 599508,
+              "answers": [
+                {
+                  "answer_id": 651320,
+                  "document_id": 1271660,
+                  "question_id": 599508,
+                  "text": "C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4763,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit light commercial (excluding wholesale sales)?",
+              "id": 599515,
+              "answers": [
+                {
+                  "answer_id": 651325,
+                  "document_id": 1271660,
+                  "question_id": 599515,
+                  "text": "C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4700,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build community centers (including wholesale and retail sales). Which zoning districts permits this use?",
+              "id": 599524,
+              "answers": [
+                {
+                  "answer_id": 651328,
+                  "document_id": 1271660,
+                  "question_id": 599524,
+                  "text": " C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4762,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow physical fitness centers?",
+              "id": 599526,
+              "answers": [
+                {
+                  "answer_id": 651329,
+                  "document_id": 1271660,
+                  "question_id": 599526,
+                  "text": "C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4700,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build physical fitness centers. Which zoning districts permits this use?",
+              "id": 599532,
+              "answers": [
+                {
+                  "answer_id": 651333,
+                  "document_id": 1271660,
+                  "question_id": 599532,
+                  "text": "C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4700,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow manufacture and finishing?",
+              "id": 599538,
+              "answers": [
+                {
+                  "answer_id": 651335,
+                  "document_id": 1271660,
+                  "question_id": 599538,
+                  "text": "C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4919,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build convenience and neighborhood commercial centers (excluding wholesale sales). Which zoning districts permits this use?",
+              "id": 599541,
+              "answers": [
+                {
+                  "answer_id": 651337,
+                  "document_id": 1271660,
+                  "question_id": 599541,
+                  "text": "C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4614,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit convenience and neighborhood commercial centers (excluding wholesale sales)?",
+              "id": 599544,
+              "answers": [
+                {
+                  "answer_id": 651338,
+                  "document_id": 1271660,
+                  "question_id": 599544,
+                  "text": "C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4614,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build major automotive repair. Which zoning districts permits this use?",
+              "id": 599568,
+              "answers": [
+                {
+                  "answer_id": 651340,
+                  "document_id": 1271660,
+                  "question_id": 599568,
+                  "text": "C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4919,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit indoor theaters?",
+              "id": 599575,
+              "answers": [
+                {
+                  "answer_id": 651344,
+                  "document_id": 1271660,
+                  "question_id": 599575,
+                  "text": "C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4763,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit hotels and motels (excluding other residential occupancies)?",
+              "id": 599578,
+              "answers": [
+                {
+                  "answer_id": 651345,
+                  "document_id": 1271660,
+                  "question_id": 599578,
+                  "text": "C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4763,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build hotels and motels (excluding other residential occupancies). Which zoning districts permits this use?",
+              "id": 599582,
+              "answers": [
+                {
+                  "answer_id": 651349,
+                  "document_id": 1271660,
+                  "question_id": 599582,
+                  "text": "C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4763,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build plastic product design molding and assembly. Which zoning districts permits this use?",
+              "id": 599436,
+              "answers": [
+                {
+                  "answer_id": 651274,
+                  "document_id": 1271660,
+                  "question_id": 599436,
+                  "text": "C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4919,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow rehabilitation centers?",
+              "id": 599444,
+              "answers": [
+                {
+                  "answer_id": 651277,
+                  "document_id": 1271660,
+                  "question_id": 599444,
+                  "text": "C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4700,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build taverns and cocktail lounges. Which zoning districts permits this use?",
+              "id": 599451,
+              "answers": [
+                {
+                  "answer_id": 651282,
+                  "document_id": 1271660,
+                  "question_id": 599451,
+                  "text": " C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4762,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit small metal products design casting fabricating and processing?",
+              "id": 599457,
+              "answers": [
+                {
+                  "answer_id": 651287,
+                  "document_id": 1271660,
+                  "question_id": 599457,
+                  "text": "C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4919,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build automotive motor fuel dispensing facilities. Which zoning districts permits this use?",
+              "id": 599459,
+              "answers": [
+                {
+                  "answer_id": 651290,
+                  "document_id": 1271660,
+                  "question_id": 599459,
+                  "text": "C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4614,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build public utility stations. Which zoning districts permits this use?",
+              "id": 599463,
+              "answers": [
+                {
+                  "answer_id": 651293,
+                  "document_id": 1271660,
+                  "question_id": 599463,
+                  "text": "C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4614,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow public utility stations?",
+              "id": 599465,
+              "answers": [
+                {
+                  "answer_id": 651296,
+                  "document_id": 1271660,
+                  "question_id": 599465,
+                  "text": "C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4614,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build health and medical institutions (such as hospitals). Which zoning districts permits this use?",
+              "id": 599477,
+              "answers": [
+                {
+                  "answer_id": 651301,
+                  "document_id": 1271660,
+                  "question_id": 599477,
+                  "text": "C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4763,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow health and medical institutions (such as hospitals)?",
+              "id": 599482,
+              "answers": [
+                {
+                  "answer_id": 651305,
+                  "document_id": 1271660,
+                  "question_id": 599482,
+                  "text": "C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4763,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow libraries?",
+              "id": 599486,
+              "answers": [
+                {
+                  "answer_id": 651307,
+                  "document_id": 1271660,
+                  "question_id": 599486,
+                  "text": "C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4614,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build public and governmental services. Which zoning districts permits this use?",
+              "id": 599488,
+              "answers": [
+                {
+                  "answer_id": 651311,
+                  "document_id": 1271660,
+                  "question_id": 599488,
+                  "text": "C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4614,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build restaurants. Which zoning districts permits this use?",
+              "id": 599492,
+              "answers": [
+                {
+                  "answer_id": 651315,
+                  "document_id": 1271660,
+                  "question_id": 599492,
+                  "text": "C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4614,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow commercial printing and publishing?",
+              "id": 599502,
+              "answers": [
+                {
+                  "answer_id": 651318,
+                  "document_id": 1271660,
+                  "question_id": 599502,
+                  "text": "C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4763,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build amusement centers (including bowling alleys golf driving ranges miniature golf courses ice rinks pool and billiard halls and similar recreational uses). Which zoning districts permits this use?",
+              "id": 599511,
+              "answers": [
+                {
+                  "answer_id": 651322,
+                  "document_id": 1271660,
+                  "question_id": 599511,
+                  "text": "C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4763,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit automotive sales?",
+              "id": 599513,
+              "answers": [
+                {
+                  "answer_id": 651324,
+                  "document_id": 1271660,
+                  "question_id": 599513,
+                  "text": "C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4763,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow automotive sales?",
+              "id": 599516,
+              "answers": [
+                {
+                  "answer_id": 651326,
+                  "document_id": 1271660,
+                  "question_id": 599516,
+                  "text": "C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4763,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build light commercial (excluding wholesale sales). Which zoning districts permits this use?",
+              "id": 599519,
+              "answers": [
+                {
+                  "answer_id": 651327,
+                  "document_id": 1271660,
+                  "question_id": 599519,
+                  "text": "C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers.",
+                  "answer_start": 4700,
+                  "answer_end": 5000,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit physical fitness centers?",
+              "id": 599531,
+              "answers": [
+                {
+                  "answer_id": 651332,
+                  "document_id": 1271660,
+                  "question_id": 599531,
+                  "text": " C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4699,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build manufacture and finishing. Which zoning districts permits this use?",
+              "id": 599534,
+              "answers": [
+                {
+                  "answer_id": 651334,
+                  "document_id": 1271660,
+                  "question_id": 599534,
+                  "text": "C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4919,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow convenience and neighborhood commercial centers (excluding wholesale sales)?",
+              "id": 599540,
+              "answers": [
+                {
+                  "answer_id": 651336,
+                  "document_id": 1271660,
+                  "question_id": 599540,
+                  "text": "C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4614,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit major automotive repair?",
+              "id": 599566,
+              "answers": [
+                {
+                  "answer_id": 651339,
+                  "document_id": 1271660,
+                  "question_id": 599566,
+                  "text": "C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4919,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow major automotive repair?",
+              "id": 599569,
+              "answers": [
+                {
+                  "answer_id": 651341,
+                  "document_id": 1271660,
+                  "question_id": 599569,
+                  "text": "C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4919,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow indoor theaters?",
+              "id": 599570,
+              "answers": [
+                {
+                  "answer_id": 651342,
+                  "document_id": 1271660,
+                  "question_id": 599570,
+                  "text": " C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4762,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build indoor theaters. Which zoning districts permits this use?",
+              "id": 599573,
+              "answers": [
+                {
+                  "answer_id": 651343,
+                  "document_id": 1271660,
+                  "question_id": 599573,
+                  "text": "C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4763,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow hotels and motels (excluding other residential occupancies)?",
+              "id": 599579,
+              "answers": [
+                {
+                  "answer_id": 651346,
+                  "document_id": 1271660,
+                  "question_id": 599579,
+                  "text": "C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4763,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow Minor automotive repair?",
+              "id": 599580,
+              "answers": [
+                {
+                  "answer_id": 651347,
+                  "document_id": 1271660,
+                  "question_id": 599580,
+                  "text": "C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4614,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit Minor automotive repair?",
+              "id": 599581,
+              "answers": [
+                {
+                  "answer_id": 651350,
+                  "document_id": 1271660,
+                  "question_id": 599581,
+                  "text": "C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4614,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow mortuary and funeral homes?",
+              "id": 599584,
+              "answers": [
+                {
+                  "answer_id": 651351,
+                  "document_id": 1271660,
+                  "question_id": 599584,
+                  "text": "C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers",
+                  "answer_start": 4614,
+                  "answer_end": 4999,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            }
+          ],
+          "context": "                   Chapters Subjects 1 Scope and Administration 2 Definitions 3 Use Districts 4 Agricultural Zones 5 Residential Zones 6 Commercial and Commercial/Residential Zones 7 Factory/Industrial Zones 8 General Provisions 9 Special Regulations 10 Sign Regulations 11 Nonconforming Structures and Uses 12 Conditional Uses 13 Planned Unit Development 14 Referenced Standards       The following is a chapter-by-chapter synopsis of the scope and intent of the provisions of the International Zoning Code: Chapter 1 Scope and Administration. This chapter contains provisions for the application, enforcement and administration of subsequent requirements of the code. In addition to establish- ing the scope of the code, Chapter 1 identifies which buildings and structures come under its pur- view. Chapter 1 is largely concerned with maintaining “due process of law” in enforcing the zoning criteria contained in the body of the code. Only through careful observation of the administrative provisions can the building official reasonably expect to demonstrate that “equal protection under the law” has been provided. Chapter 2 Definitions. All terms that are defined in the code are listed alphabetically in Chapter 2. While a defined term may be used in one chapter or another, the meaning provided in Chapter 2 is applicable throughout the code. Additional definitions regarding signs are found in Chapter 10. These are not listed in Chapter 2. 2012 INTERNATIONAL ZONING CODE” vii  viii Where understanding of a term’s definition is especially key to or necessary for understanding of a particular code provision, the term is shown in italics wherever it appears in the code. This is true only for those terms that have a meaning that is unique to the code. In other words, the generally understood meaning of a term or phrase might not be sufficient or consistent with the meaning pre- scribed by the code; therefore, it is essential that the code-defined meaning be known. Guidance regarding tense, gender and plurality of defined terms as well as guidance regarding terms not defined in this code is provided. Chapter 3 Use Districts. Chapter 3 identifies classifications for typical zoning districts and pro- vides for the application of minimum district areas, in order to regulate and restrict the locations for uses and locations of buildings designated for specific areas and to regulate the minimum required areas or yards and courts and important open-areas property. This chapter also requires coordination of the established zoning districts with approved zoning maps. Further, this chapter also contains information on the minimum requirements for conditional use areas, which includes particular considerations as to their proper location to adjacent, estab- lished or intended uses, or to the planned growth of the community. Chapter 3, along with Chapters 4 through 7 establish the criteria to classify properties into com- patible use districts. Chapter 4 Agricultural Zones. Chapter 4 identifies three divisions of agricultural zones includ- ing any area to be designated as open space, agricultural uses and land used for public parks and similar uses. After the specific zoning areas are established, this chapter provides minimum bulk zoning regulations to establish lot area, structure-to-open space density, lot dimensions, and set- back and building height requirements. For example, within an agricultural zone 2 there is a limit of one dwelling unit per 10 acres with a minimum lot area of 10 acres. Lot dimensions are required to be 400 feet wide by 400 feet deep minimum for this parcel of ground. Chapter 5 Residential Zones. The objective of Chapter 5 is to define residential uses for a juris- diction to utilize in arranging compatible land uses in order to achieve the maximum social and eco- nomic benefit for the community. This chapter identifies three divisions of residential zones including single-family, two-family and multiunit residential uses. Once the particular zones are established, provisions for the minimum bulk zoning regulations, such as lot area, structure-to- Open-space density, lot dimensions, setback and building height requirements, are indicated. For example, based on Table 502.1, a Division 2b residential lot would restrict the overall building height to 35 feet and establish a minimum front yard of 15 feet, side yard of 5 feet, and rear yard of 20 feet while requiring a minimum overall lot size of 6,000 square feet. Chapter 6 Commercial and Commercial/Residential Zones. Chapter 6 identifies four divi- sions of commercial zones, including C1, which includes minor automotive repair and automotive fuel dispensing facilities; C2, which includes light commercial and group care facilities; C3, which includes amusement centers including bowling alleys, golf driving ranges, miniature golf courses, ice skating rinks, pool and billiard halls; and C4, which includes major automotive repair, manufacturing and commercial centers. This chapter also contains two divisions of commercial/residential zones that accommodate residential uses in light and medium commercial zones (Divisions 1 and 2). Once the particular zones are established, Chapter 6 provides specific minimum bulk zoning restrictions to include lot area, structure-to-open-space density, lot dimensions, and setback and building height requirements. Chapter 7 Factory/Industrial Zones. The objective of Chapter 7 is to define factory/industrial uses for a jurisdiction to utilize in arranging compatible land uses for the social and economic wel- fare of the community. This chapter identifies three divisions of factory/industrial zones including a range of factory/industrial zones from light manufacturing or industrial, such as warehouses and auto body shops (Division 1), to heavy manufacturing or industrial, such as automotive dismantling and petroleum refineries (Division 3). Once the particular zones are established, Chapter 7 provides minimum bulk zoning regulations that establish lot area, structure-to-open-space density, lot dimensions, and setback and building height requirements. 2012 INTERNATIONAL ZONING CODE”  Chapter 8 General Provisions. Chapter 8 contains general zoning provisions along with require- ments for elements that are common to most uses recognized by this code, to include parking stall dimensions, driveway width requirements, allowable projections into required yard spaces, land- scaping and loading space size requirements. This chapter also establishes the minimum number of required off-street parking spaces for specific uses, fence height requirements specific to front, side and rear yard locations, accessory buildings and minimum separation distance requirements from accessory buildings to the main building on the same lot, maximum allowable projection encroach- ment into the required front and rear yards, and landscaping requirements for new buildings and additions and maintenance requirements for existing landscaping. Chapter 8 also provides for the jurisdiction to specifically review and approve the availability of essential services infrastructure for all new projects with a focus on sewer, potable water, street lighting and fire hydrants. Chapter 9 Special Regulations. Chapter 9 recognizes two unique uses, home office and adult- use businesses, and establishes requirements to address each based on their characteristics and potential impact related to other uses/zoning districts. With respect to home occupations, Chapter 9 contains restrictions that include maximum allowable floor area for both the home occupation and the storage for same, exterior display and patron and parking allowances. With respect to adult uses, Chapter 9 requires adult uses to obtain a conditional-use permit and contains a list of four specific location requirements for adult uses. Chapter 10 Sign Regulations. The primary purpose of Chapter 10 is to establish the regulation for the use of signs and sign structures. This chapter addresses the various sign types, provides numerous figures that show examples of general signs, roof signs, wall signs and fascia signs, and addresses the computation methodology of sign area for code compliance. Chapter 10 also contains the general provisions that apply to sign placement, maintenance, repair and removal, as well as requirements for wall, free-standing, directional and temporary signs. Chapter 11 Nonconforming Structures and Uses. Chapter 11 contains provisions for noncon- forming structures and uses regulated under this code. The primary purpose of this chapter is to ensure that existing structures and current land use practices legally established prior to the adop- tion of the International Zoning Code are allowed to be continued. This chapter also describes the criteria that a nonconforming structure or use must meet in order to be allowed to be maintained unchanged. Specific criteria is provided for the discontinuance of a nonconforming use to include vacancy and damage. Chapter 11 also describes the restrictions on enlargements and modifications to a nonconforming structure.   Chapter 12 Conditional Uses. Chapter 12 establishes the requirements for conditional uses based on the occasional need for a use not normally permitted in a particular zoning district and due to the unique characteristics and service that use provides to the public. This chapter contains requirements for conditional use permits, minimum documentation required to support a condi- tional use property, and fees. Further, Chapter 12 establishes the criteria for expiration and revoca- tion of conditional use permit and includes a provision that allows the applicant to submit an amendment to a conditional use permit. Chapter 13 Planned Unit Development. Chapter 13 identifies the code requirements for planned unit developments and describes the important role of the planning commission. The pri- mary purpose of this chapter is to permit and encourage diversification, variation, and imagination in the relationship of uses, structures, open spaces and heights of structures. It is further intended to encourage more rational and economic development with relationship to public services, and to encourage and facilitate the preservation of open lands. This chapter contains the specific condi- tions for planned unit developments, including area, uses, ownership and open space requirements. Chapter 14 Referenced Standards. The code contains numerous references to standards that are used to regulate materials and methods of construction. Chapter 14 contains a comprehensive list of all standards that are referenced in the code. The standards are part of the code to the extent of the referenced standard. Compliance with the referenced standard is necessary for compliance with this code. By providing specifically adopted standards, the construction and installation requirements necessary for compliance with the code can be readily determined. The basis for code compliance is, therefore, established and available on an equal basis to the code official, contractor, designer and owner. 2012 INTERNATIONAL ZONING CODE” ix  This chapter is organized to facilitate locating specific standards, by listing all of the referenced standards, alphabetically, by acronym of the promulgating agency of the standard. Each agency’s standards are then listed in either alphabetical or numeric order based upon the standard identifi- cation. The list also contains the title of the standard; the edition (date) of the standard referenced; any addenda included as part of the ICC adoption; and the section or sections of this code that ref- erenced the standard. 2012 INTERNATIONAL ZONING CODE”  LEGISLATION The Jnternational Codes are designed and promulgated to be adopted by reference by legislative action. Jurisdictions wishing to adopt the 2012 International Zoning Code as an enforceable regulation governing structures and premises should ensure that certain factual information is included in the adopting legislation at the time adoption is being considered by the appropriate governmental body. The following sample adoption legislation addresses several key elements, including the information required for insertion into the code text. SAMPLE LEGISLATION FOR ADOPTION OF THE INTERNATIONAL ZONING CODE ORDINANCE NO. AIN] [ORDINANCE/STATUTE/REGULATION] of the JURISDICTION] adopting the 2012 edition of the /nternational Zoning Code, regulating and governing the development, erection, construction, enlargement, alteration, repair, movement, removal, demoli- tion, conversion, occupancy, use, height, area and maintenance of all buildings, structures and lots in the JURISDICTION]; pro- viding for the issuance of permits, including conditional use permits, and collection of fees therefor; repealing [ORDINANCE/ STATUTE/REGULATION] No. of the [JURISDICTION] and all other ordinances or parts of laws in conflict therewith. The [GOVERNING BODY] of the [JURISDICTION] does ordain as follows:   Section 1. That a certain document, three (3) copies of which are on file in the office of the [TITLE OF JURISDICTION’S KEEPER OF RECORDS] of [NAME OF JURISDICTION], being marked and designated as the Jnternational Zoning Code, 2012 edition, as published by the International Code Council, be and is hereby adopted as the Zoning Code of the JURISDICTION], in the state of [STATE NAME] for regulating and governing the development, erection, construction, enlargement, alteration, repair, movement, removal, demolition, conversion, occupancy, use, height, area and maintenance of all buildings, structures and lots in the [JURIS- DICTION]; providing for the issuance of permits, including conditional use permits, and collection of fees therefor; and each and all of the regulations, provisions, penalties, conditions and terms of said Zoning Code on file in the office of the [JURISDICTION] are hereby referred to, adopted, and made a part hereof, as if fully set out in this legislation, with the additions, insertions, dele- tions and changes, if any, prescribed in Section 3 of this ordinance. Section 2. (Incorporate penalties for violations) Section 3. The following sections are hereby revised: Section 101.1. Insert [NAME OF JURISDICTION] Section 109.2.2. Insert [NUMBER OF WORKING DAYS] Table 302.1. Insert [MINIMUM AREAS] Section 1008.1.1. Insert [SIGN AREA] Section 1008.1.3. Insert [SIGN AREAS IN TWO LOCATIONS] Table 1008.1.1(1). Insert [SIGN AREAS IN THREE LOCATIONS] Table 1008.1.1(2). Insert [PERCENTAGE OF BUILDING ELEVATION IN THREE LOCATIONS] Table 1008.1.2. Insert [NO. OF SIGNS, HEIGHT AND AREA IN 10 LOCATIONS] Section 1008.2.1. Insert [SIGN AREAS IN EIGHT LOCATIONS] Section 1008.2.2. Insert [SIGN HEIGHTS AND AREA IN 10 LOCATIONS] Section 1008.2.3. Insert [SIGN AREAS IN THREE LOCATIONS] Section 1008.2.5. Insert [SIGN HEIGHT AND AREA IN TWO LOCATIONS] Section 1008.2.6. Insert [SIGN HEIGHT AND AREA IN TWO LOCATIONS] Section 1008.3.3. Insert [SIGN AREA, HEIGHT, PROJECTION AND VERTICAL DISTANCE IN SIX LOCATIONS] Section 1008.3.4. Insert [SIGN AREA AND VERTICAL DISTANCE IN TWO LOCATIONS] Section 1008.3.5. Insert [SIGN HEIGHT IN TWO LOCATIONS] 2012 INTERNATIONAL ZONING CODE” xi  Section 4. That [ORDINANCE/STATUTE/REGULATION] No. of [JURISDICTION] entitled [FILL IN HERE THE COMPLETE TITLE OF THE LEGISLATION OR LAWS IN EFFECT AT THE PRESENT TIME SO THAT THEY WILL BE REPEALED BY DEFINITE MEN- TION] and all other ordinances or parts of laws in conflict herewith are hereby repealed. Section 5. That if any section, subsection, sentence, clause or phrase of this legislation is, for any reason, held to be unconstitu- tional, such decision shall not affect the validity of the remaining portions of this ordinance. The [GOVERNING BODY] hereby declares that it would have passed this law, and each section, subsection, clause or phrase thereof, irrespective of the fact that any one or more sections, subsections, sentences, clauses and phrases be declared unconstitutional. Section 6. That nothing in this legislation or in the Zoning Code hereby adopted shall be construed to affect any suit or proceed- ing impending in any court, or any rights acquired, or liability incurred, or any cause or causes of action acquired or existing, under any act or ordinance hereby repealed as cited in Section 4 of this law; nor shall any just or legal right or remedy of any character be lost, impaired or affected by this legislation. Section 7. That the [JURISDICTION’S KEEPER OF RECORDS] is hereby ordered and directed to cause this legislation to be pub- lished. (An additional provision may be required to direct the number of times the legislation is to be published and to specify that it is to be in a newspaper in general circulation. Posting may also be required.) Section 8. That this law and the rules, regulations, provisions, requirements, orders and matters established and adopted hereby shall take effect and be in full force and effect [TIME PERIOD] from and after the date of its final passage and adoption. xii 2012 INTERNATIONAL ZONING CODE”  TABLE OF CONTENTS CHAPTER1 SCOPEAND ADMINISTRATION... 1 PART 1—SCOPE AND APPLICATION. ............ 1 Section 101 General 00... eee ee 1 102 Fees... eens 1",
+          "document_id": 1271660
+        }
+      ]
+    },
+    {
+      "paragraphs": [
+        {
+          "qas": [
+            {
+              "question": "Which zoning districts permit quarries?",
+              "id": 603223,
+              "answers": [
+                {
+                  "answer_id": 651352,
+                  "document_id": 1271667,
+                  "question_id": 603223,
+                  "text": "FI",
+                  "answer_start": 5669,
+                  "answer_end": 5671,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit places of religious worship?",
+              "id": 603231,
+              "answers": [
+                {
+                  "answer_id": 651353,
+                  "document_id": 1271667,
+                  "question_id": 603231,
+                  "text": "FI zones. Allowable factory/industrial (FI) zone uses shall be: Division 1. Any light-manufacturing or industrial use, such as warehouses, research or testing laboratories, prod- uct distribution centers, woodworking shops, auto body shops, furniture assembly, dry cleaning plants, places of religious worship, public and governmental services, machine shops, and boat building storage yards. Division 2. Any use permitted in the FI, Division 1 zone and stadiums and arenas, indoor swap meets, breweries, liquid fertilizer manufacturing, carpet manufacturing, monument works, and a regional recycling center. Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses",
+                  "answer_start": 5669,
+                  "answer_end": 6484,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow places of religious worship?",
+              "id": 603232,
+              "answers": [
+                {
+                  "answer_id": 651354,
+                  "document_id": 1271667,
+                  "question_id": 603232,
+                  "text": " FI zones. Allowable factory/industrial (FI) zone uses shall be: Division 1. Any light-manufacturing or industrial use, such as warehouses, research or testing laboratories, prod- uct distribution centers, woodworking shops, auto body shops, furniture assembly, dry cleaning plants, places of religious worship, public and governmental services, machine shops, and boat building storage yards. Division 2. Any use permitted in the FI, Division 1 zone and stadiums and arenas, indoor swap meets, breweries, liquid fertilizer manufacturing, carpet manufacturing, monument works, and a regional recycling center. Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses",
+                  "answer_start": 5668,
+                  "answer_end": 6484,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build places of religious worship. Which zoning districts permits this use?",
+              "id": 603237,
+              "answers": [
+                {
+                  "answer_id": 651355,
+                  "document_id": 1271667,
+                  "question_id": 603237,
+                  "text": "FI zones",
+                  "answer_start": 5669,
+                  "answer_end": 5677,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow boat storage yards?",
+              "id": 603238,
+              "answers": [
+                {
+                  "answer_id": 651356,
+                  "document_id": 1271667,
+                  "question_id": 603238,
+                  "text": "FI zones",
+                  "answer_start": 5669,
+                  "answer_end": 5677,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build boat storage yards. Which zoning districts permits this use?",
+              "id": 603242,
+              "answers": [
+                {
+                  "answer_id": 651357,
+                  "document_id": 1271667,
+                  "question_id": 603242,
+                  "text": "FI zones. Allowable factory/industrial (FI) zone uses shall be: Division 1. Any light-manufacturing or industrial use, such as warehouses, research or testing laboratories, prod- uct distribution centers, woodworking shops, auto body shops, furniture assembly, dry cleaning plants, places of religious worship, public and governmental services, machine shops, and boat building storage yards. Division 2. Any use permitted in the FI, Division 1 zone and stadiums and arenas, indoor swap meets, breweries, liquid fertilizer manufacturing, carpet manufacturing, monument works, and a regional recycling center. Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses",
+                  "answer_start": 5669,
+                  "answer_end": 6484,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow storage yards?",
+              "id": 603245,
+              "answers": [
+                {
+                  "answer_id": 651358,
+                  "document_id": 1271667,
+                  "question_id": 603245,
+                  "text": "FI zones. Allowable factory/industrial (FI) zone uses shall be: Division 1. Any light-manufacturing or industrial use, such as warehouses, research or testing laboratories, prod- uct distribution centers, woodworking shops, auto body shops, furniture assembly, dry cleaning plants, places of religious worship, public and governmental services, machine shops, and boat building storage yards. Division 2. Any use permitted in the FI, Division 1 zone and stadiums and arenas, indoor swap meets, breweries, liquid fertilizer manufacturing, carpet manufacturing, monument works, and a regional recycling center. Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses",
+                  "answer_start": 5669,
+                  "answer_end": 6484,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit boat storage yards?",
+              "id": 603246,
+              "answers": [
+                {
+                  "answer_id": 651359,
+                  "document_id": 1271667,
+                  "question_id": 603246,
+                  "text": "FI zones",
+                  "answer_start": 5669,
+                  "answer_end": 5677,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build storage yards. Which zoning districts permits this use?",
+              "id": 603248,
+              "answers": [
+                {
+                  "answer_id": 651360,
+                  "document_id": 1271667,
+                  "question_id": 603248,
+                  "text": "FI zones",
+                  "answer_start": 5669,
+                  "answer_end": 5677,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit storage yards?",
+              "id": 603249,
+              "answers": [
+                {
+                  "answer_id": 651361,
+                  "document_id": 1271667,
+                  "question_id": 603249,
+                  "text": "FI zones",
+                  "answer_start": 5669,
+                  "answer_end": 5677,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow salt works?",
+              "id": 603252,
+              "answers": [
+                {
+                  "answer_id": 651362,
+                  "document_id": 1271667,
+                  "question_id": 603252,
+                  "text": "Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses",
+                  "answer_start": 6278,
+                  "answer_end": 6484,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit salt works?",
+              "id": 603253,
+              "answers": [
+                {
+                  "answer_id": 651363,
+                  "document_id": 1271667,
+                  "question_id": 603253,
+                  "text": "Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses",
+                  "answer_start": 6278,
+                  "answer_end": 6484,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build salt works. Which zoning districts permits this use?",
+              "id": 603254,
+              "answers": [
+                {
+                  "answer_id": 651364,
+                  "document_id": 1271667,
+                  "question_id": 603254,
+                  "text": "Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar use",
+                  "answer_start": 6278,
+                  "answer_end": 6483,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow petroleum refining?",
+              "id": 603260,
+              "answers": [
+                {
+                  "answer_id": 651365,
+                  "document_id": 1271667,
+                  "question_id": 603260,
+                  "text": "Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses",
+                  "answer_start": 6278,
+                  "answer_end": 6484,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit stadiums and arenas?",
+              "id": 603261,
+              "answers": [
+                {
+                  "answer_id": 651366,
+                  "document_id": 1271667,
+                  "question_id": 603261,
+                  "text": "Division 2. Any use permitted in the FI, Division 1 zone and stadiums and arenas, indoor swap meets, breweries, liquid fertilizer manufacturing, carpet manufacturing, monument works, and a regional recycling center. Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses",
+                  "answer_start": 6062,
+                  "answer_end": 6484,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow monument works?",
+              "id": 603262,
+              "answers": [
+                {
+                  "answer_id": 651367,
+                  "document_id": 1271667,
+                  "question_id": 603262,
+                  "text": "Division 2. Any use permitted in the FI, Division 1 zone and stadiums and arenas, indoor swap meets, breweries, liquid fertilizer manufacturing, carpet manufacturing, monument works, and a regional recycling center. Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses",
+                  "answer_start": 6062,
+                  "answer_end": 6484,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build petroleum refining. Which zoning districts permits this use?",
+              "id": 603265,
+              "answers": [
+                {
+                  "answer_id": 651369,
+                  "document_id": 1271667,
+                  "question_id": 603265,
+                  "text": "Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses",
+                  "answer_start": 6278,
+                  "answer_end": 6484,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build monument works. Which zoning districts permits this use?",
+              "id": 603267,
+              "answers": [
+                {
+                  "answer_id": 651371,
+                  "document_id": 1271667,
+                  "question_id": 603267,
+                  "text": "Division 2. Any use permitted in the FI, Division 1 zone and stadiums and arenas, indoor swap meets, breweries, liquid fertilizer manufacturing, carpet manufacturing, monument works, and a regional recycling center. Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses",
+                  "answer_start": 6062,
+                  "answer_end": 6484,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit petroleum refining?",
+              "id": 603268,
+              "answers": [
+                {
+                  "answer_id": 651373,
+                  "document_id": 1271667,
+                  "question_id": 603268,
+                  "text": " Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses",
+                  "answer_start": 6277,
+                  "answer_end": 6484,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit alcohol manufacturing?",
+              "id": 603279,
+              "answers": [
+                {
+                  "answer_id": 651374,
+                  "document_id": 1271667,
+                  "question_id": 603279,
+                  "text": "Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses.",
+                  "answer_start": 6278,
+                  "answer_end": 6485,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow alcohol manufacturing?",
+              "id": 603281,
+              "answers": [
+                {
+                  "answer_id": 651375,
+                  "document_id": 1271667,
+                  "question_id": 603281,
+                  "text": "Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses",
+                  "answer_start": 6278,
+                  "answer_end": 6484,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build alcohol manufacturing. Which zoning districts permits this use?",
+              "id": 603284,
+              "answers": [
+                {
+                  "answer_id": 651376,
+                  "document_id": 1271667,
+                  "question_id": 603284,
+                  "text": "Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses",
+                  "answer_start": 6278,
+                  "answer_end": 6484,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow dry cleaning plants?",
+              "id": 603313,
+              "answers": [
+                {
+                  "answer_id": 651380,
+                  "document_id": 1271667,
+                  "question_id": 603313,
+                  "text": "(FI) zone uses shall be: Division 1. Any light-manufacturing or industrial use, such as warehouses, research or testing laboratories, prod- uct distribution centers, woodworking shops, auto body shops, furniture assembly, dry cleaning plants, places of religious worship, public and governmental services, machine shops, and boat building storage yards. Division 2. Any use permitted in the FI, Division 1 zone and stadiums and arenas, indoor swap meets, breweries, liquid fertilizer manufacturing, carpet manufacturing, monument works, and a regional recycling center. Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses",
+                  "answer_start": 5708,
+                  "answer_end": 6484,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit dry cleaning plants?",
+              "id": 603316,
+              "answers": [
+                {
+                  "answer_id": 651381,
+                  "document_id": 1271667,
+                  "question_id": 603316,
+                  "text": "FI zones",
+                  "answer_start": 5669,
+                  "answer_end": 5677,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build public and governmental services. Which zoning districts permits this use?",
+              "id": 603331,
+              "answers": [
+                {
+                  "answer_id": 651385,
+                  "document_id": 1271667,
+                  "question_id": 603331,
+                  "text": "FI zones",
+                  "answer_start": 5669,
+                  "answer_end": 5677,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit furniture assembly?",
+              "id": 603333,
+              "answers": [
+                {
+                  "answer_id": 651386,
+                  "document_id": 1271667,
+                  "question_id": 603333,
+                  "text": "(FI) zone uses shall be: Division 1. Any light-manufacturing or industrial use, such as warehouses, research or testing laboratories, prod- uct distribution centers, woodworking shops, auto body shops, furniture assembly, dry cleaning plants, places of religious worship, public and governmental services, machine shops, and boat building storage yards. Division 2. Any use permitted in the FI, Division 1 zone and stadiums and arenas, indoor swap meets, breweries, liquid fertilizer manufacturing, carpet manufacturing, monument works, and a regional recycling center. Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses.",
+                  "answer_start": 5708,
+                  "answer_end": 6485,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow furniture assembly?",
+              "id": 603338,
+              "answers": [
+                {
+                  "answer_id": 651388,
+                  "document_id": 1271667,
+                  "question_id": 603338,
+                  "text": "FI zones",
+                  "answer_start": 5669,
+                  "answer_end": 5677,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit research or testing laboratories?",
+              "id": 603341,
+              "answers": [
+                {
+                  "answer_id": 651391,
+                  "document_id": 1271667,
+                  "question_id": 603341,
+                  "text": "(FI) zone uses shall be: Division 1. Any light-manufacturing or industrial use, such as warehouses, research or testing laboratories, prod- uct distribution centers, woodworking shops, auto body shops, furniture assembly, dry cleaning plants, places of religious worship, public and governmental services, machine shops, and boat building storage yards. Division 2. Any use permitted in the FI, Division 1 zone and stadiums and arenas, indoor swap meets, breweries, liquid fertilizer manufacturing, carpet manufacturing, monument works, and a regional recycling center. Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses",
+                  "answer_start": 5708,
+                  "answer_end": 6484,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow paper manufacturing?",
+              "id": 603370,
+              "answers": [
+                {
+                  "answer_id": 651395,
+                  "document_id": 1271667,
+                  "question_id": 603370,
+                  "text": "Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses",
+                  "answer_start": 6278,
+                  "answer_end": 6484,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build carpet manufacturing. Which zoning districts permits this use?",
+              "id": 603389,
+              "answers": [
+                {
+                  "answer_id": 651402,
+                  "document_id": 1271667,
+                  "question_id": 603389,
+                  "text": "Division 2. Any use permitted in the FI, Division 1 zone and stadiums and arenas, indoor swap meets, breweries, liquid fertilizer manufacturing, carpet manufacturing, monument works, and a regional recycling center. Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses.",
+                  "answer_start": 6062,
+                  "answer_end": 6485,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit woodworking shops?",
+              "id": 603399,
+              "answers": [
+                {
+                  "answer_id": 651406,
+                  "document_id": 1271667,
+                  "question_id": 603399,
+                  "text": "FI zones",
+                  "answer_start": 5669,
+                  "answer_end": 5677,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build indoor swap meets. Which zoning districts permits this use?",
+              "id": 603413,
+              "answers": [
+                {
+                  "answer_id": 651410,
+                  "document_id": 1271667,
+                  "question_id": 603413,
+                  "text": "Division 2. Any use permitted in the FI, Division 1 zone and stadiums and arenas, indoor swap meets, breweries, liquid fertilizer manufacturing, carpet manufacturing, monument works, and a regional recycling center. Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses",
+                  "answer_start": 6062,
+                  "answer_end": 6484,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow machine shops?",
+              "id": 603432,
+              "answers": [
+                {
+                  "answer_id": 651414,
+                  "document_id": 1271667,
+                  "question_id": 603432,
+                  "text": " FI zones",
+                  "answer_start": 5668,
+                  "answer_end": 5677,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow stadiums and arenas?",
+              "id": 603264,
+              "answers": [
+                {
+                  "answer_id": 651368,
+                  "document_id": 1271667,
+                  "question_id": 603264,
+                  "text": "Division 2. Any use permitted in the FI, Division 1 zone and stadiums and arenas, indoor swap meets, breweries, liquid fertilizer manufacturing, carpet manufacturing, monument works, and a regional recycling center. Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses",
+                  "answer_start": 6062,
+                  "answer_end": 6484,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit monument works?",
+              "id": 603266,
+              "answers": [
+                {
+                  "answer_id": 651370,
+                  "document_id": 1271667,
+                  "question_id": 603266,
+                  "text": "Division 2. Any use permitted in the FI, Division 1 zone and stadiums and arenas, indoor swap meets, breweries, liquid fertilizer manufacturing, carpet manufacturing, monument works, and a regional recycling center. Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses",
+                  "answer_start": 6062,
+                  "answer_end": 6484,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build stadiums and arenas. Which zoning districts permits this use?",
+              "id": 603269,
+              "answers": [
+                {
+                  "answer_id": 651372,
+                  "document_id": 1271667,
+                  "question_id": 603269,
+                  "text": "Division 2. Any use permitted in the FI, Division 1 zone and stadiums and arenas, indoor swap meets, breweries, liquid fertilizer manufacturing, carpet manufacturing, monument works, and a regional recycling center. Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses",
+                  "answer_start": 6062,
+                  "answer_end": 6484,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow cotton gins?",
+              "id": 603306,
+              "answers": [
+                {
+                  "answer_id": 651377,
+                  "document_id": 1271667,
+                  "question_id": 603306,
+                  "text": "Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses",
+                  "answer_start": 6278,
+                  "answer_end": 6484,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit cotton gins?",
+              "id": 603308,
+              "answers": [
+                {
+                  "answer_id": 651378,
+                  "document_id": 1271667,
+                  "question_id": 603308,
+                  "text": " Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses",
+                  "answer_start": 6277,
+                  "answer_end": 6484,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build cotton gins. Which zoning districts permits this use?",
+              "id": 603311,
+              "answers": [
+                {
+                  "answer_id": 651379,
+                  "document_id": 1271667,
+                  "question_id": 603311,
+                  "text": "Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses",
+                  "answer_start": 6278,
+                  "answer_end": 6484,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build dry cleaning plants. Which zoning districts permits this use?",
+              "id": 603317,
+              "answers": [
+                {
+                  "answer_id": 651382,
+                  "document_id": 1271667,
+                  "question_id": 603317,
+                  "text": "FI zones",
+                  "answer_start": 5669,
+                  "answer_end": 5677,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow public and governmental services?",
+              "id": 603321,
+              "answers": [
+                {
+                  "answer_id": 651383,
+                  "document_id": 1271667,
+                  "question_id": 603321,
+                  "text": "FI zones",
+                  "answer_start": 5669,
+                  "answer_end": 5677,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit public and governmental services?",
+              "id": 603322,
+              "answers": [
+                {
+                  "answer_id": 651384,
+                  "document_id": 1271667,
+                  "question_id": 603322,
+                  "text": "(FI) zone uses shall be: Division 1. Any light-manufacturing or industrial use, such as warehouses, research or testing laboratories, prod- uct distribution centers, woodworking shops, auto body shops, furniture assembly, dry cleaning plants, places of religious worship, public and governmental services, machine shops, and boat building storage yards. Division 2. Any use permitted in the FI, Division 1 zone and stadiums and arenas, indoor swap meets, breweries, liquid fertilizer manufacturing, carpet manufacturing, monument works, and a regional recycling center. Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses",
+                  "answer_start": 5708,
+                  "answer_end": 6484,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build furniture assembly. Which zoning districts permits this use?",
+              "id": 603337,
+              "answers": [
+                {
+                  "answer_id": 651387,
+                  "document_id": 1271667,
+                  "question_id": 603337,
+                  "text": "FI zones",
+                  "answer_start": 5669,
+                  "answer_end": 5677,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build research or testing laboratories. Which zoning districts permits this use?",
+              "id": 603340,
+              "answers": [
+                {
+                  "answer_id": 651390,
+                  "document_id": 1271667,
+                  "question_id": 603340,
+                  "text": "FI zones.",
+                  "answer_start": 5669,
+                  "answer_end": 5678,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow research or testing laboratories?",
+              "id": 603342,
+              "answers": [
+                {
+                  "answer_id": 651392,
+                  "document_id": 1271667,
+                  "question_id": 603342,
+                  "text": "(FI) zone uses shall be: Division 1. Any light-manufacturing or industrial use, such as warehouses, research or testing laboratories, prod- uct distribution centers, woodworking shops, auto body shops, furniture assembly, dry cleaning plants, places of religious worship, public and governmental services, machine shops, and boat building storage yards. Division 2. Any use permitted in the FI, Division 1 zone and stadiums and arenas, indoor swap meets, breweries, liquid fertilizer manufacturing, carpet manufacturing, monument works, and a regional recycling center. Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses",
+                  "answer_start": 5708,
+                  "answer_end": 6484,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow liquid fertilizer manufacturing?",
+              "id": 603369,
+              "answers": [
+                {
+                  "answer_id": 651393,
+                  "document_id": 1271667,
+                  "question_id": 603369,
+                  "text": "Division 2. Any use permitted in the FI, Division 1 zone and stadiums and arenas, indoor swap meets, breweries, liquid fertilizer manufacturing, carpet manufacturing, monument works, and a regional recycling center. Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses",
+                  "answer_start": 6062,
+                  "answer_end": 6484,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow carpet manufacturing?",
+              "id": 603384,
+              "answers": [
+                {
+                  "answer_id": 651398,
+                  "document_id": 1271667,
+                  "question_id": 603384,
+                  "text": "Division 2. Any use permitted in the FI, Division 1 zone ",
+                  "answer_start": 6062,
+                  "answer_end": 6119,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build product distribution centers. Which zoning districts permits this use?",
+              "id": 603388,
+              "answers": [
+                {
+                  "answer_id": 651401,
+                  "document_id": 1271667,
+                  "question_id": 603388,
+                  "text": "FI zones",
+                  "answer_start": 5669,
+                  "answer_end": 5677,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build woodworking shops. Which zoning districts permits this use?",
+              "id": 603398,
+              "answers": [
+                {
+                  "answer_id": 651405,
+                  "document_id": 1271667,
+                  "question_id": 603398,
+                  "text": "(FI) zone uses shall be: Division 1. Any light-manufacturing or industrial use, such as warehouses, research or testing laboratories, prod- uct distribution centers, woodworking shops, auto body shops, furniture assembly, dry cleaning plants, places of religious worship, public and governmental services, machine shops, and boat building storage yards. Division 2. Any use permitted in the FI, Division 1 zone and stadiums and arenas, indoor swap meets, breweries, liquid fertilizer manufacturing, carpet manufacturing, monument works, and a regional recycling center. Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses",
+                  "answer_start": 5708,
+                  "answer_end": 6484,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build auto-dismantling yards. Which zoning districts permits this use?",
+              "id": 603403,
+              "answers": [
+                {
+                  "answer_id": 651408,
+                  "document_id": 1271667,
+                  "question_id": 603403,
+                  "text": "Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses",
+                  "answer_start": 6278,
+                  "answer_end": 6484,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit warehouses?",
+              "id": 603431,
+              "answers": [
+                {
+                  "answer_id": 651413,
+                  "document_id": 1271667,
+                  "question_id": 603431,
+                  "text": "FI zones",
+                  "answer_start": 5669,
+                  "answer_end": 5677,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build machine shops. Which zoning districts permits this use?",
+              "id": 603437,
+              "answers": [
+                {
+                  "answer_id": 651416,
+                  "document_id": 1271667,
+                  "question_id": 603437,
+                  "text": "FI zones",
+                  "answer_start": 5669,
+                  "answer_end": 5677,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit liquid fertilizer manufacturing?",
+              "id": 603377,
+              "answers": [
+                {
+                  "answer_id": 651396,
+                  "document_id": 1271667,
+                  "question_id": 603377,
+                  "text": "Division 2. Any use permitted in the FI, Division 1 zone",
+                  "answer_start": 6062,
+                  "answer_end": 6118,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow product distribution centers?",
+              "id": 603386,
+              "answers": [
+                {
+                  "answer_id": 651399,
+                  "document_id": 1271667,
+                  "question_id": 603386,
+                  "text": "FI zones",
+                  "answer_start": 5669,
+                  "answer_end": 5677,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow woodworking shops?",
+              "id": 603396,
+              "answers": [
+                {
+                  "answer_id": 651404,
+                  "document_id": 1271667,
+                  "question_id": 603396,
+                  "text": "FI zones",
+                  "answer_start": 5669,
+                  "answer_end": 5677,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow warehouses?",
+              "id": 603430,
+              "answers": [
+                {
+                  "answer_id": 651411,
+                  "document_id": 1271667,
+                  "question_id": 603430,
+                  "text": "FI zones",
+                  "answer_start": 5669,
+                  "answer_end": 5677,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit machine shops?",
+              "id": 603434,
+              "answers": [
+                {
+                  "answer_id": 651415,
+                  "document_id": 1271667,
+                  "question_id": 603434,
+                  "text": "(FI) zone uses shall be: Division 1. Any light-manufacturing or industrial use, such as warehouses, research or testing laboratories, prod- uct distribution centers, woodworking shops, auto body shops, furniture assembly, dry cleaning plants, places of religious worship, public and governmental services, machine shops, and boat building storage yards. Division 2. Any use permitted in the FI, Division 1 zone and stadiums and arenas, indoor swap meets, breweries, liquid fertilizer manufacturing, carpet manufacturing, monument works, and a regional recycling center. Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses",
+                  "answer_start": 5708,
+                  "answer_end": 6484,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build liquid fertilizer manufacturing. Which zoning districts permits this use?",
+              "id": 603372,
+              "answers": [
+                {
+                  "answer_id": 651394,
+                  "document_id": 1271667,
+                  "question_id": 603372,
+                  "text": "Division 2. Any use permitted in the FI, Division 1 zone and stadiums and arenas, indoor swap meets, breweries, liquid fertilizer manufacturing, carpet manufacturing, monument works, and a regional recycling center. Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses.",
+                  "answer_start": 6062,
+                  "answer_end": 6485,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit carpet manufacturing?",
+              "id": 603383,
+              "answers": [
+                {
+                  "answer_id": 651397,
+                  "document_id": 1271667,
+                  "question_id": 603383,
+                  "text": "Division 2. Any use permitted in the FI, Division 1 zone and stadiums and arenas, indoor swap meets, breweries, liquid fertilizer manufacturing, carpet manufacturing, monument works, and a regional recycling center. Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses",
+                  "answer_start": 6062,
+                  "answer_end": 6484,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit product distribution centers?",
+              "id": 603387,
+              "answers": [
+                {
+                  "answer_id": 651400,
+                  "document_id": 1271667,
+                  "question_id": 603387,
+                  "text": "FI zones",
+                  "answer_start": 5669,
+                  "answer_end": 5677,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow auto-dismantling yards?",
+              "id": 603395,
+              "answers": [
+                {
+                  "answer_id": 651403,
+                  "document_id": 1271667,
+                  "question_id": 603395,
+                  "text": "Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses",
+                  "answer_start": 6278,
+                  "answer_end": 6484,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit auto-dismantling yards?",
+              "id": 603397,
+              "answers": [
+                {
+                  "answer_id": 651407,
+                  "document_id": 1271667,
+                  "question_id": 603397,
+                  "text": "Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses",
+                  "answer_start": 6278,
+                  "answer_end": 6484,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit indoor swap meets?",
+              "id": 603409,
+              "answers": [
+                {
+                  "answer_id": 651409,
+                  "document_id": 1271667,
+                  "question_id": 603409,
+                  "text": "Division 2. Any use permitted in the FI, Division 1 zone and stadiums and arenas, indoor swap meets, breweries, liquid fertilizer manufacturing, carpet manufacturing, monument works, and a regional recycling center. Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses",
+                  "answer_start": 6062,
+                  "answer_end": 6484,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build warehouses. Which zoning districts permits this use?",
+              "id": 603429,
+              "answers": [
+                {
+                  "answer_id": 651412,
+                  "document_id": 1271667,
+                  "question_id": 603429,
+                  "text": "(FI) zone uses shall be: Division 1. Any light-manufacturing or industrial use, such as warehouses, research or testing laboratories, prod- uct distribution centers, woodworking shops, auto body shops, furniture assembly, dry cleaning plants, places of religious worship, public and governmental services, machine shops, and boat building storage yards. Division 2. Any use permitted in the FI, Division 1 zone and stadiums and arenas, indoor swap meets, breweries, liquid fertilizer manufacturing, carpet manufacturing, monument works, and a regional recycling center. Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses",
+                  "answer_start": 5708,
+                  "answer_end": 6484,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            }
+          ],
+          "context": " Single-family dwellings, public owned and operated parks, recreation centers, swimming pools and _play- grounds, police and fire department stations, public and governmental services, public libraries, schools and col- leges (excluding colleges or trade schools operated for profit), public parking lots, private garages, buildings accessory to the above permitted uses (including private garages and accessory living quarters), and temporary buildings. Division 2. The following uses are permitted in an R, Division 2 zone: Any use permitted in R, Division 1 zones and two-fam- ily dwellings. Division 3. The following uses are permitted in an R, Division 3 zone: All uses permitted in R, Division 2 zones, multiple-unit dwellings, such as apartment houses, boarding houses, condominiums and congregate residences.                SECTION 502 BULK REGULATIONS 502.1 General. The minimum area, setbacks, density and maximum height shall be as prescribed in Table 502.1. TABLE 502.1 RESIDENTIAL (R) ZONE BULK REGULATIONS {in feet, unless noted otherwise) MINIMUM MAXIMUM LOT DIMENSIONS SETBACK REQUIREMENTS MAXIMUM LOT AREA/ DENSITY _ _. . a So DIVISION SITE (square | (dwelling unit/ Minimum Minimum Minimum Minimum Minimum BUILDING feet) acre) lot width lot depth front yard side yard rear yard HEIGHT? L a 35,000 1 125 150 25 10 30 35 b 20,000 2 100 125 20 10 25 35 c 10,000 4 15 100 20 5 25 35 d 6,000 6 60 90 15 5 20 35 2 a 10,000 4 60 70 20 5 20 35 b 6,000 6 60 70 15 5 20 35 3 a 6,000 8 60 70 15 5 20 35 b 6,000 12 60 70 15 5 20 35                For SI: 1 foot = 304.8 mm, 1 square foot = 0.0929 m’, 1 acre = 4047 m*. a. Accessory towers, satellite dishes and similar structures shall be permitted to exceed the maximum height when approved by the code official. 2012 INTERNATIONAL ZONING CODE” WV   18 2012 INTERNATIONAL ZONING CODE”  CHAPTER 6 COMMERCIAL AND COMMERCIAL/RESIDENTIAL ZONES SECTION 601 COMMERCIAL AND COMMERCIAL/RESIDENTIAL 601.1 ZONES DEFINED Commercial and commercial/residential zones. Allowable commercial (C) zone and commercial/residential (CR) zone uses shall be: C Zone Division 1. The following uses are permitted in a C, Division 1 zone: Minor automotive repair, automotive motor fuel dis- pensing facilities, automotive self-service motor fuel dispensing facilities, business or financial services, convenience and neighborhood commercial centers (excluding wholesale sales), family and group day care facilities, libraries, mortuary and funeral homes, public and governmental services, police and fire department stations, places of religious worship, public utility sta- tions, and restaurants. Division 2. The following uses are permitted in a C, Division 2 zone: Any uses permitted in C, Division 1 zones, and light commercial (excluding wholesale sales), group care facilities, physical fitness centers, religious, cultural and fraternal activities, rehabilitation centers, and schools and colleges operated for profit (including commercial, vocational and trade schools). Division 3. The following uses are permitted in a C, Division 3 zone: Any uses permitted in C, Division 2 zones, and amusement centers (including bowling alleys, golf driving ranges, miniature golf courses, ice rinks, pool and billiard halls, and similar recreational uses), auto- motive sales, building material supply sales (wholesale and retail), cultural institutions (such as museums and art galleries), community commercial centers (includ- ing wholesale and retail sales), health and medical institutions (such as hospitals), hotels and motels (excluding other residential occupancies), commercial TABLE 602.1 printing and publishing, taverns and cocktail lounges, indoor theaters, and self-storage warehouses. Division 4. The following uses are permitted in a C, Division 4 zone: Any uses permitted in C, Division 3 zones, and major automotive repair, commercial bakeries, regional commercial centers (including wholesale and retail sales), plastic products design, molding and assembly, small metal products design, casting, fabri- cating, and processing, manufacture and finishing, stor- age yards, and wood products manufacture and finishing. CR Zone Permitted (commercial/residential) (CR) zone uses shall Division 1. The following uses are permitted in a CR, Division 1 zone: Any use permitted in a C, Division 1 zone, and resi- dential use permitted, except in the story or basement abutting street grade. Division 2. The following uses are permitted in a CR, Division 2 zone: Any use permitted in a C, Division 2 zone, and resi- dential use permitted, except in the story or basement abutting street grade. SECTION 602 BULK REGULATIONS 602.1 General. The minimum area, setbacks, density and maximum height shall be as prescribed in Table 602.1. COMMERCIAL (C) AND COMMERCIAL/RESIDENTIAL (CR) ZONES BULK REGULATIONS {in feet, unless noted otherwise)                           MINIMUM LOT MAXIMUM LOT DIMENSIONS SETBACK REQUIREMENTS MAXIMUM AREA DENSITY Minimum Minimum Minimum Minimum Minimum BUILDING DIVISION (square feet) (units/acre) lot width lot depth front yard side yard rear yard HEIGHT? 1 6,000 12 30 70 0 0 0 30 2 Not Applicable] Not Applicable 30 70 0 0 0 40 3 Not Applicable} Not Applicable 15 100 0 0 0 50 4 Not Applicable} Not Applicable 15 100 0 0 0 50 For SI: 1 foot = 304.8 mm, 1 square foot = 0.0929 m®, 1 acre = 4047 m’. a. Accessory towers, satellite disks and similar structures shall be permitted to exceed the listed heights when approved by the code official. 2012 INTERNATIONAL ZONING CODE” 19  20 2012 INTERNATIONAL ZONING CODE”  CHAPTER 7 FACTORY/INDUSTRIAL ZONES SECTION 701 FACTORY/INDUSTRIAL ZONES DEFINED 701.1 FI zones. Allowable factory/industrial (FI) zone uses shall be: Division 1. Any light-manufacturing or industrial use, such as warehouses, research or testing laboratories, prod- uct distribution centers, woodworking shops, auto body shops, furniture assembly, dry cleaning plants, places of religious worship, public and governmental services, machine shops, and boat building storage yards. Division 2. Any use permitted in the FI, Division 1 zone and stadiums and arenas, indoor swap meets, breweries, liquid fertilizer manufacturing, carpet manufacturing, monument works, and a regional recycling center. Division 3. Any use permitted in the FI, Division 2 zone and auto-dismantling yards, alcohol manufacturing, cotton gins, paper manufacturing, quarries, salt works, petroleum refining, and other similar uses. SECTION 702 BULK REGULATIONS 702.1 General. The minimum area, setbacks, density and maximum height shall be as prescribed in Table 702.1. TABLE 702.1 FACTORY/INDUSTRIAL (Fl) ZONE BULK REGULATIONS {in feet, unless noted otherwise)",
+          "document_id": 1271667
+        }
+      ]
+    },
+    {
+      "paragraphs": [
+        {
+          "qas": [
+            {
+              "question": "Which zoning districts allow public parking lots?",
+              "id": 602843,
+              "answers": [
+                {
+                  "answer_id": 651437,
+                  "document_id": 1271666,
+                  "question_id": 602843,
+                  "text": "RESIDENTIAL ZONES",
+                  "answer_start": 6322,
+                  "answer_end": 6339,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build public parking lots. Which zoning districts permits this use?",
+              "id": 602851,
+              "answers": [
+                {
+                  "answer_id": 651440,
+                  "document_id": 1271666,
+                  "question_id": 602851,
+                  "text": "RESIDENTIAL ZONES",
+                  "answer_start": 6322,
+                  "answer_end": 6339,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow temporary buildings?",
+              "id": 602799,
+              "answers": [
+                {
+                  "answer_id": 651431,
+                  "document_id": 1271666,
+                  "question_id": 602799,
+                  "text": "RESIDENTIAL ZONES",
+                  "answer_start": 6322,
+                  "answer_end": 6339,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit public parking lots?",
+              "id": 602846,
+              "answers": [
+                {
+                  "answer_id": 651439,
+                  "document_id": 1271666,
+                  "question_id": 602846,
+                  "text": "RESIDENTIAL ZONES",
+                  "answer_start": 6322,
+                  "answer_end": 6339,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow schools and colleges (excluding colleges or trade schools operated for profit)?",
+              "id": 602786,
+              "answers": [
+                {
+                  "answer_id": 651434,
+                  "document_id": 1271666,
+                  "question_id": 602786,
+                  "text": "RESIDENTIAL ZONES",
+                  "answer_start": 6322,
+                  "answer_end": 6339,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit schools and colleges (excluding colleges or trade schools operated for profit)?",
+              "id": 602789,
+              "answers": [
+                {
+                  "answer_id": 651435,
+                  "document_id": 1271666,
+                  "question_id": 602789,
+                  "text": "RESIDENTIAL ZONES",
+                  "answer_start": 6322,
+                  "answer_end": 6339,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build schools and colleges (excluding colleges or trade schools operated for profit). Which zoning districts permits this use?",
+              "id": 602790,
+              "answers": [
+                {
+                  "answer_id": 651436,
+                  "document_id": 1271666,
+                  "question_id": 602790,
+                  "text": "RESIDENTIAL ZONES",
+                  "answer_start": 6322,
+                  "answer_end": 6339,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit temporary buildings?",
+              "id": 602800,
+              "answers": [
+                {
+                  "answer_id": 651432,
+                  "document_id": 1271666,
+                  "question_id": 602800,
+                  "text": "RESIDENTIAL ZONES",
+                  "answer_start": 6322,
+                  "answer_end": 6339,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build temporary buildings. Which zoning districts permits this use?",
+              "id": 602804,
+              "answers": [
+                {
+                  "answer_id": 651433,
+                  "document_id": 1271666,
+                  "question_id": 602804,
+                  "text": "RESIDENTIAL ZONES",
+                  "answer_start": 6322,
+                  "answer_end": 6339,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build open space. Which zoning districts permits this use?",
+              "id": 602899,
+              "answers": [
+                {
+                  "answer_id": 651419,
+                  "document_id": 1271666,
+                  "question_id": 602899,
+                  "text": "AGRICULTURAL ZONES",
+                  "answer_start": 4875,
+                  "answer_end": 4893,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow single-family dwellings?",
+              "id": 602903,
+              "answers": [
+                {
+                  "answer_id": 651426,
+                  "document_id": 1271666,
+                  "question_id": 602903,
+                  "text": "RESIDENTIAL ZONES",
+                  "answer_start": 6322,
+                  "answer_end": 6339,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build agricultural Use. Which zoning districts permits this use?",
+              "id": 602920,
+              "answers": [
+                {
+                  "answer_id": 651420,
+                  "document_id": 1271666,
+                  "question_id": 602920,
+                  "text": "AGRICULTURAL ZONES",
+                  "answer_start": 4875,
+                  "answer_end": 4893,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow agricultural Use?",
+              "id": 602926,
+              "answers": [
+                {
+                  "answer_id": 651422,
+                  "document_id": 1271666,
+                  "question_id": 602926,
+                  "text": "AGRICULTURAL ZONES",
+                  "answer_start": 4875,
+                  "answer_end": 4893,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow publicly owned and operated parks?",
+              "id": 602961,
+              "answers": [
+                {
+                  "answer_id": 651441,
+                  "document_id": 1271666,
+                  "question_id": 602961,
+                  "text": "RESIDENTIAL ZONES",
+                  "answer_start": 6322,
+                  "answer_end": 6339,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build swimming pools and playgrounds. Which zoning districts permits this use?",
+              "id": 602983,
+              "answers": [
+                {
+                  "answer_id": 651430,
+                  "document_id": 1271666,
+                  "question_id": 602983,
+                  "text": "RESIDENTIAL ZONES",
+                  "answer_start": 6322,
+                  "answer_end": 6339,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow dwellings?",
+              "id": 602917,
+              "answers": [
+                {
+                  "answer_id": 651425,
+                  "document_id": 1271666,
+                  "question_id": 602917,
+                  "text": " Division 2. Any agricultural use, including, but not limited to, dwellings, maintenance/storage buildings and other such uses necessary for the principal use",
+                  "answer_start": 4958,
+                  "answer_end": 5116,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit agricultural Use?",
+              "id": 602923,
+              "answers": [
+                {
+                  "answer_id": 651421,
+                  "document_id": 1271666,
+                  "question_id": 602923,
+                  "text": "AGRICULTURAL ZONES",
+                  "answer_start": 4875,
+                  "answer_end": 4893,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit publicly owned and operated parks?",
+              "id": 602967,
+              "answers": [
+                {
+                  "answer_id": 651442,
+                  "document_id": 1271666,
+                  "question_id": 602967,
+                  "text": "RESIDENTIAL ZONES",
+                  "answer_start": 6322,
+                  "answer_end": 6339,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit swimming pools and playgrounds?",
+              "id": 602978,
+              "answers": [
+                {
+                  "answer_id": 651429,
+                  "document_id": 1271666,
+                  "question_id": 602978,
+                  "text": "RESIDENTIAL ZONES DEFINED",
+                  "answer_start": 6322,
+                  "answer_end": 6347,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit single-family dwellings?",
+              "id": 602904,
+              "answers": [
+                {
+                  "answer_id": 651427,
+                  "document_id": 1271666,
+                  "question_id": 602904,
+                  "text": " RESIDENTIAL ZONES",
+                  "answer_start": 6321,
+                  "answer_end": 6339,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build dwellings. Which zoning districts permits this use?",
+              "id": 602916,
+              "answers": [
+                {
+                  "answer_id": 651424,
+                  "document_id": 1271666,
+                  "question_id": 602916,
+                  "text": "Division 2. Any agricultural use, including, but not limited to, dwellings, maintenance/storage buildings and other such uses necessary for the principal use",
+                  "answer_start": 4959,
+                  "answer_end": 5116,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "I would like to build publicly owned and operated parks. Which zoning districts permits this use?",
+              "id": 602971,
+              "answers": [
+                {
+                  "answer_id": 651443,
+                  "document_id": 1271666,
+                  "question_id": 602971,
+                  "text": "RESIDENTIAL ZONES",
+                  "answer_start": 6322,
+                  "answer_end": 6339,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow swimming pools and playgrounds?",
+              "id": 602975,
+              "answers": [
+                {
+                  "answer_id": 651428,
+                  "document_id": 1271666,
+                  "question_id": 602975,
+                  "text": "RESIDENTIAL ZONES",
+                  "answer_start": 6322,
+                  "answer_end": 6339,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts allow open space?",
+              "id": 602891,
+              "answers": [
+                {
+                  "answer_id": 651417,
+                  "document_id": 1271666,
+                  "question_id": 602891,
+                  "text": "AGRICULTURAL ZONES",
+                  "answer_start": 4781,
+                  "answer_end": 4799,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit open space?",
+              "id": 602896,
+              "answers": [
+                {
+                  "answer_id": 651418,
+                  "document_id": 1271666,
+                  "question_id": 602896,
+                  "text": "AGRICULTURAL ZONES ",
+                  "answer_start": 4875,
+                  "answer_end": 4894,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            },
+            {
+              "question": "Which zoning districts permit dwellings?",
+              "id": 602914,
+              "answers": [
+                {
+                  "answer_id": 651423,
+                  "document_id": 1271666,
+                  "question_id": 602914,
+                  "text": "Division 2. Any agricultural use, including, but not limited to, dwellings, maintenance/storage buildings and other such uses necessary for the principal use",
+                  "answer_start": 4959,
+                  "answer_end": 5116,
+                  "answer_category": null
+                }
+              ],
+              "is_impossible": false
+            }
+          ],
+          "context": "are characterized by such activities as the sale of agricultural products, contractors’ offices and equipment sheds, fire- works, carnivals, flea markets, and garage sales. V SIGN. See Section 1002.1. VARIANCE. A deviation from the height, bulk, setback, parking or other dimensional requirements established by this code. WALL OR FASCIA SIGN. See Section 1002.1. WAREHOUSE, WHOLESALE OR STORAGE. A build- ing or premises in which goods, merchandise or equipment are stored for eventual distribution. WINDOW SIGN. See Section 1002.1. YARD. An open, unoccupied space on a lot, other than a court, which is unobstructed from the ground upward by buildings or structures, except as otherwise provided in this code. YARD, FRONT. A yard extending across the full width of the lot, the depth of which is the minimum horizontal distance between the front lot line and a line parallel thereto. YARD, REAR. A yard extending across the full width of the lot, the depth of which is the minimum horizontal distance between the rear lot line or ordinary high water line and a line parallel thereto. YARD, SIDE. An open, unoccupied space on the same lot with the building and between the building line and the side lot line, or to the ordinary high water line. 2012 INTERNATIONAL ZONING CODE”  CHAPTER 3 USE DISTRICTS SECTION 301 DISTRICT CLASSIFICATIONS 301.1 Classification. In order to classify, regulate and restrict the locations of uses and locations of buildings designated for specific areas; and to regulate and determine the areas of yards, courts and other open spaces within or surrounding such buildings, property is hereby classified into districts as prescribed in this chapter. SECTION 302 MINIMUM AREAS FOR ZONING DISTRICTS 302.1 Minimum areas. The minimum areas that may consti- tute a separate or detached part of any of the following zoning districts on the zoning map or subsequent amendments to said zoning map shall be as shown in Table 302.1. When a nonres- idential district is directly across the street from or abuts the district with the same or less restrictive classification, the area of the land directly across the street or abutting the property may be included in the calculations in meeting the minimum district size requirements. TABLE 302.1 MINIMUM AREAS FOR ZONING DISTRICTS      ZONING MINIMUM AREA? DISTRICT OF THE DISTRICT A, Division 1 No minimum A, Division 2 [JURISDICTION TO INSERT NUMBER]   A, Division 3 C, Division 1 C, Division 2 C, Division 3 C, Division 4 CR, Division 1 CR, Division 2 FI, Division 1 FI, Division 2 FI, Division 3 R, Division 1 [JURISDICTION TO INSERT NUMBER] [JURISDICTION TO INSERT NUMBER] [JURISDICTION TO INSERT NUMBER] [JURISDICTION TO INSERT NUMBER] [JURISDICTION TO INSERT NUMBER] [JURISDICTION TO INSERT NUMBER] [JURISDICTION TO INSERT NUMBER] [JURISDICTION TO INSERT NUMBER] [JURISDICTION TO INSERT NUMBER] [JURISDICTION TO INSERT NUMBER] [JURISDICTION TO INSERT NUMBER] R, Division 2 [JURISDICTION TO INSERT NUMBER] R, Division 3 [JURISDICTION TO INSERT NUMBER] For SI: 1 acre = 4047 m*. a. The adopting jurisdiction should fill in with appropriate land areas expressed in acres.                         SECTION 303 ZONING MAP 303.1 General. The boundaries of each zoning district are to be indicated upon the official zoning map as approved by the 2012 INTERNATIONAL ZONING CODE” legislative authority. Said map and subsequent amendments thereto shall be considered as a part of this code. SECTION 304 ANNEXED TERRITORY 304.1 Classification. Any territory hereafter annexed shall automatically, upon such annexation, be classified as R, Divi- sion la, residential district, and be subject to all conditions and regulations applicable to property in such district. SECTION 305 CONDITIONAL USES 305.1 General. The principal objective of this zoning code is to provide for an orderly arrangement of compatible build- ings and land uses, and for the property location of all types of uses required for the social and economic welfare of the community. To accomplish this objective, each type and kind of use is classified as permitted in one or more of the various use districts established by this code. However, in addition to those uses specifically classified and permitted in each dis- trict, there are certain additional uses which it may be neces- sary to allow because of the unusual characteristics of the service they provide the public. These conditional uses require particular considerations as to their proper location to adjacent, established or intended uses, or to the planned growth of the community. The conditions controlling the locations and operation of such special uses are established by the applicable sections of this code. 13  14 2012 INTERNATIONAL ZONING CODE”  uses shall be: SECTION 401 AGRICULTURAL ZONES DEFINED 401.1 Agricultural zone. Allowable agricultural (A) zone CHAPTER 4 AGRICULTURAL ZONES Division 1. Any designated open space as set forth in this code. Division 2. Any agricultural use, including, but not limited to, dwellings, maintenance/storage buildings and other such uses necessary for the principal use. Division 3. Any public park land or other similar recre- ational use, including, but not limited to, amusement rides, office buildings, retail buildings and dwellings necessary for the maintenance of the principal use. SECTION 402 BULK REGULATIONS 402.1 General. The minimum area, setbacks, density and maximum height shall be as prescribed in Table 402.1. TABLE 402.1 AGRICULTURAL (A) ZONE BULK REGULATIONS (in feet, unless noted otherwise)®   LOT DIMENSIONS SETBACK REQUIREMENTS            unit/5 acres          MINIMUM MAXIMUM MAXIMUM ZONE LOT AREA DENSITY Minimum Minimum Minimum Minimum Minimum BUILDING DIVISION (acres) (units/acre) lot width lot depth front yard side yard rear yard HEIGHT? 1 20 1 dwelling 600 600 30 15 60 35 unit/20 acres 2 10 1 dwelling 400 400 30 15 60 35 unit/10 acres 3 5 1 dwelling 250 250 30 15 60 35    For SI: 1 foot = 304.8 mm, 1 acre = 4047 m’. a. Open spaces and parks can be of a reduced size, if approved. b. Access storage structures, windmills and similar structures shall be permitted to exceed the maximum height when approved by the code official. 2012 INTERNATIONAL ZONING CODE” 15  16 2012 INTERNATIONAL ZONING CODE”  CHAPTER 5 RESIDENTIAL ZONES SECTION 501 RESIDENTIAL ZONES DEFINED 501.1 Residential zone. Allowable residential (R) zone uses shall be: Division 1. The following uses are permitted in an R, Division 1 zone:",
+          "document_id": 1271666
+        }
+      ]
+    }
+  ]
+}

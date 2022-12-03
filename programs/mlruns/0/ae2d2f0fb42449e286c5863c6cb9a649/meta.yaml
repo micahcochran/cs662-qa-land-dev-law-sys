@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/MasterControlProgram/git/cs662-qa-land-dev-law-sys/programs/mlruns/0/ae2d2f0fb42449e286c5863c6cb9a649/artifacts
+end_time: 1669449375995
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ae2d2f0fb42449e286c5863c6cb9a649
+run_name: test_trainer
+run_uuid: ae2d2f0fb42449e286c5863c6cb9a649
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1669447944740
+status: 3
+tags: []
+user_id: jesusaur

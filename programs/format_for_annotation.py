@@ -22,7 +22,7 @@ q_dfs.append(q_df.iloc[:500])
 q_dfs.append(q_df.iloc[500:1000])
 q_dfs.append(q_df.iloc[1000:])
 
-for index in range(13):
+for index in range(18):
     for indx, q_df in enumerate(q_dfs):
         q_df['document_identifier'] = f'id{index}'
         q_df.to_csv(f'{file_path}/csv/questions{index}{indx}.csv', index=False, header=True, lineterminator='\n', columns=['question', 'document_identifier', 'question_identifier']) 

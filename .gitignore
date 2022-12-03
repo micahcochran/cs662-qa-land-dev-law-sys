@@ -1,6 +1,10 @@
 triplesdb/.ipynb_checkpoints/
 triplesdb/__pycache__/
 
+programs/.ipynb_checkpoints/
+
+__pycache__/
+
 # Node artifact files
 node_modules/
 dist/
