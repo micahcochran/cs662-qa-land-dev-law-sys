@@ -8,7 +8,7 @@ Instead of tourism this is using the method for a zoning information Question An
 
 ### Files
 * [KGQAS.ipynb](KGQAS.ipynb) - Start here.  This is a very high level view of the Zoning KGQAS working.
-* [semantic_parsing.py](semantic_parsing.py) - This ties together the entire Semantic parsing phase from the other classsee the below [Semantic Parsing](#Semantic_Parsing) section.
+* [semantic_parsing.py](semantic_parsing.py) - This ties together the entire Semantic parsing phase from the other classses the below [Semantic Parsing](#Semantic_Parsing) section.
 * [indexes.py](indexes.py) - The indexes are used by the Semantic Parsing class for training and classification.
 * [kg_helper.py](kg_helper.py) - This is helper code for this code accessing the template generation.
 
