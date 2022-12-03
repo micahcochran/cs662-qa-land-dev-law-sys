@@ -18,7 +18,6 @@ from question_classification import QuestionClassification
 from entity_class_linking import EntityClassLinking
 from relation_extraction import RelationExtraction
 from slot_filling_query_execution import SlotFillingQueryExecution
-# from kg_helper import generate_templates, get_template
 import kg_helper
 
 
@@ -84,19 +83,20 @@ class SemanticParsingClass:
     def generate_filtered_corpus(self) -> List[dict]:
         question_corpus = list(kg_helper.generate_templates())
         # remove questions that are empty sets
-        question_corpus_filt = self._remove_false_answers(self._remove_empty_answers(question_corpus))
+#        question_corpus_filt = self._remove_false_answers(self._remove_empty_answers(question_corpus))
+        question_corpus_filt = kg_helper.remove_empty_answers(question_corpus)
         return question_corpus_filt
 
     # There are some distinctions in :ZoningDistrict and :ZoningDivisionDistrict that did not appear in the original
     # generate_template.  This is causing a few questions that could be answerable, but it would have to use a :seeAlso
     # hop.  This is doable, but out of scope for this phase of the project.  The function below is the workaround.
-    def _remove_empty_answers(self, question_corpus: List[dict]) -> List[dict]:
-        return [q for q in question_corpus if q['answer'] != []]
+#    def _remove_empty_answers(self, question_corpus: List[dict]) -> List[dict]:
+#        return [q for q in question_corpus if q['answer'] != []]
 
     # Some questions should be producing True as their output.  They are producing false.  The last minute workaround
     # is to just remove them from the corpus.  generate_template needs to be fixed.
-    def _remove_false_answers(self, question_corpus: List[dict]) -> List[dict]:
-        return [q for q in question_corpus if q['answer'] != False]
+#    def _remove_false_answers(self, question_corpus: List[dict]) -> List[dict]:
+#        return [q for q in question_corpus if q['answer'] != False]
 
 
 def generate_all_templates_test():
@@ -140,7 +140,8 @@ def measure_accuracy(subset: int = 0, randomized_subset: bool = False):
     sem_par = SemanticParsingClass()
     question_corpus = list(kg_helper.generate_templates())
     # remove questions that are empty sets and False, this takes it down to 900 questions
-    question_corpus_filt = list(sem_par._remove_false_answers(sem_par._remove_empty_answers(question_corpus)))
+#    question_corpus_filt = list(sem_par._remove_false_answers(sem_par._remove_empty_answers(question_corpus)))
+    question_corpus_filt = list(kg_helper.remove_empty_answers(question_corpus))
     print(f'question_corpus_filt: {len(question_corpus_filt)}')
 
     if subset > 0:
@@ -163,12 +164,12 @@ def measure_accuracy(subset: int = 0, randomized_subset: bool = False):
         answers = [sem_par.classify(q['question']) for q in question_corpus_filt]
         gold_answers = [q['answer'] for q in question_corpus_filt]
 
-    # Need to take lists convert it to a string for accuruacy
-#    accuracy = accuracy_score(gold_answers.join, answers)
-    # take all the inner lists and join as strings them with commas
+    # take all the inner lists and join as strings and separate with commas
     accuracy = accuracy_score([','.join(a) for a in gold_answers], [','.join(a) for a in answers])
-    f1 = f1_score(gold_answers, answers, average='micro')
-    print(f'# answers: {len(answers)} accuracy:  {accuracy * 100.0} f1 score: {f1 * 100.0}')
+#    f1 = f1_score(gold_answers, answers, average='micro')
+    f1_scores = f1_score(gold_answers, answers, average=None)
+#    print(f'# answers: {len(answers)} accuracy:  {accuracy * 100.0} f1 score: {f1 * 100.0}')
+    print(f'num. answers: {len(answers)} accuracy:  {accuracy * 100.0} f1 scores: {f1_scores}')
     print(answers)
 
 
@@ -181,5 +182,5 @@ def train_all():
 if __name__ == '__main__':
 #    generate_all_templates_test()
 #    simple_classify_test()
-    measure_accuracy()
+    measure_accuracy(30)
 #    train_all()

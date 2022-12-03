@@ -320,7 +320,7 @@ ASK {
               'answer_datatype': bool,
               }
 
-        # FIXME: THE ABOVE TEMPLATE NEEDS SOME WORK SO THAT IT CAN PROPERLY GENERATE SPARQL QUERIES.
+        # FIXME: THE ABOVE TEMPLATE NEEDS SOME WORK SO THAT IT CAN PROPERLY GENERATE SPARQL QUERIES WITH UNITS.
         #        IT IS BEING COMMENTED OUT UNTIL THAT TIME.
         # self.templates['template_dimreg_4var_yn_answer'] = t4
 

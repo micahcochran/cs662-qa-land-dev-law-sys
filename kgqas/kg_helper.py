@@ -45,6 +45,12 @@ def generate_dim_templates(dimreq_kg: Optional[rdflib.graph.Graph] = None) -> it
 
     return triplesdb.generate_template.generate_dimensional_templates(dimreq_kg)
 
+# There are some distinctions in :ZoningDistrict and :ZoningDivisionDistrict that did not appear in the original
+# generate_template.  This is causing a few questions that could be answerable, but it would have to use a :seeAlso
+# hop.  This is doable, but out of scope for this phase of the project.  The function below is the workaround.
+def remove_empty_answers(question_corpus: List[dict]) -> List[dict]:
+    return [q for q in question_corpus if q['answer'] != []]
+
 def label_dictionary() -> dict:
     raise DeprecationWarning("Use template_number_dictionary() or template_names instead")
     tg_obj = triplesdb.generate_template.TemplateGeneration()

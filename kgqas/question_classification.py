@@ -223,11 +223,9 @@ class QuestionClassification:
         # NOTE: the steps are is specific to this dataset.
         questions_and_labels = [(gd['question'], gd['template_name']) for gd in tg]
         question_corpus = [ql[0] for ql in questions_and_labels]
-#        template_number_dict = label_dictionary()
         template_labels = [template_number_dictionary()[ql[1]] for ql in questions_and_labels]
 
 
-#        question_dep_encoded = np.array(map(lambda sentence: np.array(dependency_steps(nlp, sentence)), question_corpus))
         question_dep_encoded = np.array([np.array(self.dependency_encoding(self.nlp, sentence)) for sentence in question_corpus])
         print(f"Number of Questions Encoded: {question_dep_encoded.shape[0]}")
         print(template_labels)

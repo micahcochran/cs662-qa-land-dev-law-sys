@@ -7,11 +7,9 @@ from operator import attrgetter
 from typing import List, Optional, Tuple
 
 # External library imports
-from loguru import logger
 from nltk.metrics.distance import edit_distance
 from nltk.tokenize import word_tokenize
 from nltk.util import everygrams
-# install sentence_transformers
 from sentence_transformers import SentenceTransformer, util
 
 # internal libraries
@@ -28,8 +26,6 @@ class EntityClassLinking:
         # this model is a 5 times faster model
         self.sbert_model = SentenceTransformer('all-MiniLM-L6-v2')
         # This is for step 5 Algorithm 1.
-#        ec_embeddings = self.sbert_model.encode(self.index_kg.all_index_labels(), convert_to_tensor=True)
-#        self.entity_candidate_embeddings = list(zip(self.index_kg.all_index_labels(), ec_embeddings))
         ec_embeddings = self.sbert_model.encode(self.index_kg.all_entity_labels(), convert_to_tensor=True)
         self.entity_candidate_embeddings = list(zip(self.index_kg.all_entity_labels(), ec_embeddings))
 
@@ -40,7 +36,7 @@ class EntityClassLinking:
         # compute unigram, bigram, and trigram at the same time
         # ngram_out = everygrams(tokens, max_len=3)  # this is per the paper
         # compute unigram, bigram, trigram, 4-grams and 5-grams all at the same time
-        ngram_out = list(everygrams(tokens, max_len=5))  # However, I need more for my application
+        ngram_out = list(everygrams(tokens, max_len=5))  # However, I need more for my application.
         # print(ngram_out)
 
 
