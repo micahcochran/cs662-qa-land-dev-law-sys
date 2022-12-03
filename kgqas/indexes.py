@@ -8,8 +8,6 @@ from typing import Dict, Optional, Set, Tuple
 # external libraries
 import rdflib
 
-# TODO: Perhaps add numeric values specified in the KG to the index.
-
 # For these indexes are in a set of tuples.
 # The text label (Literal) is first element, and the URI fragment is second element.
 # The URI fragment could be in any position, the Literal must be in the object position.
@@ -53,10 +51,12 @@ class IndexesKG:
 
         self._units_index = self._init_units()
 
+        # numeric values are also captured as classes.  This is workable, but not ideal.
         self._numeric_index = self._init_numbers(kg)
 
-#        self._predicate_index = self._init_predicates(kg)
-        self._predicate_index = self._init_variable_predicate(kg, 'rdf:Property')
+        # :permitsUse causes problems because it doesn't need to be identified as a predicate. Some templates are hard
+        # coded to use :permitsUse.  For now, take it out of the predicate_index.
+        self._predicate_index = self._init_variable_predicate(kg, 'rdf:Property') - set([('permits use', ':permitsUse')])
 
         self._zoning_index = self._init_variable_predicate(kg, ':ZoningDistrict')
 
@@ -64,7 +64,7 @@ class IndexesKG:
 
         self._entity_index = self._permitted_uses_index | self._units_index | self._numeric_index | \
                              self._zoning_index | self._zoning_division_index
-        # TODO REMOVE ME
+        # TODO REMOVE ME?
         # combine the indexes
         self._all_indexes = self._label_index2 | self._permitted_uses_index | self._units_index | self._numeric_index
 
@@ -128,9 +128,9 @@ SELECT ?pred ?obj WHERE {
         # print(number_list)
         return set([(num, '') for num, _ in number_list])
 
-    @property
-    def label_index2(self) -> Set[Tuple[str, str]]:
-        return self._label_index2
+#    @property
+#    def label_index2(self) -> Set[Tuple[str, str]]:
+#        return self._label_index2
 
     # These are a set of object which have the :permitsUse property.
     # We will always know that :permitsUse is a predicate, with the use as an object.
@@ -168,9 +168,9 @@ SELECT ?pred ?obj WHERE {
     def all_indexes(self) -> Set[Tuple[str, str]]:
         return self._all_indexes
 
-    def all_index_labels(self) -> list:
-        raise DeprecationWarning("all_index_labels() deprecated, use all_entity_labels() instead.")
-        return [label for label, _fragment in self._all_indexes]
+#    def all_index_labels(self) -> list:
+#        raise DeprecationWarning("all_index_labels() deprecated, use all_entity_labels() instead.")
+#        return [label for label, _fragment in self._all_indexes]
 
     @property
     def zoning_index(self) -> Set[Tuple[str, str]]:
@@ -192,9 +192,9 @@ SELECT ?pred ?obj WHERE {
 if __name__ == '__main__':
     indexkg = IndexesKG()
 
-    print("==========  Label Index 2 ==========")
-    print(indexkg.label_index2)
-    print(f"Labels2 Count: {len(indexkg.label_index2)}")
+#    print("==========  Label Index 2 ==========")
+#    print(indexkg.label_index2)
+#    print(f"Labels2 Count: {len(indexkg.label_index2)}")
     print("==========  Numeric Index 2 ==========")
     print(indexkg.numeric_index)
     print(f"Numeric Count: {len(indexkg.numeric_index)}")
