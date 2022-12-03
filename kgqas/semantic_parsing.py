@@ -10,6 +10,7 @@ import random
 from typing import List, Union
 
 # external library imports
+from loguru import logger
 from sklearn.metrics import accuracy_score, f1_score
 
 # project internal imports
@@ -137,6 +138,7 @@ def get_random_questions_answers(question_corpus: List[dict], n: int) -> List[di
 
 # This takes 44 minutes to run on all questions
 def measure_accuracy():
+    logger.info("measuring the accuracy of Zoning KGQAS")
     sem_par = SemanticParsingClass()
     question_corpus = list(kg_helper.generate_templates())
     # remove questions that are empty sets and False, this takes it down to 900 questions
@@ -144,16 +146,20 @@ def measure_accuracy():
     print(f'question_corpus_filt: {len(question_corpus_filt)}')
 #    SUBSET = 0
     SUBSET = 10
-    if SUBSET:
+    if SUBSET > 0:
+        logger.info(f"measuring subset of size: {SUBSET}")
         answers = [sem_par.classify(q['question']) for q in question_corpus_filt[:SUBSET]]
         gold_answers = [q['answer'] for q in question_corpus_filt[:SUBSET]]
     else:
         answers = [sem_par.classify(q['question']) for q in question_corpus_filt]
-        gold_answers = [q['answer'] for q in question_corpus_filt[:SUBSET]]
+        gold_answers = [q['answer'] for q in question_corpus_filt]
 
-    accuracy = accuracy_score(gold_answers, answers)
+    # Need to take lists convert it to a string for accuruacy
+#    accuracy = accuracy_score(gold_answers.join, answers)
+    # take all the inner lists and join as strings them with commas
+    accuracy = accuracy_score([','.join(a) for a in gold_answers], [','.join(a) for a in answers])
     f1 = f1_score(gold_answers, answers, average='micro')
-    print(f'accuracy:  {accuracy * 100.0} f1 score: {f1 * 100.0}')
+    print(f'# answers: {len(answers)} accuracy:  {accuracy * 100.0} f1 score: {f1 * 100.0}')
     print(answers)
 
 # training time is 2 minutes on CPU
@@ -165,5 +171,5 @@ def train_all():
 if __name__ == '__main__':
 #    generate_all_templates_test()
 #    simple_classify_test()
-#    measure_accuracy()
-    train_all()
+    measure_accuracy()
+#    train_all()

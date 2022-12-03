@@ -100,7 +100,7 @@ class SlotFillingQueryExecution:
 
 #        if template_dict['answer_datatype'] == list:
         if result_type == list:
-            print(f"Results OBJ: {results}")
+#            print(f"Results OBJ: {results}")
             print(
                 f"Results OBJ vars: {str(results.vars[0])}")  # assuming 1 variable result, an okay assumption for my application
             assert (len(results.vars) == 1)

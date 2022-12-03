@@ -30,9 +30,12 @@ from kg_helper import generate_templates, template_names, template_number_dictio
 # nltk.download('universal_tagset')    # brown when tagset='universal'
 # nltk.download('averaged_perceptron_tagger')    # PerceptronTagger(load=True)
 
+
+# TODO: move the model as a part of the class so it isn't being loaded every time.
 class QuestionClassification:
     def __init__(self):
         self.nlp = self.dependency_parse_stanza_initialize()
+        self.model = self.load_model()
 
     # UNUSED
     def pos_tagging(self, sentence: str):
@@ -258,6 +261,7 @@ class QuestionClassification:
         model.save_model("question_classification_model.ubj")
         end_time = time.time()
         logger.info(f"Training XGBoost Classifier took: {end_time-start_time} s")
+        self.model = model
         return model
 
 
@@ -272,15 +276,15 @@ class QuestionClassification:
         returns an integer with the classification"""
 
         question_dep_encoded = np.array([self.dependency_encoding(self.nlp, sentence)])
-
-        if model is None:
-            model = self.load_model()
+        # using self.model instead
+#        if model is None:
+#            model = self.load_model()
 #            logger.info("Loading XGBoost model: question_classification_model.ubj")
 #            model = xgb.XGBClassifier()
 #            model.load_model("question_classification_model.ubj")
 
         print(question_dep_encoded)
-        ypred = model.predict(question_dep_encoded)
+        ypred = self.model.predict(question_dep_encoded)
         print(ypred)
         return ypred[0]
 
@@ -291,6 +295,7 @@ class QuestionClassification:
     def load_model(self):
         logger.info("Loading XGBoost model: question_classification_model.ubj")
         model = xgb.XGBClassifier()
+        # TODO: If this gives an error, need to suggest training first.
         model.load_model("question_classification_model.ubj")
         return model
 
