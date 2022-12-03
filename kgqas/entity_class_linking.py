@@ -4,7 +4,7 @@ Semantic Parsing Phase - 2) Entity Linking and Class Linking
 # Python library imports
 from collections import defaultdict, namedtuple
 from operator import attrgetter
-from typing import List, Tuple
+from typing import List, Optional, Tuple
 
 # External library imports
 from loguru import logger
@@ -18,15 +18,22 @@ from sentence_transformers import SentenceTransformer, util
 import indexes
 
 class EntityClassLinking:
-    def __init__(self):
-        self.index_kg = indexes.IndexesKG()
+    def __init__(self, index_kg: Optional[indexes.IndexesKG] = None, verbose=True):
+        if index_kg:
+            self.index_kg = index_kg
+        else:
+            self.index_kg = indexes.IndexesKG()
 
         # SBERT for computing the embeddings
         # this model is a 5 times faster model
         self.sbert_model = SentenceTransformer('all-MiniLM-L6-v2')
         # This is for step 5 Algorithm 1.
-        ec_embeddings = self.sbert_model.encode(self.index_kg.all_index_labels(), convert_to_tensor=True)
-        self.entity_candidate_embeddings = list(zip(self.index_kg.all_index_labels(), ec_embeddings))
+#        ec_embeddings = self.sbert_model.encode(self.index_kg.all_index_labels(), convert_to_tensor=True)
+#        self.entity_candidate_embeddings = list(zip(self.index_kg.all_index_labels(), ec_embeddings))
+        ec_embeddings = self.sbert_model.encode(self.index_kg.all_entity_labels(), convert_to_tensor=True)
+        self.entity_candidate_embeddings = list(zip(self.index_kg.all_entity_labels(), ec_embeddings))
+
+        self.verbose = verbose
 
     def ngram_collection(self, sentence) -> list:
         tokens = word_tokenize(sentence)
@@ -41,7 +48,7 @@ class EntityClassLinking:
 
     # this is Algorithm 1 in the paper
     def string_similarity_score(self, mention) -> List[Tuple[float, str]]:
-        entity_candidates = self.index_kg.all_index_labels()
+        entity_candidates = self.index_kg.all_entity_labels()
 
         Score_Result = namedtuple("Score_STS", 'ld_div_ls, ld, ls, cand')
         # score a single mention and candidate
@@ -54,18 +61,22 @@ class EntityClassLinking:
         computed_scores = []
         # print(mention)
         for m in list(mention):
-            print(m)
+            if self.verbose:
+                print(m)
             for cand in entity_candidates:
-                print(f'{m} {cand}')
+                if self.verbose:
+                    print(f'{m} {cand}')
                 computed_scores.append(score_sts(m, cand))
 
         # 2. Sort STS based on ld/ls
         computed_scores.sort(key=attrgetter('ld_div_ls'))
         # 3. Sort STS based on ls descending if ld is equal to zero
-        if(any(filter(lambda x: x.ld == 0, computed_scores))):
+        if any(filter(lambda x: x.ld == 0, computed_scores)):
             computed_scores.sort(key=attrgetter('ls'), reverse=True)
 
-        print(computed_scores)
+        if self.verbose:
+            print(computed_scores)
+
         # 4. Compute STR (STring Ranks) including entity candidates' string-ranks where the
         # string-rank of the entity candidate c is 1/index(stc) where index(stc) is the index
         # of the entity candidate c in STS Vector
@@ -122,21 +133,39 @@ class EntityClassLinking:
             # print(f'SER2: {ser[2]}')
             similarity_score[ser[2]] += score
 
-        print(similarity_score)
+        if self.verbose:
+            print(similarity_score)
         similarity_score_list = [(score, label) for label, score in similarity_score.items()]
         similarity_score_list.sort(key=lambda x: x[0], reverse=True)
-        print("======== Top Similarity Scores ========")
-        for i in range(10):
-            print(f"{similarity_score_list[i]}")
+        if self.verbose:
+            print("======== Top Similarity Scores ========")
+            for i in range(10):
+                print(f"{similarity_score_list[i]}")
 
         return similarity_score_list
 
-    def run(self):
-        sentence = 'Are auto-dismantling yards permitted?'
-        ecl = EntityClassLinking()
-        ngram = ecl.ngram_collection(sentence)
+def single_question_test():
+    sentence = 'Are auto-dismantling yards permitted?'
+    ecl = EntityClassLinking()
+    ngram = ecl.ngram_collection(sentence)
+    ecl.string_similarity_score(ngram)
+
+
+# this took 54 minutes on CPU, ouch.
+def all_question_test():
+    from kg_helper import generate_templates
+
+    ecl = EntityClassLinking()
+
+    tg = generate_templates()
+    questions = [generated_data['question'] for generated_data in tg]
+
+    for q in questions:
+        ngram = ecl.ngram_collection(q)
         ecl.string_similarity_score(ngram)
 
+
 if __name__ == '__main__':
-    ecl = EntityClassLinking()
-    ecl.run()
+    ecl = EntityClassLinking(verbose=True)
+    single_question_test()
+#    all_question_test()

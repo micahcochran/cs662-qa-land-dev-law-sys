@@ -5,36 +5,61 @@ Semantic Parsing Phase - 3) Relation Extraction
 import itertools
 import pickle
 import random
-from typing import List, Tuple
+from typing import List, Optional, Tuple
 
 # imports from external libraries
 from loguru import logger
+import pandas as pd
+import numpy as np
 from sklearn.metrics import f1_score
 from sklearn.model_selection import train_test_split
 from sklearn.neural_network import MLPClassifier
 from sklearn.preprocessing import MultiLabelBinarizer
-from sklearn.preprocessing import OneHotEncoder
 from sentence_transformers import SentenceTransformer, util
 
 # internal imports
-from indexes import IndexesKG
-from kg_helper import generate_templates
+import indexes
+# from kg_helper import generate_dim_templates, generate_templates
+from kg_helper import generate_dim_templates
+
+# TODO Templates will vary, but any of the permitted use templates, we will already know the predicate for that.
+#      This may be able to be skipped entirely for that case.
+#
+
+# TODO will have to modify training to split predicates
 
 class RelationExtraction():
-    def __init__(self):
+    def __init__(self, index_kg: Optional[indexes.IndexesKG] = None):
         # This is a faster model
         self.sbert_model = SentenceTransformer('all-MiniLM-L6-v2')
         # MLP Classifier model
         self.model = None
 
-        idx = IndexesKG()
+        if index_kg is None:
+            index_kg = indexes.IndexesKG()
 
+        self.index_kg = index_kg
         # below code create a 1-hot encoding for labels
-        self.mlb = MultiLabelBinarizer(classes=sorted(idx.all_index_labels()))
-        _, variables = self.process_question_corpus(list(generate_templates()))
-        self.label_encoding = self.mlb.fit_transform(variables)
+#        self.mlb = MultiLabelBinarizer(classes=sorted(idx.all_index_labels()))
+        self.mlb = MultiLabelBinarizer(classes=sorted(index_kg.predicate_labels()))
 
-    def process_question_corpus(self, question_corpus, verbose=False) -> Tuple[List[str], List[List[str]]]:
+#        _, variables = self.process_question_corpus(list(generate_templates()))
+#        self.label_encoding = self.mlb.fit_transform(variables)
+        # Why is the pre_generating label encoding????
+        _, variables = self.process_question_corpus(list(generate_dim_templates()), verbose=False)
+#        print(f"variables: {variables}")
+#        # filter out variables that are not in the predicates
+        variables_filtered = [self.filter_relation_variables(row) for row in variables]
+#        print(f"variables_filtered: {variables_filtered}")
+        self.label_encoding = self.mlb.fit_transform(variables_filtered)
+#        print(f"self.label_encoding: {self.label_encoding}")
+#        self.label_encoding = self.mlb.fit_transform(index_kg.predicate_labels())
+
+    def filter_relation_variables(self, variables: List[str]) -> List[str]:
+        """filter out variables that are not in the predicates"""
+        return [v for v in variables if v in self.index_kg.predicate_labels()]
+
+    def process_question_corpus(self, question_corpus, verbose=True) -> Tuple[List[str], List[List[str]]]:
         """Takes the question corpus and splits it into parallel lists of questions and variable values used to fill in
         the question.
         return (questions, variables)"""
@@ -50,9 +75,11 @@ class RelationExtraction():
         # remove strings that begin with : or [ ...  URI fragment predicates ":maxBulidingHeight" and units "[ft_i]"
         # These are useless to the production of the text version of the question
         # (perhaps the generate_template.py needs to be rewritten to not
-        # have these values for the question text.)  This is not idea.
+        # have these values for the question text.)  This is not idea           .
         variables = [list(filter(lambda x: x[0] not in (':', '['), vi))
-                        for vi in variables_intermediate]
+                                    for vi in variables_intermediate]
+
+        # variables = list(filter(lambda v: v in self.index_kg.predicate_labels(), variables_no_units_frags))
         if verbose:
             print(f"{len(questions_and_variables)}, {len(questions)}, {len(variables)}")
             print("===== 10 Random Question and Variables ===== ")
@@ -64,13 +91,6 @@ class RelationExtraction():
         return questions, variables
 
     def train(self, questions: List[str], variables: List[List[str]]):
-        # flatten the list of list into a list, use set to determine the unique variables for the MLP Classifier,
-        # (prepare for encoding the matrix)
-        #variable_classes = list(set(itertools.chain(*variables)))
-
-        # mlb = MultiLabelBinarizer(classes=variable_classes)
-        # this is preferrable to the above.
-
 
         # label_encoding = self.mlb.fit_transform(variables)
         # mlb.fit([idx.all_index_labels()])
@@ -78,7 +98,13 @@ class RelationExtraction():
         # Use SBERT to generate the embedding for the MLP
         q_embeddings = [self.sbert_model.encode(q) for q in questions]
 
-        X_train, X_test, y_train, y_test = train_test_split(q_embeddings, self.label_encoding, random_state=246341428,
+        # print(q_embeddings)
+#        print(self.label_encoding)
+        variables_encoded = self.mlb.fit_transform(variables)
+
+#        X_train, X_test, y_train, y_test = train_test_split(q_embeddings, self.label_encoding, random_state=246341428,
+#                                                            shuffle=True)
+        X_train, X_test, y_train, y_test = train_test_split(q_embeddings, variables_encoded, random_state=246341428,
                                                             shuffle=True)
 
         # Used Table 5. MLP Parameters from paper
@@ -136,9 +162,9 @@ class RelationExtraction():
 #        accuracy = accuracy_score(y_test, predictions)
 #        f1 = f1_score(y_test, y_pred, average='micro')
         # SCORING IS HAVING ISSUES
-        # thows ValueError: X has 145 features, but MLPClassifier is expecting 384 features as input.
-        accuracy = self.model.score(y_test, y_pred)
-        print(f"Accuracy {accuracy * 100.0}")
+        # for scoring it throws ValueError: X has 9 features, but MLPClassifier is expecting 384 features as input.
+#        accuracy = self.model.score(y_test, y_pred)
+#        print(f"Accuracy {accuracy * 100.0}")
 #        print(f"F1 Score: {f1* 100.0}")
         with open("relation_extraction_model.pickle", "wb") as fp:
             pickle.dump(self.model, fp)
@@ -152,7 +178,15 @@ class RelationExtraction():
         # match the number from question_classification to a template
         # figure out the number of k spots to fill
         # MLP Classifier will tell you if it is correct or not
-    def extract(self, sentence: str):
+
+    def extract(self, sentence: str, k: int) -> np.ndarray:
+        """
+        :param sentence:
+        :param k: the number of spots to be extracted
+        :return:
+        """
+        # Note: k should not be 0, that means there is no work to do.
+
         if self.model is None:
             logger.info('Loading MLPClassifier Model: relation_extraction_model.pickle')
             with open("relation_extraction_model.pickle", 'rb') as pick_in:
@@ -162,10 +196,16 @@ class RelationExtraction():
 
         embedding = self.sbert_model.encode(sentence)
         reshaped = embedding.reshape(1, -1)
-        result = self.model.predict(reshaped)
-        result_labels = self.mlb.inverse_transform(result)
+        # Predict the probability for each class label
+        result = self.model.predict_proba(reshaped)
+        # result_labels = self.mlb.inverse_transform(result)
         # print(result)
-        return result_labels  # this is a list of string
+        # extract the top-k relations
+        p_result = pd.Series(result[0])
+        k_results = p_result.nlargest(k)
+        return self.mlb.classes_[k_results.index]  # array of most likely matches
+
+        # return result_labels  # this is a list of string
         # return result  # this is a matrix
 
         # Use SBERT to generate the embedding for the MLP
@@ -216,7 +256,8 @@ class RelationExtraction():
 
 def main_training():
     relex = RelationExtraction()
-    questions, variables = relex.process_question_corpus(list(generate_templates()))
+#    questions, variables = relex.process_question_corpus(list(generate_templates()))
+    questions, variables = relex.process_question_corpus(list(generate_dim_templates()))
     relex.train(questions, variables)
 
 def small_training_test():
@@ -239,15 +280,15 @@ def small_training_test():
 
 def extract_test(relex=None):
     ex_questions = [
-        'I would like to build public parking lots.  Which zoning districts permits this use?',
-        'Are libraries allowed in a C1 zoning district?',
-        # the below question is having problems picking up '6000' and 'square feet'
+#        'I would like to build public parking lots.  Which zoning districts permits this use?',
+#        'Are libraries allowed in a C1 zoning district?',
+        # the below question is having problems picking up '6000'
         'Is the minimum lot size for a property in the C1 zoning district 6000 square feet?',
         'What is the minimum lot width in the R3a zoning district?',
     ]
     ex_variables = [
-        ['public parking lots'],
-        ['libraries', 'C1'],
+#        ['public parking lots'],   # no relations
+#        ['libraries', 'C1'],       # no relations
         ['minimum lot size', '6000', 'C1', 'square feet'],
         ['minimum lot width', 'R3a']
     ]
@@ -255,18 +296,24 @@ def extract_test(relex=None):
         relex = RelationExtraction()
 
     for i, q in enumerate(ex_questions):
-        print(f"Question {i}: {q}")
-        result = relex.extract(q)
+        k = len(relex.filter_relation_variables(ex_variables[i]))
+        print(f"Question {i}: {q}, k: {k}")
+        result = relex.extract(q, k)
         print(result)
 
-# NOT WORKING
+
+# This process takes 15 seconds for 270 questions
+# SCORING NOT WORKING
 def extract_all_test(relex=None):
     if relex is None:
         relex = RelationExtraction()
 
-    questions, gold_variables = relex.process_question_corpus(question_corpus=list(generate_templates()))
+    questions, gold_variables = relex.process_question_corpus(question_corpus=list(generate_dim_templates()))
     # gold_encoding = relex.label_encoding   # accessing class variables is a BAD idea
-    # results = [relex.extract(q) for q in questions]
+    for i, q in enumerate(questions):
+        k = len(relex.filter_relation_variables(gold_variables[i]))
+        relex.extract(q, k)
+
     # f1 = f1_score(gold_encoding, results)
     # print(f"F1 Score: {f1 * 100.0}")
 
@@ -275,5 +322,7 @@ if __name__ == '__main__':
 #    extract_all_test()
 #    relex = main_training()
 #    extract_test(relex)
-    extract_test()
+
+    extract_all_test()
+#    extract_test()
 #    small_training_test()

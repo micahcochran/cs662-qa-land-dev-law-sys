@@ -22,8 +22,7 @@ import stanza
 import xgboost as xgb
 
 # internal library imports
-# from semantic_parsing import generate_templates, label_dictionary
-from kg_helper import generate_templates, label_dictionary
+from kg_helper import generate_templates, template_names, template_number_dictionary
 
 # The below aren't needed for nltk because I am using spacy.
 # Run these one time only
@@ -31,9 +30,12 @@ from kg_helper import generate_templates, label_dictionary
 # nltk.download('universal_tagset')    # brown when tagset='universal'
 # nltk.download('averaged_perceptron_tagger')    # PerceptronTagger(load=True)
 
+
+# TODO: move the model as a part of the class so it isn't being loaded every time.
 class QuestionClassification:
     def __init__(self):
         self.nlp = self.dependency_parse_stanza_initialize()
+        self.model = self.load_model()
 
     # UNUSED
     def pos_tagging(self, sentence: str):
@@ -221,9 +223,8 @@ class QuestionClassification:
         # NOTE: the steps are is specific to this dataset.
         questions_and_labels = [(gd['question'], gd['template_name']) for gd in tg]
         question_corpus = [ql[0] for ql in questions_and_labels]
-#        template_number_dict = self.label_dictionary()
-        template_number_dict = label_dictionary()
-        template_labels = [template_number_dict[ql[1]] for ql in questions_and_labels]
+#        template_number_dict = label_dictionary()
+        template_labels = [template_number_dictionary()[ql[1]] for ql in questions_and_labels]
 
 
 #        question_dep_encoded = np.array(map(lambda sentence: np.array(dependency_steps(nlp, sentence)), question_corpus))
@@ -260,6 +261,7 @@ class QuestionClassification:
         model.save_model("question_classification_model.ubj")
         end_time = time.time()
         logger.info(f"Training XGBoost Classifier took: {end_time-start_time} s")
+        self.model = model
         return model
 
 
@@ -274,21 +276,26 @@ class QuestionClassification:
         returns an integer with the classification"""
 
         question_dep_encoded = np.array([self.dependency_encoding(self.nlp, sentence)])
-
-        if model is None:
-            model = self.load_model()
+        # using self.model instead
+#        if model is None:
+#            model = self.load_model()
 #            logger.info("Loading XGBoost model: question_classification_model.ubj")
 #            model = xgb.XGBClassifier()
 #            model.load_model("question_classification_model.ubj")
 
         print(question_dep_encoded)
-        ypred = model.predict(question_dep_encoded)
+        ypred = self.model.predict(question_dep_encoded)
         print(ypred)
         return ypred[0]
+
+    def classification_number_to_template_name(self, number: int) -> str:
+        """Convert the number of the template to a name"""
+        return template_names()[number]
 
     def load_model(self):
         logger.info("Loading XGBoost model: question_classification_model.ubj")
         model = xgb.XGBClassifier()
+        # TODO: If this gives an error, need to suggest training first.
         model.load_model("question_classification_model.ubj")
         return model
 
@@ -319,7 +326,7 @@ def generate_all_templates_text():
     for res in generate_templates():
         print(res)
 
-def classify_main():
+def classify_small_test_main():
     qc = QuestionClassification()
 #    model = qc.train2()
 #    template_number = qc.classify('Are auto-dismantling yards permitted?', model)
@@ -337,10 +344,26 @@ def classify_main():
         template_number = qc.classify(q, model)
         print(f"Question: {q} template_number = {template_number}")
 
+# On CPU this takes about 4 minutes
+def classify_all_test_main():
+    qc = QuestionClassification()
+    print("===== Question Classifications =====")
+    model = qc.load_model()
+    tg = generate_templates()
+    questions = [generated_data['question'] for generated_data in tg]
+#    for q in questions:
+#        template_number = qc.classify(q, model)
+    [qc.classify(q, model) for q in questions]
+
+
+
+
 if __name__ == '__main__':
     import sys
 #    sys.exit(main())
 #    sys.exit(compute_max_main())
 #    sys.exit(generate_all_templates_text())
-    sys.exit(qc_train_main())
-#    classify_main()
+
+#    sys.exit(qc_train_main())
+#    classify_small_test_main()
+    classify_all_test_main()
