@@ -81,7 +81,7 @@ class EntityClassLinking:
             return st_rank
 
         st_ranks = compute_string_ranks(computed_scores)
-        # 5. Compute vector SES (SEmantic Similiariy) containing the cosine similarity cs
+        # 5. Compute vector SES (SEmantic Similarity) containing the cosine similarity cs
         # between the embeddings of an entity mention m and the embeddings of entity candidates
         def compute_semantic_similarity(mention) -> List[Tuple]:
             embedding_mention = [self.sbert_model.encode(' '.join(m), convert_to_tensor=True) for m in mention]

@@ -3,22 +3,40 @@ Semantic Parsing Phase - 4) Slot Filling and Query Execution
 """
 # Python internal libraries
 import string
+import sys
 from typing import List, Optional, Union
 
 # external libraries
-
+import rdflib
 
 # internal library imports
 import indexes
 import kg_helper
+# internal libraries that need a different path
+sys.path.append("..")  # hack to allow triplesdb imports
+from triplesdb.generate_template import TemplateGeneration
 
 class SlotFillingQueryExecution:
-    def __init__(self, index_kg: Optional[indexes.IndexesKG] = None):
+    def __init__(self, index_kg: Optional[indexes.IndexesKG] = None,
+                 template_generation: Optional[TemplateGeneration] = None,
+                 knowledge_graph: Optional[rdflib.Graph] = None):
         index_kg: Optional[indexes.IndexesKG] = None
         if index_kg is None:
             index_kg = indexes.IndexesKG()
 
         self.index_kg = index_kg
+
+        if knowledge_graph is None:
+            self.kg = rdflib.Graph()
+            self.kg.parse("triplesdb/combined.ttl")
+        else:
+            self.kg = knowledge_graph
+
+        if template_generation is None:
+            template_path = Path('../triplesdb/templates')
+            self.tg = TemplateGeneration(template_path)
+        else:
+            self.tg = template_generation
 
     # TODO: This function needs a rewrite to remove a lot of development code.
 
@@ -27,7 +45,8 @@ class SlotFillingQueryExecution:
 
         # This example is simpler than the paper.  Due to the Zoning KG being two orders of magnitude smaller
         # and less complicated.  This doesn't really do the cartesian product of all the results.
-        template_dict = kg_helper.get_template(template_name)
+#        template_dict = kg_helper.get_template(template_name)
+        template_dict = self.tg.get_template(template_name)
         print(f"template name: {template_name}")
         print(f"SPARQL TEMPLATE: {template_dict['sparql_template']}")
         print(f"VARIABLES: {template_dict['variables']}")
@@ -47,6 +66,8 @@ class SlotFillingQueryExecution:
 
         sparql_template = string.Template(template_dict['sparql_template'])
 
+        # paper used Cartesian product (itertools.product does that),
+        # This code does not exactly do that, but it is not far from that idea. 
         # There is only one slot - this is NOT ROBUST CODE
         if num_entity_slots == 1:
             slot_name = template_dict['sparql_variables_entities']
@@ -92,14 +113,18 @@ class SlotFillingQueryExecution:
 
     def _query_sparql_str(self, sparql: str, result_type) -> Union[bool, List[str]]:
         print(f'SPARQL:  {sparql}')
-        kg = kg_helper.get_knowledge_graph()
+        # kg = kg_helper.get_knowledge_graph()
 
         #        if isinstance(sparql_code, str):
-        results = kg.query(sparql)
+        results = self.kg.query(sparql)
 
         print("====== The answer is ======")
 
-        if result_type == list:
+#        if template_dict['answer_datatype'] == list:
+#        if result_type == list:
+        if result_type == 'list':
+#            print(f"Results OBJ: {results}")
+
             print(
                 f"Results OBJ vars: {str(results.vars[0])}")  # assuming 1 variable result, an okay assumption for my application
             assert (len(results.vars) == 1)
@@ -107,7 +132,9 @@ class SlotFillingQueryExecution:
             # this is using what is returned from the query via rdflib.
             for r in results:
                 print(r[str(results.vars[0])])
-            return [r[str(results.vars[0])] for r in results]
+#            return [r[str(results.vars[0])] for r in results]
+            # the
+            return [r[str(results.vars[0])].toPython() for r in results]
 
             # the other approach would be to look it up from the template to see what we should be getting.
             # for r in results:
@@ -118,11 +145,13 @@ class SlotFillingQueryExecution:
 
     def _query_sparql_list(self, sparql_list: List[str], result_type) -> Union[bool, List[str]]:
         results = [self._query_sparql_str(sparql, result_type) for sparql in sparql_list]
-        if result_type == bool:
+#        if result_type == bool:
+        if result_type == 'bool':
             # if any of the ASK (Y/N) questions are True, the answer is True.
             return any(results)
         # Does a list need to be flattened?
         return results
+
 
 def classify_tests():
     questions = ['What is the minimum side setback in the R2 zoning district?']

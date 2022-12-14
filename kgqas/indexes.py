@@ -8,6 +8,7 @@ from typing import Dict, Optional, Set, Tuple
 # external libraries
 import rdflib
 
+
 # For these indexes are in a set of tuples.
 # The text label (Literal) is first element, and the URI fragment is second element.
 # The URI fragment could be in any position, the Literal must be in the object position.
@@ -71,7 +72,7 @@ class IndexesKG:
 
     def _init_variable_predicate(self, kg: Optional[rdflib.graph.Graph], predicate: str) -> Set[Tuple[str, str]]:
         """
-        Used to get create indexes for predeicates that match rdf:Property,
+        Used to get create indexes for predicates that match rdf:Property,
         :ZoningDistrict, :ZoningDistrictDivision
         """
 

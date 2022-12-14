@@ -1,0 +1,19 @@
+# Template 2 - template_use_2var_yn_answer
+[template]
+template_name = 'template_use_2var_yn_answer'
+knowledge_graph = 'permitted_uses'
+variables = ['use', 'zoning']  # variables feed into the templates
+variable_names_sparql = []  # variable resulting from SPARQL query
+sparql_variables_entities = ['use', 'zoning']
+sparql_template = """
+ASK {
+    ?zoning :permitsUse "${use}" ;
+    rdfs:label "${zoning}" .
+}
+"""
+
+question_templates = ["Are $use allowed in a $zoning zoning district?",
+                     "Are $use permitted in a $zoning zoning district?"]
+
+answer_datatype = 'bool'
+

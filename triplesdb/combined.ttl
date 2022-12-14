@@ -14,7 +14,7 @@
 
 ##### Custom Unit ########
 # The IZC has three custom units: Dwelling units per acre, acres per dwelling units, and units per acre.
-# I would like to denote these by [du/acr_u], [acr_u/du], and [u/acr_u].
+# I would like to denote these by [du/acr_us], [acr_us/du], and [u/acr_us].
 # These are units are upper bounds for the density of dwelling units in an area.
 
 # Per the The Unified Code for Units of Measure (Sections 2 & Section 3) - https://unitsofmeasure.org/ucum
@@ -24,7 +24,7 @@
 # * Curly braces {} enclose annotation.
 #
 # Using this notation for the moment...
-#      :maxDensity        "4 [du/acr_u]"^^cdt:dimensionless ;
+#      :maxDensity        "4 [du/acr_us]"^^cdt:dimensionless ;
 #
 
 # Notes about creating a custom unit: https://ci.mines-stetienne.fr/lindt/
@@ -411,7 +411,7 @@
      rdfs:seeAlso       :r1 ;
      rdfs:label         "R1a" ;
      :minLotSize        "35000 [sft_i]"^^cdt:area ;
-     :maxDensity        "1 [du/acr_u]"^^cdt:dimensionless ;
+     :maxDensity        "1 [du/acr_us]"^^cdt:dimensionless ;
      :minLotWidth       "125 [ft_i]"^^cdt:length ;
      :minLotDepth       "150 [ft_i]"^^cdt:length ;
      :minFrontSetback   "25 [ft_i]"^^cdt:length ;
@@ -423,7 +423,7 @@
      rdfs:seeAlso       :r1 ;
      rdfs:label         "R1b" ;
      :minLotSize        "20000 [sft_i]"^^cdt:area ;
-     :maxDensity        "2 [du/acr_u]"^^cdt:dimensionless ;
+     :maxDensity        "2 [du/acr_us]"^^cdt:dimensionless ;
      :minLotWidth       "100 [ft_i]"^^cdt:length ;
      :minLotDepth       "125 [ft_i]"^^cdt:length ;
      :minFrontSetback   "20 [ft_i]"^^cdt:length ;
@@ -435,7 +435,7 @@
      rdfs:seeAlso       :r1 ;
      rdfs:label         "R1c" ;
      :minLotSize        "10000 [sft_i]"^^cdt:area ;
-     :maxDensity        "4 [du/acr_u]"^^cdt:dimensionless ;
+     :maxDensity        "4 [du/acr_us]"^^cdt:dimensionless ;
      :minLotWidth       "75 [ft_i]"^^cdt:length ;
      :minLotDepth       "100 [ft_i]"^^cdt:length ;
      :minFrontSetback   "20 [ft_i]"^^cdt:length ;
@@ -448,7 +448,7 @@
      rdfs:seeAlso       :r1 ;
      rdfs:label         "R1d" ;
      :minLotSize        "6000 [sft_i]"^^cdt:area ;
-     :maxDensity        "6 [du/acr_u]"^^cdt:dimensionless ;
+     :maxDensity        "6 [du/acr_us]"^^cdt:dimensionless ;
      :minLotWidth       "60 [ft_i]"^^cdt:length ;
      :minLotDepth       "90 [ft_i]"^^cdt:length ;
      :minFrontSetback   "15 [ft_i]"^^cdt:length ;
@@ -461,7 +461,7 @@
      rdfs:seeAlso       :r2 ;
      rdfs:label         "R2a" ;
      :minLotSize        "10000 [sft_i]"^^cdt:area ;
-     :maxDensity        "4 [du/acr_u]"^^cdt:dimensionless ;
+     :maxDensity        "4 [du/acr_us]"^^cdt:dimensionless ;
      :minLotWidth       "60 [ft_i]"^^cdt:length ;
      :minLotDepth       "70 [ft_i]"^^cdt:length ;
      :minFrontSetback   "20 [ft_i]"^^cdt:length ;
@@ -474,7 +474,7 @@
      rdfs:seeAlso       :r2 ;
      rdfs:label         "R2b" ;
      :minLotSize        "6000 [sft_i]"^^cdt:area ;
-     :maxDensity        "6 [du/acr_u]"^^cdt:dimensionless ;
+     :maxDensity        "6 [du/acr_us]"^^cdt:dimensionless ;
      :minLotWidth       "60 [ft_i]"^^cdt:length ;
      :minLotDepth       "70 [ft_i]"^^cdt:length ;
      :minFrontSetback   "15 [ft_i]"^^cdt:length ;
@@ -486,7 +486,7 @@
      rdfs:seeAlso       :r3 ;
      rdfs:label         "R3a" ;
      :minLotSize        "6000 [sft_i]"^^cdt:area ;
-     :maxDensity        "8 [du/acr_u]"^^cdt:dimensionless ;
+     :maxDensity        "8 [du/acr_us]"^^cdt:dimensionless ;
      :minLotWidth       "60 [ft_i]"^^cdt:length ;
      :minLotDepth       "70 [ft_i]"^^cdt:length ;
      :minFrontSetback   "15 [ft_i]"^^cdt:length ;
@@ -499,7 +499,7 @@
      rdfs:seeAlso       :r3 ;
      rdfs:label         "R3b" ;
      :minLotSize        "6000 [sft_i]"^^cdt:area ;
-     :maxDensity        "12 [du/acr_u]"^^cdt:dimensionless ;
+     :maxDensity        "12 [du/acr_us]"^^cdt:dimensionless ;
      :minLotWidth       "60 [ft_i]"^^cdt:length ;
      :minLotDepth       "70 [ft_i]"^^cdt:length ;
      :minFrontSetback   "15 [ft_i]"^^cdt:length ;
@@ -511,7 +511,7 @@
 ########  Commercial Zoning Districts  ########
 :c1     # rdfs:label         "C1" ;
      :minLotSize        "6000 [sft_i]"^^cdt:area ;
-     :maxDensity        "12 [u/acr_u]"^^cdt:dimensionless ;
+     :maxDensity        "12 [u/acr_us]"^^cdt:dimensionless ;
      :minLotWidth       "30 [ft_i]"^^cdt:length ;
      :minLotDepth       "70 [ft_i]"^^cdt:length ;
      :minFrontSetback   "0 [ft_i]"^^cdt:length ;
@@ -574,7 +574,7 @@
 ########  Agricultural Zoning Districts  ########
 :a1     # rdfs:label         "A1" ;
      :minLotSize        "20 [acr_us]"^^cdt:area ;
-     :maxDensity        "20 [acr_u/du]"^^cdt:dimensionless ;
+     :maxDensity        "20 [acr_us/du]"^^cdt:dimensionless ;
      :minLotWidth       "600 [ft_i]"^^cdt:length ;
      :minLotDepth       "600 [ft_i]"^^cdt:length ;
      :minFrontSetback   "30 [ft_i]"^^cdt:length ;
@@ -585,7 +585,7 @@
 
 :a2     # rdfs:label         "A2" ;
      :minLotSize        "10 [acr_us]"^^cdt:area ;
-     :maxDensity        "10 [acr_u/du]"^^cdt:dimensionless ;
+     :maxDensity        "10 [acr_us/du]"^^cdt:dimensionless ;
      :minLotWidth       "400 [ft_i]"^^cdt:length ;
      :minLotDepth       "400 [ft_i]"^^cdt:length ;
      :minFrontSetback   "30 [ft_i]"^^cdt:length ;
@@ -595,7 +595,7 @@
 
 :a3     # rdfs:label         "A3" ;
      :minLotSize        "5 [acr_us]"^^cdt:area ;
-     :maxDensity        "5 [acr_u/du]"^^cdt:dimensionless ;
+     :maxDensity        "5 [acr_us/du]"^^cdt:dimensionless ;
      :minLotWidth       "250 [ft_i]"^^cdt:length ;
      :minLotDepth       "250 [ft_i]"^^cdt:length ;
      :minFrontSetback   "30 [ft_i]"^^cdt:length ;

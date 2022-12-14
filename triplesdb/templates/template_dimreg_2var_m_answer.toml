@@ -1,0 +1,18 @@
+# Template 3 - template_dimreg_2var_m_answer
+[template]
+template_name = 'template_dimreg_2var_m_answer'
+knowledge_graph = 'dimensional_reqs'
+variables = ['regulation_predicate', 'regulation_text', 'zoning']  # variables feed into the templates
+variable_names_sparql = ['regulation_value']  # variable resulting from SPARQL query
+sparql_variables_entities = ['zoning']
+sparql_template = """
+SELECT ?regulation_value
+
+WHERE {
+    ?zoning $regulation_predicate ?regulation_value ;
+            rdfs:label "${zoning}" .
+}
+"""
+question_templates = ["What is the $regulation_text in the $zoning zoning district?"]
+answer_datatype = 'list'
+      

@@ -5,8 +5,10 @@ Semantic Parsing Phase - 1) Question Classification
 # training takes ~3 minutes on CPU
 
 # Python library imports
+from pathlib import Path
+import sys
 import time
-from typing import List
+from typing import List, Optional
 
 # External library imports
 # install loguru
@@ -14,6 +16,7 @@ from loguru import logger
 from nltk.tag.perceptron import PerceptronTagger
 from nltk.tokenize import word_tokenize
 import numpy as np
+import rdflib
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, f1_score
 import spacy
@@ -24,7 +27,11 @@ import xgboost as xgb
 # internal library imports
 from kg_helper import generate_templates, template_names, template_number_dictionary
 
-# The below aren't needed for nltk because I am using spacy.
+# internal libraries that need a different path
+sys.path.append("..")  # hack to allow triplesdb imports
+from triplesdb.generate_template import TemplateGeneration
+
+# The below aren't needed for nltk because I am using stanza to do POS and dependency parsing.
 # Run these one time only
 # import nltk
 # nltk.download('universal_tagset')    # brown when tagset='universal'
@@ -33,9 +40,23 @@ from kg_helper import generate_templates, template_names, template_number_dictio
 
 # TODO: move the model as a part of the class so it isn't being loaded every time.
 class QuestionClassification:
-    def __init__(self):
+    def __init__(self, template_generation: Optional[TemplateGeneration] = None,
+                 knowledge_graph: Optional[rdflib.Graph] = None):
         self.nlp = self.dependency_parse_stanza_initialize()
         self.model = self.load_model()
+
+
+        if knowledge_graph is None:
+            self.kg = rdflib.Graph()
+            self.kg.parse("triplesdb/combined.ttl")
+        else:
+            self.kg = knowledge_graph
+
+        if template_generation is None:
+            template_path = Path('../triplesdb/templates')
+            self.tg = TemplateGeneration(template_path)
+        else:
+            self.tg = template_generation
 
     # UNUSED
     def pos_tagging(self, sentence: str):
@@ -181,8 +202,9 @@ class QuestionClassification:
     # This only needs to be performed once
     # This takes about 3 minutes to run on CPU.
     def run_compute_max_length_from_training_data(self):
-        tg = generate_templates()
-        maximum = self.compute_max_length_from_training_data([generated_data['question'] for generated_data in tg])
+        # tg = generate_templates()
+        tmpls = self.tg.generate_all_templates(self.kg, self.kg)
+        maximum = self.compute_max_length_from_training_data([generated_data['question'] for generated_data in tmpls])
         return maximum
 
     # This is really just something that needs to be ran once to determine the size of l1 and l2
@@ -209,21 +231,26 @@ class QuestionClassification:
         return self.padding(enc)
 
     # WORKING
-    def train2(self, question_templates=None):
+    def train2(self, question_templates: Optional[list] = None):
         """Train the Question XGBoost Classifier.
         train_iter : iterable of the questions that you'd like to train"""
         logger.info("1. Question Classifier training begun. ================")
         start_time = time.time()
         # generate the questions from the templates
         if question_templates is not None:
-            tg = question_templates
+            gen_temp = question_templates
         else:
-            tg = generate_templates()
+            # use the default
+            gen_temp = self.tg.generate_all_templates_shuffle(self.kg, self.kg)
 
         # NOTE: the steps are is specific to this dataset.
-        questions_and_labels = [(gd['question'], gd['template_name']) for gd in tg]
+        questions_and_labels = [(gd['question'], gd['template_name']) for gd in gen_temp]
         question_corpus = [ql[0] for ql in questions_and_labels]
-        template_labels = [template_number_dictionary()[ql[1]] for ql in questions_and_labels]
+        print(f"question_corpus: {question_corpus}")
+#        template_number_dict = label_dictionary()
+#        template_labels = [template_number_dictionary()[ql[1]] for ql in questions_and_labels]
+        template_labels = [self.tg.template_number_dict[ql[1]] for ql in questions_and_labels]
+
 
 
         question_dep_encoded = np.array([np.array(self.dependency_encoding(self.nlp, sentence)) for sentence in question_corpus])
@@ -288,7 +315,8 @@ class QuestionClassification:
 
     def classification_number_to_template_name(self, number: int) -> str:
         """Convert the number of the template to a name"""
-        return template_names()[number]
+#        return template_names()[number]
+        return self.tg.template_names()[number]
 
     def load_model(self):
         logger.info("Loading XGBoost model: question_classification_model.ubj")
@@ -306,7 +334,7 @@ def main():
     qc.run("What is the address of the hotel where Mozart Week takes place?")
 #    qc.run("When does Mozart Week start?")
 
-# this function seems to work.
+# this function seems to work.  - takes 16 minutes on newer set of questions.
 def qc_train_main():
     """This is a step to train the classifier"""
     qc = QuestionClassification()
@@ -320,9 +348,9 @@ def compute_max_main():
     print(f'length: {len(maximum)}')
 
 # this is a test to make sure that this function can get to the TTL files.
-def generate_all_templates_text():
-    for res in generate_templates():
-        print(res)
+# def generate_all_templates_text():
+#    for res in generate_templates():
+#        print(res)
 
 def classify_small_test_main():
     qc = QuestionClassification()
@@ -347,8 +375,8 @@ def classify_all_test_main():
     qc = QuestionClassification()
     print("===== Question Classifications =====")
     model = qc.load_model()
-    tg = generate_templates()
-    questions = [generated_data['question'] for generated_data in tg]
+    tmpls = self.tg.generate_all_templates(kg, kg)
+    questions = [generated_data['question'] for generated_data in tmpls]
 #    for q in questions:
 #        template_number = qc.classify(q, model)
     [qc.classify(q, model) for q in questions]
@@ -357,11 +385,10 @@ def classify_all_test_main():
 
 
 if __name__ == '__main__':
-    import sys
 #    sys.exit(main())
 #    sys.exit(compute_max_main())
 #    sys.exit(generate_all_templates_text())
 
-#    sys.exit(qc_train_main())
+    sys.exit(qc_train_main())
 #    classify_small_test_main()
-    classify_all_test_main()
+#    classify_all_test_main()
