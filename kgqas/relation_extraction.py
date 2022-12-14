@@ -1,16 +1,24 @@
 """
 Semantic Parsing Phase - 3) Relation Extraction
 """
+
+# Relation Extraction is currently only need for dimensional questions.  Permitted use questions
+# are assumed to have predicate of :permitsUse.  Until the time in which that changes due
+# to this answering more complicated questions.
+
 # internal Python libraries
 import itertools
+from pathlib import Path
 import pickle
 import random
+import sys
 from typing import List, Optional, Tuple
 
 # imports from external libraries
 from loguru import logger
 import pandas as pd
 import numpy as np
+import rdflib
 from sklearn.metrics import f1_score
 from sklearn.model_selection import train_test_split
 from sklearn.neural_network import MLPClassifier
@@ -21,6 +29,9 @@ from sentence_transformers import SentenceTransformer, util
 import indexes
 # from kg_helper import generate_dim_templates, generate_templates
 from kg_helper import generate_dim_templates
+# internal libraries that need a different path
+sys.path.append("..")  # hack to allow triplesdb imports
+from triplesdb.generate_template import TemplateGeneration
 
 # TODO Templates will vary, but any of the permitted use templates, we will already know the predicate for that.
 #      This may be able to be skipped entirely for that case.
@@ -29,7 +40,22 @@ from kg_helper import generate_dim_templates
 # TODO will have to modify training to split predicates
 
 class RelationExtraction():
-    def __init__(self, index_kg: Optional[indexes.IndexesKG] = None):
+    def __init__(self, index_kg: Optional[indexes.IndexesKG] = None,
+                template_generation: Optional[TemplateGeneration] = None,
+                knowledge_graph: Optional[rdflib.Graph] = None):
+
+        if knowledge_graph is None:
+            self.kg = rdflib.Graph()
+            self.kg.parse("triplesdb/combined.ttl")
+        else:
+            self.kg = knowledge_graph
+
+        if template_generation is None:
+            template_path = Path('../triplesdb/templates')
+            self.tg = TemplateGeneration(template_path)
+        else:
+            self.tg = template_generation
+
         # This is a faster model
         self.sbert_model = SentenceTransformer('all-MiniLM-L6-v2')
         # MLP Classifier model
@@ -46,7 +72,9 @@ class RelationExtraction():
 #        _, variables = self.process_question_corpus(list(generate_templates()))
 #        self.label_encoding = self.mlb.fit_transform(variables)
         # Why is the pre_generating label encoding????
-        _, variables = self.process_question_corpus(list(generate_dim_templates()), verbose=False)
+#        _, variables = self.process_question_corpus(list(generate_dim_templates()), verbose=False)
+        dim_templates = list(self.tg.generate_dimensional_templates(dimreq_kg=self.kg))
+        _, variables = self.process_question_corpus(dim_templates, verbose=False)
 #        print(f"variables: {variables}")
 #        # filter out variables that are not in the predicates
         variables_filtered = [self.filter_relation_variables(row) for row in variables]
@@ -257,6 +285,7 @@ class RelationExtraction():
 def main_training():
     relex = RelationExtraction()
 #    questions, variables = relex.process_question_corpus(list(generate_templates()))
+#    questions, variables = relex.process_question_corpus(list(generate_dim_templates()))
     questions, variables = relex.process_question_corpus(list(generate_dim_templates()))
     relex.train(questions, variables)
 
@@ -320,9 +349,9 @@ def extract_all_test(relex=None):
 
 if __name__ == '__main__':
 #    extract_all_test()
-#    relex = main_training()
-#    extract_test(relex)
+    relex = main_training()
+    extract_test(relex)
 
-    extract_all_test()
+#    extract_all_test()
 #    extract_test()
 #    small_training_test()

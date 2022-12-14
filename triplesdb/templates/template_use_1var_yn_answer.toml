@@ -1,0 +1,17 @@
+# Template 5 - template_use_1var_yn_answer
+[template]
+template_name = 'template_use_1var_yn_answer'
+knowledge_graph = 'permitted_uses'
+variables = ['use']  # variables feed into the templates
+variable_names_sparql = [] # variable resulting from SPARQL query
+sparql_variables_entities = ['use',]
+sparql_template = """
+ASK {
+    ?zoning :permitsUse "${use}" .
+}
+"""
+
+question_templates = ["Are $use permitted?",
+                      "Are $use allowed?"]
+answer_datatype = 'bool'
+

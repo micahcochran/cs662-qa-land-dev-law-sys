@@ -6,11 +6,14 @@ and classifying for this step.
 # Entire classify pipeline takes about 10 seconds CPU time per question.
 
 # Python Standard Libraries
+from pathlib import Path
 import random
-from typing import List, Union
+import sys
+from typing import List, Optional, Union
 
 # external library imports
 from loguru import logger
+import rdflib
 from sklearn.metrics import accuracy_score, f1_score
 
 # project internal imports
@@ -18,8 +21,13 @@ from question_classification import QuestionClassification
 from entity_class_linking import EntityClassLinking
 from relation_extraction import RelationExtraction
 from slot_filling_query_execution import SlotFillingQueryExecution
+
+
 # from kg_helper import generate_templates, get_template
-import kg_helper
+# import kg_helper
+# internal libraries that need a different path
+sys.path.append("..")
+from triplesdb.generate_template import TemplateGeneration
 
 
 # FIXME: Why is name Class in this class???
@@ -29,32 +37,51 @@ class SemanticParsingClass:
     This is the easy way to interact with this class
     """
 
-    def __init__(self):
-        self.qc = QuestionClassification()
-        self.relex = RelationExtraction()
+    def __init__(self, template_generation: Optional[TemplateGeneration] = None,
+                    knowledge_graph: Optional[rdflib.Graph] = None):
+
+        if knowledge_graph is None:
+            self.kg = rdflib.Graph()
+            self.kg.parse("triplesdb/combined.ttl")
+        else:
+            self.kg = knowledge_graph
+
+        if template_generation is None:
+            template_path = Path('../triplesdb/templates')
+            self.tg = TemplateGeneration(template_path)
+        else:
+            self.tg = template_generation
+
+        self.qc = QuestionClassification(template_generation=self.tg, knowledge_graph=self.kg)
+        self.relex = RelationExtraction(template_generation=self.tg, knowledge_graph=self.kg)
+
 
     def train_all(self):
-        """This does all of the training in sequentially."""
-#        question_corpus = list(kg_helper.generate_templates())
-        # remove questions that are empty sets
-#        question_corpus_filt = self._remove_false_answers(self._remove_empty_answers(question_corpus))
-        # WORKAROUND: doing this for questions that don't have the correct answers.
-        question_corpus_filt = self.generate_filtered_corpus()
+        """This does all of the training sequentially."""
+        # TODO: Should kg or tg be stored by the class? 
+        kg = rdflib.Graph()
+        kg.parse("triplesdb/combined.ttl")
+        template_path = Path('../triplesdb/templates')
+        tg = TemplateGeneration(template_path)
+        # print(f'len(kg): {len(kg)}')
 
+        question_corpus = list(tg.generate_all_templates_shuffle(kg, kg))
+#        question_corpus = list(kg_helper.generate_templates_shuffle())
+        # print('sempar.train_all()')
+        # print(f'question_corpus: {question_corpus}')
         # 1) Question Classification
-        # qc = QuestionClassification()
-        self.qc.train2(question_corpus_filt)
+        self.qc.train2(question_corpus)
+
         # 2) Entity Linking and Class Linking
         # There isn't anything to train for this step.
-        # ecl = EntityClassLinking()
-        # ngram = ecl.ngram_collection(sentence)
-        # similarity_scores = ecl.string_similarity_score(ngram)
 
         # 3) Relation Extraction
-        questions, variables = self.relex.process_question_corpus(question_corpus_filt)
+        questions, variables = self.relex.process_question_corpus(question_corpus)
         self.relex.train(questions, variables)
 
+
     def classify(self, sentence: str) -> Union[bool, List[str]]:
+        logger.debug(f"QUESTION: {sentence}")
         # 1) Question Classification
         classified_template_number = self.qc.classify(sentence)
         classified_template_name = self.qc.classification_number_to_template_name(classified_template_number)
@@ -68,7 +95,8 @@ class SemanticParsingClass:
         # Some questions for Zoning are so simple that they only have one possible predicate,
         # in those case this step can be skipped entirely.  This is the case for most of the questions.
         # About 1/4 of the Zoning questions need this step.
-        template_dict = kg_helper.get_template(classified_template_name)
+        # template_dict = kg_helper.get_template(classified_template_name)
+        template_dict = self.tg.get_template(classified_template_name)
         if template_dict['knowledge_graph'] == 'permitted_uses':
             # skip Relation Extraction
             most_relevant_relations = None
@@ -78,14 +106,14 @@ class SemanticParsingClass:
             most_relevant_relations = self.relex.extract(sentence, k=1)
 
         # 4) Slot Filling and Query Execution
-        sfqe = SlotFillingQueryExecution()
+        sfqe = SlotFillingQueryExecution(template_generation=self.tg)
         return sfqe.slot_fill_query_execute(classified_template_name, similarity_scores, most_relevant_relations)
 
-    def generate_filtered_corpus(self) -> List[dict]:
-        question_corpus = list(kg_helper.generate_templates())
+#    def generate_filtered_corpus(self) -> List[dict]:
+#        question_corpus = list(kg_helper.generate_templates())
         # remove questions that are empty sets
-        question_corpus_filt = self._remove_false_answers(self._remove_empty_answers(question_corpus))
-        return question_corpus_filt
+#        question_corpus_filt = self._remove_false_answers(self._remove_empty_answers(question_corpus))
+#        return question_corpus_filt
 
     # There are some distinctions in :ZoningDistrict and :ZoningDivisionDistrict that did not appear in the original
     # generate_template.  This is causing a few questions that could be answerable, but it would have to use a :seeAlso
@@ -105,7 +133,22 @@ class SemanticParsingClass:
         return [q for q in question_corpus if q['answer'] != False]
 
 def generate_all_templates_test():
-    for res in kg_helper.generate_templates():
+    kg = rdflib.Graph()
+    kg.parse("triplesdb/combined.ttl")
+    template_path = Path('../triplesdb/templates')
+    tg = TemplateGeneration(template_path)
+
+    for res in tg.generate_all_templates(kg, kg):
+        print(res)
+
+def generate_all_templates_shuffle_test():
+    kg = rdflib.Graph()
+    kg.parse("triplesdb/combined.ttl")
+    template_path = Path('../triplesdb/templates')
+    tg = TemplateGeneration(template_path)
+
+#    for res in tg.generate_all_templates(kg, kg):
+    for res in tg.generate_all_templates_shuffle(kg, kg):
         print(res)
 
 # 4 questions take 16 seconds to answer on CPU
@@ -113,11 +156,13 @@ def simple_classify_test():
 
     questions = ['What is the minimum side setback in the R2a zoning district?',  # Works
                  'Are auto-dismantling yards permitted?',                        # works
-                 'Which zoning districts allow physical fitness centers?',       # works
+                 'Which zoning districts allow physical fitness centers?',       # misclassifies as a yes/no question
+                 # above question causes a KeyError for regulation_predicate in slot_fill_query_execute()
                  'Are salt works allowed in a FI3 zoning district?',             # works
                  ]
 
     sem_par = SemanticParsingClass()
+    # should catch KeyError exception in list comprehension from .classify()
     answers = [sem_par.classify(q) for q in questions]
 
     for q, a in zip(questions, answers):
@@ -137,15 +182,23 @@ def get_random_questions_answers(question_corpus: List[dict], n: int) -> List[di
     return results
 
 # This takes 44 minutes to run on all questions
+# I estimate that this will take about 8 hours.
 def measure_accuracy():
     logger.info("measuring the accuracy of Zoning KGQAS")
     sem_par = SemanticParsingClass()
-    question_corpus = list(kg_helper.generate_templates())
+
+    kg = rdflib.Graph()
+    kg.parse("triplesdb/combined.ttl")
+    template_path = Path('../triplesdb/templates')
+    tg = TemplateGeneration(template_path)
+    question_corpus = list(tg.generate_all_templates_shuffle(kg, kg))
+    question_corpus_filt = question_corpus  # FIXME
+#    question_corpus = list(kg_helper.generate_templates())
     # remove questions that are empty sets and False, this takes it down to 900 questions
-    question_corpus_filt = sem_par._remove_false_answers(sem_par._remove_empty_answers(question_corpus))
-    print(f'question_corpus_filt: {len(question_corpus_filt)}')
+    # question_corpus_filt = sem_par._remove_false_answers(sem_par._remove_empty_answers(question_corpus))
+    # print(f'question_corpus_filt: {len(question_corpus_filt)}')
 #    SUBSET = 0
-    SUBSET = 10
+    SUBSET = 5
     if SUBSET > 0:
         logger.info(f"measuring subset of size: {SUBSET}")
         answers = [sem_par.classify(q['question']) for q in question_corpus_filt[:SUBSET]]
@@ -154,12 +207,35 @@ def measure_accuracy():
         answers = [sem_par.classify(q['question']) for q in question_corpus_filt]
         gold_answers = [q['answer'] for q in question_corpus_filt]
 
-    # Need to take lists convert it to a string for accuruacy
+    # Need to take lists convert it to a string for accuracy
 #    accuracy = accuracy_score(gold_answers.join, answers)
-    # take all the inner lists and join as strings them with commas
-    accuracy = accuracy_score([','.join(a) for a in gold_answers], [','.join(a) for a in answers])
-    f1 = f1_score(gold_answers, answers, average='micro')
-    print(f'# answers: {len(answers)} accuracy:  {accuracy * 100.0} f1 score: {f1 * 100.0}')
+
+   #  for a in answers:
+   #     print(f'a: {a}')
+   #     print(f'type of a: {type(a)}')
+
+    def flatten_lists(x):
+        """flattens a list from ['a', 'b', 'c'] to 'a, b, c' """
+        if isinstance(x, list):
+            return ', '.join(x)
+        return x
+    # that didn't work because it would try to join boolean answers.
+    # accuracy = accuracy_score([','.join(a) for a in gold_answers], [','.join(a) for a in answers])
+
+    # take all the inner lists and join their strings them with commas
+    gold_answers_flattened = [flatten_lists(a) for a in gold_answers]
+    # Note: the order should be the same due to using the same code to get there. 
+    #       There doesn't seem to be a need to sort the results.
+    answers_flattened = [flatten_lists(a) for a in answers]
+    accuracy = accuracy_score(gold_answers_flattened, 
+                              answers_flattened)
+#    accuracy = accuracy_score(gold_answers_flattened, answers_flattened)
+
+#    f1 = f1_score(gold_answers, answers, average='micro')
+    f1 = f1_score(gold_answers_flattened, answers_flattened, average='micro')
+    print(f'# answers: {len(answers)} accuracy:  {accuracy * 100.0}, f1 score: {f1 * 100.0}')
+#    f1s = f1_score(gold_answers_flattened, answers_flattened)
+#    print(f'# answers: {len(answers)} accuracy:  {accuracy * 100.0}, f1 score: {f1s}')
     print(answers)
 
 # training time is 2 minutes on CPU
@@ -170,6 +246,7 @@ def train_all():
 
 if __name__ == '__main__':
 #    generate_all_templates_test()
-#    simple_classify_test()
-    measure_accuracy()
+#    generate_all_templates_shuffle_test()
+    simple_classify_test()
+#    measure_accuracy()
 #    train_all()
