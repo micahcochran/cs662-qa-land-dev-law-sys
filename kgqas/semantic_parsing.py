@@ -30,6 +30,7 @@ sys.path.append("..")
 from triplesdb.generate_template import TemplateGeneration
 
 
+
 # FIXME: Why is name Class in this class???
 class SemanticParsingClass:
     """This is the interface for the Semantic Parsing Step.
@@ -115,22 +116,18 @@ class SemanticParsingClass:
 #        question_corpus_filt = self._remove_false_answers(self._remove_empty_answers(question_corpus))
 #        return question_corpus_filt
 
+
     # There are some distinctions in :ZoningDistrict and :ZoningDivisionDistrict that did not appear in the original
     # generate_template.  This is causing a few questions that could be answerable, but it would have to use a :seeAlso
     # hop.  This is doable, but out of scope for this phase of the project.  The function below is the workaround.
-    def _remove_empty_answers(self, question_corpus: List[dict]) -> List[dict]:
-        return [q for q in question_corpus if q['answer'] != []]
-        # qc_filtered = []
-        # for q in question_corpus:
-        #    if q['answer'] == []:
-        #        continue
-        #    qc_filtered.append(q)
-        # return
+#    def _remove_empty_answers(self, question_corpus: List[dict]) -> List[dict]:
+#        return [q for q in question_corpus if q['answer'] != []]
 
     # Some questions should be producing True as their output.  They are producing false.  The last minute workaround
     # is to just remove them from the corpus.  generate_template needs to be fixed.
-    def _remove_false_answers(self, question_corpus: List[dict]) -> List[dict]:
-        return [q for q in question_corpus if q['answer'] != False]
+#    def _remove_false_answers(self, question_corpus: List[dict]) -> List[dict]:
+#        return [q for q in question_corpus if q['answer'] != False]
+
 
 def generate_all_templates_test():
     kg = rdflib.Graph()
@@ -150,6 +147,7 @@ def generate_all_templates_shuffle_test():
 #    for res in tg.generate_all_templates(kg, kg):
     for res in tg.generate_all_templates_shuffle(kg, kg):
         print(res)
+
 
 # 4 questions take 16 seconds to answer on CPU
 def simple_classify_test():
@@ -181,9 +179,12 @@ def get_random_questions_answers(question_corpus: List[dict], n: int) -> List[di
         results.append(row)
     return results
 
+
 # This takes 44 minutes to run on all questions
-# I estimate that this will take about 8 hours.
-def measure_accuracy():
+
+# I estimate that this will take about 8 hours for the ~5000 questions.
+def measure_accuracy(subset: int = 0, randomized_subset: bool = False):
+    """measure the accuracy and F1-score of the Semantic Parsing Process"""
     logger.info("measuring the accuracy of Zoning KGQAS")
     sem_par = SemanticParsingClass()
 
@@ -195,14 +196,27 @@ def measure_accuracy():
     question_corpus_filt = question_corpus  # FIXME
 #    question_corpus = list(kg_helper.generate_templates())
     # remove questions that are empty sets and False, this takes it down to 900 questions
-    # question_corpus_filt = sem_par._remove_false_answers(sem_par._remove_empty_answers(question_corpus))
-    # print(f'question_corpus_filt: {len(question_corpus_filt)}')
-#    SUBSET = 0
-    SUBSET = 5
-    if SUBSET > 0:
-        logger.info(f"measuring subset of size: {SUBSET}")
-        answers = [sem_par.classify(q['question']) for q in question_corpus_filt[:SUBSET]]
-        gold_answers = [q['answer'] for q in question_corpus_filt[:SUBSET]]
+
+#    question_corpus_filt = list(sem_par._remove_false_answers(sem_par._remove_empty_answers(question_corpus)))
+#    question_corpus_filt = list(kg_helper.remove_empty_answers(question_corpus))
+    print(f'question_corpus_filt: {len(question_corpus_filt)}')
+
+    if subset > 0:
+        if randomized_subset:
+            # randomize in order to try to see if it has problems on certain questions
+            logger.info(f"measuring randomized subset of size: {subset}")
+            answers = []
+            gold_answers = []
+            for i in range(subset):
+                rnd = random.randint(0, subset)
+                a = sem_par.classify(question_corpus_filt[rnd]['question'])
+                answers.append(a)
+                ga = question_corpus_filt[rnd]['answer']
+                gold_answers.append(ga)
+        else:
+            logger.info(f"measuring subset of size: {subset}")
+            answers = [sem_par.classify(q['question']) for q in question_corpus_filt[:subset]]
+            gold_answers = [q['answer'] for q in question_corpus_filt[:subset]]
     else:
         answers = [sem_par.classify(q['question']) for q in question_corpus_filt]
         gold_answers = [q['answer'] for q in question_corpus_filt]
@@ -238,6 +252,7 @@ def measure_accuracy():
 #    print(f'# answers: {len(answers)} accuracy:  {accuracy * 100.0}, f1 score: {f1s}')
     print(answers)
 
+
 # training time is 2 minutes on CPU
 def train_all():
     """This trains both models that have to be trained"""
@@ -246,7 +261,8 @@ def train_all():
 
 if __name__ == '__main__':
 #    generate_all_templates_test()
-#    generate_all_templates_shuffle_test()
-    simple_classify_test()
-#    measure_accuracy()
+
+#    simple_classify_test()
+    measure_accuracy(30)
+
 #    train_all()

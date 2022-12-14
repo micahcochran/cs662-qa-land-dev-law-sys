@@ -42,6 +42,7 @@ class SlotFillingQueryExecution:
 
     def slot_fill_query_execute(self, template_name: str, similarity_scores, relations) -> Union[bool, List[str]]:
         """This fills in the slots."""
+
         # This example is simpler than the paper.  Due to the Zoning KG being two orders of magnitude smaller
         # and less complicated.  This doesn't really do the cartesian product of all the results.
 #        template_dict = kg_helper.get_template(template_name)
@@ -57,7 +58,7 @@ class SlotFillingQueryExecution:
             # relations[0]
             # slots['regulation_predicate']
             slots['regulation_predicate'] = self.index_kg.predicate_dict[relations[0]]
-#        results = rdflib.query(sparql)
+
         print(f'SLOTS: {slots}')
         num_entity_slots = len(template_dict['sparql_variables_entities'])
         print(f'num_entity_slots: {num_entity_slots}')
@@ -123,6 +124,7 @@ class SlotFillingQueryExecution:
 #        if result_type == list:
         if result_type == 'list':
 #            print(f"Results OBJ: {results}")
+
             print(
                 f"Results OBJ vars: {str(results.vars[0])}")  # assuming 1 variable result, an okay assumption for my application
             assert (len(results.vars) == 1)

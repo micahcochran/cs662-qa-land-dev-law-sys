@@ -253,7 +253,6 @@ class QuestionClassification:
 
 
 
-#        question_dep_encoded = np.array(map(lambda sentence: np.array(dependency_steps(nlp, sentence)), question_corpus))
         question_dep_encoded = np.array([np.array(self.dependency_encoding(self.nlp, sentence)) for sentence in question_corpus])
         print(f"Number of Questions Encoded: {question_dep_encoded.shape[0]}")
         print(template_labels)
