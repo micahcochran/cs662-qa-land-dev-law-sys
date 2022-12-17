@@ -316,7 +316,7 @@ class TemplateGeneration:
 
         return a generator that returns a dictionary.
         """
-        print(f'generate_output() with template_name {template_name}')
+        # print(f'generate_output() with template_name {template_name}')
         if template_name not in self.templates:
             raise ValueError(f'template name: {template_name} does not exist.')
 
@@ -352,7 +352,7 @@ class TemplateGeneration:
         question_templates = [string.Template(q_tmpl) for q_tmpl in self.templates[template_name]['question_templates']]
 
         variable_names = tuple(self.templates[template_name]['variables'])
-        print(f'variable_names: {variable_names}')
+        # print(f'variable_names: {variable_names}')
         for variables in iterators[variable_names]:
             # print(f"variable_names: {variable_names}, variables: {variables}")
             # make sure the variables that come in are in a tuple
@@ -441,7 +441,7 @@ class TemplateGeneration:
             #    dimreq_kg.parse("bulk.ttl")
             dimreq_kg.parse("bulk2.ttl")
             # dimreq_kg.parse("combined.ttl")
-        print(f'len(dimreq_kg): {len(dimreq_kg)}, len(uses_kg): {len(uses_kg)}')
+        # print(f'len(dimreq_kg): {len(dimreq_kg)}, len(uses_kg): {len(uses_kg)}')
 
         # tg = TemplateGeneration()
         iterators = []

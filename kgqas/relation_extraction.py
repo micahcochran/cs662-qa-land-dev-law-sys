@@ -13,6 +13,7 @@ import pickle
 import random
 import sys
 from typing import List, Optional, Tuple
+import warnings
 
 # imports from external libraries
 from loguru import logger
@@ -198,14 +199,19 @@ class RelationExtraction():
             pickle.dump(self.model, fp)
         return self.model
 
-
-    def extract(self, sentence: str, k: int) -> np.ndarray:
+    # for my application I only need 1 relation (so, k=1), therefore this code is probably
+    # not going to match what the paper is doing with multiple relations.
+    # This won't work when k > 1
+    def extract(self, sentence: str, k: int) -> List[str]:
         """
         :param sentence:
         :param k: the number of spots to be extracted
         :return:
         """
         # Note: k should not be 0, that means there is no work to do.
+
+        if k > 1:
+            warnings.warn('extract() function was not written with k > 1 in mind, it probably not work.')
 
         if self.model is None:
             logger.info('Loading MLPClassifier Model: relation_extraction_model.pickle')
@@ -219,13 +225,16 @@ class RelationExtraction():
         # Predict the probability for each class label
         result = self.model.predict_proba(reshaped)
         # result_labels = self.mlb.inverse_transform(result)
-        # print(result)
+#        print(result)
         # extract the top-k relations
         p_result = pd.Series(result[0])
-        # print(f'p_result: {p_result}')
+#        print(f'p_result: {p_result}')
         k_results = p_result.nlargest(k)
-        # print(f'k_results: {k_results.index}')
-        return self.mlb.classes_[k_results.index]  # array of most likely matches
+#        print(f'k_results: {k_results.index}')
+
+        # this line will work well when k > 1
+        k_idx = list(k_results.index)[0]
+        return [self.mlb.classes[k_idx]]  # list of most likely single match
 
 
 # Here are a few examples questions that are passed through:
@@ -252,6 +261,7 @@ def main_training():
 
     relex.train(questions, variables)
 
+# test is built upon old assumptions
 def small_training_test():
     """small test of main for debugging"""
     ex_questions = [
@@ -278,17 +288,22 @@ def extract_test(relex=None):
         'Is the minimum lot size for a property in the C1 zoning district 6000 square feet?',
         'What is the minimum lot width in the R3a zoning district?',
     ]
-    ex_variables = [
+    # this is based on old expectations of relation extraction
+#    ex_variables = [
 #        ['public parking lots'],   # no relations, uses default "permits use" relation
 #        ['libraries', 'C1'],       # no relations, uses default "permits use" relation
-        ['minimum lot size', '6000', 'C1', 'square feet'],
-        ['minimum lot width', 'R3a']
+        # ['minimum lot size', '6000', 'C1', 'square feet'],
+#        ['minimum lot width', 'R3a']
+#    ]
+    ex_relation = [
+        ['minimum lot size'],
+        ['minimum lot width']
     ]
     if relex is None:
         relex = RelationExtraction()
 
     for i, q in enumerate(ex_questions):
-        k = len(relex.filter_relation_variables(ex_variables[i]))
+        k = len(relex.filter_relation_variables(ex_relation[i]))
         print(f"Question {i}: {q}, k: {k}")
         result = relex.extract(q, k)
         print(result)
@@ -313,9 +328,9 @@ def extract_all_test(relex=None):
 
 if __name__ == '__main__':
 #    extract_all_test()
-    relex = main_training()
-    extract_test(relex)
+#    relex = main_training()
+#    extract_test(relex)
 
 #    extract_all_test()
-#    extract_test()
+    extract_test()
 #    small_training_test()

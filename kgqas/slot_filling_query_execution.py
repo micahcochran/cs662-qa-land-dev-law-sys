@@ -40,7 +40,7 @@ class SlotFillingQueryExecution:
 
     # TODO: This function needs a rewrite to remove a lot of development code.
 
-    def slot_fill_query_execute(self, template_name: str, similarity_scores, relations) -> Union[bool, List[str]]:
+    def slot_fill_query_execute(self, template_name: str, similarity_scores, relations: List[str]) -> Union[bool, List[str]]:
         """This fills in the slots."""
 
         # This example is simpler than the paper.  Due to the Zoning KG being two orders of magnitude smaller

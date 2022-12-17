@@ -246,7 +246,7 @@ class QuestionClassification:
         # NOTE: the steps are is specific to this dataset.
         questions_and_labels = [(gd['question'], gd['template_name']) for gd in gen_temp]
         question_corpus = [ql[0] for ql in questions_and_labels]
-        print(f"question_corpus: {question_corpus}")
+        # print(f"question_corpus: {question_corpus}")
 #        template_number_dict = label_dictionary()
 #        template_labels = [template_number_dictionary()[ql[1]] for ql in questions_and_labels]
         template_labels = [self.tg.template_number_dict[ql[1]] for ql in questions_and_labels]
