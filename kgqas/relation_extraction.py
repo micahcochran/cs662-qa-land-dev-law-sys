@@ -20,7 +20,7 @@ from loguru import logger
 import pandas as pd
 import numpy as np
 import rdflib
-from sklearn.metrics import f1_score
+from sklearn.metrics import accuracy_score, f1_score
 from sklearn.model_selection import train_test_split
 from sklearn.neural_network import MLPClassifier
 from sklearn.preprocessing import MultiLabelBinarizer
@@ -309,21 +309,52 @@ def extract_test(relex=None):
         print(result)
 
 
-# This process takes 15 seconds for 270 questions
-# SCORING IS NOT WORKING
-def extract_all_test(relex=None):
+# This process takes 15 seconds for ~300 questions
+def extract_measure_accuracy(relex=None):
+    """measure the accuracy for all the dimensional relations"""
     if relex is None:
         relex = RelationExtraction()
 
-    question_corpus = remove_empty_answers(list(generate_dim_templates()))
-    questions, gold_variables = relex.process_question_corpus(question_corpus=question_corpus)
-    # gold_encoding = relex.label_encoding   # accessing class variables is a BAD idea
-    for i, q in enumerate(questions):
-        k = len(relex.filter_relation_variables(gold_variables[i]))
-        relex.extract(q, k)
+    question_corpus = list(generate_dim_templates())
+    questions, gold_vars = relex.process_question_corpus(question_corpus=question_corpus)
+    # remove the non-relation portion of the gold variables
+    gold_relation = [relex.filter_relation_variables(g) for g in gold_vars]
 
-    # f1 = f1_score(gold_encoding, results)
-    # print(f"F1 Score: {f1}")
+    # gold_encoding = relex.label_encoding   # accessing class variables is a BAD idea
+    result_relations = []
+    for i, q in enumerate(questions):
+        # k = len(relex.filter_relation_variables(gold_variables[i]))
+        k = len(gold_relation[i])
+        if k > 0:
+            result = relex.extract(q, k)
+            result_relations.append(result)
+        else:
+            result_relations.append([])
+
+    # print(f'len(result_relations): {len(result_relations)}, len(gold_vars_filt): {len(gold_relation)}')
+    # print('GOLD RELATION')
+    # print(gold_relation)
+    # print('RESULT RELATIONS')
+    # print(result_relations)
+
+    def flatten_lists(x):
+        """flattens a list from ['a', 'b', 'c'] to 'a, b, c' """
+        if isinstance(x, list):
+            return ', '.join(x)
+        return x
+
+    # take all the inner lists and join their strings them with commas
+    gold_relation_flattened = [flatten_lists(v) for v in gold_relation]
+    # Note: the order should be the same due to using the same code to get there. 
+    #       There doesn't seem to be a need to sort the results.
+    result_relations_flattened = [flatten_lists(r) for r in result_relations]
+
+    accuracy = accuracy_score(gold_relation_flattened, result_relations_flattened)
+    print(f'Accuracy Score: {accuracy}')
+    f1 = f1_score(gold_relation_flattened, result_relations_flattened, average='micro')
+    # f1 = f1_score(gold_variables, result_relations)
+    print(f"F1 Score: {f1}")
+    return accuracy
 
 
 if __name__ == '__main__':
@@ -331,6 +362,6 @@ if __name__ == '__main__':
 #    relex = main_training()
 #    extract_test(relex)
 
-#    extract_all_test()
-    extract_test()
+    extract_measure_accuracy()
+#    extract_test()
 #    small_training_test()
