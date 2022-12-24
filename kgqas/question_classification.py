@@ -21,6 +21,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, f1_score
 import spacy
 import stanza
+from stanza.pipeline.core import DownloadMethod
 # install xgboost
 import xgboost as xgb
 
@@ -104,7 +105,8 @@ class QuestionClassification:
     def dependency_parse_stanza_initialize(self):
         """Initialization for dependency_parse_stanza()"""
         # nlp = stanza.Pipeline(lang='en', processors='tokenize,mwt,pos,lemma,depparse')
-        nlp = stanza.Pipeline(lang='en', processors='tokenize,lemma,pos,depparse')
+        nlp = stanza.Pipeline(lang='en', processors='tokenize,lemma,pos,depparse',
+                              download_method=DownloadMethod.REUSE_RESOURCES)  # d/l first time, reuse other times.
         return nlp
 
     # padding to the encoding to MAX_VECTOR_LEN
@@ -246,7 +248,7 @@ class QuestionClassification:
         # NOTE: the steps are is specific to this dataset.
         questions_and_labels = [(gd['question'], gd['template_name']) for gd in gen_temp]
         question_corpus = [ql[0] for ql in questions_and_labels]
-        print(f"question_corpus: {question_corpus}")
+        # print(f"question_corpus: {question_corpus}")
 #        template_number_dict = label_dictionary()
 #        template_labels = [template_number_dictionary()[ql[1]] for ql in questions_and_labels]
         template_labels = [self.tg.template_number_dict[ql[1]] for ql in questions_and_labels]

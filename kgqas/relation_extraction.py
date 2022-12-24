@@ -13,13 +13,14 @@ import pickle
 import random
 import sys
 from typing import List, Optional, Tuple
+import warnings
 
 # imports from external libraries
 from loguru import logger
 import pandas as pd
 import numpy as np
 import rdflib
-from sklearn.metrics import f1_score
+from sklearn.metrics import accuracy_score, f1_score
 from sklearn.model_selection import train_test_split
 from sklearn.neural_network import MLPClassifier
 from sklearn.preprocessing import MultiLabelBinarizer
@@ -198,14 +199,19 @@ class RelationExtraction():
             pickle.dump(self.model, fp)
         return self.model
 
-
-    def extract(self, sentence: str, k: int) -> np.ndarray:
+    # for my application I only need 1 relation (so, k=1), therefore this code is probably
+    # not going to match what the paper is doing with multiple relations.
+    # This won't work when k > 1
+    def extract(self, sentence: str, k: int) -> List[str]:
         """
         :param sentence:
         :param k: the number of spots to be extracted
         :return:
         """
         # Note: k should not be 0, that means there is no work to do.
+
+        if k > 1:
+            warnings.warn('extract() function was not written with k > 1 in mind, it probably not work.')
 
         if self.model is None:
             logger.info('Loading MLPClassifier Model: relation_extraction_model.pickle')
@@ -219,13 +225,16 @@ class RelationExtraction():
         # Predict the probability for each class label
         result = self.model.predict_proba(reshaped)
         # result_labels = self.mlb.inverse_transform(result)
-        # print(result)
+#        print(result)
         # extract the top-k relations
         p_result = pd.Series(result[0])
-        # print(f'p_result: {p_result}')
+#        print(f'p_result: {p_result}')
         k_results = p_result.nlargest(k)
-        # print(f'k_results: {k_results.index}')
-        return self.mlb.classes_[k_results.index]  # array of most likely matches
+#        print(f'k_results: {k_results.index}')
+
+        # this line will work well when k > 1
+        k_idx = list(k_results.index)[0]
+        return [self.mlb.classes[k_idx]]  # list of most likely single match
 
 
 # Here are a few examples questions that are passed through:
@@ -252,6 +261,7 @@ def main_training():
 
     relex.train(questions, variables)
 
+# test is built upon old assumptions
 def small_training_test():
     """small test of main for debugging"""
     ex_questions = [
@@ -278,44 +288,80 @@ def extract_test(relex=None):
         'Is the minimum lot size for a property in the C1 zoning district 6000 square feet?',
         'What is the minimum lot width in the R3a zoning district?',
     ]
-    ex_variables = [
+    # this is based on old expectations of relation extraction
+#    ex_variables = [
 #        ['public parking lots'],   # no relations, uses default "permits use" relation
 #        ['libraries', 'C1'],       # no relations, uses default "permits use" relation
-        ['minimum lot size', '6000', 'C1', 'square feet'],
-        ['minimum lot width', 'R3a']
+        # ['minimum lot size', '6000', 'C1', 'square feet'],
+#        ['minimum lot width', 'R3a']
+#    ]
+    ex_relation = [
+        ['minimum lot size'],
+        ['minimum lot width']
     ]
     if relex is None:
         relex = RelationExtraction()
 
     for i, q in enumerate(ex_questions):
-        k = len(relex.filter_relation_variables(ex_variables[i]))
+        k = len(relex.filter_relation_variables(ex_relation[i]))
         print(f"Question {i}: {q}, k: {k}")
         result = relex.extract(q, k)
         print(result)
 
 
-# This process takes 15 seconds for 270 questions
-# SCORING IS NOT WORKING
-def extract_all_test(relex=None):
+# This process takes 15 seconds for ~300 questions
+def extract_measure_accuracy(relex=None):
+    """measure the accuracy for all the dimensional relations"""
     if relex is None:
         relex = RelationExtraction()
 
-    question_corpus = remove_empty_answers(list(generate_dim_templates()))
-    questions, gold_variables = relex.process_question_corpus(question_corpus=question_corpus)
-    # gold_encoding = relex.label_encoding   # accessing class variables is a BAD idea
-    for i, q in enumerate(questions):
-        k = len(relex.filter_relation_variables(gold_variables[i]))
-        relex.extract(q, k)
+    question_corpus = list(generate_dim_templates())
+    questions, gold_vars = relex.process_question_corpus(question_corpus=question_corpus)
+    # remove the non-relation portion of the gold variables
+    gold_relation = [relex.filter_relation_variables(g) for g in gold_vars]
 
-    # f1 = f1_score(gold_encoding, results)
-    # print(f"F1 Score: {f1}")
+    # gold_encoding = relex.label_encoding   # accessing class variables is a BAD idea
+    result_relations = []
+    for i, q in enumerate(questions):
+        # k = len(relex.filter_relation_variables(gold_variables[i]))
+        k = len(gold_relation[i])
+        if k > 0:
+            result = relex.extract(q, k)
+            result_relations.append(result)
+        else:
+            result_relations.append([])
+
+    # print(f'len(result_relations): {len(result_relations)}, len(gold_vars_filt): {len(gold_relation)}')
+    # print('GOLD RELATION')
+    # print(gold_relation)
+    # print('RESULT RELATIONS')
+    # print(result_relations)
+
+    def flatten_lists(x):
+        """flattens a list from ['a', 'b', 'c'] to 'a, b, c' """
+        if isinstance(x, list):
+            return ', '.join(x)
+        return x
+
+    # take all the inner lists and join their strings them with commas
+    gold_relation_flattened = [flatten_lists(v) for v in gold_relation]
+    # Note: the order should be the same due to using the same code to get there. 
+    #       There doesn't seem to be a need to sort the results.
+    result_relations_flattened = [flatten_lists(r) for r in result_relations]
+
+    accuracy = accuracy_score(gold_relation_flattened, result_relations_flattened)
+    print(f'Accuracy Score: {accuracy}')
+    f1 = f1_score(gold_relation_flattened, result_relations_flattened, average='micro')
+    # f1 = f1_score(gold_variables, result_relations)
+    print(f"F1 Score: {f1}")
+    return accuracy
 
 
 if __name__ == '__main__':
 #    extract_all_test()
-    relex = main_training()
-    extract_test(relex)
+#    relex = main_training()
+#    extract_test(relex)
 
-#    extract_all_test()
+    extract_measure_accuracy()
 #    extract_test()
 #    small_training_test()

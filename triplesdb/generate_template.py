@@ -27,6 +27,7 @@ import rdflib
 # FIXME Plural/singular form substitution needs implementation.
 #           "Is a bank a permitted use?" versus "Are banks a permitted use?"
 
+
 class QueryUsesSparql:
     """SPARQL queries that have multiple uses for the Permitted Uses Knowledge Graph."""
 
@@ -56,13 +57,16 @@ class QueryUsesSparql:
         """
 
         sparql = """
-        SELECT ?zoning_label
-
-        WHERE {
-                ?zoning rdfs:label ?zoning_label .
-        }
-        """
-
+SELECT ?zoning_label
+WHERE {
+    { ?zid    a           :ZoningDistrict .
+      ?zid    rdfs:label  ?zoning_label .
+    }
+    UNION
+    { ?zid    a           :ZoningDistrictDivision .
+      ?zid    rdfs:label  ?zoning_label .
+    }
+}"""
         results = self.uses_kg.query(sparql)
 
         for zoning in set([str(res.zoning_label) for res in results]):
@@ -89,7 +93,7 @@ class QueryUsesSparql:
             yield res.use, res.zoning_label
 
 
-    # This causes Template 2 to have 4681 questions versus 403 of only the true questions
+    # This causes Template 2 to have 3276 questions versus 403 of only the true questions
     # from .all_uses_zoning_only_true_iter().
     def all_uses_zoning_iter(self) -> Generator[Tuple[str, str], None, None]:
         """
@@ -316,7 +320,7 @@ class TemplateGeneration:
 
         return a generator that returns a dictionary.
         """
-        print(f'generate_output() with template_name {template_name}')
+        # print(f'generate_output() with template_name {template_name}')
         if template_name not in self.templates:
             raise ValueError(f'template name: {template_name} does not exist.')
 
@@ -352,7 +356,7 @@ class TemplateGeneration:
         question_templates = [string.Template(q_tmpl) for q_tmpl in self.templates[template_name]['question_templates']]
 
         variable_names = tuple(self.templates[template_name]['variables'])
-        print(f'variable_names: {variable_names}')
+        # print(f'variable_names: {variable_names}')
         for variables in iterators[variable_names]:
             # print(f"variable_names: {variable_names}, variables: {variables}")
             # make sure the variables that come in are in a tuple
@@ -441,7 +445,7 @@ class TemplateGeneration:
             #    dimreq_kg.parse("bulk.ttl")
             dimreq_kg.parse("bulk2.ttl")
             # dimreq_kg.parse("combined.ttl")
-        print(f'len(dimreq_kg): {len(dimreq_kg)}, len(uses_kg): {len(uses_kg)}')
+        # print(f'len(dimreq_kg): {len(dimreq_kg)}, len(uses_kg): {len(uses_kg)}')
 
         # tg = TemplateGeneration()
         iterators = []
@@ -524,7 +528,7 @@ def main() -> int:
                  'template_use_2var_yn_answer',
                  'template_dimreg_2var_m_answer',
                  'template_dimreg_4var_yn_answer',
-                 'template_dimreg_4var_yn_answer',]
+                 'template_use_1var_yn_answer',]
 
     # print(f"ARGS: {args}")
 
