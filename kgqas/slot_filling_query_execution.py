@@ -2,6 +2,7 @@
 Semantic Parsing Phase - 4) Slot Filling and Query Execution
 """
 # Python internal libraries
+from pathlib import Path
 import string
 import sys
 from typing import List, Optional, Union
@@ -112,13 +113,14 @@ class SlotFillingQueryExecution:
         return answers
 
     def _query_sparql_str(self, sparql: str, result_type) -> Union[bool, List[str]]:
-        print(f'SPARQL:  {sparql}')
+        print('===== SPARQL =====')
+        print(sparql)
         # kg = kg_helper.get_knowledge_graph()
 
         #        if isinstance(sparql_code, str):
         results = self.kg.query(sparql)
 
-        print("====== The answer is ======")
+        print("====== Partial answer ======")
 
 #        if template_dict['answer_datatype'] == list:
 #        if result_type == list:
