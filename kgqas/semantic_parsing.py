@@ -59,17 +59,9 @@ class SemanticParsingClass:
 
     def train_all(self):
         """This does all of the training sequentially."""
-        # TODO: Should kg or tg be stored by the class? 
-        kg = rdflib.Graph()
-        kg.parse("triplesdb/combined.ttl")
-        template_path = Path('../triplesdb/templates')
-        tg = TemplateGeneration(template_path)
-        # print(f'len(kg): {len(kg)}')
-
-        question_corpus = list(tg.generate_all_templates_shuffle(kg, kg))
-#        question_corpus = list(kg_helper.generate_templates_shuffle())
-        # print('sempar.train_all()')
+        question_corpus = list(self.tg.generate_all_templates_shuffle(self.kg, self.kg))
         # print(f'question_corpus: {question_corpus}')
+
         # 1) Question Classification
         self.qc.train2(question_corpus)
 
@@ -96,7 +88,6 @@ class SemanticParsingClass:
         # Some questions for Zoning are so simple that they only have one possible predicate,
         # in those case this step can be skipped entirely.  This is the case for most of the questions.
         # About 1/4 of the Zoning questions need this step.
-        # template_dict = kg_helper.get_template(classified_template_name)
         template_dict = self.tg.get_template(classified_template_name)
         if template_dict['knowledge_graph'] == 'permitted_uses':
             # skip Relation Extraction
@@ -193,13 +184,12 @@ def measure_accuracy(subset: int = 0, randomized_subset: bool = False):
     template_path = Path('../triplesdb/templates')
     tg = TemplateGeneration(template_path)
     question_corpus = list(tg.generate_all_templates_shuffle(kg, kg))
-    question_corpus_filt = question_corpus  # FIXME
-#    question_corpus = list(kg_helper.generate_templates())
-    # remove questions that are empty sets and False, this takes it down to 900 questions
+    question_corpus_filt = question_corpus  # FIXME filtering may still be needed but less extensively
 
+    # remove questions that are empty sets and False, this takes it down to 900 questions
 #    question_corpus_filt = list(sem_par._remove_false_answers(sem_par._remove_empty_answers(question_corpus)))
 #    question_corpus_filt = list(kg_helper.remove_empty_answers(question_corpus))
-    print(f'question_corpus_filt: {len(question_corpus_filt)}')
+    print(f'len(question_corpus_filt): {len(question_corpus_filt)}')
 
     if subset > 0:
         if randomized_subset:
@@ -228,7 +218,7 @@ def measure_accuracy(subset: int = 0, randomized_subset: bool = False):
    #     print(f'a: {a}')
    #     print(f'type of a: {type(a)}')
 
-    def flatten_lists(x):
+    def flatten_lists(x: List[str]) -> str:
         """flattens a list from ['a', 'b', 'c'] to 'a, b, c' """
         if isinstance(x, list):
             return ', '.join(x)
@@ -243,17 +233,14 @@ def measure_accuracy(subset: int = 0, randomized_subset: bool = False):
     answers_flattened = [flatten_lists(a) for a in answers]
     accuracy = accuracy_score(gold_answers_flattened, 
                               answers_flattened)
-#    accuracy = accuracy_score(gold_answers_flattened, answers_flattened)
 
-#    f1 = f1_score(gold_answers, answers, average='micro')
     f1 = f1_score(gold_answers_flattened, answers_flattened, average='micro')
     print(f'# answers: {len(answers)} accuracy:  {accuracy * 100.0}, f1 score: {f1 * 100.0}')
-#    f1s = f1_score(gold_answers_flattened, answers_flattened)
-#    print(f'# answers: {len(answers)} accuracy:  {accuracy * 100.0}, f1 score: {f1s}')
+
     print(answers)
 
 
-# training time is 2 minutes on CPU
+# training time is 9 minutes on CPU
 def train_all():
     """This trains both models that have to be trained"""
     sem_par = SemanticParsingClass()
@@ -264,5 +251,7 @@ if __name__ == '__main__':
 
 #    simple_classify_test()
     measure_accuracy(30)
+#    measure_accuracy(5)
+
 
 #    train_all()
