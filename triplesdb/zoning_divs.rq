@@ -1,0 +1,25 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX : <http://www.example.org/ns/lu/zoning#>
+
+# Give the Zoning Districts that have have dimensional requirements
+
+SELECT ?zoning_label
+
+WHERE {
+    # Get the :ZoningDistrict
+    {
+        ?zid    a           :ZoningDistrict .
+        ?zid    rdfs:label  ?zoning_label .
+        # remove :ZoningDistrict that are the subject of a :seeAlso tag
+        FILTER NOT EXISTS {
+            ?ozid    rdfs:seeAlso    ?zid .
+        }
+    }
+    UNION
+    # Get the :ZoiningDistrictDivision values
+    {
+        ?zid    a           :ZoningDistrictDivision .
+        ?zid    rdfs:label  ?zoning_label .
+    }
+}
+
