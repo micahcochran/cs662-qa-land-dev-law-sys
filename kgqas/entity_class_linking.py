@@ -74,6 +74,7 @@ class EntityClassLinking:
 
         # 2. Sort STS based on ld/ls
         computed_scores.sort(key=attrgetter('ld_div_ls'))
+    
         # 3. Sort STS based on ls descending if ld is equal to zero
 #        if any(filter(lambda x: x.ld == 0, computed_scores)):  # this works
         if min(computed_scores, key=attrgetter('ld')) == 0:
