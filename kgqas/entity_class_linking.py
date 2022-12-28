@@ -43,6 +43,14 @@ class EntityClassLinking:
         return ngram_out
 
     # this is Algorithm 1 in the paper
+    #
+    # Note: There is room for performance improvements here.  Sort could be replaced
+    # with a randomized or deterministic select, if it is known how many results are relevant
+    # (knowing how many k slots need to be filled).  These are O(n) operations on average.
+    # Or perhaps getting a few minimum/maximum elements O(n).
+    # Sorting is likely an O(n log n) operation.
+    # Question Classification would have to take over the responsibility of figuring out
+    # the k number of slots.
     def string_similarity_score(self, mention) -> List[Tuple[float, str]]:
         entity_candidates = self.index_kg.all_entity_labels()
 
@@ -67,7 +75,8 @@ class EntityClassLinking:
         # 2. Sort STS based on ld/ls
         computed_scores.sort(key=attrgetter('ld_div_ls'))
         # 3. Sort STS based on ls descending if ld is equal to zero
-        if any(filter(lambda x: x.ld == 0, computed_scores)):
+#        if any(filter(lambda x: x.ld == 0, computed_scores)):  # this works
+        if min(computed_scores, key=attrgetter('ld')) == 0:
             computed_scores.sort(key=attrgetter('ls'), reverse=True)
 
         if self.verbose:
