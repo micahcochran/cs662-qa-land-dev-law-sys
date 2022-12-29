@@ -62,15 +62,12 @@ WHERE {
     { ?zid    a           :ZoningDistrict .
       ?zid    rdfs:label  ?zoning_label .
     }
-    UNION
-    { ?zid    a           :ZoningDistrictDivision .
-      ?zid    rdfs:label  ?zoning_label .
-    }
 }"""
         results = self.uses_kg.query(sparql)
 
         for zoning in set([str(res.zoning_label) for res in results]):
             yield zoning
+
 
     def all_uses_zoning_only_true_iter(self) -> Generator[Tuple[str, str], None, None]:
         """
@@ -185,14 +182,46 @@ WHERE {
         for zoning in set([str(res.zoning_label) for res in results]):
             yield zoning
 
-    def all_regulations_zoning_iter(self) -> Generator[Tuple[str, str, str], None, None]:
+    def all_zoning_dims_iter(self):
+        """
+        iterator of all the zoning division districts in the knowledge graph
+        These are the values that should have dimensions.
+        """
+
+        sparql = """
+SELECT ?zoning_label
+WHERE {
+    # Get the :ZoningDistrict
+    {
+        ?zid    a           :ZoningDistrict .
+        ?zid    rdfs:label  ?zoning_label .
+        # remove :ZoningDistrict that are the subject of a :seeAlso tag
+        FILTER NOT EXISTS {
+            ?ozid    rdfs:seeAlso    ?zid .
+        }
+    }
+    UNION
+    # Get the :ZoiningDistrictDivision values
+    {
+        ?zid    a           :ZoningDistrictDivision .
+        ?zid    rdfs:label  ?zoning_label .
+    }
+}
+"""
+        results = self.dimensional_kg.query(sparql)
+
+        for zoning in set([str(res.zoning_label) for res in results]):
+            yield zoning
+
+
+    def all_regulations_zoning_dims_iter(self) -> Generator[Tuple[str, str, str], None, None]:
         """
         iterator
         :return:
         """
-        for zoning in self.all_zoning_iter():
+        for zoning_div in self.all_zoning_dims_iter():
             for regulation_text, regulation_predicate in self.DIM_REGULATIONS_TEXT.items():
-                yield regulation_predicate, regulation_text, zoning
+                yield regulation_predicate, regulation_text, zoning_div
 
     def all_regulations_values_zoning_iter(self):
         """
@@ -344,7 +373,8 @@ class TemplateGeneration:
             iterators = {
                 ('regulation_predicate', 'regulation_text', 'regulation_value', 'zoning'):
                     qdims.all_regulations_values_zoning_iter(),
-                ('regulation_predicate', 'regulation_text', 'zoning'): qdims.all_regulations_zoning_iter(),
+#                ('regulation_predicate', 'regulation_text', 'zoning'): qdims.all_regulations_zoning_iter(),
+                ('regulation_predicate', 'regulation_text', 'zoning_dims'): qdims.all_regulations_zoning_dims_iter(),
                 ('zoning',): qdims.all_zoning_iter(),
             }
         else:
@@ -432,7 +462,7 @@ class TemplateGeneration:
         """generate all the templates
 
         uses_kg or dimreq_kg rdflib.Graph() objects may be passed.  Otherwise, these will be loaded automatically."""
-        print('generate_all_templates()')
+        # print('generate_all_templates()')
         if uses_kg is None:
             uses_kg = rdflib.Graph()
             # load the graph related to the permitted uses
