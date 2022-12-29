@@ -29,8 +29,15 @@ def print_answer(answer):
     if isinstance(answer, bool):
         ny = ('No', 'Yes')
         print(f'Answer: {ny[int(answer)]}')
+    elif isinstance(answer, list):
+        # answer returns a List of rdflib.term
+        # print(f'Answer (unconverted): {answer}')
+
+        # implicitly converts rdflib.term to a string representation
+        answer_str = ', '.join(answer)
+        print(f'Answer: {answer_str}')
     else:
-        print(f'Answer: {answer}')
+        raise RuntimeError(f'Unexpected answer type: "{type(answer)}".')
 
 def help_message() -> str:
     message = """
