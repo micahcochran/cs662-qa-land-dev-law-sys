@@ -1,7 +1,9 @@
 """This is a CLI for the Zoning KGQAS"""
 
 # Python Standard Libraries
+import os
 from pathlib import Path
+from pprint import pprint
 import random
 import readline
 import sys
@@ -23,12 +25,20 @@ def random_question(qc: List[dict]):
 def random_questions(question_corpus: List[dict], num_qs: int) -> List[str]:
     return [random_question(question_corpus) for i in range(num_qs)]
 
+def print_answer(answer):
+    if isinstance(answer, bool):
+        ny = ('No', 'Yes')
+        print(f'Answer: {ny[int(answer)]}')
+    else:
+        print(f'Answer: {answer}')
+
 def help_message() -> str:
-    msg = """
+    message = """
 This is a question answering system for Zoning Information based for the
-International Zoning Code 2021.  It can answer questions for permitted uses and
+2021 International Zoning Code.  It can answer questions for permitted uses and
 dimensional requirements.
-The IZC 2021 can be found at 
+
+The 2021 IZC can be found at
 https://codes.iccsafe.org/content/IZC2021P1/arrangement-and-format-of-the-2021-izc
 
 Type in your question and it will provide an answer.
@@ -36,10 +46,12 @@ Type in your question and it will provide an answer.
 Commands: 
     random question(s) - provides you random question(s) that can be asked
     ask # - ask one of the random questions
-    help - this message 
     quit/exit - exits program
+    clear - clear the screen
+    verbose true/false - switch verbosity of program (default false)
+    help - this message
 """
-    return msg
+    return message
 
 def main() -> int:
     line = ''
@@ -55,7 +67,7 @@ def main() -> int:
     print()
     print(help_message())
 #    print()
-
+    verbosity = False
     quit_flag = False
     while(not quit_flag):
         line = input(' > ').strip()
@@ -63,27 +75,58 @@ def main() -> int:
         if line.lower() == 'random questions':
             generated_qs = random_questions(question_corpus, 5)
             for i, q in enumerate(generated_qs):
-                print(f'Q #{i+1}: {q}') 
+                print(f'Q #{i+1}: {q}')
+            print()
         elif line.lower() == 'random question':
             generated_qs = random_question(question_corpus)
             print(f'Q:  {generated_qs}')
         elif line.lower() == 'ask':
-            result = sempar.classify(generated_qs)
-            print(f'Result: {result}')
+            answer, msg = sempar.classify(generated_qs)
+            print_answer(answer)
+            if verbosity:
+                pprint(msg)
+
+#            if verbosity == True:
+
+#            result = sempar.classify(generated_qs)
+#            print(f'Result: {result}')
         elif line.lower().startswith('ask '):
             after_ask = line.lower()[4:]
             if(after_ask.strip().isnumeric()):
-                result = sempar.classify(generated_qs[int(after_ask)-1])
-                print(f'Result: {result}')
+#                result = sempar.classify(generated_qs[int(after_ask)-1])
+#                print(f'Result: {result}')
+                answer, msg = sempar.classify(generated_qs[int(after_ask)-1])
+                print_answer(answer)
+                if verbosity:
+                    pprint(msg)
             else:
                 print('I could not parse that "ask" command.')
         elif line.lower() == 'help':
             print(help_message())
+        elif line.lower() == 'clear':
+            # call the operating system command to clear the screen
+            if os.name == 'nt':
+                _ = os.system('cls')
+            else:
+                _ = os.system('clear')
+        elif line.lower().startswith('verbose '):
+            after_verbose = line.lower()[8:]
+            if after_verbose.strip() == 'true':
+                verbosity = True
+            elif after_verbose.strip() == 'false':
+                verbosity = False
+            else:
+                print(f'Could not understand verbose value "{after_verbose}", which should be either true/false')
         elif line.lower() in ('exit', 'quit'):
             quit_flag = True
         else:
-            result = sempar.classify(line)
-            print(f'Result: {result}')
+#            result = sempar.classify(line)
+#            print(f'Result: {result}')
+
+            answer, msg = sempar.classify(line)
+            print_answer(answer)
+            if verbosity:
+                pprint(msg)
 
     return 0
 

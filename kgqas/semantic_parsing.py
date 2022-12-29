@@ -73,16 +73,21 @@ class SemanticParsingClass:
         self.relex.train(questions, variables)
 
 
-    def classify(self, sentence: str) -> Union[bool, List[str]]:
+    def classify(self, sentence: str) -> (Union[bool, List[str]], dict):
         logger.debug(f"QUESTION: {sentence}")
+        msg = {}
+
         # 1) Question Classification
         classified_template_number = self.qc.classify(sentence)
         classified_template_name = self.qc.classification_number_to_template_name(classified_template_number)
+        msg['classified_template_number'] = classified_template_number
+        msg['classified_template_name'] = classified_template_name
 
         # 2) Entity Linking and Class Linking
         ecl = EntityClassLinking(verbose=False)  # too talkative
         ngram = ecl.ngram_collection(sentence)
         similarity_scores = ecl.string_similarity_score(ngram)
+        msg['similiarity_scores_top_10'] = similarity_scores[:10]
 
         # 3) Relation Extraction
         # Some questions for Zoning are so simple that they only have one possible predicate,
@@ -97,9 +102,14 @@ class SemanticParsingClass:
             # This is due to the Zoning KG example being very simple, unlike the Tourism KG from the original paper.
             most_relevant_relations = self.relex.extract(sentence, k=1)
 
+        if most_relevant_relations is not None:
+            msg['most_relevant_relations'] = most_relevant_relations
+
         # 4) Slot Filling and Query Execution
         sfqe = SlotFillingQueryExecution(template_generation=self.tg)
-        return sfqe.slot_fill_query_execute(classified_template_name, similarity_scores, most_relevant_relations)
+        answer, slot_msg = sfqe.slot_fill_query_execute(classified_template_name, similarity_scores, most_relevant_relations)
+        msg.update(slot_msg)
+        return answer, msg
 
 #    def generate_filtered_corpus(self) -> List[dict]:
 #        question_corpus = list(kg_helper.generate_templates())
@@ -250,8 +260,8 @@ if __name__ == '__main__':
 #    generate_all_templates_test()
 
 #    simple_classify_test()
-    measure_accuracy(30)
-#    measure_accuracy(5)
+#    measure_accuracy(30)
+    measure_accuracy(5)
 
 
 #    train_all()

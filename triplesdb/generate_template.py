@@ -62,10 +62,6 @@ WHERE {
     { ?zid    a           :ZoningDistrict .
       ?zid    rdfs:label  ?zoning_label .
     }
-    UNION
-    { ?zid    a           :ZoningDistrictDivision .
-      ?zid    rdfs:label  ?zoning_label .
-    }
 }"""
         results = self.uses_kg.query(sparql)
 
@@ -466,7 +462,7 @@ class TemplateGeneration:
         """generate all the templates
 
         uses_kg or dimreq_kg rdflib.Graph() objects may be passed.  Otherwise, these will be loaded automatically."""
-        print('generate_all_templates()')
+        # print('generate_all_templates()')
         if uses_kg is None:
             uses_kg = rdflib.Graph()
             # load the graph related to the permitted uses

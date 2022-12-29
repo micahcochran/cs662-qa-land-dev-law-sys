@@ -310,9 +310,9 @@ class QuestionClassification:
 #            model = xgb.XGBClassifier()
 #            model.load_model("question_classification_model.ubj")
 
-        print(question_dep_encoded)
+        # print(question_dep_encoded)
         ypred = self.model.predict(question_dep_encoded)
-        print(ypred)
+        # print(ypred)
         return ypred[0]
 
     def classification_number_to_template_name(self, number: int) -> str:

@@ -41,17 +41,25 @@ class SlotFillingQueryExecution:
 
     # TODO: This function needs a rewrite to remove a lot of development code.
 
-    def slot_fill_query_execute(self, template_name: str, similarity_scores, relations: List[str]) -> Union[bool, List[str]]:
-        """This fills in the slots."""
+    def slot_fill_query_execute(self, template_name: str, similarity_scores, relations: List[str]) \
+            -> (Union[bool, List[str]], dict):
+        """
+        This fills in the slots.
+        returns (answer, msg)
+        """
 
+        # This is the message of all of the variables
+        msg = {}
         # This example is simpler than the paper.  Due to the Zoning KG being two orders of magnitude smaller
         # and less complicated.  This doesn't really do the cartesian product of all the results.
 #        template_dict = kg_helper.get_template(template_name)
         template_dict = self.tg.get_template(template_name)
-        print(f"template name: {template_name}")
-        print(f"SPARQL TEMPLATE: {template_dict['sparql_template']}")
+       # print(f"template name: {template_name}")
+#        msg['template_name'] = template_name
+       # print(f"SPARQL TEMPLATE: {template_dict['sparql_template']}")
+        msg['sparql_template'] = template_dict['sparql_template']
         print(f"VARIABLES: {template_dict['variables']}")
-        print(f'RELATIONS: {relations}')
+#        print(f'RELATIONS: {relations}')
         slots = {}
         if 'regulation_predicate' in template_dict['variables']:
             # translate from text to a predicate
@@ -62,8 +70,10 @@ class SlotFillingQueryExecution:
 
         print(f'SLOTS: {slots}')
         num_entity_slots = len(template_dict['sparql_variables_entities'])
-        print(f'num_entity_slots: {num_entity_slots}')
-        print(f'SIMILARITY SCORES for num_entity_slots: {similarity_scores[:num_entity_slots]}')
+        # print(f'num_entity_slots: {num_entity_slots}')
+        msg['num_entity_slots'] = num_entity_slots
+        # print(f'SIMILARITY SCORES for num_entity_slots: {similarity_scores[:num_entity_slots]}')
+        msg['similarity_scores'] = similarity_scores[:num_entity_slots]
 
         sparql_template = string.Template(template_dict['sparql_template'])
 
@@ -85,11 +95,13 @@ class SlotFillingQueryExecution:
             slots_forward = dict(zip(slot_names, slots_values))
 
             # fill in the SPARQL template
-            print(f"SLOTS FORWARD: {slots_forward}")
+            # print(f"SLOTS FORWARD: {slots_forward}")
+            msg['slots_forward'] = slots_forward
             sparql_code_fw = sparql_template.substitute(slots_forward)
 
             slots_reversed = dict(zip(slot_names, (slots_values[1], slots_values[0])))
-            print(f"SLOTS REVERSED: {slots_reversed}")
+            # print(f"SLOTS REVERSED: {slots_reversed}")
+            msg['slots_reversed'] = slots_reversed
             sparql_code_rev = sparql_template.substitute(slots_reversed)
             sparql_code = [sparql_code_fw, sparql_code_rev]
 
@@ -104,38 +116,41 @@ class SlotFillingQueryExecution:
             raise RuntimeError
 
         # print the answers to the console
-        if template_dict['answer_datatype'] == bool:
-            if answers:
-                print("Yes")
-            else:
-                print("No")
+#        if template_dict['answer_datatype'] == bool:
+#            if answers:
+#                print("Yes")
+#            else:
+#                print("No")
+#            ny = ('No', 'Yes')
+#            return ny[int(answer)], msg
 
-        return answers
+        return answers, msg
 
     def _query_sparql_str(self, sparql: str, result_type) -> Union[bool, List[str]]:
-        print('===== SPARQL =====')
-        print(sparql)
+        msg = {}
+        # print('===== SPARQL =====')
+        # print(sparql)
+        msg['sparql_built'] = sparql
         # kg = kg_helper.get_knowledge_graph()
 
         #        if isinstance(sparql_code, str):
         results = self.kg.query(sparql)
 
-        print("====== Partial answer ======")
+        # print("====== Partial answer ======")
 
 #        if template_dict['answer_datatype'] == list:
 #        if result_type == list:
         if result_type == 'list':
 #            print(f"Results OBJ: {results}")
 
-            print(
-                f"Results OBJ vars: {str(results.vars[0])}")  # assuming 1 variable result, an okay assumption for my application
+#            print(
+#                f"Results OBJ vars: {str(results.vars[0])}")  # assuming 1 variable result, an okay assumption for my application
             assert (len(results.vars) == 1)
 
             # this is using what is returned from the query via rdflib.
-            for r in results:
-                print(r[str(results.vars[0])])
-#            return [r[str(results.vars[0])] for r in results]
-            # the
+#            for r in results:
+#                print(r[str(results.vars[0])])
+
             return [r[str(results.vars[0])].toPython() for r in results]
 
             # the other approach would be to look it up from the template to see what we should be getting.
