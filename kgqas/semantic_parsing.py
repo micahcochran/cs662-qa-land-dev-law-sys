@@ -209,7 +209,7 @@ def measure_accuracy(subset: int = 0, randomized_subset: bool = False):
             gold_answers = []
             for i in range(subset):
                 rnd = random.randint(0, subset)
-                a = sem_par.classify(question_corpus_filt[rnd]['question'])
+                a, msg = sem_par.classify(question_corpus_filt[rnd]['question'])
                 answers.append(a)
                 ga = question_corpus_filt[rnd]['answer']
                 gold_answers.append(ga)
@@ -260,8 +260,8 @@ if __name__ == '__main__':
 #    generate_all_templates_test()
 
 #    simple_classify_test()
-#    measure_accuracy(30)
-    measure_accuracy(5)
+    measure_accuracy(90)
+#    measure_accuracy(5)
 
 
 #    train_all()

@@ -143,17 +143,18 @@ class SlotFillingQueryExecution:
         if result_type == 'list':
 #            print(f"Results OBJ: {results}")
 
-#            print(
-#                f"Results OBJ vars: {str(results.vars[0])}")  # assuming 1 variable result, an okay assumption for my application
+#            print(f"Results OBJ vars: {str(results.vars[0])}")
             assert (len(results.vars) == 1)
 
             # this is using what is returned from the query via rdflib.
 #            for r in results:
 #                print(r[str(results.vars[0])])
 
-            return [r[str(results.vars[0])].toPython() for r in results]
+            # assuming 1 variable result, an okay assumption for my application
+#            return [r[str(results.vars[0])].toPython() for r in results]
+            return [r[str(results.vars[0])] for r in results]
 
-            # the other approach would be to look it up from the template to see what we should be getting.
+            # another approach would be to look it up from the template to see what we should be getting.
             # for r in results:
             #    print(r[template_dict['variable_names_sparql']])
 
