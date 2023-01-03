@@ -159,7 +159,6 @@ def single_question_test():
 
 # this takes almost 2 hours on CPU for 2711 questions.
 def all_question_test():
-    # from kg_helper import generate_templates
     from pathlib import Path
     import sys
     import rdflib

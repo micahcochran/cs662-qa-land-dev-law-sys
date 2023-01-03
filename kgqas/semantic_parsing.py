@@ -23,9 +23,6 @@ from entity_class_linking import EntityClassLinking
 from relation_extraction import RelationExtraction
 from slot_filling_query_execution import SlotFillingQueryExecution
 
-
-# from kg_helper import generate_templates, get_template
-# import kg_helper
 # internal libraries that need a different path
 sys.path.append("..")
 from triplesdb.generate_template import TemplateGeneration
@@ -208,7 +205,6 @@ def measure_accuracy(subset: int = 0, randomized_subset: bool = False):
 
     # remove questions that are empty sets and False, this takes it down to 900 questions
 #    question_corpus_filt = list(sem_par._remove_false_answers(sem_par._remove_empty_answers(question_corpus)))
-#    question_corpus_filt = list(kg_helper.remove_empty_answers(question_corpus))
     print(f'len(question_corpus_filt): {len(question_corpus_filt)}')
 
     if subset > 0:

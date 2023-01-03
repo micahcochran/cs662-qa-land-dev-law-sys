@@ -13,7 +13,6 @@ import rdflib
 
 # internal library imports
 import indexes
-# import kg_helper
 # internal libraries that need a different path
 sys.path.append("..")  # hack to allow triplesdb imports
 from triplesdb.generate_template import TemplateGeneration
@@ -55,7 +54,6 @@ class SlotFillingQueryExecution:
         sfqe_start = time.time()
         # This example is simpler than the paper.  Due to the Zoning KG being two orders of magnitude smaller
         # and less complicated.  This doesn't really do the cartesian product of all the results.
-#        template_dict = kg_helper.get_template(template_name)
         template_dict = self.tg.get_template(template_name)
        # print(f"template name: {template_name}")
 #        msg['template_name'] = template_name
@@ -136,7 +134,6 @@ class SlotFillingQueryExecution:
         # print('===== SPARQL =====')
         # print(sparql)
         msg['sparql_built'] = sparql
-        # kg = kg_helper.get_knowledge_graph()
 
         #        if isinstance(sparql_code, str):
         results = self.kg.query(sparql)
