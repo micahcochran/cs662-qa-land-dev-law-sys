@@ -5,6 +5,7 @@ Semantic Parsing Phase - 4) Slot Filling and Query Execution
 from pathlib import Path
 import string
 import sys
+import time
 from typing import List, Optional, Union
 
 # external libraries
@@ -12,7 +13,7 @@ import rdflib
 
 # internal library imports
 import indexes
-import kg_helper
+# import kg_helper
 # internal libraries that need a different path
 sys.path.append("..")  # hack to allow triplesdb imports
 from triplesdb.generate_template import TemplateGeneration
@@ -50,6 +51,8 @@ class SlotFillingQueryExecution:
 
         # This is the message of all of the variables
         msg = {}
+
+        sfqe_start = time.time()
         # This example is simpler than the paper.  Due to the Zoning KG being two orders of magnitude smaller
         # and less complicated.  This doesn't really do the cartesian product of all the results.
 #        template_dict = kg_helper.get_template(template_name)
@@ -58,7 +61,7 @@ class SlotFillingQueryExecution:
 #        msg['template_name'] = template_name
        # print(f"SPARQL TEMPLATE: {template_dict['sparql_template']}")
         msg['sparql_template'] = template_dict['sparql_template']
-        print(f"VARIABLES: {template_dict['variables']}")
+#        print(f"VARIABLES: {template_dict['variables']}")
 #        print(f'RELATIONS: {relations}')
         slots = {}
         if 'regulation_predicate' in template_dict['variables']:
@@ -68,7 +71,7 @@ class SlotFillingQueryExecution:
             # slots['regulation_predicate']
             slots['regulation_predicate'] = self.index_kg.predicate_dict[relations[0]]
 
-        print(f'SLOTS: {slots}')
+#        print(f'SLOTS: {slots}')
         num_entity_slots = len(template_dict['sparql_variables_entities'])
         # print(f'num_entity_slots: {num_entity_slots}')
         msg['num_entity_slots'] = num_entity_slots
@@ -86,7 +89,7 @@ class SlotFillingQueryExecution:
             slots[slot_name0] = similarity_scores[0][1]
 
             # fill in the SPARQL template
-            print(f"SLOTS: {slots}")
+            # print(f"SLOTS: {slots}")
             sparql_code = sparql_template.substitute(slots)
         elif num_entity_slots == 2:
             slot_names = template_dict['sparql_variables_entities']
@@ -106,6 +109,7 @@ class SlotFillingQueryExecution:
             sparql_code = [sparql_code_fw, sparql_code_rev]
 
         elif num_entity_slots > 2:
+            # I do not currently have a need for more than 2 slots.
             raise NotImplementedError
 
         if isinstance(sparql_code, str):
@@ -123,6 +127,7 @@ class SlotFillingQueryExecution:
 #                print("No")
 #            ny = ('No', 'Yes')
 #            return ny[int(answer)], msg
+        msg['sfqe_time'] = time.time() - sfqe_start
 
         return answers, msg
 

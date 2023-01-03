@@ -26,7 +26,7 @@ from stanza.pipeline.core import DownloadMethod
 import xgboost as xgb
 
 # internal library imports
-from kg_helper import generate_templates, template_names, template_number_dictionary
+# from kg_helper import generate_templates, template_names, template_number_dictionary
 
 # internal libraries that need a different path
 sys.path.append("..")  # hack to allow triplesdb imports

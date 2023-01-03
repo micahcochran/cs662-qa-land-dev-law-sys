@@ -157,21 +157,34 @@ def single_question_test():
     ecl.string_similarity_score(ngram)
 
 
-# this took 54 minutes on CPU, ouch.
+# this takes almost 2 hours on CPU for 2711 questions.
 def all_question_test():
-    from kg_helper import generate_templates
+    # from kg_helper import generate_templates
+    from pathlib import Path
+    import sys
+    import rdflib
+    sys.path.append("..")  # allows triplesdb imports
+    from triplesdb.generate_template import TemplateGeneration
+
+    kg = rdflib.Graph()
+    kg.parse("triplesdb/combined.ttl")
+    template_path = Path('../triplesdb/templates')
+    tg = TemplateGeneration(template_path)
+    tmpls = tg.generate_all_templates(kg, kg)
 
     ecl = EntityClassLinking()
 
-    tg = generate_templates()
-    questions = [generated_data['question'] for generated_data in tg]
+    # tg = generate_templates()
+    # questions = [generated_data['question'] for generated_data in tg]
+    questions = [generated_data['question'] for generated_data in tmpls]
 
     for q in questions:
         ngram = ecl.ngram_collection(q)
         ecl.string_similarity_score(ngram)
+        # the answer is not stored
 
 
 if __name__ == '__main__':
-    ecl = EntityClassLinking(verbose=True)
-    single_question_test()
-#    all_question_test()
+#    ecl = EntityClassLinking(verbose=True)
+#    single_question_test()
+    all_question_test()
