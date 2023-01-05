@@ -9,6 +9,7 @@ and classifying for this step.
 from pathlib import Path
 import random
 import sys
+import time
 from typing import List, Optional, Union
 
 # external library imports
@@ -22,9 +23,6 @@ from entity_class_linking import EntityClassLinking
 from relation_extraction import RelationExtraction
 from slot_filling_query_execution import SlotFillingQueryExecution
 
-
-# from kg_helper import generate_templates, get_template
-# import kg_helper
 # internal libraries that need a different path
 sys.path.append("..")
 from triplesdb.generate_template import TemplateGeneration
@@ -78,16 +76,22 @@ class SemanticParsingClass:
         msg = {}
 
         # 1) Question Classification
+        qc_time_start = time.time()
         classified_template_number = self.qc.classify(sentence)
+        qc_time_end = time.time()
         classified_template_name = self.qc.classification_number_to_template_name(classified_template_number)
         msg['classified_template_number'] = classified_template_number
         msg['classified_template_name'] = classified_template_name
+        msg['qc_time'] = qc_time_end - qc_time_start
 
         # 2) Entity Linking and Class Linking
+        ecl_time_start = time.time()
         ecl = EntityClassLinking(verbose=False)  # too talkative
         ngram = ecl.ngram_collection(sentence)
         similarity_scores = ecl.string_similarity_score(ngram)
+        ecl_time_end = time.time()
         msg['similiarity_scores_top_10'] = similarity_scores[:10]
+        msg['ecl_time'] = ecl_time_end - ecl_time_start
 
         # 3) Relation Extraction
         # Some questions for Zoning are so simple that they only have one possible predicate,
@@ -100,7 +104,10 @@ class SemanticParsingClass:
         else:
             # For zoning the k value is 1 (or zero [case above]) meaning that there is only one relationship to find.
             # This is due to the Zoning KG example being very simple, unlike the Tourism KG from the original paper.
+            relex_time_start = time.time()
             most_relevant_relations = self.relex.extract(sentence, k=1)
+            relex_time_end = time.time()
+            msg['relex_time'] = relex_time_end - relex_time_start
 
         if most_relevant_relations is not None:
             msg['most_relevant_relations'] = most_relevant_relations
@@ -198,7 +205,6 @@ def measure_accuracy(subset: int = 0, randomized_subset: bool = False):
 
     # remove questions that are empty sets and False, this takes it down to 900 questions
 #    question_corpus_filt = list(sem_par._remove_false_answers(sem_par._remove_empty_answers(question_corpus)))
-#    question_corpus_filt = list(kg_helper.remove_empty_answers(question_corpus))
     print(f'len(question_corpus_filt): {len(question_corpus_filt)}')
 
     if subset > 0:
@@ -245,7 +251,8 @@ def measure_accuracy(subset: int = 0, randomized_subset: bool = False):
                               answers_flattened)
 
     f1 = f1_score(gold_answers_flattened, answers_flattened, average='micro')
-    print(f'# answers: {len(answers)} accuracy:  {accuracy * 100.0}, f1 score: {f1 * 100.0}')
+#    print(f'# answers: {len(answers)} accuracy:  {accuracy * 100.0}, f1 score: {f1 * 100.0}')
+    print(f'# answers: {len(answers)} accuracy:  {accuracy:.3%}, f1 score: {f1:.3%}')
 
     print(answers)
 

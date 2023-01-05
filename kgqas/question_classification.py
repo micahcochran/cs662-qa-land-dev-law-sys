@@ -26,20 +26,17 @@ from stanza.pipeline.core import DownloadMethod
 import xgboost as xgb
 
 # internal library imports
-from kg_helper import generate_templates, template_names, template_number_dictionary
-
 # internal libraries that need a different path
 sys.path.append("..")  # hack to allow triplesdb imports
 from triplesdb.generate_template import TemplateGeneration
 
-# The below aren't needed for nltk because I am using stanza to do POS and dependency parsing.
+# The below nltk imports aren't needed because this uses stanza to do POS and dependency parsing.
 # Run these one time only
 # import nltk
 # nltk.download('universal_tagset')    # brown when tagset='universal'
 # nltk.download('averaged_perceptron_tagger')    # PerceptronTagger(load=True)
 
 
-# TODO: move the model as a part of the class so it isn't being loaded every time.
 class QuestionClassification:
     def __init__(self, template_generation: Optional[TemplateGeneration] = None,
                  knowledge_graph: Optional[rdflib.Graph] = None):
@@ -204,7 +201,6 @@ class QuestionClassification:
     # This only needs to be performed once
     # This takes about 3 minutes to run on CPU.
     def run_compute_max_length_from_training_data(self):
-        # tg = generate_templates()
         tmpls = self.tg.generate_all_templates(self.kg, self.kg)
         maximum = self.compute_max_length_from_training_data([generated_data['question'] for generated_data in tmpls])
         return maximum
@@ -250,7 +246,6 @@ class QuestionClassification:
         question_corpus = [ql[0] for ql in questions_and_labels]
         # print(f"question_corpus: {question_corpus}")
 #        template_number_dict = label_dictionary()
-#        template_labels = [template_number_dictionary()[ql[1]] for ql in questions_and_labels]
         template_labels = [self.tg.template_number_dict[ql[1]] for ql in questions_and_labels]
 
 
@@ -317,7 +312,6 @@ class QuestionClassification:
 
     def classification_number_to_template_name(self, number: int) -> str:
         """Convert the number of the template to a name"""
-#        return template_names()[number]
         return self.tg.template_names()[number]
 
     def load_model(self):
@@ -348,11 +342,6 @@ def compute_max_main():
     maximum = qc.run_compute_max_length_from_training_data()
     print(f'MAXIMUM: {maximum}')
     print(f'length: {len(maximum)}')
-
-# this is a test to make sure that this function can get to the TTL files.
-# def generate_all_templates_text():
-#    for res in generate_templates():
-#        print(res)
 
 def classify_small_test_main():
     qc = QuestionClassification()

@@ -7,6 +7,7 @@ from pprint import pprint
 import random
 import readline
 import sys
+import time
 from typing import List
 
 # external library imports
@@ -88,11 +89,13 @@ def main() -> int:
             generated_qs = random_question(question_corpus)
             print(f'Q:  {generated_qs}')
         elif line.lower() == 'ask':
+            start_t = time.time()
             answer, msg = sempar.classify(generated_qs)
+            end_t = time.time()
             print_answer(answer)
             if verbosity:
                 pprint(msg)
-
+            print(f'Runtime: {end_t-start_t:.3f} sec')
 #            if verbosity == True:
 
 #            result = sempar.classify(generated_qs)
@@ -102,12 +105,16 @@ def main() -> int:
             if(after_ask.strip().isnumeric()):
 #                result = sempar.classify(generated_qs[int(after_ask)-1])
 #                print(f'Result: {result}')
+                start_t = time.time()
                 answer, msg = sempar.classify(generated_qs[int(after_ask)-1])
+                end_t = time.time()
                 print_answer(answer)
                 if verbosity:
                     pprint(msg)
+                print(f'Runtime: {end_t-start_t:.3f} sec')
             else:
                 print('I could not parse that "ask" command.')
+
         elif line.lower() == 'help':
             print(help_message())
         elif line.lower() == 'clear':
@@ -129,11 +136,14 @@ def main() -> int:
         else:
 #            result = sempar.classify(line)
 #            print(f'Result: {result}')
-
+            start_t = time.time()
             answer, msg = sempar.classify(line)
+            end_t = time.time()
             print_answer(answer)
             if verbosity:
                 pprint(msg)
+
+            print(f'Runtime: {end_t-start_t:.3f} sec')
 
     return 0
 

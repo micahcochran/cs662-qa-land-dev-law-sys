@@ -312,10 +312,16 @@ def extract_test(relex=None):
 # This process takes 15 seconds for ~300 questions
 def extract_measure_accuracy(relex=None):
     """measure the accuracy for all the dimensional relations"""
-    if relex is None:
-        relex = RelationExtraction()
+    kg = rdflib.Graph()
+    kg.parse("triplesdb/combined.ttl")
+    template_path = Path('../triplesdb/templates')
+    tg = TemplateGeneration(template_path)
 
-    question_corpus = list(generate_dim_templates())
+    if relex is None:
+        relex = RelationExtraction(template_generation=tg, knowledge_graph=kg)
+
+    # question_corpus = list(generate_dim_templates())
+    question_corpus = list(tg.generate_dimensional_templates(kg))
     questions, gold_vars = relex.process_question_corpus(question_corpus=question_corpus)
     # remove the non-relation portion of the gold variables
     gold_relation = [relex.filter_relation_variables(g) for g in gold_vars]
