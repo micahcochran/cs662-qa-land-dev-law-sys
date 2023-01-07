@@ -30,7 +30,7 @@ from sentence_transformers import SentenceTransformer
 import indexes
 
 # from kg_helper import generate_dim_templates, generate_templates
-from kg_helper import generate_dim_templates
+# from kg_helper import generate_dim_templates
 # internal libraries that need a different path
 sys.path.append("..")  # hack to allow triplesdb imports
 from triplesdb.generate_template import TemplateGeneration
@@ -126,7 +126,10 @@ class RelationExtraction():
         # Use SBERT to generate the embedding for the MLP
         q_embeddings = [self.sbert_model.encode(q) for q in questions]
 
+        from pprint import pprint
         variables_filtered = [self.filter_relation_variables(row) for row in variables]
+        print('VARIABLES_FILTERED:')
+        pprint(list(zip(variables_filtered, variables)))
         # print(q_embeddings)
 #        print(self.label_encoding)
         variables_encoded = self.mlb.fit_transform(variables_filtered)
@@ -254,10 +257,17 @@ class RelationExtraction():
 
 
 def main_training():
-    relex = RelationExtraction()
+    kg = rdflib.Graph()
+    kg.parse("triplesdb/combined.ttl")
+    template_path = Path('../triplesdb/templates')
+    tg = TemplateGeneration(template_path)
+
+    relex = RelationExtraction(template_generation=tg, knowledge_graph=kg)
+
+#    relex = RelationExtraction()
 #    questions, variables = relex.process_question_corpus(list(generate_templates()))
 #    questions, variables = relex.process_question_corpus(list(generate_dim_templates()))
-    questions, variables = relex.process_question_corpus(list(generate_dim_templates()))
+    questions, variables = relex.process_question_corpus(list(tg.generate_dimensional_templates(kg)))
 
     relex.train(questions, variables)
 
@@ -365,9 +375,9 @@ def extract_measure_accuracy(relex=None):
 
 if __name__ == '__main__':
 #    extract_all_test()
-#    relex = main_training()
+    relex = main_training()
 #    extract_test(relex)
 
-    extract_measure_accuracy()
+#    extract_measure_accuracy()
 #    extract_test()
 #    small_training_test()
