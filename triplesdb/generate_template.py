@@ -268,7 +268,7 @@ WHERE {
 SELECT ?property_name ?property_label
 
 WHERE {
-    ?property_name a rdf:Property ;
+    ?property_name  a   :DimensionalProperty ;
                 rdfs:label  ?property_label .
 }
         """

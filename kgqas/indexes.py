@@ -55,9 +55,8 @@ class IndexesKG:
         # numeric values are also captured as classes.  This is workable, but not ideal.
         self._numeric_index = self._init_numbers(kg)
 
-        # :permitsUse causes problems because it doesn't need to be identified as a predicate. Some templates are hard
-        # coded to use :permitsUse.  For now, take it out of the predicate_index.
-        self._predicate_index = self._init_variable_predicate(kg, 'rdf:Property') - set([('permits use', ':permitsUse')])
+        # Includes all of the rdf:Property's except for ('permits use', ':permitsUse')
+        self._predicate_index = self._init_variable_predicate(kg, ':DimensionalProperty')
 
         self._zoning_index = self._init_variable_predicate(kg, ':ZoningDistrict')
 
@@ -72,7 +71,7 @@ class IndexesKG:
 
     def _init_variable_predicate(self, kg: Optional[rdflib.graph.Graph], predicate: str) -> Set[Tuple[str, str]]:
         """
-        Used to get create indexes for predicates that match rdf:Property,
+        Used to get create indexes for predicates that match :DimensionalProperty,
         :ZoningDistrict, :ZoningDistrictDivision
         """
 
