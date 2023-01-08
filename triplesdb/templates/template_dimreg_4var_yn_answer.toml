@@ -2,21 +2,20 @@
 [template]
 template_name = 'template_dimreg_4var_yn_answer'
 knowledge_graph = 'dimensional_reqs'
-variables = ['regulation_predicate', 'regulation_text', 'regulation_value', 'zoning']
-#              'variables = ('regulation_predicate', 'regulation_text', 'regulation_value', 'zoning', 'unit_text'),
+variables = ['regulation_predicate', 'regulation_text', 'regulation_number', 'unit_symbol', 'zoning']
 # variables feed into the templates
 variable_names_sparql = []  # variable resulting from SPARQL query
-sparql_variables_entities = ['regulation_value', 'zoning']
+sparql_variables_entities = ['regulation_number', 'unit_symbol', 'zoning']
 sparql_template = """
 ASK {
-        ?zoning $regulation_predicate "${regulation_value} ${unit_symbol}"^^${unit_datatype} ;
+        ?zoning $regulation_predicate "${regulation_number} ${unit_symbol}"^^${unit_datatype} ;
                 rdfs:label "${zoning}" .
 }
 """
 #          'question_templates':
-#                ["Is the $regulation_text for a property in the $zoning zoning district $regulation_value square feet?"],
+#                ["Is the $regulation_text for a property in the $zoning zoning district $regulation_number square feet?"],
 question_templates = [
-    "Is the $regulation_text for a property in the $zoning zoning district $regulation_value $unit_text?"]
+    "Is the $regulation_text for a property in the $zoning zoning district $regulation_number $unit_text?"]
 
 answer_datatype = 'bool'
 

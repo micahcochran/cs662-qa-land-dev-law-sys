@@ -182,7 +182,7 @@ WHERE {
         for zoning in set([str(res.zoning_label) for res in results]):
             yield zoning
 
-    def all_zoning_dims_iter(self):
+    def all_zoning_dims_iter(self) -> Generator[str, None, None]:
         """
         iterator of all the zoning division districts in the knowledge graph
         These are the values that should have dimensions.
@@ -223,13 +223,14 @@ WHERE {
             for regulation_text, regulation_predicate in self.DIM_REGULATIONS_TEXT.items():
                 yield regulation_predicate, regulation_text, zoning_div
 
-    def all_regulations_values_zoning_iter(self):
+    def all_regulations_values_zoning_iter(self) -> Generator[Tuple[str, str, str, str, str], None, None]:
         """
         iterator of regulation_predicate, regulation_value, zoning districts in the knowledge graph
 
         units are left in regulation_value
         """
 
+        # this skips predicates that are not of the :DimensionalProperty
         sparql = """
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         PREFIX : <http://www.example.org/ns/lu/zoning#>
@@ -239,25 +240,24 @@ WHERE {
         WHERE {
                 ?zoning rdfs:label ?zoning_label ;
                         ?regulation_predicate ?regulation_value .
+                ?regulation_predicate   a     :DimensionalProperty .
         }
         """
 
         results = self.dimensional_kg.query(sparql)
 
         for regulation_predicate, regulation_value, zoning_label in results:
-
-            # skip predicates that are not in the dictionary of dimensional regulations
-            if str(regulation_predicate) not in self.DIM_REGULATIONS_PRED_URI:
-                continue
+            regulation_number, unit_symbol = regulation_value.split()
 
             # Skip regulation_values that where the 1st token does not start with numbers.
             # Note: SPARQL provides an isNumeric, but that does not work with values like "10 [ft_i]"^^cdt:length.
-            if not regulation_value.split()[0].isnumeric():
+            if not regulation_number.isnumeric():
                 continue
 
-            # this is regulation_predicate, regulation_text, regulation_value, zoning_label
+
+            # this is regulation_predicate, regulation_text, regulation_number, unit_symbol, zoning_label
             yield ':' + regulation_predicate.fragment, self.DIM_REGULATIONS_PRED_URI[
-                str(regulation_predicate)], regulation_value, zoning_label
+                str(regulation_predicate)], regulation_number, unit_symbol, zoning_label
 
 
     def _get_kg_properties(self) -> dict:
@@ -371,7 +371,7 @@ class TemplateGeneration:
 
             # NOTE: variables should be in the same order as the tuples that come out of the iterator.
             iterators = {
-                ('regulation_predicate', 'regulation_text', 'regulation_value', 'zoning'):
+                ('regulation_predicate', 'regulation_text', 'regulation_number', 'unit_symbol', 'zoning'):
                     qdims.all_regulations_values_zoning_iter(),
 #                ('regulation_predicate', 'regulation_text', 'zoning'): qdims.all_regulations_zoning_iter(),
                 ('regulation_predicate', 'regulation_text', 'zoning_dims'): qdims.all_regulations_zoning_dims_iter(),
@@ -401,13 +401,21 @@ class TemplateGeneration:
                               map(lambda x: str(x), variables_tuple)))
 
             # handle units for variable_values
+            # TODO: REMOVE, this no longer seems to be run
             if 'regulation_value' in varibs \
                     and '[' in varibs['regulation_value'] and ']' in varibs['regulation_value']:
                 value, unit_symbol = varibs['regulation_value'].split()
                 # Example: "1000 [ft_i]"
-                varibs['regulation_value'] = value  # = "1000"
+                varibs['regulation_value'] = value  # = "1000"   # old
+                # varibs['regulation_number'] = value  # = "1000"  # new
                 # print(f"value is {value}")
                 varibs['unit_symbol'] = unit_symbol  # = "[ft_i]"
+                varibs['unit_text'] = UNITS_SYMBOL[unit_symbol]  # = "feet"
+                varibs['unit_datatype'] = UNIT_DATATYPE[unit_symbol]  # = "cdt:length"
+
+            # sets other variables
+            if 'unit_symbol' in varibs:
+                unit_symbol = varibs['unit_symbol']
                 varibs['unit_text'] = UNITS_SYMBOL[unit_symbol]  # = "feet"
                 varibs['unit_datatype'] = UNIT_DATATYPE[unit_symbol]  # = "cdt:length"
 
