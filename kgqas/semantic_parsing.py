@@ -192,7 +192,9 @@ def get_random_questions_answers(question_corpus: List[dict], n: int) -> List[di
 
 # I estimate that this will take about 8 hours for the ~5000 questions.
 def measure_accuracy(subset: int = 0, randomized_subset: bool = False):
-    """measure the accuracy and F1-score of the Semantic Parsing Process"""
+    """measure the accuracy and F1-score of the Semantic Parsing Process
+    subset - measure a subset of the questions, numeric value of the number of questions to test
+    randomized_subset - randomize the subset"""
     logger.info("measuring the accuracy of Zoning KGQAS")
     sem_par = SemanticParsingClass()
 
@@ -221,10 +223,12 @@ def measure_accuracy(subset: int = 0, randomized_subset: bool = False):
                 gold_answers.append(ga)
         else:
             logger.info(f"measuring subset of size: {subset}")
-            answers = [sem_par.classify(q['question']) for q in question_corpus_filt[:subset]]
+            answers_message = [sem_par.classify(q['question']) for q in question_corpus_filt[:subset]]
+            answers = [a for a, msg in answers_message]
             gold_answers = [q['answer'] for q in question_corpus_filt[:subset]]
     else:
-        answers = [sem_par.classify(q['question']) for q in question_corpus_filt]
+        answers_message = [sem_par.classify(q['question']) for q in question_corpus_filt]
+        answers = [a for a, msg in answers_message]
         gold_answers = [q['answer'] for q in question_corpus_filt]
 
     # Need to take lists convert it to a string for accuracy
@@ -247,6 +251,10 @@ def measure_accuracy(subset: int = 0, randomized_subset: bool = False):
     # Note: the order should be the same due to using the same code to get there. 
     #       There doesn't seem to be a need to sort the results.
     answers_flattened = [flatten_lists(a) for a in answers]
+
+    # print(f'gold_answers_flattened: {gold_answers_flattened}')
+    # print(f'answers_flattened: {answers_flattened}')
+
     accuracy = accuracy_score(gold_answers_flattened, 
                               answers_flattened)
 
@@ -267,6 +275,7 @@ if __name__ == '__main__':
 #    generate_all_templates_test()
 
 #    simple_classify_test()
+    # 90 questions take about 6 minutes CPU
     measure_accuracy(90)
 #    measure_accuracy(5)
 
