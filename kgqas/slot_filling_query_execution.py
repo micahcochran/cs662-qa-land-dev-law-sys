@@ -2,6 +2,7 @@
 Semantic Parsing Phase - 4) Slot Filling and Query Execution
 """
 # Python internal libraries
+import itertools
 from pathlib import Path
 import string
 import sys
@@ -15,7 +16,7 @@ import rdflib
 import indexes
 # internal libraries that need a different path
 sys.path.append("..")  # hack to allow triplesdb imports
-from triplesdb.generate_template import TemplateGeneration
+from triplesdb.generate_template import TemplateGeneration, UNIT_DATATYPE, UNITS_NAME
 
 class SlotFillingQueryExecution:
     def __init__(self, index_kg: Optional[indexes.IndexesKG] = None,
@@ -70,6 +71,7 @@ class SlotFillingQueryExecution:
             slots['regulation_predicate'] = self.index_kg.predicate_dict[relations[0]]
 
 #        print(f'SLOTS: {slots}')
+#        print(f"other SLOTS:{template_dict['sparql_variables_entities']}")
         num_entity_slots = len(template_dict['sparql_variables_entities'])
         # print(f'num_entity_slots: {num_entity_slots}')
         msg['num_entity_slots'] = num_entity_slots
@@ -78,9 +80,6 @@ class SlotFillingQueryExecution:
 
         sparql_template = string.Template(template_dict['sparql_template'])
 
-        # paper used Cartesian product (itertools.product does that),
-        # This code does not exactly do that, but it is not far from that idea. 
-        # There is only one slot - this is NOT ROBUST CODE
         if num_entity_slots == 1:
             slot_name = template_dict['sparql_variables_entities']
             slot_name0 = slot_name[0]  # dereference tuple
@@ -90,10 +89,13 @@ class SlotFillingQueryExecution:
             # print(f"SLOTS: {slots}")
             sparql_code = sparql_template.substitute(slots)
         elif num_entity_slots == 2:
+            # TODO: Can this be eliminated because of the below code?
             slot_names = template_dict['sparql_variables_entities']
             slots_values = [ss[1] for ss in similarity_scores]
 
             slots_forward = dict(zip(slot_names, slots_values))
+            # add the relation extract from slots
+            slots_forward.update(slots)
 
             # fill in the SPARQL template
             # print(f"SLOTS FORWARD: {slots_forward}")
@@ -101,18 +103,55 @@ class SlotFillingQueryExecution:
             sparql_code_fw = sparql_template.substitute(slots_forward)
 
             slots_reversed = dict(zip(slot_names, (slots_values[1], slots_values[0])))
+            # add the relation extract from slots
+            slots_reversed.update(slots)
+
             # print(f"SLOTS REVERSED: {slots_reversed}")
             msg['slots_reversed'] = slots_reversed
             sparql_code_rev = sparql_template.substitute(slots_reversed)
             sparql_code = [sparql_code_fw, sparql_code_rev]
 
         elif num_entity_slots > 2:
-            # I do not currently have a need for more than 2 slots.
-            raise NotImplementedError
+            # lightly tested code
+            # dereference similarity scores
+            # NOTE: this is currently 136, which this should be less than 10 similarity scores.
+            slots_values = [ss[1] for ss in similarity_scores]
+#            print(f'len(slots_values): {len(slots_values)}')
+            slot_names = template_dict['sparql_variables_entities']
+
+            slots_array = []
+            sparql_code = []
+            # this does the cartesian product by move the names of the slots around
+            # by using itertools.permutations()
+            for p_slot_names in itertools.permutations(slot_names, num_entity_slots):
+                slots_p = dict(zip(p_slot_names, slots_values))
+                # add the relation extract from slots
+                slots_p.update(slots)
+
+                # unit symbol has to be converted from text to a symbol "feet" -> "[ft_i]"
+                if 'unit_symbol' in slot_names:
+#                    unit_symbol = slots_p['unit_symbol']
+#                    print(f'unit_symbol: {unit_symbol}')
+#                    print(f'UNITS_NAME: {UNITS_NAME}')
+                    updated_slots = self._convert_unit_symbol_give_datatype(slots_p)
+                    # skip where the unit_symbol is not a unit
+                    if updated_slots is None:
+                        continue
+                    slots_p.update(updated_slots)
+                # varibs['unit_text'] = UNITS_SYMBOL[unit_symbol]  # = "feet"
+                # varibs['unit_datatype'] = UNIT_DATATYPE[unit_symbol]  # = "cdt:length"
+
+                slots_array.append(slots_p)
+                # fill in SPARQL template
+                sparql_code.append(sparql_template.substitute(slots_p))
+
+            # Note: A cartesian product is not really appropriate for this application.
+            # Relying upon the index matching would be better in this case.
 
         if isinstance(sparql_code, str):
             answers = self._query_sparql_str(sparql_code, template_dict['answer_datatype'])
         elif isinstance(sparql_code, list):
+            # print(f"sparql_code: {sparql_code}")
             answers = self._query_sparql_list(sparql_code, template_dict['answer_datatype'])
         else:
             raise RuntimeError
@@ -128,6 +167,17 @@ class SlotFillingQueryExecution:
         msg['sfqe_time'] = time.time() - sfqe_start
 
         return answers, msg
+
+    def _convert_unit_symbol_give_datatype(self, slots_p: dict) -> Optional[dict]:
+        """convert text unit to a symbol and give the data type"""
+        unit_symbol = slots_p['unit_symbol']
+        if unit_symbol not in UNITS_NAME:
+            return None
+        # convert the unit text "feet" -> "[ft_i]"
+        slots_p['unit_symbol'] = UNITS_NAME[unit_symbol]
+        # add the datatype of "length"
+        slots_p['unit_datatype'] = UNIT_DATATYPE[UNITS_NAME[unit_symbol]]
+        return slots_p
 
     def _query_sparql_str(self, sparql: str, result_type) -> Union[bool, List[str]]:
         msg = {}

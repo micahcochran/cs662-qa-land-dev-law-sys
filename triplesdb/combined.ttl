@@ -42,6 +42,8 @@
 # This is for the division of residential densities with different dimensional requirements.
 :ZoningDistrictDivision rdfs:subClassOf :ZoningDistrict .
 
+# Define a subclass of Property, for the properties that are related to dimensional requirements
+:DimensionalProperty     rdfs:subClassOf     rdf:Property .
 
 # Property Definitions ---------------------------------------------------------
 
@@ -49,35 +51,35 @@
                     rdfs:label      "permits use" ;
                     rdfs:range      rdfs:Literal .
 
-:minLotSize         rdf:type        rdf:Property ;
+:minLotSize         rdf:type        :DimensionalProperty ;
                     rdfs:label      "minimum lot size" ;
                     rdfs:range       cdt:area .
 
-:maxDensity         rdf:type        rdf:Property ;
+:maxDensity         rdf:type        :DimensionalProperty ;
                     rdfs:label      "maximum density" ;
                     rdfs:range       cdt:dimensionless .
 
-:minLotWidth        rdf:type        rdf:Property ;
+:minLotWidth        rdf:type        :DimensionalProperty ;
                     rdfs:label      "minimum lot width" ;
                     rdfs:range       cdt:length .
 
-:minLotDepth        rdf:type        rdf:Property ;
+:minLotDepth        rdf:type        :DimensionalProperty ;
                     rdfs:label      "minimum lot depth" ;
                     rdfs:range       cdt:length .
 
-:minFrontSetback    rdf:type        rdf:Property ;
+:minFrontSetback    rdf:type        :DimensionalProperty ;
                     rdfs:label      "minimum front setback" ;
                     rdfs:range       cdt:length .
 
-:minSideSetback     rdf:type        rdf:Property ;
+:minSideSetback     rdf:type        :DimensionalProperty ;
                     rdfs:label      "minimum side setback" ;
                     rdfs:range       cdt:length .
 
-:minRearSetback     rdf:type        rdf:Property ;
+:minRearSetback     rdf:type        :DimensionalProperty ;
                     rdfs:label      "minimum rear setback" ;
                     rdfs:range       cdt:length .
 
-:maxBuildingHeight  rdf:type        rdf:Property ;
+:maxBuildingHeight  rdf:type        :DimensionalProperty ;
                     rdfs:label      "maximum building height" ;
                     rdfs:range       cdt:length .
 
