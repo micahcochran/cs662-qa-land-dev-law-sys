@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """This is a CLI for the Zoning KGQAS"""
 
 # Python Standard Libraries
@@ -31,7 +33,7 @@ def print_answer(answer):
         ny = ('No', 'Yes')
         print(f'Answer: {ny[int(answer)]}')
     elif isinstance(answer, list):
-        # answer returns a List of rdflib.term
+        # answer returns a List of a List of rdflib.term
         # print(f'Answer (unconverted): {answer}')
 
         # implicitly converts rdflib.term to a string representation
@@ -49,7 +51,7 @@ dimensional requirements.
 The 2021 IZC can be found at
 https://codes.iccsafe.org/content/IZC2021P1/arrangement-and-format-of-the-2021-izc
 
-Type in your question and it will provide an answer.
+Type in your question and press Enter, the software will give you an answer.
 
 Commands: 
     random question(s) - provides you random question(s) that can be asked
