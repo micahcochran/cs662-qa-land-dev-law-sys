@@ -13,30 +13,31 @@ dependencies:
   - pytest
   - scikit-learn
   - sklearn-pandas
+#  - inflect = 6.0.2
   - ipykernel
   - ipywidgets
   - pathlib
   - xgboost
   - shap
   - pip
-  - rdflib
-  # - pytorch # uncomment for any intel system
+  - rdflib = 6.2.0
+  - pytorch # uncomment for any intel system
   - keras
   - nltk
   - spacy
   - seaborn
   - gensim
-  # - transformers
+  - transformers
   - apache-beam
   - optuna
   - loguru
   - stanza
   - pip:
-    - transformers # as pip package to override pytorch version when installing farm-haystack on M1 macs
+  #  - transformers # as pip package to override pytorch version when installing farm-haystack on M1 macs
     - sentence-transformers # as pip package to override pytorch version when installing farm-haystack on M1 macs
     - evaluate # as pip package to override pytorch version when installing farm-haystack on M1 macs
     - datasets # as pip package to override pytorch version when installing farm-haystack on M1 macs
-    - farm-haystack # uncomment for any linux intel system with basic features set
+    # - farm-haystack # uncomment for any linux intel system with basic features set
     # - farm-haystack[all] # if you want to use CPU on any linux intel system with full features set
     # - farm-haystack[all-gpu] # if you want to use GPU on any linux intel system with full features set
     # for m1 macs need rust, cmake, postgresql install with brew, 
