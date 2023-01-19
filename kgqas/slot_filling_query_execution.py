@@ -40,8 +40,7 @@ class SlotFillingQueryExecution:
         else:
             self.tg = template_generation
 
-    # TODO: This function needs a rewrite to remove a lot of development code.
-
+    # this function has been divided into three functions - TODO: REMOVE
     def slot_fill_query_execute(self, template_name: str, similarity_scores, relations: List[str]) \
             -> (Union[bool, List[str]], dict):
         """
@@ -53,8 +52,7 @@ class SlotFillingQueryExecution:
         msg = {}
 
         sfqe_start = time.time()
-        # This example is simpler than the paper.  Due to the Zoning KG being two orders of magnitude smaller
-        # and less complicated.  This doesn't really do the cartesian product of all the results.
+
         template_dict = self.tg.get_template(template_name)
        # print(f"template name: {template_name}")
 #        msg['template_name'] = template_name
@@ -168,6 +166,120 @@ class SlotFillingQueryExecution:
 
         return answers, msg
 
+    def slot_fill(self, template_name: str, similarity_scores, relations: List[str]) \
+            -> dict:
+        """
+        This handles filling the slots.
+        returns msg
+        """
+
+        # This is the message of all of the variables
+        msg = {}
+
+        sf_start = time.time()
+        template_dict = self.tg.get_template(template_name)
+       # print(f"template name: {template_name}")
+#        msg['template_name'] = template_name
+       # print(f"SPARQL TEMPLATE: {template_dict['sparql_template']}")
+       # msg['sparql_template'] = template_dict['sparql_template']
+#        print(f"VARIABLES: {template_dict['variables']}")
+#        print(f'RELATIONS: {relations}')
+        slots = {}
+        if 'regulation_predicate' in template_dict['variables']:
+            # translate from text to a predicate
+            # print(f"Index: {self.index_kg.predicate_index}")
+            slots['regulation_predicate'] = self.index_kg.predicate_dict[relations[0]]
+
+#        print(f'SLOTS: {slots}')
+#        print(f"other SLOTS:{template_dict['sparql_variables_entities']}")
+        num_entity_slots = len(template_dict['sparql_variables_entities'])
+        # print(f'num_entity_slots: {num_entity_slots}')
+        msg['num_entity_slots'] = num_entity_slots
+        # print(f'SIMILARITY SCORES for num_entity_slots: {similarity_scores[:num_entity_slots]}')
+        msg['similarity_scores'] = similarity_scores[:num_entity_slots]
+
+        # sparql_template = string.Template(template_dict['sparql_template'])
+
+
+        # lightly tested code
+        # dereference similarity scores
+        # NOTE: this is currently 136, which this should be less than 10 similarity scores.
+        slots_values = [ss[1] for ss in similarity_scores]
+#            print(f'len(slots_values): {len(slots_values)}')
+        slot_names = template_dict['sparql_variables_entities']
+
+        msg['filled_slots'] = []
+#        sparql_code = []
+        # this does the cartesian product by move the names of the slots around
+        # by using itertools.permutations()
+        for p_slot_names in itertools.permutations(slot_names, num_entity_slots):
+            slots_p = dict(zip(p_slot_names, slots_values))
+            # add the relation extract from slots
+            slots_p.update(slots)
+
+            # unit symbol has to be converted from text to a symbol "feet" -> "[ft_i]"
+            if 'unit_symbol' in slot_names:
+#                    print(f'unit_symbol: {unit_symbol}')
+#                    print(f'UNITS_NAME: {UNITS_NAME}')
+                updated_slots = self._convert_unit_symbol_give_datatype(slots_p)
+                # skip where the unit_symbol is not a unit
+                if updated_slots is None:
+                    continue
+                slots_p.update(updated_slots)
+
+            msg['filled_slots'].append(slots_p)
+            # fill in SPARQL template
+ #           sparql_code.append(sparql_template.substitute(slots_p))
+
+        # TESTING, if length == 1, dereference that item in the list
+        if len(msg['filled_slots']):
+            msg['filled_slots'] = msg['filled_slots'][0]
+
+        msg['sf_time'] = time.time() - sf_start
+
+        return msg
+
+    def fill_sparql_template(self, template_name: str, msg: dict) -> dict:
+        """
+        takes filled slots and fills in the sparql_template
+        returns msg
+        """
+
+        template_dict = self.tg.get_template(template_name)
+        msg['sparql_template'] = template_dict['sparql_template']
+        sparql_template = string.Template(template_dict['sparql_template'])
+
+#        msg['sparql_templates_filled'] = [sparql_template.substitute(p) for p in msg['filled_slots']]
+#        d = {}
+#        for k,v in msg['filled_slots'].items():
+#            print(f'k: {k}, v: {v}')
+#            sparql_template.substitute(p)
+#        msg['sparql_templates_filled'].append(d)
+        # this seems better
+        msg['sparql_templates_filled'] = sparql_template.substitute(msg['filled_slots'])
+
+        return msg
+
+    def query_execution(self, template_name: str, msg: dict) -> (Union[bool, List[str]], dict):
+        """executes the query
+        returns (answers, msg)"""
+        qe_time = time.time()
+
+        template_dict = self.tg.get_template(template_name)
+        sparql_code =  msg['sparql_templates_filled']
+
+        if isinstance(sparql_code, str):
+            answers = self._query_sparql_str(sparql_code, template_dict['answer_datatype'])
+        elif isinstance(sparql_code, list):
+            # print(f"sparql_code: {sparql_code}")
+            answers = self._query_sparql_list(sparql_code, template_dict['answer_datatype'])
+        else:
+            raise RuntimeError
+
+        msg['qe_time'] = time.time() - qe_time
+
+        return answers, msg
+
     def _convert_unit_symbol_give_datatype(self, slots_p: dict) -> Optional[dict]:
         """convert text unit to a symbol and give the data type"""
         unit_symbol = slots_p['unit_symbol']
@@ -223,8 +335,9 @@ class SlotFillingQueryExecution:
         return results
 
 
-def classify_tests():
+def slot_tests():
     questions = ['What is the minimum side setback in the R2 zoning district?']
 
 if __name__ == '__main__':
-    classify_tests()
+    pass
+    # classify_tests()
