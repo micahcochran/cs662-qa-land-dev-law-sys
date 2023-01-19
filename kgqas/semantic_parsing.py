@@ -7,6 +7,7 @@ and classifying for this step.
 
 # Python Standard Libraries
 from pathlib import Path
+from pprint import pprint
 import random
 import sys
 import time
@@ -114,8 +115,17 @@ class SemanticParsingClass:
 
         # 4) Slot Filling and Query Execution
         sfqe = SlotFillingQueryExecution(template_generation=self.tg)
-        answer, slot_msg = sfqe.slot_fill_query_execute(classified_template_name, similarity_scores, most_relevant_relations)
-        msg.update(slot_msg)
+        # responsibilities of each function has been reduced
+        sf_msg = sfqe.slot_fill(classified_template_name, similarity_scores, most_relevant_relations)
+        msg.update(sf_msg)
+#            pprint(msg)
+        sparql_msg = sfqe.fill_sparql_template(classified_template_name, msg)
+        msg.update(sparql_msg)
+        answer, qe_msg = sfqe.query_execution(classified_template_name, msg)
+        msg.update(qe_msg)
+#            answer, slot_msg = sfqe.slot_fill_query_execute(classified_template_name, similarity_scores, most_relevant_relations)
+#            msg.update(slot_msg)
+
         return answer, msg
 
 #    def generate_filtered_corpus(self) -> List[dict]:
@@ -190,7 +200,7 @@ def get_random_questions_answers(question_corpus: List[dict], n: int) -> List[di
 
 # This takes 44 minutes to run on all questions
 
-# I estimate that this will take about 8 hours for the ~5000 questions.
+# This should take about 2-3 hours for 2700 questions
 def measure_accuracy(subset: int = 0, randomized_subset: bool = False):
     """measure the accuracy and F1-score of the Semantic Parsing Process
     subset - measure a subset of the questions, numeric value of the number of questions to test
@@ -264,6 +274,119 @@ def measure_accuracy(subset: int = 0, randomized_subset: bool = False):
 
     print(answers)
 
+def _dict_keysorted_string(d: dict) -> str:
+    """
+    Convert a dictionary to a string like str(), but sorts by key name.
+    """
+    out = '{'
+    for k in sorted(d.keys()):
+        if out[-1] != '{':
+            out += ", "
+        out += f"{k}: {d[k]}"
+
+    out += '}'
+    return out
+
+# TODO can this function and measure_accuracy be combined or made into functions that share the work? 
+# measure the accuracy of the slot filling step
+def measure_slot_filled_accuracy(subset: int = 0, random_state: Optional[int] = None):
+    """measure the accuracy and F1-score of the Semantic Parsing Process
+    subset - measure a subset of the questions, numeric value of the number of questions to test
+    random_state - use numeric value to randomize questions"""
+    logger.info("measuring the accuracy of Zoning KGQAS")
+    start_time = time.time()
+    sem_par = SemanticParsingClass()
+
+    kg = rdflib.Graph()
+    kg.parse("triplesdb/combined.ttl")
+    template_path = Path('../triplesdb/templates')
+    tg = TemplateGeneration(template_path)
+    # FIXME: generate_all_templates_shuffle() random_state is not quite repeatable
+    question_corpus = list(tg.generate_all_templates_shuffle(kg, kg, random_state=random_state))
+#    question_corpus_filt = question_corpus  # FIXME filtering may still be needed but less extensively
+
+    # remove questions that are empty sets and False, this takes it down to 900 questions
+#    question_corpus_filt = list(sem_par._remove_false_answers(sem_par._remove_empty_answers(question_corpus)))
+#    print(f'len(question_corpus_filt): {len(question_corpus_filt)}')
+    print(f'len(question_corpus): {len(question_corpus)}')
+
+    if subset > 0:
+#        if randomized_subset:
+            # randomize in order to try to see if it has problems on certain questions
+#            logger.info(f"measuring randomized subset of size: {subset}")
+#            answers = []
+#            answer_slots_filled = []
+#            gold_answers = []
+#            gold_slots = []
+            # random.seed(42)
+#            for _ in range(subset):
+#                rnd = random.randint(0, subset)
+#                a, msg = sem_par.classify(question_corpus[rnd]['question'])
+#                answers.append(a)
+#                answer_slots_filled.append(msg['filled_slots'])
+#                ga = question_corpus[rnd]['answer']
+#                gold_answers.append(ga)
+#                gs = question_corpus[rnd]['variables']
+#                gold_answers.append(gs)
+#        else:
+            logger.info(f"measuring subset of size: {subset}")
+            answers_message = [sem_par.classify(q['question']) for q in question_corpus[:subset]]
+#            answers = [a for a, msg in answers_message]
+            msgs = [msg for a, msg in answers_message]
+            answer_slots_filled = [msg['filled_slots'] for msg in msgs]
+            gold_answers = [q['answer'] for q in question_corpus[:subset]]
+            gold_slots = [q['variables'] for q in question_corpus[:subset]]
+    else:
+        answers_message = [sem_par.classify(q['question']) for q in question_corpus]
+#        answers = [a for a, msg in answers_message]
+        msgs = [msg for a, msg in answers_message]
+        answer_slots_filled = [msg['filled_slots'] for msg in msgs]
+        gold_answers = [q['answer'] for q in question_corpus]
+        gold_slots = [q['variables'] for q in question_corpus]
+
+
+#    print('$$$$$ ANSWER SLOTS FILLED $$$$$')
+#    pprint(answer_slots_filled)
+#    print('$$$$$$$$ GOLD SLOTS $$$$$$$')
+#    pprint(gold_slots)
+#    print('$$$$$$$$$$$$$$$  MESSAGES  $$$$$$$$$$$$$$$$')
+#    pprint(msgs)
+
+    # mass filter of keys, I would prefer something a little better like getting the keys from the template
+    # regulation_predicate should not be in 
+    # Another ways to do this in Python 3.11 is to use string.Template.get_identifiers() from the template.
+    FILTERED_KEYS = ('regulation_number', 'regulation_predicate', 'use', 'unit_datatype',
+                     'unit_symbol', 'zoning_dims', 'zoning')
+
+    # slot answer conversion
+    def answer_conversion(a, filter_keys: bool=False):
+        if isinstance(a, dict):
+            if filter_keys is True:
+                filtered = {k: v for k, v in a.items() if k in FILTERED_KEYS} 
+                return _dict_keysorted_string(filtered)
+            else:
+                return _dict_keysorted_string(a)
+        else:
+            return a
+
+    # take all the inner lists and join their strings them with commas - REMOVE
+    gold_answers_sortedstrs = [answer_conversion(a, True) for a in answer_slots_filled]
+    # Note: the order should be the same due to using the same code to get there. 
+    #       There doesn't seem to be a need to sort the results.  - REMOVE
+    answers_sortedstrs = [answer_conversion(a) for a in answer_slots_filled]
+
+    accuracy = accuracy_score(gold_answers_sortedstrs, 
+                              answers_sortedstrs)
+
+    f1 = f1_score(gold_answers_sortedstrs, answers_sortedstrs, average='micro')
+#    print(f'# answers: {len(answers)} accuracy:  {accuracy * 100.0}, f1 score: {f1 * 100.0}')
+    print(f'# answers: {len(answers_sortedstrs)} accuracy:  {accuracy:.3%}, f1 score: {f1:.3%}')
+    runtime = time.time()-start_time
+    print(f'Runtime: {runtime}, per question runtime {runtime/subset}')
+
+#    print(answers)
+
+
 
 # training time is 9 minutes on CPU
 def train_all():
@@ -271,13 +394,16 @@ def train_all():
     sem_par = SemanticParsingClass()
     sem_par.train_all()
 
+
 if __name__ == '__main__':
 #    generate_all_templates_test()
 
 #    simple_classify_test()
     # 90 questions take about 6 minutes CPU
-    measure_accuracy(90)
-#    measure_accuracy(5)
+#    measure_accuracy(90)
+#    measure_accuracy(10)
 
 
 #    train_all()
+
+    measure_slot_filled_accuracy(random_state=42)

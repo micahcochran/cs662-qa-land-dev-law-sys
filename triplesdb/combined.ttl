@@ -164,7 +164,7 @@
 :a2 a           :ZoningDistrict ;
     rdfs:label  "A2" .
 
-:a2 :permitsUse "agricultural Use" ;
+:a2 :permitsUse "agricultural use" ;
     :permitsUse "dwellings" ;
     :permitsUse "maintenance/storage buildings" .
 
