@@ -382,7 +382,7 @@ def measure_slot_filled_accuracy(subset: int = 0, random_state: Optional[int] = 
 #    print(f'# answers: {len(answers)} accuracy:  {accuracy * 100.0}, f1 score: {f1 * 100.0}')
     print(f'# answers: {len(answers_sortedstrs)} accuracy:  {accuracy:.3%}, f1 score: {f1:.3%}')
     runtime = time.time()-start_time
-    print(f'Runtime: {runtime}, per question runtime {runtime/subset}')
+    print(f'Runtime: {runtime}, per question runtime {runtime/len(answers_sortedstrs)}')
 
 #    print(answers)
 
@@ -406,4 +406,4 @@ if __name__ == '__main__':
 
 #    train_all()
 
-    measure_slot_filled_accuracy(random_state=42)
+    measure_slot_filled_accuracy(10, random_state=42)
