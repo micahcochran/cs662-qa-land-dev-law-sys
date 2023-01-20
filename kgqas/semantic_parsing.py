@@ -128,12 +128,6 @@ class SemanticParsingClass:
 
         return answer, msg
 
-#    def generate_filtered_corpus(self) -> List[dict]:
-#        question_corpus = list(kg_helper.generate_templates())
-        # remove questions that are empty sets
-#        question_corpus_filt = self._remove_false_answers(self._remove_empty_answers(question_corpus))
-#        return question_corpus_filt
-
 
     # There are some distinctions in :ZoningDistrict and :ZoningDivisionDistrict that did not appear in the original
     # generate_template.  This is causing a few questions that could be answerable, but it would have to use a :seeAlso
@@ -141,10 +135,6 @@ class SemanticParsingClass:
 #    def _remove_empty_answers(self, question_corpus: List[dict]) -> List[dict]:
 #        return [q for q in question_corpus if q['answer'] != []]
 
-    # Some questions should be producing True as their output.  They are producing false.  The last minute workaround
-    # is to just remove them from the corpus.  generate_template needs to be fixed.
-#    def _remove_false_answers(self, question_corpus: List[dict]) -> List[dict]:
-#        return [q for q in question_corpus if q['answer'] != False]
 
 
 def generate_all_templates_test():
@@ -198,82 +188,6 @@ def get_random_questions_answers(question_corpus: List[dict], n: int) -> List[di
     return results
 
 
-# This takes 44 minutes to run on all questions
-
-# This should take about 2-3 hours for 2700 questions
-def measure_accuracy(subset: int = 0, randomized_subset: bool = False):
-    """measure the accuracy and F1-score of the Semantic Parsing Process
-    subset - measure a subset of the questions, numeric value of the number of questions to test
-    randomized_subset - randomize the subset"""
-    logger.info("measuring the accuracy of Zoning KGQAS")
-    sem_par = SemanticParsingClass()
-
-    kg = rdflib.Graph()
-    kg.parse("triplesdb/combined.ttl")
-    template_path = Path('../triplesdb/templates')
-    tg = TemplateGeneration(template_path)
-    question_corpus = list(tg.generate_all_templates_shuffle(kg, kg))
-    question_corpus_filt = question_corpus  # FIXME filtering may still be needed but less extensively
-
-    # remove questions that are empty sets and False, this takes it down to 900 questions
-#    question_corpus_filt = list(sem_par._remove_false_answers(sem_par._remove_empty_answers(question_corpus)))
-    print(f'len(question_corpus_filt): {len(question_corpus_filt)}')
-
-    if subset > 0:
-        if randomized_subset:
-            # randomize in order to try to see if it has problems on certain questions
-            logger.info(f"measuring randomized subset of size: {subset}")
-            answers = []
-            gold_answers = []
-            for i in range(subset):
-                rnd = random.randint(0, subset)
-                a, msg = sem_par.classify(question_corpus_filt[rnd]['question'])
-                answers.append(a)
-                ga = question_corpus_filt[rnd]['answer']
-                gold_answers.append(ga)
-        else:
-            logger.info(f"measuring subset of size: {subset}")
-            answers_message = [sem_par.classify(q['question']) for q in question_corpus_filt[:subset]]
-            answers = [a for a, msg in answers_message]
-            gold_answers = [q['answer'] for q in question_corpus_filt[:subset]]
-    else:
-        answers_message = [sem_par.classify(q['question']) for q in question_corpus_filt]
-        answers = [a for a, msg in answers_message]
-        gold_answers = [q['answer'] for q in question_corpus_filt]
-
-    # Need to take lists convert it to a string for accuracy
-#    accuracy = accuracy_score(gold_answers.join, answers)
-
-   #  for a in answers:
-   #     print(f'a: {a}')
-   #     print(f'type of a: {type(a)}')
-
-    def flatten_lists(x: List[str]) -> str:
-        """flattens a list from ['a', 'b', 'c'] to 'a, b, c' """
-        if isinstance(x, list):
-            return ', '.join(x)
-        return x
-    # that didn't work because it would try to join boolean answers.
-    # accuracy = accuracy_score([','.join(a) for a in gold_answers], [','.join(a) for a in answers])
-
-    # take all the inner lists and join their strings them with commas
-    gold_answers_flattened = [flatten_lists(a) for a in gold_answers]
-    # Note: the order should be the same due to using the same code to get there. 
-    #       There doesn't seem to be a need to sort the results.
-    answers_flattened = [flatten_lists(a) for a in answers]
-
-    # print(f'gold_answers_flattened: {gold_answers_flattened}')
-    # print(f'answers_flattened: {answers_flattened}')
-
-    accuracy = accuracy_score(gold_answers_flattened, 
-                              answers_flattened)
-
-    f1 = f1_score(gold_answers_flattened, answers_flattened, average='micro')
-#    print(f'# answers: {len(answers)} accuracy:  {accuracy * 100.0}, f1 score: {f1 * 100.0}')
-    print(f'# answers: {len(answers)} accuracy:  {accuracy:.3%}, f1 score: {f1:.3%}')
-
-    print(answers)
-
 def _dict_keysorted_string(d: dict) -> str:
     """
     Convert a dictionary to a string like str(), but sorts by key name.
@@ -287,10 +201,10 @@ def _dict_keysorted_string(d: dict) -> str:
     out += '}'
     return out
 
-# TODO can this function and measure_accuracy be combined or made into functions that share the work? 
-# measure the accuracy of the slot filling step
-def measure_slot_filled_accuracy(subset: int = 0, random_state: Optional[int] = None):
-    """measure the accuracy and F1-score of the Semantic Parsing Process
+# measures the accuracy of slot filling and answering
+# This should take about 2-3 hours for 2700 questions
+def measure_accuracy(subset: int = 0, random_state: Optional[int] = None):
+    """measure the accuracy and F1-score of the Slot filling and answering
     subset - measure a subset of the questions, numeric value of the number of questions to test
     random_state - use numeric value to randomize questions"""
     logger.info("measuring the accuracy of Zoning KGQAS")
@@ -303,47 +217,23 @@ def measure_slot_filled_accuracy(subset: int = 0, random_state: Optional[int] = 
     tg = TemplateGeneration(template_path)
     # FIXME: generate_all_templates_shuffle() random_state is not quite repeatable
     question_corpus = list(tg.generate_all_templates_shuffle(kg, kg, random_state=random_state))
-#    question_corpus_filt = question_corpus  # FIXME filtering may still be needed but less extensively
-
-    # remove questions that are empty sets and False, this takes it down to 900 questions
-#    question_corpus_filt = list(sem_par._remove_false_answers(sem_par._remove_empty_answers(question_corpus)))
-#    print(f'len(question_corpus_filt): {len(question_corpus_filt)}')
-    print(f'len(question_corpus): {len(question_corpus)}')
 
     if subset > 0:
-#        if randomized_subset:
-            # randomize in order to try to see if it has problems on certain questions
-#            logger.info(f"measuring randomized subset of size: {subset}")
-#            answers = []
-#            answer_slots_filled = []
-#            gold_answers = []
-#            gold_slots = []
-            # random.seed(42)
-#            for _ in range(subset):
-#                rnd = random.randint(0, subset)
-#                a, msg = sem_par.classify(question_corpus[rnd]['question'])
-#                answers.append(a)
-#                answer_slots_filled.append(msg['filled_slots'])
-#                ga = question_corpus[rnd]['answer']
-#                gold_answers.append(ga)
-#                gs = question_corpus[rnd]['variables']
-#                gold_answers.append(gs)
-#        else:
-            logger.info(f"measuring subset of size: {subset}")
-            answers_message = [sem_par.classify(q['question']) for q in question_corpus[:subset]]
-#            answers = [a for a, msg in answers_message]
-            msgs = [msg for a, msg in answers_message]
-            answer_slots_filled = [msg['filled_slots'] for msg in msgs]
-            gold_answers = [q['answer'] for q in question_corpus[:subset]]
-            gold_slots = [q['variables'] for q in question_corpus[:subset]]
+        logger.info(f"measuring subset of size: {subset}")
+        answers_message = [sem_par.classify(q['question']) for q in question_corpus[:subset]]
+        msgs = [msg for a, msg in answers_message]
+        answer_slots_filled = [msg['filled_slots'] for msg in msgs]
+        gold_answers = [q['answer'] for q in question_corpus[:subset]]
+        gold_slots = [q['variables'] for q in question_corpus[:subset]]
     else:
+        logger.info(f'measuring entire corpus of size: {len(question_corpus)}')
         answers_message = [sem_par.classify(q['question']) for q in question_corpus]
-#        answers = [a for a, msg in answers_message]
         msgs = [msg for a, msg in answers_message]
         answer_slots_filled = [msg['filled_slots'] for msg in msgs]
         gold_answers = [q['answer'] for q in question_corpus]
         gold_slots = [q['variables'] for q in question_corpus]
 
+    answers = [a for a, msg in answers_message]
 
 #    print('$$$$$ ANSWER SLOTS FILLED $$$$$')
 #    pprint(answer_slots_filled)
@@ -358,6 +248,13 @@ def measure_slot_filled_accuracy(subset: int = 0, random_state: Optional[int] = 
     FILTERED_KEYS = ('regulation_number', 'regulation_predicate', 'use', 'unit_datatype',
                      'unit_symbol', 'zoning_dims', 'zoning')
 
+
+    def flatten_lists(x: List[str]) -> str:
+        """flattens a list from ['a', 'b', 'c'] to 'a, b, c' """
+        if isinstance(x, list):
+            return ', '.join(x)
+        return x
+
     # slot answer conversion
     def answer_conversion(a, filter_keys: bool=False):
         if isinstance(a, dict):
@@ -370,21 +267,38 @@ def measure_slot_filled_accuracy(subset: int = 0, random_state: Optional[int] = 
             return a
 
     # take all the inner lists and join their strings them with commas - REMOVE
-    gold_answers_sortedstrs = [answer_conversion(a, True) for a in answer_slots_filled]
+    gold_answer_slots_sortedstrs = [answer_conversion(a, True) for a in answer_slots_filled]
     # Note: the order should be the same due to using the same code to get there. 
     #       There doesn't seem to be a need to sort the results.  - REMOVE
-    answers_sortedstrs = [answer_conversion(a) for a in answer_slots_filled]
+    answer_slots_sortedstrs = [answer_conversion(a) for a in answer_slots_filled]
 
-    accuracy = accuracy_score(gold_answers_sortedstrs, 
-                              answers_sortedstrs)
+    accuracy_sf = accuracy_score(gold_answer_slots_sortedstrs, 
+                                 answer_slots_sortedstrs)
 
-    f1 = f1_score(gold_answers_sortedstrs, answers_sortedstrs, average='micro')
-#    print(f'# answers: {len(answers)} accuracy:  {accuracy * 100.0}, f1 score: {f1 * 100.0}')
-    print(f'# answers: {len(answers_sortedstrs)} accuracy:  {accuracy:.3%}, f1 score: {f1:.3%}')
+
+    # take all the inner lists and join their strings them with commas
+    gold_answers_flattened = [flatten_lists(a) for a in gold_answers]
+    # Note: the order should be the same due to using the same code to get there. 
+    #       There doesn't seem to be a need to sort the results.
+    answers_flattened = [flatten_lists(a) for a in answers]
+
+    # print(f'gold_answers_flattened: {gold_answers_flattened}')
+    # print(f'answers_flattened: {answers_flattened}')
+
+    accuracy = accuracy_score(gold_answers_flattened, 
+                              answers_flattened)
+
+    f1_sf = f1_score(gold_answer_slots_sortedstrs, answer_slots_sortedstrs, average='micro')
+
+    f1 = f1_score(gold_answers_flattened, answers_flattened, average='micro')
+     
+    print(f'# answers: {len(answers)} Answer accuracy:  {accuracy:.2%}, Answer f1 score: {f1:.2%}')
+    print(f'Slot Filled accuracy:  {accuracy_sf:.2%}, Slot Filled f1 score: {f1_sf:.2%}')
     runtime = time.time()-start_time
-    print(f'Runtime: {runtime}, per question runtime {runtime/len(answers_sortedstrs)}')
+    print(f'Runtime: {runtime:.5} s, per question runtime {runtime/len(answers)}')
 
 #    print(answers)
+
 
 
 
@@ -406,4 +320,4 @@ if __name__ == '__main__':
 
 #    train_all()
 
-    measure_slot_filled_accuracy(10, random_state=42)
+    measure_accuracy(5, random_state=42)
