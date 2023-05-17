@@ -38,7 +38,9 @@ class SemanticParsingClass:
     """
 
     def __init__(self, template_generation: Optional[TemplateGeneration] = None,
-                    knowledge_graph: Optional[rdflib.Graph] = None):
+                    knowledge_graph: Optional[rdflib.Graph] = None, verbose = False):
+
+        self.verbose = verbose
 
         if knowledge_graph is None:
             self.kg = rdflib.Graph()
@@ -73,7 +75,9 @@ class SemanticParsingClass:
 
 
     def classify(self, sentence: str) -> (Union[bool, List[str]], dict):
-        logger.debug(f"QUESTION: {sentence}")
+
+        if self.verbose is True:
+            logger.debug(f"QUESTION: {sentence}")
         msg = {}
 
         # 1) Question Classification
