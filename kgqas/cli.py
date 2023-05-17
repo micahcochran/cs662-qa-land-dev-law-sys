@@ -108,7 +108,9 @@ def main() -> int:
 #                result = sempar.classify(generated_qs[int(after_ask)-1])
 #                print(f'Result: {result}')
                 start_t = time.time()
-                answer, msg = sempar.classify(generated_qs[int(after_ask)-1])
+                question = generated_qs[int(after_ask)-1]
+                print(f'Asking question: {question}')
+                answer, msg = sempar.classify(question)
                 end_t = time.time()
                 print_answer(answer)
                 if verbosity:
@@ -135,6 +137,9 @@ def main() -> int:
                 print(f'Could not understand verbose value "{after_verbose}", which should be either true/false')
         elif line.lower() in ('exit', 'quit'):
             quit_flag = True
+        # skip empty input
+        elif line.strip() == '':
+            continue
         else:
 #            result = sempar.classify(line)
 #            print(f'Result: {result}')

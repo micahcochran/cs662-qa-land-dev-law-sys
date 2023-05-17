@@ -19,7 +19,7 @@ import numpy as np
 import rdflib
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, f1_score
-import spacy
+# import spacy
 import stanza
 from stanza.pipeline.core import DownloadMethod
 # install xgboost
@@ -66,6 +66,7 @@ class QuestionClassification:
     # NOT WORKING: Had problems finding the POS tag of the headword.
     # result in a triplets in the following form:
     # <POS tag of headword, dependency tag, POS tag of dependent word>
+    """
     def dependency_parsing_spacy(self, sentence: str) -> List[tuple]:
         nlp = spacy.load("en_core_web_sm")
         doc = nlp(sentence)
@@ -79,6 +80,7 @@ class QuestionClassification:
                f'{token.text:{12}} {token.pos_:{6}} <{token.tag_:{6}} {token.dep_:{6}}> {token.head} {spacy.explain(token.pos_):{20}} {spacy.explain(token.tag_)}')
             dependency_triplets.append((doc[token.i].tag_, token.head, token.dep_, token.tag_))
         return [(doc[token.i].tag_, token.head, token.dep_, token.tag_) for token in doc]
+    """
 
     # result in a triplets in the following form:
     # <POS tag of headword, dependency tag, POS tag of dependent word>

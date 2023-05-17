@@ -28,10 +28,10 @@ These are the files most relevant to the Zoning KGQAS system and question_templa
 
 * bulk.rq -- This is a query for the "bulk" requirements for the maximum Density
 * minwidth.rq -- Query for the minimum width requirement for bulk.ttl and bulk2.ttl. 
-* rand.rq -- Demonstration of SPARQL RAND() function to add randomization to the returned results.  The paper mentioned using this for training.
+* rand.rq -- Demonstration of SPARQL RAND() function to add randomization to the returned results.  The paper mentioned using this for training.  Reproducible order is nice so that you can tell if a change improved the method.  rdflib/SPARQL does not seem to have a documented way to seed the random function.  Python code was used to do this instead.
 
 ### Notes
-* [rdflib_10_questions.ipynb](rdflib_10_questions.ipynb) - I think the idea was to try to create 10 questions with its associated SPARQL query.  It lead to the development of `generated_template.py`.
+* [rdflib_10_questions.ipynb](rdflib_10_questions.ipynb) - The idea was to try to create 10 questions with its associated SPARQL query.  This was early development.  It lead to the development of `generated_template.py`.
 
 * [Custom Datatypes (CDT)](https://ci.mines-stetienne.fr/lindt/v4/custom_datatypes) is one such way of denoting units in Knowledge Graphs.  One problem with it is the values are not numeric, so using isNumeric() in SPARQL will not work.  Instead, QUDT adds more triples to represent the units.
 

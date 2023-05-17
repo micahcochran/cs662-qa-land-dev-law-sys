@@ -18,7 +18,7 @@ import warnings
 # imports from external libraries
 from loguru import logger
 import pandas as pd
-import numpy as np
+# import numpy as np
 import rdflib
 from sklearn.metrics import accuracy_score, f1_score
 from sklearn.model_selection import train_test_split

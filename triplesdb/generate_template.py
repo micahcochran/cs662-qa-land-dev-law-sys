@@ -18,7 +18,9 @@ else:
     # internal library in Python 3.11+
     import tomllib
 
-
+# External libraries
+# using inflect to detect if a word is singular or plural
+# import inflect
 # Developed using rdflib version 6.2.0 is the current version as of 2022-10-31.
 # using feature URIRef.fragment added in this version, but could easily program around if needed.
 import rdflib
@@ -338,6 +340,7 @@ class TemplateGeneration:
         return self._template_number
 
 
+    # TODO: break this up to get the slots used to generate SPARQL code
 
     # NOTE: The dictionary was a design decision to allow extension
     # to add other variables.
@@ -384,6 +387,7 @@ class TemplateGeneration:
         # set up the templates
         sparql_template = string.Template(self.templates[template_name]['sparql_template'])
         question_templates = [string.Template(q_tmpl) for q_tmpl in self.templates[template_name]['question_templates']]
+        # TODO: Modify code to detect plural/singular in templates
 
         variable_names = tuple(self.templates[template_name]['variables'])
         # print(f'variable_names: {variable_names}')
@@ -420,7 +424,7 @@ class TemplateGeneration:
                 varibs['unit_datatype'] = UNIT_DATATYPE[unit_symbol]  # = "cdt:length"
 
             # print(f"varibs: {varibs}")
-
+            # TODO: how do I separate the variable "slots" for the gold for generating SPARQL code?
             result = {'sparql': sparql_template.substitute(varibs),
                       'template_name': template_name,
                       'variables': varibs,
