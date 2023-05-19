@@ -3,6 +3,7 @@
 
 These are instructions that should work on many configurations of Linux.  These are the requirements for the `KGQAS/` and the question generation (in `tripledb/`).
 
+The environment will require about 5.2 GB of storage.
 Create a python environment (`env-zoqa` or feel free to use another name) this is a venv style:
 ```bash
 python3 -m venv env-zoqa 
@@ -14,17 +15,28 @@ source env-zoqa/bin/activate
 ```
 
 Install the python packages.
-```
-pip3 install -r requirements.txt
-``` 
-
-Run this to install a required part of NLTK
-```
-python3 -c "import nltk; nltk.download('punkt')"
+```bash
+pip3 install -r env/requirements.txt
 ```
 
 ---
-## Notes about complication
+## Notes
+
+If you see something similar to this error:
+```
+LookupError: 
+**********************************************************************
+  Resource punkt not found.
+  Please use the NLTK Downloader to obtain the resource:
+```
+
+Run this to install a required part of NLTK
+```
+python3 -m nltk.downloader punkt
+```
+
+---
+## Notes about Anaconda Instruction
 
 Problem: The Anaconda instructions would run for an hour and time out not being able to solve the environment.
 
