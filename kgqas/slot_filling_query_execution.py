@@ -40,131 +40,6 @@ class SlotFillingQueryExecution:
         else:
             self.tg = template_generation
 
-    # this function has been divided into three functions - TODO: REMOVE
-    def slot_fill_query_execute(self, template_name: str, similarity_scores, relations: List[str]) \
-            -> (Union[bool, List[str]], dict):
-        """
-        This fills in the slots.
-        returns (answer, msg)
-        """
-
-        # This is the message of all of the variables
-        msg = {}
-
-        sfqe_start = time.time()
-
-        template_dict = self.tg.get_template(template_name)
-       # print(f"template name: {template_name}")
-#        msg['template_name'] = template_name
-       # print(f"SPARQL TEMPLATE: {template_dict['sparql_template']}")
-        msg['sparql_template'] = template_dict['sparql_template']
-#        print(f"VARIABLES: {template_dict['variables']}")
-#        print(f'RELATIONS: {relations}')
-        slots = {}
-        if 'regulation_predicate' in template_dict['variables']:
-            # translate from text to a predicate
-            # print(f"Index: {self.index_kg.predicate_index}")
-            # relations[0]
-            # slots['regulation_predicate']
-            slots['regulation_predicate'] = self.index_kg.predicate_dict[relations[0]]
-
-#        print(f'SLOTS: {slots}')
-#        print(f"other SLOTS:{template_dict['sparql_variables_entities']}")
-        num_entity_slots = len(template_dict['sparql_variables_entities'])
-        # print(f'num_entity_slots: {num_entity_slots}')
-        msg['num_entity_slots'] = num_entity_slots
-        # print(f'SIMILARITY SCORES for num_entity_slots: {similarity_scores[:num_entity_slots]}')
-        msg['similarity_scores'] = similarity_scores[:num_entity_slots]
-
-        sparql_template = string.Template(template_dict['sparql_template'])
-
-        if num_entity_slots == 1:
-            slot_name = template_dict['sparql_variables_entities']
-            slot_name0 = slot_name[0]  # dereference tuple
-            slots[slot_name0] = similarity_scores[0][1]
-
-            # fill in the SPARQL template
-            # print(f"SLOTS: {slots}")
-            sparql_code = sparql_template.substitute(slots)
-        elif num_entity_slots == 2:
-            # TODO: Can this be eliminated because of the below code?
-            slot_names = template_dict['sparql_variables_entities']
-            slots_values = [ss[1] for ss in similarity_scores]
-
-            slots_forward = dict(zip(slot_names, slots_values))
-            # add the relation extract from slots
-            slots_forward.update(slots)
-
-            # fill in the SPARQL template
-            # print(f"SLOTS FORWARD: {slots_forward}")
-            msg['slots_forward'] = slots_forward
-            sparql_code_fw = sparql_template.substitute(slots_forward)
-
-            slots_reversed = dict(zip(slot_names, (slots_values[1], slots_values[0])))
-            # add the relation extract from slots
-            slots_reversed.update(slots)
-
-            # print(f"SLOTS REVERSED: {slots_reversed}")
-            msg['slots_reversed'] = slots_reversed
-            sparql_code_rev = sparql_template.substitute(slots_reversed)
-            sparql_code = [sparql_code_fw, sparql_code_rev]
-
-        elif num_entity_slots > 2:
-            # lightly tested code
-            # dereference similarity scores
-            # NOTE: this is currently 136, which this should be less than 10 similarity scores.
-            slots_values = [ss[1] for ss in similarity_scores]
-#            print(f'len(slots_values): {len(slots_values)}')
-            slot_names = template_dict['sparql_variables_entities']
-
-            slots_array = []
-            sparql_code = []
-            # this does the cartesian product by move the names of the slots around
-            # by using itertools.permutations()
-            for p_slot_names in itertools.permutations(slot_names, num_entity_slots):
-                slots_p = dict(zip(p_slot_names, slots_values))
-                # add the relation extract from slots
-                slots_p.update(slots)
-
-                # unit symbol has to be converted from text to a symbol "feet" -> "[ft_i]"
-                if 'unit_symbol' in slot_names:
-#                    unit_symbol = slots_p['unit_symbol']
-#                    print(f'unit_symbol: {unit_symbol}')
-#                    print(f'UNITS_NAME: {UNITS_NAME}')
-                    updated_slots = self._convert_unit_symbol_give_datatype(slots_p)
-                    # skip where the unit_symbol is not a unit
-                    if updated_slots is None:
-                        continue
-                    slots_p.update(updated_slots)
-                # varibs['unit_text'] = UNITS_SYMBOL[unit_symbol]  # = "feet"
-                # varibs['unit_datatype'] = UNIT_DATATYPE[unit_symbol]  # = "cdt:length"
-
-                slots_array.append(slots_p)
-                # fill in SPARQL template
-                sparql_code.append(sparql_template.substitute(slots_p))
-
-            # Note: A cartesian product is not really appropriate for this application.
-            # Relying upon the index matching would be better in this case.
-
-        if isinstance(sparql_code, str):
-            answers = self._query_sparql_str(sparql_code, template_dict['answer_datatype'])
-        elif isinstance(sparql_code, list):
-            # print(f"sparql_code: {sparql_code}")
-            answers = self._query_sparql_list(sparql_code, template_dict['answer_datatype'])
-        else:
-            raise RuntimeError
-
-        # print the answers to the console
-#        if template_dict['answer_datatype'] == bool:
-#            if answers:
-#                print("Yes")
-#            else:
-#                print("No")
-#            ny = ('No', 'Yes')
-#            return ny[int(answer)], msg
-        msg['sfqe_time'] = time.time() - sfqe_start
-
-        return answers, msg
 
     def slot_fill(self, template_name: str, similarity_scores, relations: List[str]) \
             -> dict:
@@ -232,7 +107,7 @@ class SlotFillingQueryExecution:
  #           sparql_code.append(sparql_template.substitute(slots_p))
 
         # TESTING, if length == 1, dereference that item in the list
-        if len(msg['filled_slots']):
+        if len(msg['filled_slots']) == 1:
             msg['filled_slots'] = msg['filled_slots'][0]
 
         msg['sf_time'] = time.time() - sf_start
@@ -249,15 +124,17 @@ class SlotFillingQueryExecution:
         msg['sparql_template'] = template_dict['sparql_template']
         sparql_template = string.Template(template_dict['sparql_template'])
 
-#        msg['sparql_templates_filled'] = [sparql_template.substitute(p) for p in msg['filled_slots']]
-#        d = {}
-#        for k,v in msg['filled_slots'].items():
-#            print(f'k: {k}, v: {v}')
-#            sparql_template.substitute(p)
-#        msg['sparql_templates_filled'].append(d)
-        # this seems better
-        msg['sparql_templates_filled'] = sparql_template.substitute(msg['filled_slots'])
+        # NOTE: I'm not sure why later code does not accept msg['filled_slots'] as a list in all cases, 
+        #       but there must be assumption made in later portions of the code.
 
+        if isinstance(msg['filled_slots'], list):
+            result = [sparql_template.substitute(fs) for fs in msg['filled_slots']]
+        else:
+            # when only 1 slot is to be filled
+            result = sparql_template.substitute(msg['filled_slots'])
+
+        msg['sparql_templates_filled'] = result 
+#        print(msg['sparql_templates_filled'])
         return msg
 
     def query_execution(self, template_name: str, msg: dict) -> (Union[bool, List[str]], dict):
