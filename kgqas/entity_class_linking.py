@@ -32,11 +32,18 @@ class EntityClassLinking:
         self.verbose = verbose
 
     def ngram_collection(self, sentence) -> list:
-        tokens = word_tokenize(sentence)
+        try:
+            tokens = word_tokenize(sentence)
+        except LookupError:
+            # Download and install punkt for NLTK, if not already installed.
+            import nltk
+            nltk.download('punkt')
+            tokens = word_tokenize(sentence)
+
         # compute unigram, bigram, and trigram at the same time
         # ngram_out = everygrams(tokens, max_len=3)  # this is per the paper
         # compute unigram, bigram, trigram, 4-grams and 5-grams all at the same time
-        ngram_out = list(everygrams(tokens, max_len=5))  # However, I need more for my application.
+        ngram_out = list(everygrams(tokens, max_len=5))  # However, longer n-grams are need for this application.
         # print(ngram_out)
 
 

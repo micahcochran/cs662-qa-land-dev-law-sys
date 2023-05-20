@@ -11,10 +11,9 @@ import time
 from typing import List, Optional
 
 # External library imports
-# install loguru
 from loguru import logger
-from nltk.tag.perceptron import PerceptronTagger
-from nltk.tokenize import word_tokenize
+# from nltk.tag.perceptron import PerceptronTagger
+# from nltk.tokenize import word_tokenize
 import numpy as np
 import rdflib
 from sklearn.model_selection import train_test_split
@@ -22,7 +21,6 @@ from sklearn.metrics import accuracy_score, f1_score
 # import spacy
 import stanza
 from stanza.pipeline.core import DownloadMethod
-# install xgboost
 import xgboost as xgb
 
 # internal library imports
@@ -57,11 +55,13 @@ class QuestionClassification:
             self.tg = template_generation
 
     # UNUSED
+    """
     def pos_tagging(self, sentence: str):
         avg_tagger = PerceptronTagger(load=True)
         tokens = word_tokenize(sentence)
         avg_perceptron_tags = avg_tagger.tag(tokens)
         return avg_perceptron_tags
+    """
 
     # NOT WORKING: Had problems finding the POS tag of the headword.
     # result in a triplets in the following form:
@@ -231,7 +231,7 @@ class QuestionClassification:
         return self.padding(enc)
 
     # WORKING
-    def train2(self, question_templates: Optional[list] = None):
+    def train(self, question_templates: Optional[list] = None):
         """Train the Question XGBoost Classifier.
         train_iter : iterable of the questions that you'd like to train"""
         logger.info("1. Question Classifier training begun. ================")
@@ -336,7 +336,7 @@ def main():
 def qc_train_main():
     """This is a step to train the classifier"""
     qc = QuestionClassification()
-    qc.train2()
+    qc.train()
 
 def compute_max_main():
     """Exercise to figure out the maximum vector needed for the problem."""
@@ -347,7 +347,7 @@ def compute_max_main():
 
 def classify_small_test_main():
     qc = QuestionClassification()
-#    model = qc.train2()
+#    model = qc.train()
 #    template_number = qc.classify('Are auto-dismantling yards permitted?', model)
 
     # these are questions to test that all of the 5 of the templates are being tested

@@ -64,7 +64,7 @@ class SemanticParsingClass:
         # print(f'question_corpus: {question_corpus}')
 
         # 1) Question Classification
-        self.qc.train2(question_corpus)
+        self.qc.train(question_corpus)
 
         # 2) Entity Linking and Class Linking
         # There isn't anything to train for this step.
